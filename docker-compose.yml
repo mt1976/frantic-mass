@@ -1,0 +1,17 @@
+---
+services:
+  cosmic-orange:
+    image: mt1976/frantic-mass:latest
+    container_name: cosmic-orange
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /Volumes/External HD/Docker/Shared/backups/frantic-mass:/app/data/backups
+      - /Volumes/External HD/Docker/Shared/database:/app/data/database
+      - /Volumes/External HD/Docker/Shared/dumps/frantic-mass:/app/data/dumps
+      - /Volumes/External HD/Docker/Shared/logs:/app/data/logs
+    ports:
+      - 5059:5059
+    restart: unless-stopped

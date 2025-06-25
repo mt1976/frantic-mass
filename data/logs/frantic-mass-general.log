@@ -1,0 +1,179 @@
+2025/06/25 21:28:39.297716 main.go:24: [97m[INFO][0m massStore Initialise Start
+2025/06/25 21:28:39.301859 main.go:26: [97m[INFO][0m massStore Initialise Initialising Database Connections
+2025/06/25 21:28:39.301866 main.go:28: [97m[INFO][0m massStore Initialise Initialising User DAO
+2025/06/25 21:28:39.338360 main.go:31: [97m[INFO][0m massStore Initialise Initialising Baseline DAO
+2025/06/25 21:28:39.338710 main.go:34: [97m[INFO][0m massStore Initialise Initialising Tag DAO
+2025/06/25 21:28:39.339057 main.go:37: [97m[INFO][0m massStore Initialise Initialising Goal DAO
+2025/06/25 21:28:39.339350 main.go:40: [97m[INFO][0m massStore Initialise Initialising Weight DAO
+2025/06/25 21:28:39.339752 main.go:43: [97m[INFO][0m massStore Initialise Initialising WeightTag DAO
+2025/06/25 21:28:39.340717 main.go:45: [97m[INFO][0m massStore Initialise Initialising WeightProjection DAO
+2025/06/25 21:28:39.341083 main.go:48: [97m[INFO][0m massStore Initialise Initialised Database Connections
+2025/06/25 21:28:39.341115 main.go:56: [97m[INFO][0m massStore Initialise Done
+2025/06/25 21:28:39.341137 main.go:65: [97m[INFO][0m randNum: 5892
+2025/06/25 21:28:39.362486 main.go:71: [97m[INFO][0m newRec:[{ID:100000 Key:cdd158a175c34de9050f1248bc9b0293614609cbafc3a42fc5074a8fcf33324e Raw:250625212839341141000501089351 Audit:{CreatedAt:2025-06-25 21:28:39.341169 +0100 BST m=+0.050728876 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.341169 +0100 BST m=+0.050728876 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser5892@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser5892 Email:massUser5892@example.com PasswordHash:Test 5892}]
+2025/06/25 21:28:39.369863 main.go:65: [97m[INFO][0m randNum: 6814
+2025/06/25 21:28:39.392870 main.go:71: [97m[INFO][0m newRec:[{ID:100001 Key:9d3482895dee9268a5a60723dabe50bd7f843e022d1f102a252fd76e164e5bec Raw:250625212839369875000501075072 Audit:{CreatedAt:2025-06-25 21:28:39.369887 +0100 BST m=+0.079446418 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.369887 +0100 BST m=+0.079446418 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser6814@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser6814 Email:massUser6814@example.com PasswordHash:Test 6814}]
+2025/06/25 21:28:39.400994 main.go:65: [97m[INFO][0m randNum: 6861
+2025/06/25 21:28:39.412042 main.go:71: [97m[INFO][0m newRec:[{ID:100002 Key:6719983657310b4de09d19d6fd45ce8f5fb362f03668a14c2b189f803a94d4b6 Raw:250625212839401028000501089110 Audit:{CreatedAt:2025-06-25 21:28:39.401044 +0100 BST m=+0.110602960 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.401044 +0100 BST m=+0.110602960 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser6861@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser6861 Email:massUser6861@example.com PasswordHash:Test 6861}]
+2025/06/25 21:28:39.422881 main.go:65: [97m[INFO][0m randNum: 3750
+2025/06/25 21:28:39.435512 main.go:71: [97m[INFO][0m newRec:[{ID:100003 Key:c88717ff5c001435e5cce9ff052b769cc7fc2a2b73fb7ebf877238acef8aec86 Raw:250625212839422904000501059883 Audit:{CreatedAt:2025-06-25 21:28:39.422921 +0100 BST m=+0.132479918 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.422921 +0100 BST m=+0.132479918 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser3750@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser3750 Email:massUser3750@example.com PasswordHash:Test 3750}]
+2025/06/25 21:28:39.442015 main.go:65: [97m[INFO][0m randNum: 9679
+2025/06/25 21:28:39.453917 main.go:71: [97m[INFO][0m newRec:[{ID:100004 Key:b1915ab6223681cd54c773e137cbaabe1473fd5691a82427a3d18de87ca16b61 Raw:250625212839442048000501098839 Audit:{CreatedAt:2025-06-25 21:28:39.44206 +0100 BST m=+0.151618668 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.44206 +0100 BST m=+0.151618668 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser9679@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser9679 Email:massUser9679@example.com PasswordHash:Test 9679}]
+2025/06/25 21:28:39.460354 main.go:65: [97m[INFO][0m randNum: 5792
+2025/06/25 21:28:39.500204 main.go:71: [97m[INFO][0m newRec:[{ID:100005 Key:bd47d6df0e64a8c6ff0fb319e216168a5102cab1345d29c9719bca152ab02021 Raw:250625212839460365000501051127 Audit:{CreatedAt:2025-06-25 21:28:39.460382 +0100 BST m=+0.169940501 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.460382 +0100 BST m=+0.169940501 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser5792@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser5792 Email:massUser5792@example.com PasswordHash:Test 5792}]
+2025/06/25 21:28:39.508481 main.go:65: [97m[INFO][0m randNum: 9982
+2025/06/25 21:28:39.523000 main.go:71: [97m[INFO][0m newRec:[{ID:100006 Key:d926624ce29b581e711b779456f36734765a1a5e6b0c3a287ae85337e3227820 Raw:250625212839508493000501083524 Audit:{CreatedAt:2025-06-25 21:28:39.508504 +0100 BST m=+0.218062376 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.508504 +0100 BST m=+0.218062376 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser9982@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser9982 Email:massUser9982@example.com PasswordHash:Test 9982}]
+2025/06/25 21:28:39.527816 main.go:65: [97m[INFO][0m randNum: 1162
+2025/06/25 21:28:39.539197 main.go:71: [97m[INFO][0m newRec:[{ID:100007 Key:5e035ef980aca220de49bc1e11e438d2f2b22737aa77001401ac8194c484a94f Raw:250625212839527825000501055669 Audit:{CreatedAt:2025-06-25 21:28:39.527833 +0100 BST m=+0.237391376 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.527833 +0100 BST m=+0.237391376 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser1162@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser1162 Email:massUser1162@example.com PasswordHash:Test 1162}]
+2025/06/25 21:28:39.546242 main.go:65: [97m[INFO][0m randNum: 8995
+2025/06/25 21:28:39.557836 main.go:71: [97m[INFO][0m newRec:[{ID:100008 Key:35dc2ff6d4c909988466e1204482aebdc93d634553e0ae7f6d5dea362941061a Raw:250625212839546269000501058131 Audit:{CreatedAt:2025-06-25 21:28:39.546299 +0100 BST m=+0.255856918 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.546299 +0100 BST m=+0.255856918 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser8995@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser8995 Email:massUser8995@example.com PasswordHash:Test 8995}]
+2025/06/25 21:28:39.564015 main.go:65: [97m[INFO][0m randNum: 2490
+2025/06/25 21:28:39.576205 main.go:71: [97m[INFO][0m newRec:[{ID:100009 Key:77269ac6b155f1f038a5cddeda6a4b43fceaabe6668b7d3af564a154db0090f8 Raw:250625212839564023000501038667 Audit:{CreatedAt:2025-06-25 21:28:39.56403 +0100 BST m=+0.273587293 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:39 Updates:[{UpdatedAt:2025-06-25 21:28:39.56403 +0100 BST m=+0.273587293 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:39 UpdateNotes:New User created massUser2490@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:massUser2490 Email:massUser2490@example.com PasswordHash:Test 2490}]
+2025/06/25 21:28:39.745196 main.go:86: [97m[INFO][0m lk:[{Data:[{Key:cdd158a175c34de9050f1248bc9b0293614609cbafc3a42fc5074a8fcf33324e Value:250625212839341141000501089351 AltID: Description: ObjectDomain: Selected:false} {Key:9d3482895dee9268a5a60723dabe50bd7f843e022d1f102a252fd76e164e5bec Value:250625212839369875000501075072 AltID: Description: ObjectDomain: Selected:false} {Key:6719983657310b4de09d19d6fd45ce8f5fb362f03668a14c2b189f803a94d4b6 Value:250625212839401028000501089110 AltID: Description: ObjectDomain: Selected:false} {Key:c88717ff5c001435e5cce9ff052b769cc7fc2a2b73fb7ebf877238acef8aec86 Value:250625212839422904000501059883 AltID: Description: ObjectDomain: Selected:false} {Key:b1915ab6223681cd54c773e137cbaabe1473fd5691a82427a3d18de87ca16b61 Value:250625212839442048000501098839 AltID: Description: ObjectDomain: Selected:false} {Key:bd47d6df0e64a8c6ff0fb319e216168a5102cab1345d29c9719bca152ab02021 Value:250625212839460365000501051127 AltID: Description: ObjectDomain: Selected:false} {Key:d926624ce29b581e711b779456f36734765a1a5e6b0c3a287ae85337e3227820 Value:250625212839508493000501083524 AltID: Description: ObjectDomain: Selected:false} {Key:5e035ef980aca220de49bc1e11e438d2f2b22737aa77001401ac8194c484a94f Value:250625212839527825000501055669 AltID: Description: ObjectDomain: Selected:false} {Key:35dc2ff6d4c909988466e1204482aebdc93d634553e0ae7f6d5dea362941061a Value:250625212839546269000501058131 AltID: Description: ObjectDomain: Selected:false} {Key:77269ac6b155f1f038a5cddeda6a4b43fceaabe6668b7d3af564a154db0090f8 Value:250625212839564023000501038667 AltID: Description: ObjectDomain: Selected:false}]}]
+2025/06/25 21:28:39.745337 main.go:93: [97m[INFO][0m count:[10]
+2025/06/25 21:28:39.745424 main.go:100: [97m[INFO][0m count:[0]
+2025/06/25 21:28:39.745506 main.go:107: [97m[INFO][0m count2:[0]
+2025/06/25 21:28:39.748653 main.go:121: [97m[INFO][0m count4:[0]
+2025/06/25 21:28:39.759276 main.go:128: [97m[INFO][0m drop:[templ]
+2025/06/25 21:28:39.759305 main.go:135: [97m[INFO][0m cdrop:[0]
+2025/06/25 21:28:39.881303 userStore.go:326: [97m[INFO][0m Deleting User (0/10) 72f0829374aeee936b9224a048fb3854e644fe9052cf3346193e3f38eb65418c
+2025/06/25 21:28:39.913353 userStore.go:326: [97m[INFO][0m Deleting User (1/10) 64374379f3a1cd20c667360ae24b5da4501111929f61cc7f4c033442df425a88
+2025/06/25 21:28:39.937030 userStore.go:326: [97m[INFO][0m Deleting User (2/10) 1e2628f3cbe1bb9dde4e344a310e345078d6e05bc6842eb1838deaf9eb39f3df
+2025/06/25 21:28:39.956271 userStore.go:326: [97m[INFO][0m Deleting User (3/10) e0859a8db0e9fa997c0f4bad18182c790d666ced65d000da8cc68c3e3439025e
+2025/06/25 21:28:39.981833 userStore.go:326: [97m[INFO][0m Deleting User (4/10) 01e6c057b3940dee3802275d5c02125cce21e1e69de8cedd7b7553296fe3d5a1
+2025/06/25 21:28:39.997182 userStore.go:326: [97m[INFO][0m Deleting User (5/10) 7c57f9230c4e09298934779bdb7001b09acfffd51d7801b2ecaa7fae32eff4db
+2025/06/25 21:28:40.026115 userStore.go:326: [97m[INFO][0m Deleting User (6/10) 02ed26e20f17e41e607f19d6e76c4f2ac9b02cfab5a773ff19497912a0f246d5
+2025/06/25 21:28:40.042685 userStore.go:326: [97m[INFO][0m Deleting User (7/10) 7184551b9f1a5e29e2bc8700c6556ab92c594b4a734ace8fc42eb348fde772b1
+2025/06/25 21:28:40.064993 userStore.go:326: [97m[INFO][0m Deleting User (8/10) 9ac4378ccbb604b99cce7bb7fd8408348ad2597be08a98935895ceb4ccbd5406
+2025/06/25 21:28:40.085551 userStore.go:326: [97m[INFO][0m Deleting User (9/10) 079d74d65f91497516366496366b2f4a38dbe55ac5cf3ff18ea7b316e5f58a19
+2025/06/25 21:28:40.105868 main.go:154: [97m[INFO][0m Drop Data Post Export:[templ]
+2025/06/25 21:28:40.228649 main.go:163: [97m[INFO][0m Post Import:[10]
+2025/06/25 21:28:40.228661 main.go:166: [97m[INFO][0m massStore Initialise Creating Baseline for UserID: 2490
+2025/06/25 21:28:40.241024 main.go:171: [97m[INFO][0m Baseline Created:[{ID:100000 Key:9b93543689a88100ef67277334f2b5eea4a9f99041bd401eab8c064febb79f7a Raw:250625212840228668000501093810 Audit:{CreatedAt:2025-06-25 21:28:40.228672 +0100 BST m=+0.938223210 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:40 Updates:[{UpdatedAt:2025-06-25 21:28:40.228672 +0100 BST m=+0.938223210 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:40 UpdateNotes:New baseline created 2490}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:2490 HeightCm:{Value:187.96} Note:BaselineFor2490}]
+2025/06/25 21:28:40.241045 main.go:174: [97m[INFO][0m massStore Initialise Creating Goal for UserID: 2490
+2025/06/25 21:28:40.260709 main.go:180: [97m[INFO][0m Goal Created:[{ID:100000 Key:cb23fad8674a9cb955d8a28699edf1e2ea6ffc703aea0e54ce38fad43f86253a Raw:250625212840241053000501030895 Audit:{CreatedAt:2025-06-25 21:28:40.241058 +0100 BST m=+0.950609793 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:40 Updates:[{UpdatedAt:2025-06-25 21:28:40.241058 +0100 BST m=+0.950609793 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:40 UpdateNotes:New goal created 2490}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:2490 Name:GoalFor2490 TargetWeight:{Value:90} TargetDate:2025-07-25 21:28:40.241052 +0100 BST LossPerWeek:{Value:2} Note:This is a test goal to check the goal creation process CompositeID:2490/250625212840241053000501030895 NoProjections:0}]
+2025/06/25 21:28:40.260752 main.go:183: [97m[INFO][0m massStore Initialise Creating Tag
+2025/06/25 21:28:40.274522 main.go:188: [97m[INFO][0m Tag Created:[{ID:100000 Key:30dd4d259901ec998c3d646841b032aa1e497c8e65c720ff890f517a1599c6c1 Raw:250625212840260761000501015629 Audit:{CreatedAt:2025-06-25 21:28:40.260795 +0100 BST m=+0.970345710 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:40 Updates:[{UpdatedAt:2025-06-25 21:28:40.260795 +0100 BST m=+0.970345710 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:40 UpdateNotes:New tag created TagFor2490}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Name:TagFor2490}]
+2025/06/25 21:28:40.274540 main.go:191: [97m[INFO][0m massStore Initialise Creating Weight for UserID: 2490
+2025/06/25 21:28:40.286646 main.go:196: [97m[INFO][0m Weight Created:[{ID:100000 Key:b14284d4b2c85b63bb6da0d9bcb70728be4c1befa527ffdee2b27deeb6debd00 Raw:250625212840274548000501024470 Audit:{CreatedAt:2025-06-25 21:28:40.274611 +0100 BST m=+0.984161960 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:40 Updates:[{UpdatedAt:2025-06-25 21:28:40.274611 +0100 BST m=+0.984161960 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:40 UpdateNotes:New weight created 2490}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:2490 RecordedAt:2025-06-25 21:28:40.274547 +0100 BST m=+0.984098501 Weight:{Value:80} BMI:{Value:22.64431117613148 Note:Normal weight} Note:WeightFor2490}]
+2025/06/25 21:28:40.286669 main.go:201: [97m[INFO][0m randNum: 3193
+2025/06/25 21:28:40.324023 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:40.335002 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:40.358399 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:40.373369 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:40.386905 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:40.402634 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:40.429757 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:40.441320 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:40.452009 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:40.479413 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:40.479429 main.go:201: [97m[INFO][0m randNum: 9139
+2025/06/25 21:28:40.510572 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:40.522256 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:40.552396 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:40.563170 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:40.581372 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:40.603404 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:40.622670 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:40.634631 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:40.661076 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:40.678002 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:40.678015 main.go:201: [97m[INFO][0m randNum: 8869
+2025/06/25 21:28:40.715086 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:40.735872 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:40.748619 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:40.773104 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:40.794110 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:40.805194 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:40.830518 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:40.845469 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:40.859101 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:40.882495 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:40.882513 main.go:201: [97m[INFO][0m randNum: 1534
+2025/06/25 21:28:40.915502 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:40.929202 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:40.965746 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:40.978483 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:40.994174 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:41.022400 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:41.038328 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:41.054355 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:41.081698 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:41.098113 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:41.098125 main.go:201: [97m[INFO][0m randNum: 3290
+2025/06/25 21:28:41.135986 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:41.151571 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:41.166153 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:41.188810 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:41.207711 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:41.221235 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:41.247110 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:41.264814 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:41.278931 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:41.303778 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:41.303790 main.go:201: [97m[INFO][0m randNum: 9592
+2025/06/25 21:28:41.335209 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:41.360885 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:41.382378 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:41.397706 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:41.428490 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:41.446729 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:41.462292 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:41.494077 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:41.509213 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:41.538612 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:41.538625 main.go:201: [97m[INFO][0m randNum: 3407
+2025/06/25 21:28:41.572194 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:41.598747 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:41.623104 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:41.638807 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:41.668880 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:41.690736 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:41.719667 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:41.738360 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:41.754567 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:41.780944 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:41.780956 main.go:201: [97m[INFO][0m randNum: 3614
+2025/06/25 21:28:41.814452 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:41.845060 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:41.866846 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:41.881997 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:41.921101 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:41.936824 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:41.969358 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:41.989961 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:42.025230 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:42.046463 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:42.046473 main.go:201: [97m[INFO][0m randNum: 4494
+2025/06/25 21:28:42.086087 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:42.107351 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:42.123003 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:42.156420 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:42.173568 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:42.201790 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:42.221102 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:42.250426 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:42.270582 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:42.299882 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:42.299894 main.go:201: [97m[INFO][0m randNum: 8412
+2025/06/25 21:28:42.338095 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/1]
+2025/06/25 21:28:42.371533 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/2]
+2025/06/25 21:28:42.392494 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/3]
+2025/06/25 21:28:42.422617 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/4]
+2025/06/25 21:28:42.443082 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/5]
+2025/06/25 21:28:42.473864 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/6]
+2025/06/25 21:28:42.498258 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/7]
+2025/06/25 21:28:42.530191 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/8]
+2025/06/25 21:28:42.554914 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/9]
+2025/06/25 21:28:42.587063 main.go:214: [97m[INFO][0m Projection Created:[2490/100000/10]
+2025/06/25 21:28:42.587082 main.go:219: [97m[INFO][0m massStore Initialise Creating WeightTag
+2025/06/25 21:28:42.604352 main.go:224: [97m[INFO][0m WeightTag Created:[{ID:100000 Key:0c9cae4a53d327b08a9d3653857d3f59e76f27444485ccfed3621b5ebc94a6b7 Raw:250625212842587090000501088227 Audit:{CreatedAt:2025-06-25 21:28:42.587103 +0100 BST m=+3.296632668 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-06-25 21:28:42 Updates:[{UpdatedAt:2025-06-25 21:28:42.587103 +0100 BST m=+3.296632668 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-06-25 21:28:42 UpdateNotes:New weightTag created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} WeightID:100000 TagID:100000}]
+2025/06/25 21:28:43.078361 main.go:237: [97m[INFO][0m massStore HeightCM 187.96 cm
+2025/06/25 21:28:43.078372 main.go:238: [97m[INFO][0m massStore HeightM 1.88 m
+2025/06/25 21:28:43.078380 main.go:240: [97m[INFO][0m massStore HeightIN 74.00 in
+2025/06/25 21:28:43.078388 main.go:241: [97m[INFO][0m massStore HeightFT 6 ft 2 in
+2025/06/25 21:28:43.078395 main.go:243: [97m[INFO][0m massStore HeightString 187.96 cm
+2025/06/25 21:28:43.078410 main.go:245: [97m[INFO][0m massStore WeightKg 80.00 kg
+2025/06/25 21:28:43.078416 main.go:246: [97m[INFO][0m massStore WeightLbs 176.37 lbs
+2025/06/25 21:28:43.078424 main.go:248: [97m[INFO][0m massStore WeightStone 12 st 8 lbs
+2025/06/25 21:28:43.078431 main.go:249: [97m[INFO][0m massStore WeightString 80.00 kg

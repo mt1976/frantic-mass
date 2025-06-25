@@ -1,0 +1,16 @@
+2025/06/25 21:28:39.335238 userStore_init.go:36: [35m[EVENT][0m Initialised User
+2025/06/25 21:28:39.338705 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
+2025/06/25 21:28:39.339047 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
+2025/06/25 21:28:39.339346 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
+2025/06/25 21:28:39.339740 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
+2025/06/25 21:28:39.340710 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
+2025/06/25 21:28:39.341074 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
+2025/06/25 21:28:39.341109 userStore.go:336: [35m[EVENT][0m Cleared down User
+2025/06/25 21:28:39.341128 userStore.go:336: [35m[EVENT][0m Cleared down User
+2025/06/25 21:28:39.881210 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
+2025/06/25 21:28:40.105855 userStore.go:336: [35m[EVENT][0m Cleared down User
+2025/06/25 21:28:40.228536 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
+2025/06/25 21:28:42.607757 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
+2025/06/25 21:28:42.837827 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
+2025/06/25 21:28:42.837860 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
+2025/06/25 21:28:43.078242 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]

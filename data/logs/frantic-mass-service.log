@@ -1,0 +1,28 @@
+2025/06/25 21:28:42.604453 jobs_helpers.go:50: [32m[SERVICE][0m [Schedule] Job "User Job" - Started
+2025/06/25 21:28:42.607730 user_job.go:95: [32m[SERVICE][0m [UserJob] Running 'User Job' job across 2 locations
+2025/06/25 21:28:42.607744 user_job.go:98: [32m[SERVICE][0m [UserJob] Getting list of databases from 'main.main.GetDatabaseConnections.func57'
+2025/06/25 21:28:42.607750 user_job.go:104: [32m[SERVICE][0m [UserJob] Running 'User Job' job across 1 database(s)
+2025/06/25 21:28:42.607874 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(1/10) 250625212840109344000501054284
+2025/06/25 21:28:42.634558 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(2/10) 250625212840119291000501073568
+2025/06/25 21:28:42.651510 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(3/10) 250625212840142848000501063036
+2025/06/25 21:28:42.680600 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(4/10) 250625212840149616000501098177
+2025/06/25 21:28:42.702496 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(5/10) 250625212840162393000501083416
+2025/06/25 21:28:42.719998 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(6/10) 250625212840170139000501077483
+2025/06/25 21:28:42.750297 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(7/10) 250625212840181774000501046554
+2025/06/25 21:28:42.772242 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(8/10) 250625212840189557000501060380
+2025/06/25 21:28:42.791755 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(9/10) 250625212840198614000501031668
+2025/06/25 21:28:42.808820 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(10/10) 250625212840217132000501007251
+2025/06/25 21:28:42.837840 user_job.go:98: [32m[SERVICE][0m [UserJob] Getting list of databases from 'main.main.GetDatabaseConnections.func58'
+2025/06/25 21:28:42.837852 user_job.go:104: [32m[SERVICE][0m [UserJob] Running 'User Job' job across 1 database(s)
+2025/06/25 21:28:42.837982 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(1/10) 250625212840109344000501054284
+2025/06/25 21:28:42.859933 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(2/10) 250625212840119291000501073568
+2025/06/25 21:28:42.877291 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(3/10) 250625212840142848000501063036
+2025/06/25 21:28:42.905699 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(4/10) 250625212840149616000501098177
+2025/06/25 21:28:42.935181 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(5/10) 250625212840162393000501083416
+2025/06/25 21:28:42.953729 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(6/10) 250625212840170139000501077483
+2025/06/25 21:28:42.977715 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(7/10) 250625212840181774000501046554
+2025/06/25 21:28:43.017289 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(8/10) 250625212840189557000501060380
+2025/06/25 21:28:43.038721 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(9/10) 250625212840198614000501031668
+2025/06/25 21:28:43.058933 userStore_helpers.go:83: [32m[SERVICE][0m [UserJob] User(10/10) 250625212840217132000501007251
+2025/06/25 21:28:43.078341 jobs_helpers.go:56: [32m[SERVICE][0m [Schedule] Job "User Job" - Completed
+2025/06/25 21:28:43.078350 jobs_helpers.go:57: [32m[SERVICE][0m [Schedule] Job "User Job" Scheduled [0/30 * * * * *] [Every 30 seconds]

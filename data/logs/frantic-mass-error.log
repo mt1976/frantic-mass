@@ -1,0 +1,1 @@
+2025/06/25 21:28:39.745516 main.go:112: [31m[ERROR][0m invalid type for field ID (string != int)
