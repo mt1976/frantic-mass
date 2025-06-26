@@ -27,8 +27,9 @@ type goal_Store struct {
 	UserID        int      `storm:"index"`  // Foreign key to User
 	Name          string   `storm:"unique"` // Name of the goal
 	TargetWeight  t.Weight // Target weight in kilograms
+	TargetBMI     t.BMI    // Target BMI
 	TargetDate    time.Time
-	LossPerWeek   t.Weight // Expected weight loss per week in kilograms
+	LossPerWeek   t.Weight // Desired weight loss per week in kilograms
 	Note          string
 	CompositeID   string // Composite ID for unique identification of the goal
 	NoProjections int    // Projection Period in weeks, used for calculating the target date based on the current weight and loss per week
@@ -44,6 +45,7 @@ var (
 	FIELD_Name          = "Name"
 	FIELD_UserID        = "UserID"
 	FIELD_TargetWeight  = "TargetWeight"
+	FIELD_TargetBMI     = "TargetBMI"
 	FIELD_TargetDate    = "TargetDate"
 	FIELD_LossPerWeek   = "LossPerWeek"
 	FIELD_Note          = "Note"
