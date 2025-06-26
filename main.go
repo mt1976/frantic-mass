@@ -189,7 +189,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("massStore", "Initialise", "Creating Weight for UserID:", userID)
-	thisWeight, weightErr := weight.New(context.TODO(), userID, types.Weight{Value: 80.00}, fmt.Sprintf("WeightFor%v", userID), time.Now())
+	thisWeight, weightErr := weight.New(context.TODO(), userID, types.Weight{Value: 120.00}, fmt.Sprintf("WeightFor%v", userID), time.Now())
 	if weightErr != nil {
 		logHandler.ErrorLogger.Println(weightErr)
 	} else {
@@ -197,7 +197,7 @@ func main() {
 	}
 
 	for i := 0; i < 10; i++ {
-		randNum := rand.Intn(10000-1000) + 1000
+		randNum := (120.00 - i) - rand.Intn(10-1) + 1
 		logHandler.InfoLogger.Println("randNum:", randNum)
 
 		_, newRedErr := weight.New(context.TODO(), userID, types.Weight{Value: float64(randNum)}, fmt.Sprintf("WeightFor%v", randNum), time.Now().Add(time.Duration(randNum)*(time.Hour*24)))
@@ -247,5 +247,13 @@ func main() {
 	stones, _ := thisWeight.Weight.StonesAsString()
 	logHandler.InfoLogger.Println("massStore", "WeightStone", stones)
 	logHandler.InfoLogger.Println("massStore", "WeightString", thisWeight.Weight.String())
+
+	loss, lossErr := weight.AverageWeightLoss(userID)
+	if lossErr != nil {
+		logHandler.ErrorLogger.Println(lossErr)
+	} else {
+		logHandler.InfoLogger.Printf("Average Weight Loss for User %d: %s", userID, loss.KgAsString())
+	}
+	logHandler.InfoLogger.Println("massStore", "Initialise", "End")
 
 }

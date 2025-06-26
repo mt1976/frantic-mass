@@ -1,11 +1,23 @@
 package types
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/mt1976/frantic-core/logHandler"
+)
 
 type Weight struct {
 	Value float64 `json:"value"` // Weight in kg
 }
 
+func (w *Weight) Set(value float64) {
+	if value < 0 {
+		logHandler.ErrorLogger.Printf("Invalid weight value: %v. Setting to zero.", value)
+		value = 0
+	}
+	logHandler.InfoLogger.Printf("Setting weight: %v kg", value)
+	w.Value = value
+}
 func (w *Weight) Kg() float64 {
 	if w.Value <= 0 {
 		return 0
@@ -144,4 +156,32 @@ func (w *Weight) Equals(in Weight) bool {
 		return true
 	}
 	return false
+}
+
+func (w *Weight) Add(in Weight) {
+	rtn := w.Value + in.Value
+	logHandler.InfoLogger.Printf("Adding weights: %v + %v = %v", w.Value, in.Value, rtn)
+	w.Set(rtn)
+}
+func (w *Weight) Minus(in Weight) Weight {
+	return Weight{Value: w.Value - in.Value}
+}
+func (w *Weight) Multiply(in Weight) Weight {
+	return Weight{Value: w.Value * in.Value}
+}
+func (w *Weight) Divide(in Weight) (Weight, error) {
+	if in.Value == 0 {
+		return Weight{}, fmt.Errorf("division by zero")
+	}
+	return Weight{Value: w.Value / in.Value}, nil
+}
+
+func (w *Weight) Nil() *Weight {
+	return &Weight{}
+}
+
+func NewWeight(value float64) *Weight {
+	w := &Weight{}
+	w.Set(value)
+	return w
 }
