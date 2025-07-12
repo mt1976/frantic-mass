@@ -1,4 +1,4 @@
-package User
+package user
 
 // Data Access Object User
 // Version: 0.2.0
@@ -14,8 +14,8 @@ import (
 
 var domain = "User"
 
-// User_Store represents a User_Store entity.
-type User_Store struct {
+// Store represents a Store entity.
+type Store struct {
 	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
 	Key   string      `storm:"unique"`              // key
 	Raw   string      `storm:"unique"`              // raw ID before encoding

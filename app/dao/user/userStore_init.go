@@ -1,4 +1,4 @@
-package User
+package user
 
 // Data Access Object User
 // Version: 0.2.0

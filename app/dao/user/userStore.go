@@ -1,4 +1,4 @@
-package User
+package user
 
 // Data Access Object User
 // Version: 0.2.0
@@ -29,7 +29,7 @@ import (
 
 func Count() (int, error) {
 	logHandler.DatabaseLogger.Printf("Count %v", domain)
-	return activeDB.Count(&User_Store{})
+	return activeDB.Count(&Store{})
 }
 
 func CountWhere(field string, value any) (int, error) {
@@ -44,15 +44,15 @@ func CountWhere(field string, value any) (int, error) {
 	return len(list), nil
 }
 
-func GetById(id any) (User_Store, error) {
+func GetById(id any) (Store, error) {
 	return GetBy(FIELD_ID, id)
 }
 
-func GetByKey(key any) (User_Store, error) {
+func GetByKey(key any) (Store, error) {
 	return GetBy(FIELD_Key, key)
 }
 
-func GetBy(field string, value any) (User_Store, error) {
+func GetBy(field string, value any) (Store, error) {
 
 	clock := timing.Start(domain, actions.GET.GetCode(), fmt.Sprintf("%v=%v", field, value))
 
@@ -61,45 +61,45 @@ func GetBy(field string, value any) (User_Store, error) {
 	if field == FIELD_ID && reflect.TypeOf(value).Name() != "int" {
 		msg := "invalid data type. Expected type of %v is int"
 		logHandler.ErrorLogger.Printf(msg, value)
-		return User_Store{}, commonErrors.WrapDAOReadError(domain, field, value, fmt.Errorf(msg, value))
+		return Store{}, commonErrors.WrapDAOReadError(domain, field, value, fmt.Errorf(msg, value))
 	}
 
-	if err := dao.IsValidFieldInStruct(field, User_Store{}); err != nil {
-		return User_Store{}, err
+	if err := dao.IsValidFieldInStruct(field, Store{}); err != nil {
+		return Store{}, err
 	}
 
-	if err := dao.IsValidTypeForField(field, value, User_Store{}); err != nil {
-		return User_Store{}, err
+	if err := dao.IsValidTypeForField(field, value, Store{}); err != nil {
+		return Store{}, err
 	}
 
-	record := User_Store{}
+	record := Store{}
 	logHandler.DatabaseLogger.Printf("Get %v where (%v=%v)", domain, field, value)
 
 	if err := activeDB.Retrieve(field, value, &record); err != nil {
 		clock.Stop(0)
-		return User_Store{}, commonErrors.WrapRecordNotFoundError(domain, field, fmt.Sprintf("%v", value))
+		return Store{}, commonErrors.WrapRecordNotFoundError(domain, field, fmt.Sprintf("%v", value))
 	}
 
 	if err := record.postGet(); err != nil {
 		clock.Stop(0)
-		return User_Store{}, commonErrors.WrapDAOReadError(domain, field, value, err)
+		return Store{}, commonErrors.WrapDAOReadError(domain, field, value, err)
 	}
 
 	clock.Stop(1)
 	return record, nil
 }
 
-func GetAll() ([]User_Store, error) {
+func GetAll() ([]Store, error) {
 
 	dao.CheckDAOReadyState(domain, audit.GET, initialised) // Check the DAO has been initialised, Mandatory.
 
-	recordList := []User_Store{}
+	recordList := []Store{}
 
 	clock := timing.Start(domain, actions.GETALL.GetCode(), "ALL")
 
 	if errG := activeDB.GetAll(&recordList); errG != nil {
 		clock.Stop(0)
-		return []User_Store{}, commonErrors.WrapNotFoundError(domain, errG)
+		return []Store{}, commonErrors.WrapNotFoundError(domain, errG)
 	}
 
 	var errPost error
@@ -113,19 +113,19 @@ func GetAll() ([]User_Store, error) {
 	return recordList, nil
 }
 
-func GetAllWhere(field string, value any) ([]User_Store, error) {
+func GetAllWhere(field string, value any) ([]Store, error) {
 	dao.CheckDAOReadyState(domain, audit.GET, initialised) // Check the DAO has been initialised, Mandatory.
 
-	recordList := []User_Store{}
-	resultList := []User_Store{}
+	recordList := []Store{}
+	resultList := []Store{}
 
 	clock := timing.Start(domain, actions.GETALL.GetCode(), fmt.Sprintf("%v=%v", field, value))
 
-	if err := dao.IsValidFieldInStruct(field, User_Store{}); err != nil {
+	if err := dao.IsValidFieldInStruct(field, Store{}); err != nil {
 		return recordList, err
 	}
 
-	if err := dao.IsValidTypeForField(field, value, User_Store{}); err != nil {
+	if err := dao.IsValidTypeForField(field, value, Store{}); err != nil {
 		return recordList, err
 	}
 
@@ -133,7 +133,7 @@ func GetAllWhere(field string, value any) ([]User_Store, error) {
 
 	recordList, err := GetAll()
 	if err != nil {
-		return []User_Store{}, err
+		return []Store{}, err
 	}
 	count := 0
 
@@ -168,13 +168,13 @@ func DeleteBy(ctx context.Context, field string, value any, note string) error {
 
 	clock := timing.Start(domain, actions.DELETE.GetCode(), fmt.Sprintf("%v=%v", field, value))
 
-	if err := dao.IsValidFieldInStruct(field, User_Store{}); err != nil {
+	if err := dao.IsValidFieldInStruct(field, Store{}); err != nil {
 		logHandler.ErrorLogger.Print(commonErrors.WrapDAODeleteError(domain, field, value, err).Error())
 		clock.Stop(0)
 		return commonErrors.WrapDAODeleteError(domain, field, value, err)
 	}
 
-	if err := dao.IsValidTypeForField(field, value, User_Store{}); err != nil {
+	if err := dao.IsValidTypeForField(field, value, Store{}); err != nil {
 		logHandler.ErrorLogger.Print(commonErrors.WrapDAODeleteError(domain, field, value, err).Error())
 		clock.Stop(0)
 		return err
@@ -218,31 +218,31 @@ func DeleteBy(ctx context.Context, field string, value any, note string) error {
 	return nil
 }
 
-func (record *User_Store) Spew() {
+func (record *Store) Spew() {
 	logHandler.InfoLogger.Printf("[%v] Record=[%+v]", domain, record)
 }
 
-func (record *User_Store) Validate() error {
+func (record *Store) Validate() error {
 	return record.validationProcessing()
 }
 
-func (record *User_Store) Update(ctx context.Context, note string) error {
+func (record *Store) Update(ctx context.Context, note string) error {
 	return record.insertOrUpdate(ctx, note, actions.UPDATE.GetCode(), audit.UPDATE, actions.UPDATE.GetCode())
 }
 
-func (record *User_Store) UpdateWithAction(ctx context.Context, auditAction audit.Action, note string) error {
+func (record *Store) UpdateWithAction(ctx context.Context, auditAction audit.Action, note string) error {
 	return record.insertOrUpdate(ctx, note, actions.UPDATE.GetCode(), auditAction, actions.UPDATE.GetCode())
 }
 
-func (record *User_Store) Create(ctx context.Context, note string) error {
+func (record *Store) Create(ctx context.Context, note string) error {
 	return record.insertOrUpdate(ctx, note, actions.CREATE.GetCode(), audit.CREATE, actions.CREATE.GetCode())
 }
 
-func (record *User_Store) Clone(ctx context.Context) (User_Store, error) {
+func (record *Store) Clone(ctx context.Context) (Store, error) {
 	return UserClone(ctx, *record)
 }
 
-func (record *User_Store) ExportRecordAsJSON(name string) {
+func (record *Store) ExportRecordAsJSON(name string) {
 
 	ID := reflect.ValueOf(*record).FieldByName(FIELD_ID)
 
@@ -289,7 +289,7 @@ func GetLookup(field, value string) (lookup.Lookup, error) {
 }
 
 func Drop() error {
-	return activeDB.Drop(User_Store{})
+	return activeDB.Drop(Store{})
 }
 
 // GetDatabaseConnections returns a function that fetches the current database instances.
@@ -370,7 +370,7 @@ func ExportRecordsAsCSV() error {
 }
 
 func ImportRecordsFromCSV() error {
-	return importExportHelper.ImportCSV(domain, &User_Store{}, tempalteImportProcessor)
+	return importExportHelper.ImportCSV(domain, &Store{}, tempalteImportProcessor)
 }
 
 // Worker is a job that is scheduled to run at a predefined interval

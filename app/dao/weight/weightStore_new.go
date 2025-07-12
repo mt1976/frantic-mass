@@ -55,13 +55,13 @@ func New(ctx context.Context, userID int, weightKg types.Weight, note string, re
 		// Log and panic if there is an error retrieving the height
 		logHandler.ErrorLogger.Panic(commonErrors.WrapDAOReadError(domain, FIELD_UserID, userID, err))
 	}
-	if bl.HeightCm.LE(0) {
+	if bl.Height.LE(0) {
 		// If no height is found, set a default value or handle the error as needed
 		logHandler.ErrorLogger.Panic(fmt.Errorf("no height found for user ID %d", userID))
 	}
 
 	BMI := types.BMI{}
-	xx, err := BMI.SetBMIFromWeightAndHeight(weightKg, bl.HeightCm) // Calculate BMI based on the weight and user ID
+	xx, err := BMI.SetBMIFromWeightAndHeight(weightKg, bl.Height) // Calculate BMI based on the weight and user ID
 	if err != nil {
 		// Log and panic if there is an error calculating the BMI
 		logHandler.ErrorLogger.Panic(commonErrors.WrapDAOCreateError(domain, userID, err))

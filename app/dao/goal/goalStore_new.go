@@ -23,7 +23,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID int, name string, targetWeight types.Weight, targetDate time.Time, lossPerWeekKg types.Weight, note string) (goal_Store, error) {
+func New(ctx context.Context, userID int, name string, targetWeight types.Weight, targetDate time.Time, lossPerWeekKg types.Weight, note string, isAverageType bool) (Goal, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -33,7 +33,7 @@ func New(ctx context.Context, userID int, name string, targetWeight types.Weight
 	sessionID := idHelpers.GetUUID()
 
 	// Create a new struct
-	record := goal_Store{}
+	record := Goal{}
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 	record.UserID = userID
@@ -44,6 +44,7 @@ func New(ctx context.Context, userID int, name string, targetWeight types.Weight
 	record.Note = note
 	// Create a composite ID for unique identification of the goal
 	record.CompositeID = fmt.Sprintf("%d/%s", userID, sessionID)
+	record.AverageWeightLoss.Set(isAverageType)
 
 	// Record the create action in the audit data
 	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %v", domain, userID)))

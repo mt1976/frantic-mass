@@ -43,11 +43,11 @@ func tempalteImportProcessor(inOriginal **baseline_Store) (string, error) {
 	//logHandler.ImportLogger.Printf("Imported %v [%+v]", domain, importedData)
 
 	stringField1 := strconv.Itoa(importedData.UserID) // Assuming UserID is the field to be returned as a string
-	if importedData.HeightCm.LE(0) {
-		logHandler.ImportLogger.Panicf("Invalid HeightCm for %v: %v", domain, importedData.HeightCm)
-		return stringField1, commonErrors.HandleGoValidatorError(fmt.Errorf("HeightCm must be greater than zero (%v)", importedData.HeightCm))
+	if importedData.Height.LE(0) {
+		logHandler.ImportLogger.Panicf("Invalid HeightCm for %v: %v", domain, importedData.Height)
+		return stringField1, commonErrors.HandleGoValidatorError(fmt.Errorf("HeightCm must be greater than zero (%v)", importedData.Height))
 	}
-	_, err := New(context.TODO(), importedData.UserID, importedData.HeightCm, importedData.Note)
+	_, err := New(context.TODO(), importedData.UserID, importedData.Height, importedData.ProjectionPeriod, importedData.Note)
 	if err != nil {
 		logHandler.ImportLogger.Panicf("Error importing %v: %v", domain, err.Error())
 		return stringField1, err

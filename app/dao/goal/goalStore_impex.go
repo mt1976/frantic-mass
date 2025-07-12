@@ -16,7 +16,7 @@ import (
 
 // tempalteImportProcessor is a helper function to create a new entry instance and save it to the database
 // It should be customised to suit the specific requirements of the entryination table/DAO.
-func tempalteImportProcessor(inOriginal **goal_Store) (string, error) {
+func tempalteImportProcessor(inOriginal **Goal) (string, error) {
 	//TODO: Build the import processing functionality for the goal_Store data here
 	//
 	importedData := **inOriginal
@@ -42,7 +42,7 @@ func tempalteImportProcessor(inOriginal **goal_Store) (string, error) {
 
 	stringField1 := strconv.Itoa(importedData.ID)
 
-	_, err := New(context.TODO(), importedData.UserID, importedData.Name, importedData.TargetWeight, importedData.TargetDate, importedData.LossPerWeek, importedData.Note)
+	_, err := New(context.TODO(), importedData.UserID, importedData.Name, importedData.TargetWeight, importedData.TargetDate, importedData.LossPerWeek, importedData.Note, importedData.AverageWeightLoss.Bool())
 
 	if err != nil {
 		logHandler.ImportLogger.Panicf("Error importing %v: %v", domain, err.Error())

@@ -20,40 +20,40 @@ import (
 //TODO: Implement the isDuplicateOf function to process the domain entity
 //TODO: Implement the postGetProcessing function to process the domain entity
 
-func (record *goal_Store) upgradeProcessing() error {
+func (record *Goal) upgradeProcessing() error {
 	//TODO: Add any upgrade processing here
 	//This processing is triggered directly after the record has been retrieved from the database
 	return nil
 }
 
-func (record *goal_Store) defaultProcessing() error {
+func (record *Goal) defaultProcessing() error {
 	//TODO: Add any default calculations here
 	//This processing is triggered directly before the record is saved to the database
 	return nil
 }
 
-func (record *goal_Store) validationProcessing() error {
+func (record *Goal) validationProcessing() error {
 	//TODO: Add any record validation here
 	//This processing is triggered directly before the record is saved to the database and after the default calculations
 	return nil
 }
 
-func (h *goal_Store) postGetProcessing() error {
+func (h *Goal) postGetProcessing() error {
 	//TODO: Add any post get processing here
 	//This processing is triggered directly after the record has been retrieved from the database and after the upgrade processing
 	return nil
 }
 
-func (record *goal_Store) preDeleteProcessing() error {
+func (record *Goal) preDeleteProcessing() error {
 	//TODO: Add any pre delete processing here
 	//This processing is triggered directly before the record is deleted from the database
 	return nil
 }
 
-func goalClone(ctx context.Context, source goal_Store) (goal_Store, error) {
+func goalClone(ctx context.Context, source Goal) (Goal, error) {
 	//TODO: Add any clone processing here
 	panic("Not Implemented")
-	return goal_Store{}, nil
+	return Goal{}, nil
 }
 
 func goalJobProcessor(j jobs.Job) {

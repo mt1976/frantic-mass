@@ -1,4 +1,4 @@
-package User
+package user
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func (record *User_Store) StartingWeight() (types.Weight, error) {
+func (record *Store) StartingWeight() (types.Weight, error) {
 	// This function returns the starting weight of the user as an appropriate string.
 
 	userID := record.ID

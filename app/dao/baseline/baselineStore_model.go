@@ -22,9 +22,10 @@ type baseline_Store struct {
 	Raw   string      `storm:"unique"`              // raw ID before encoding
 	Audit audit.Audit `csv:"-"`                     // audit data
 	// Add your fields here
-	UserID   int          `storm:"index"` // Foreign key
-	HeightCm types.Height // Height in centimeters
-	Note     string
+	UserID           int          `storm:"index"` // Foreign key
+	Height           types.Height // Height in centimeters
+	ProjectionPeriod int          // Projection period in months
+	Note             string
 }
 
 // Define the field set as names
@@ -34,7 +35,8 @@ var (
 	FIELD_Raw   = "Raw"
 	FIELD_Audit = "Audit"
 	// Add your fields here
-	FIELD_UserID   = "UserID"
-	FIELD_HeightCm = "HeightCm"
-	FIELD_Note     = "Note"
+	FIELD_UserID           = "UserID"
+	FIELD_Height           = "Height"
+	FIELD_ProjectionPeriod = "ProjectionPeriod"
+	FIELD_Note             = "Note"
 )

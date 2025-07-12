@@ -14,8 +14,9 @@ import (
 // - Obesity: BMI >= 30
 // If the BMI value is less than or equal to zero, it is considered invalid and the note is set to "Invalid BMI".
 type BMI struct {
-	Value float64 `json:"value"` // BMI value
-	Note  string  `json:"text"`  // Textual representation of BMI
+	Value       float64 `json:"value"` // BMI value
+	Description string  `json:"text"`  // Textual representation of BMI
+	Glyph       string  `json:"glyph"` // Glyph representation of BMI, if applicable
 }
 
 func (b *BMI) String() string {
@@ -33,25 +34,30 @@ func (b *BMI) Float() float64 {
 }
 
 func (b *BMI) Text() string {
-	if b.Note == "" {
+	if b.Description == "" {
 		return "Not Calculated"
 	}
-	return b.Note
+	return b.Description + " " + b.Glyph
 }
 
 func (b *BMI) set(Value float64) *BMI {
 
 	b.Value = Value
 	if b.Value <= 0 {
-		b.Note = "Invalid BMI"
+		b.Description = "Invalid BMI"
+		b.Glyph = "❌" // Example glyph for invalid BMI
 	} else if b.Value < 18.5 {
-		b.Note = "Underweight"
+		b.Description = "Underweight"
+		b.Glyph = "⚪️" // Example glyph for underweight
 	} else if b.Value < 24.9 {
-		b.Note = "Normal weight"
+		b.Description = "Normal"
+		b.Glyph = "🟢" // Example glyph for normal weight
 	} else if b.Value < 29.9 {
-		b.Note = "Overweight"
+		b.Description = "Overweight"
+		b.Glyph = "🟠" // Example glyph for overweight
 	} else {
-		b.Note = "Obesity"
+		b.Description = "Obese"
+		b.Glyph = "🔴" // Example glyph for obesity
 	}
 	return b
 }
@@ -59,7 +65,7 @@ func (b *BMI) set(Value float64) *BMI {
 func (b *BMI) SetBMIByWeightAndHeight(weightKg float64, heightCm float64) *BMI {
 	if weightKg <= 0 || heightCm <= 0 {
 		b.Value = 0
-		b.Note = "Invalid BMI"
+		b.Description = "Invalid BMI"
 		return b
 	}
 

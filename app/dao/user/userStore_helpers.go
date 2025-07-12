@@ -1,4 +1,4 @@
-package User
+package user
 
 import (
 	"context"
@@ -20,40 +20,40 @@ import (
 //TODO: Implement the isDuplicateOf function to process the domain entity
 //TODO: Implement the postGetProcessing function to process the domain entity
 
-func (record *User_Store) upgradeProcessing() error {
+func (record *Store) upgradeProcessing() error {
 	//TODO: Add any upgrade processing here
 	//This processing is triggered directly after the record has been retrieved from the database
 	return nil
 }
 
-func (record *User_Store) defaultProcessing() error {
+func (record *Store) defaultProcessing() error {
 	//TODO: Add any default calculations here
 	//This processing is triggered directly before the record is saved to the database
 	return nil
 }
 
-func (record *User_Store) validationProcessing() error {
+func (record *Store) validationProcessing() error {
 	//TODO: Add any record validation here
 	//This processing is triggered directly before the record is saved to the database and after the default calculations
 	return nil
 }
 
-func (h *User_Store) postGetProcessing() error {
+func (h *Store) postGetProcessing() error {
 	//TODO: Add any post get processing here
 	//This processing is triggered directly after the record has been retrieved from the database and after the upgrade processing
 	return nil
 }
 
-func (record *User_Store) preDeleteProcessing() error {
+func (record *Store) preDeleteProcessing() error {
 	//TODO: Add any pre delete processing here
 	//This processing is triggered directly before the record is deleted from the database
 	return nil
 }
 
-func UserClone(ctx context.Context, source User_Store) (User_Store, error) {
+func UserClone(ctx context.Context, source Store) (Store, error) {
 	//TODO: Add any clone processing here
 	panic("Not Implemented")
-	return User_Store{}, nil
+	return Store{}, nil
 }
 
 func UserJobProcessor(j jobs.Job) {

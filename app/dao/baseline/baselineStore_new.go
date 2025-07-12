@@ -22,7 +22,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID int, heightCm types.Height, note string) (baseline_Store, error) {
+func New(ctx context.Context, userID int, heightCm types.Height, projectionPeriod int, note string) (baseline_Store, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -37,7 +37,8 @@ func New(ctx context.Context, userID int, heightCm types.Height, note string) (b
 	record.Raw = sessionID
 	record.Audit = audit.Audit{}
 	record.UserID = userID
-	record.HeightCm = heightCm
+	record.Height = heightCm
+	record.ProjectionPeriod = projectionPeriod
 	record.Note = note
 
 	// Record the create action in the audit data

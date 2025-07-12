@@ -1,300 +1,218 @@
-2025/06/25 21:28:39.335238 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/25 21:28:39.338705 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/25 21:28:39.339047 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/25 21:28:39.339346 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/25 21:28:39.339740 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/25 21:28:39.340710 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/25 21:28:39.341074 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/25 21:28:39.341109 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/25 21:28:39.341128 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/25 21:28:39.881210 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/25 21:28:40.105855 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/25 21:28:40.228536 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/25 21:28:42.607757 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/25 21:28:42.837827 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/25 21:28:42.837860 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/25 21:28:43.078242 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:03:00.022160 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:03:00.023647 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:03:00.024087 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:03:00.024593 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:03:00.025910 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:03:00.026406 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:03:00.026930 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:03:00.258683 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:03:00.258730 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:03:00.766505 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:03:00.997045 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:03:01.116169 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:03:04.755982 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:03:05.019383 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:03:05.019404 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:03:05.275183 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:04:40.419585 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:04:40.420297 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:04:40.420782 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:04:40.421267 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:04:40.421739 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:04:40.422758 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:04:40.423316 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:04:40.681836 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:04:40.681880 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:04:41.246406 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:04:41.487697 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:04:41.621233 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:04:45.438068 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:04:45.796081 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:04:45.796105 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:04:46.054826 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:05:00.440727 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:05:00.441424 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:05:00.441942 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:05:00.442432 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:05:00.442894 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:05:00.443970 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:05:00.444529 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:05:00.677888 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:05:00.677931 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:05:01.225531 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:05:01.471726 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:05:01.599831 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:05:06.273975 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:05:06.520132 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:05:06.520156 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:05:06.761980 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:05:55.145303 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:05:55.146011 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:05:55.146510 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:05:55.146984 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:05:55.147442 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:05:55.148447 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:05:55.148966 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:05:55.412680 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:05:55.412733 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:05:55.967055 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:05:56.203389 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:05:56.326950 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:06:03.529528 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:06:03.778300 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:06:03.778326 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:06:04.031126 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:07:37.032960 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:07:37.033333 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:07:37.033587 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:07:37.033841 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:07:37.034086 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:07:37.034678 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:07:37.034947 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:07:37.294492 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:07:37.294540 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:07:37.827949 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:07:38.075978 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:07:38.205823 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:07:44.326829 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:07:44.527463 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:07:44.527489 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:07:44.736673 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:09:07.725453 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:09:07.726036 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:09:07.726449 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:09:07.726835 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:09:07.727679 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:09:07.728091 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:09:07.728589 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:09:07.942155 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:09:07.942202 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:09:08.409472 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:09:08.630847 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:09:08.732823 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:09:14.516737 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:09:14.759132 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:09:14.759161 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:09:15.004495 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:09:42.531590 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:09:42.531938 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:09:42.532223 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:09:42.532487 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:09:42.532745 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:09:42.533614 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:09:42.533869 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:09:42.930133 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:09:42.930174 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:09:43.572940 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:09:43.804335 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:09:43.933016 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:10:48.414400 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:10:48.416052 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:10:48.416340 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:10:48.416615 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:10:48.416873 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:10:48.417747 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:10:48.418194 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:10:48.661915 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:10:48.661950 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:10:49.186216 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:10:49.393805 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:10:49.525617 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:10:54.976894 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:10:55.162181 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:10:55.162205 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:10:55.366164 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:11:58.163355 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:11:58.164725 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:11:58.164999 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:11:58.165255 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:11:58.165500 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:11:58.166116 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:11:58.166474 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:11:58.360813 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:11:58.360858 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:11:58.799433 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:11:59.012530 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:11:59.108652 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:12:05.866281 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:12:06.247010 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:12:06.247037 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:12:06.450776 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:12:32.845008 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:12:32.845460 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:12:32.845770 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:12:32.846013 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:12:32.846255 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:12:32.846921 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:12:32.847207 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:12:33.046863 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:12:33.046905 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:12:33.506135 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:12:33.697780 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:12:33.799122 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:12:39.872934 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:12:40.119859 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:12:40.119890 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:12:40.368914 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:13:35.642093 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:13:35.642761 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:13:35.643276 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:13:35.643652 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:13:35.644296 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:13:35.644593 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:13:35.644863 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:13:35.865278 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:13:35.865332 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:13:36.425666 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:13:36.632042 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:13:36.738413 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:13:42.245942 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:13:44.527000 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:13:44.527029 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:13:44.784558 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:15:22.781141 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:15:22.781531 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:15:22.781783 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:15:22.782035 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:15:22.782277 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:15:22.782847 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:15:22.783097 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:15:23.036575 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:15:23.036618 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:15:23.592982 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:15:23.829409 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:15:23.964446 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:15:29.224622 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:15:29.432131 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:15:29.432156 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:15:29.641904 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:17:17.054551 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 10:17:17.055261 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 10:17:17.055735 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 10:17:17.056226 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 10:17:17.056712 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 10:17:17.057810 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 10:17:17.058338 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 10:17:17.265896 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:17:17.265935 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:17:17.707278 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:17:17.898763 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 10:17:18.001058 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 10:17:22.802225 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:17:22.997345 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:17:22.997371 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 10:17:23.187133 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 11:56:28.770600 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 11:56:28.772326 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 11:56:28.772662 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 11:56:28.772982 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 11:56:28.773275 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 11:56:28.773858 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 11:56:28.774104 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 11:56:29.103470 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 11:56:29.103519 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 11:56:29.591829 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 11:56:29.824982 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 11:56:29.944380 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 11:56:38.477380 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 11:56:38.728597 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 11:56:38.728619 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 11:56:38.970925 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 11:58:06.254580 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 11:58:06.254966 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 11:58:06.255244 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 11:58:06.255482 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 11:58:06.255732 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 11:58:06.256265 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 11:58:06.256517 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 11:58:06.519933 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 11:58:06.519977 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 11:58:07.068431 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 11:58:07.304698 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 11:58:07.418557 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 11:58:13.373842 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 11:58:13.567699 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 11:58:13.567722 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 11:58:13.762422 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:00:53.357586 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 12:00:53.358252 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 12:00:53.358668 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 12:00:53.359082 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 12:00:53.360151 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 12:00:53.360632 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 12:00:53.361047 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 12:00:53.552981 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 12:00:53.553031 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 12:00:54.022056 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 12:00:54.223405 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 12:00:54.326034 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 12:01:02.627892 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:01:02.877255 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:01:02.877278 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:01:03.152098 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:04:05.902599 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 12:04:05.903082 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 12:04:05.903421 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 12:04:05.903758 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 12:04:05.904082 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 12:04:05.904815 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 12:04:05.905135 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 12:04:06.162031 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 12:04:06.162087 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 12:04:06.724702 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 12:04:06.977089 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 12:04:07.102767 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 12:04:14.149626 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:04:14.349600 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:04:14.349623 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:04:14.548777 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:04:44.380262 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/06/26 12:04:44.380969 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/06/26 12:04:44.381459 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/06/26 12:04:44.381945 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/06/26 12:04:44.382423 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/06/26 12:04:44.383312 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/06/26 12:04:44.383598 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/06/26 12:04:44.577840 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 12:04:44.577886 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 12:04:45.054165 exportHelper.go:61: [35m[EVENT][0m Exported (10/10) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 12:04:45.255614 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/06/26 12:04:45.357439 importHelper.go:61: [35m[EVENT][0m Imported (10/10) User(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/06/26 12:04:50.359915 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:04:50.560649 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:04:50.560686 user_job.go:159: [35m[EVENT][0m [UserJob] Running 'User Job' tasks with database=[frantic-mass-main.db]
-2025/06/26 12:04:50.767860 user_job.go:168: [35m[EVENT][0m [UserJob] Completed 'User Job' tasks with database=[frantic-mass-main.db]
+2025/07/12 12:44:36.096625 userStore_init.go:36: [35m[EVENT][0m Initialised User
+2025/07/12 12:44:36.101340 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
+2025/07/12 12:44:36.101630 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
+2025/07/12 12:44:36.102271 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
+2025/07/12 12:44:36.102551 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
+2025/07/12 12:44:36.102812 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
+2025/07/12 12:44:36.103052 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
+2025/07/12 12:44:36.103283 weightProjectionHistoryStore_init.go:36: [35m[EVENT][0m Initialised weightProjectionHistory
+2025/07/12 12:44:36.103539 dateIndexStore_init.go:36: [35m[EVENT][0m Initialised dateIndex
+2025/07/12 12:44:36.103589 userStore.go:336: [35m[EVENT][0m Cleared down User
+2025/07/12 12:44:36.103636 baselineStore.go:336: [35m[EVENT][0m Cleared down baseline
+2025/07/12 12:44:36.103672 tagStore.go:336: [35m[EVENT][0m Cleared down tag
+2025/07/12 12:44:36.103692 goalStore.go:336: [35m[EVENT][0m Cleared down goal
+2025/07/12 12:44:36.103716 weightStore.go:336: [35m[EVENT][0m Cleared down weight
+2025/07/12 12:44:36.103735 weightProjectionStore.go:336: [35m[EVENT][0m Cleared down weightProjection
+2025/07/12 12:44:36.103753 weightTagStore.go:336: [35m[EVENT][0m Cleared down weightTag
+2025/07/12 12:44:36.103772 weightProjectionHistoryStore.go:336: [35m[EVENT][0m Cleared down weightProjectionHistory
+2025/07/12 12:44:36.103791 dateIndexStore.go:336: [35m[EVENT][0m Cleared down dateIndex
+2025/07/12 12:44:36.216059 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.216094 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {31.702035646584072 Obese 🔴}
+2025/07/12 12:44:36.242997 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.243050 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {31.135927867180786 Obese 🔴}
+2025/07/12 12:44:36.257728 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.257777 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {30.569820087777497 Obese 🔴}
+2025/07/12 12:44:36.269602 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.269643 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {30.00371230837421 Obese 🔴}
+2025/07/12 12:44:36.285334 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.285377 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {29.437604528970926 Overweight 🟠}
+2025/07/12 12:44:36.297322 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.297380 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {28.871496749567637 Overweight 🟠}
+2025/07/12 12:44:36.307160 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.307208 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {28.30538897016435 Overweight 🟠}
+2025/07/12 12:44:36.335242 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.335320 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {27.739281190761062 Overweight 🟠}
+2025/07/12 12:44:36.358159 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.358210 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {27.173173411357777 Overweight 🟠}
+2025/07/12 12:44:36.374890 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.374950 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {26.60706563195449 Overweight 🟠}
+2025/07/12 12:44:36.390133 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.390183 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {26.0409578525512 Overweight 🟠}
+2025/07/12 12:44:36.401796 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.401841 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {25.474850073147916 Overweight 🟠}
+2025/07/12 12:44:36.411219 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.411259 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {24.908742293744627 Overweight 🟠}
+2025/07/12 12:44:36.434212 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.434265 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {24.34263451434134 Normal 🟢}
+2025/07/12 12:44:36.444227 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.444302 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {23.776526734938056 Normal 🟢}
+2025/07/12 12:44:36.473177 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.473224 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {23.210418955534767 Normal 🟢}
+2025/07/12 12:44:36.488216 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.488286 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {22.64431117613148 Normal 🟢}
+2025/07/12 12:44:36.503905 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.503950 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {22.078203396728192 Normal 🟢}
+2025/07/12 12:44:36.527249 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.527336 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {21.512095617324906 Normal 🟢}
+2025/07/12 12:44:36.546830 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.546890 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {20.94598783792162 Normal 🟢}
+2025/07/12 12:44:36.558776 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.558817 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {20.37988005851833 Normal 🟢}
+2025/07/12 12:44:36.577725 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.577768 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {19.813772279115046 Normal 🟢}
+2025/07/12 12:44:36.602803 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.602844 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {19.247664499711757 Normal 🟢}
+2025/07/12 12:44:36.622712 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/12 12:44:36.622755 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/12 12:44:36.626333 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.626370 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.645557 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.645597 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.664418 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.664452 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.693890 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.693949 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.714935 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.714982 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.749063 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.749128 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.775937 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.775996 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.797712 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.797758 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.822473 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.822522 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.850038 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.850081 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.873460 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.873515 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.886360 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.886405 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.919599 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.919651 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.938600 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.938641 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.954365 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.954412 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:36.968186 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:36.968232 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:37.000844 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:37.000902 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:37.018499 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:37.018543 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:37.032297 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:37.032339 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:37.061437 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:37.061483 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:37.080402 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:37.080454 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:37.096116 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:37.096160 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:37.122350 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/12 12:44:37.122404 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/12 12:44:37.154631 dateIndex_job.go:159: [35m[EVENT][0m [dateIndexJob] Running 'dateIndex Job' tasks with database=[frantic-mass-main.db]
+2025/07/12 12:44:37.167670 dateIndex_job.go:168: [35m[EVENT][0m [dateIndexJob] Completed 'dateIndex Job' tasks with database=[frantic-mass-main.db]
+2025/07/12 12:44:37.167868 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/12 12:44:37.167879 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/12 12:44:37.167932 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/12 12:44:37.180220 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) weight(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weights.csv]
+2025/07/12 12:44:37.191941 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
+2025/07/12 12:44:37.197110 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) baseline(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/baselines.csv]
+2025/07/12 12:44:37.202674 exportHelper.go:61: [35m[EVENT][0m Exported (2/2) goal(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/goals.csv]
+2025/07/12 12:44:37.207900 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) tag(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/tags.csv]
+2025/07/12 12:44:37.208303 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100000
+2025/07/12 12:44:37.208319 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100000
+2025/07/12 12:44:37.208322 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100001
+2025/07/12 12:44:37.208326 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100001
+2025/07/12 12:44:37.208330 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100002
+2025/07/12 12:44:37.208333 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100002
+2025/07/12 12:44:37.208336 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100003
+2025/07/12 12:44:37.208339 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100003
+2025/07/12 12:44:37.208342 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100004
+2025/07/12 12:44:37.208345 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100004
+2025/07/12 12:44:37.208347 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100005
+2025/07/12 12:44:37.208349 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100005
+2025/07/12 12:44:37.208352 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100006
+2025/07/12 12:44:37.208354 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100006
+2025/07/12 12:44:37.208357 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100007
+2025/07/12 12:44:37.208359 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100007
+2025/07/12 12:44:37.208363 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100008
+2025/07/12 12:44:37.208367 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100008
+2025/07/12 12:44:37.208370 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100009
+2025/07/12 12:44:37.208373 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100009
+2025/07/12 12:44:37.208376 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100010
+2025/07/12 12:44:37.208379 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100010
+2025/07/12 12:44:37.208382 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100011
+2025/07/12 12:44:37.208385 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100011
+2025/07/12 12:44:37.208387 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100012
+2025/07/12 12:44:37.208390 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100012
+2025/07/12 12:44:37.208392 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100013
+2025/07/12 12:44:37.208394 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100013
+2025/07/12 12:44:37.208397 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100014
+2025/07/12 12:44:37.208399 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100014
+2025/07/12 12:44:37.208402 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100015
+2025/07/12 12:44:37.208404 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100015
+2025/07/12 12:44:37.208406 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100016
+2025/07/12 12:44:37.208409 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100016
+2025/07/12 12:44:37.208411 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100017
+2025/07/12 12:44:37.208414 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100017
+2025/07/12 12:44:37.208417 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100018
+2025/07/12 12:44:37.208420 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100018
+2025/07/12 12:44:37.208422 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100019
+2025/07/12 12:44:37.208425 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100019
+2025/07/12 12:44:37.208427 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100020
+2025/07/12 12:44:37.208430 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100020
+2025/07/12 12:44:37.208433 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100021
+2025/07/12 12:44:37.208436 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100021
+2025/07/12 12:44:37.208438 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100022
+2025/07/12 12:44:37.208440 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100022
+2025/07/12 12:44:37.208443 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100023
+2025/07/12 12:44:37.208445 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100023
+2025/07/12 12:44:37.208448 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100024
+2025/07/12 12:44:37.208450 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100024
+2025/07/12 12:44:37.208452 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100025
+2025/07/12 12:44:37.208455 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100025
+2025/07/12 12:44:37.208457 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100026
+2025/07/12 12:44:37.208459 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100026
+2025/07/12 12:44:37.208462 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100027
+2025/07/12 12:44:37.208464 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100027
+2025/07/12 12:44:37.208467 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100028
+2025/07/12 12:44:37.208469 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100028
+2025/07/12 12:44:37.208472 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100029
+2025/07/12 12:44:37.208475 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100029
+2025/07/12 12:44:37.208477 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100030
+2025/07/12 12:44:37.208479 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100030
+2025/07/12 12:44:37.208482 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100031
+2025/07/12 12:44:37.208484 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100031
+2025/07/12 12:44:37.208487 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100032
+2025/07/12 12:44:37.208489 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100032
+2025/07/12 12:44:37.208492 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100033
+2025/07/12 12:44:37.208494 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100033
+2025/07/12 12:44:37.208496 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100034
+2025/07/12 12:44:37.208498 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100034
+2025/07/12 12:44:37.208505 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100035
+2025/07/12 12:44:37.208508 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100035
+2025/07/12 12:44:37.208510 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100036
+2025/07/12 12:44:37.208513 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100036
+2025/07/12 12:44:37.208515 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100037
+2025/07/12 12:44:37.208518 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100037
+2025/07/12 12:44:37.208520 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100038
+2025/07/12 12:44:37.208522 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100038
+2025/07/12 12:44:37.208524 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100039
+2025/07/12 12:44:37.208527 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100039
+2025/07/12 12:44:37.208529 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100040
+2025/07/12 12:44:37.208532 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100040
+2025/07/12 12:44:37.208534 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100041
+2025/07/12 12:44:37.208536 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100041
+2025/07/12 12:44:37.208538 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100042
+2025/07/12 12:44:37.208542 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100042
+2025/07/12 12:44:37.208545 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100043
+2025/07/12 12:44:37.208547 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100043
+2025/07/12 12:44:37.208550 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100044
+2025/07/12 12:44:37.208553 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100044
+2025/07/12 12:44:37.208556 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100045
+2025/07/12 12:44:37.208559 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100045
+2025/07/12 12:44:37.215187 exportHelper.go:61: [35m[EVENT][0m Exported (46/46) weightProjection(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weightprojections.csv]
+2025/07/12 12:44:37.219567 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) weightTag(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weighttags.csv]
+2025/07/12 12:44:37.224941 exportHelper.go:61: [35m[EVENT][0m Exported (0/0) weightProjectionHistory(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weightprojectionhistorys.csv]
+2025/07/12 12:44:37.229858 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) dateIndex(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/dateindexs.csv]

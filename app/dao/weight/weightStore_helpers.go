@@ -38,9 +38,10 @@ func (record *Weight_Store) validationProcessing() error {
 	return nil
 }
 
-func (h *Weight_Store) postGetProcessing() error {
+func (record *Weight_Store) postGetProcessing() error {
 	//TODO: Add any post get processing here
 	//This processing is triggered directly after the record has been retrieved from the database and after the upgrade processing
+	record.BMI = record.GetBMI() // Ensure BMI is calculated after retrieval
 	return nil
 }
 

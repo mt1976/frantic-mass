@@ -20,10 +20,11 @@ import (
 	"github.com/mt1976/frantic-core/idHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/timing"
+	"github.com/mt1976/frantic-mass/app/types"
 	t "github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID, goalID, projectionNo int, weight t.Weight, date time.Time, note string) (weightProjection_Store, error) {
+func New(ctx context.Context, userID, goalID, projectionNo int, weight, amount t.Weight, date time.Time, note string) (WeightProjection, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -33,7 +34,7 @@ func New(ctx context.Context, userID, goalID, projectionNo int, weight t.Weight,
 	sessionID := idHelpers.GetUUID()
 
 	// Create a new struct
-	record := weightProjection_Store{}
+	record := WeightProjection{}
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 
@@ -41,13 +42,18 @@ func New(ctx context.Context, userID, goalID, projectionNo int, weight t.Weight,
 	record.GoalID = goalID
 	record.ProjectionNo = projectionNo
 	record.Weight = weight
+	record.Amount = amount
 	record.Date = date
 	record.Note = note
 	// Create a composite ID for unique identification of the projection
-	record.CompositeID = fmt.Sprintf("%d/%d/%d", userID, goalID, projectionNo)
+	//record.CompositeID = fmt.Sprintf("%d/%d/%d", userID, goalID, projectionNo)
+	cid := types.NewCompositeIDFromParts(userID, goalID, projectionNo)
+	record.CompositeID = cid.String()
+
+	record.BMI = record.GetBMI() // Calculate BMI based on the projected weight
 
 	// Record the create action in the audit data
-	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %d-%d-%d", domain, record.UserID, record.GoalID, record.ProjectionNo)))
+	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %v", domain, cid)))
 	if auditErr != nil {
 		// Log and panic if there is an error creating the status instance
 		logHandler.ErrorLogger.Panic(commonErrors.WrapDAOUpdateAuditError(domain, record.ID, auditErr))

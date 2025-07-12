@@ -24,7 +24,7 @@ func (record *baseline_Store) HeightAsFeetInches() string {
 }
 
 func (record *baseline_Store) HeightAsCm() string {
-	return fmt.Sprintf("%.2f cm", record.HeightCm)
+	return fmt.Sprintf("%.2f cm", record.Height)
 }
 
 func (record *baseline_Store) HeightAsInches() string {

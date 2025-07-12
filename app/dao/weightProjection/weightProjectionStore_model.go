@@ -17,8 +17,8 @@ import (
 
 var domain = "weightProjection"
 
-// weightProjection_Store represents a weightProjection_Store entity.
-type weightProjection_Store struct {
+// WeightProjection represents a WeightProjection entity.
+type WeightProjection struct {
 	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
 	Key   string      `storm:"unique"`              // key
 	Raw   string      `storm:"unique"`              // raw ID before encoding
@@ -31,6 +31,8 @@ type weightProjection_Store struct {
 	Date         time.Time `storm:"index"` // Date of the projection
 	Note         string    // Additional notes for the projection
 	CompositeID  string    `storm:"index"` // Composite ID for unique identification of the projection
+	BMI          t.BMI     // Body Mass Index, calculated from the projected weight
+	Amount       t.Weight  // Amount of weight loss or gain projected
 }
 
 // Define the field set as names
@@ -47,4 +49,6 @@ var (
 	FIELD_Date         = "Date"
 	FIELD_Note         = "Note"
 	FIELD_CompositeID  = "CompositeID"
+	FIELD_BMI          = "BMI"
+	FIELD_Amount       = "Amount"
 )

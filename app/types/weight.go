@@ -158,13 +158,20 @@ func (w *Weight) Equals(in Weight) bool {
 	return false
 }
 
-func (w *Weight) Add(in Weight) {
+func (w *Weight) Add(in Weight) Weight {
 	rtn := w.Value + in.Value
 	logHandler.InfoLogger.Printf("Adding weights: %v + %v = %v", w.Value, in.Value, rtn)
-	w.Set(rtn)
+	return Weight{Value: rtn}
 }
+func (w *Weight) AddFloat(in float64) Weight {
+	return Weight{Value: w.Value + in}
+}
+
 func (w *Weight) Minus(in Weight) Weight {
 	return Weight{Value: w.Value - in.Value}
+}
+func (w *Weight) MinusFloat(in float64) Weight {
+	return w.Minus(Weight{Value: in})
 }
 func (w *Weight) Multiply(in Weight) Weight {
 	return Weight{Value: w.Value * in.Value}

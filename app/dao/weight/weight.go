@@ -1,46 +1,50 @@
 package weight
 
 import (
+	"fmt"
+
 	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func AverageWeightLoss(userID int) (*types.Weight, error) {
-	// This function will calculate the average weight loss for a user
-	// based on their historical weight data.
-	// It will return the average weight loss in kilograms.
-	// If no data is found, it will return an error.
-
-	// Get The starting weight for the user, loop through the user's weight history in order to calculate the average weight loss
-
-	w, err := GetAllWhere(FIELD_UserID, userID)
-	if err != nil {
-		logHandler.ErrorLogger.Printf("Error retrieving weight data for user %d: %v", userID, err)
-		return &types.Weight{}, err
+func (record *Weight_Store) String() string {
+	if record == nil {
+		return "Weight_Store is nil"
 	}
-	if len(w) == 0 {
-		logHandler.ErrorLogger.Printf("No weight data found for user %d", userID)
-		return &types.Weight{}, nil
+	return "Weight_Store{" +
+		"ID: " + fmt.Sprintf("%d", record.ID) +
+		", Key: " + record.Key +
+		", Raw: " + record.Raw +
+		", UserID: " + fmt.Sprintf("%d", record.UserID) +
+		", RecordedAt: " + record.RecordedAt.String() +
+		", Weight: " + record.Weight.String() +
+		", BMI: " + record.BMI.String() +
+		", Note: " + record.Note +
+		"}"
+}
+
+func (record *Weight_Store) GetBMI() types.BMI {
+	logHandler.EventLogger.Printf("GetBMI called for Weight_Store ID %d", record.ID)
+	if record == nil {
+		return types.BMI{}
 	}
-	//var totalLoss *types.Weight
-	//var totalMass *types.Weight
-	totalLoss := types.NewWeight(0.0)
-	totalMass := types.NewWeight(0.0)
-	var count int
-	for i := 0; i < len(w)-1; i++ {
-		if w[i].Weight.GT(w[i+1].Weight.Value) {
-			loss := w[i].Weight.Minus(w[i+1].Weight)
-			totalLoss.Add(loss)
-			count++
+	// Recalculate BMI if it is not set
+	if record.BMI.IsZero() {
+		// Get the baseline height for the user
+		bl, err := baseline.GetByUserID(record.UserID)
+		if err != nil {
+			logHandler.ErrorLogger.Printf("Error retrieving baseline height for user %d: %v", record.UserID, err)
+			return types.BMI{}
 		}
-		logHandler.InfoLogger.Printf("Weight record %d: %v", i, w[i].Weight.String())
-		logHandler.InfoLogger.Printf("Weight recorded %d: %v", i+1, w[i+1].Audit.CreatedAt.String())
-		totalMass.Add(w[i].Weight)
+		if bl.Height.LE(0) {
+			logHandler.ErrorLogger.Printf("No height found for user ID %d, cannot calculate BMI", record.UserID)
+			return types.BMI{}
+		}
+		logHandler.ErrorLogger.Printf("BMI is not set for weight record ID %d, recalculating...", record.ID)
+		// Assuming we have a method to calculate BMI based on weight and height
+		// This is a placeholder, actual implementation may vary
+		record.BMI.SetBMIFromWeightAndHeight(record.Weight, bl.Height) // Example height in cm
 	}
-	logHandler.InfoLogger.Printf("Total weight mass for user %d: %v over %d records", userID, totalMass.String(), count)
-	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v over %d records", userID, totalLoss.String(), count)
-	logHandler.InfoLogger.Printf("Average weight loss for user %d: %v kg", userID, totalLoss.Kg()/float64(count))
-	stas, _ := totalLoss.StonesAsString()
-	logHandler.InfoLogger.Printf("Average weight loss for user %d: %v", userID, stas)
-	return totalLoss, nil
+	return record.BMI
 }

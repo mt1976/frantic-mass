@@ -1,4 +1,4 @@
-package User
+package user
 
 // Data Access Object User
 // Version: 0.2.0
@@ -16,7 +16,7 @@ import (
 
 // tempalteImportProcessor is a helper function to create a new entry instance and save it to the database
 // It should be customised to suit the specific requirements of the entryination table/DAO.
-func tempalteImportProcessor(inOriginal **User_Store) (string, error) {
+func tempalteImportProcessor(inOriginal **Store) (string, error) {
 	//TODO: Build the import processing functionality for the User_Store data here
 	//
 	importedData := **inOriginal
