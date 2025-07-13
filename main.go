@@ -7,6 +7,7 @@ import (
 
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
+	"github.com/mt1976/frantic-mass/app/dao/dateIndex"
 	"github.com/mt1976/frantic-mass/app/dao/goal"
 	"github.com/mt1976/frantic-mass/app/dao/tag"
 	user "github.com/mt1976/frantic-mass/app/dao/user"
@@ -125,6 +126,30 @@ func main() {
 		logHandler.InfoLogger.Printf("Weight Created:[%+v]", thisWeight)
 	}
 
+	// CREATE A today DATEINDEX
+
+	var dij jobs.DateIndexJob = jobs.DateIndexJob{}
+	dij.AddDatabaseAccessFunctions(weight.GetDatabaseConnections())
+	logHandler.InfoLogger.Println("Running DateIndex Job")
+	err = dij.Run()
+
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error creating DateIndex:", err)
+	} else {
+		logHandler.InfoLogger.Printf("DateIndexs created successfully")
+	}
+
+	_ = dateIndex.ExportRecordsAsCSV()
+
+	tdID, td, tdErr := dateIndex.GetToday()
+	if tdErr != nil {
+		logHandler.ErrorLogger.Println("Error getting today's DateIndex:", tdErr)
+	} else {
+		logHandler.InfoLogger.Printf("Today's DateIndex: %+v [%v]", td, tdID)
+	}
+
+	//os.Exit(0) // Exit the program successfully
+
 	// Rebuild the weight projection
 	logHandler.InfoLogger.Println("Rebuilding Weight Projections for UserID:", userIdentifier)
 	err = functions.BuildWeightGoalsProjections(thisUser, thisWeight.Weight)
@@ -141,19 +166,6 @@ func main() {
 		logHandler.ErrorLogger.Println(weightTagErr)
 	} else {
 		logHandler.InfoLogger.Printf("WeightTag Created:[%+v]", thisWeightTag)
-	}
-
-	// CREATE A today DATEINDEX
-
-	var dij jobs.DateIndexJob = jobs.DateIndexJob{}
-	dij.AddDatabaseAccessFunctions(weight.GetDatabaseConnections())
-	logHandler.InfoLogger.Println("Running DateIndex Job")
-	err = dij.Run()
-
-	if err != nil {
-		logHandler.ErrorLogger.Println("Error creating DateIndex:", err)
-	} else {
-		logHandler.InfoLogger.Println("DateIndex created successfully")
 	}
 
 	logHandler.InfoLogger.Println("HeightCM", thisBaseline.Height.CmAsString())

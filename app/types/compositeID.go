@@ -1,6 +1,11 @@
 package types
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-core/stringHelpers"
+)
 
 var Delimiter = "⋮"
 
@@ -8,11 +13,27 @@ func NewCompositeID(part ...any) string {
 	// Create a composite ID by concatenating the string representations of the parts
 	compositeID := ""
 	for _, p := range part {
-		compositeID += fmt.Sprintf("%v"+Delimiter, p)
+		// Convert each part to a string and append it to the composite ID
+		if compositeID != "" {
+			compositeID += Delimiter // Add delimiter between parts
+		}
+		// Use fmt.Sprintf to convert the part to a string
+		// This handles different types of parts (int, string, etc.)
+		// If the part is nil, it will be converted to an empty string
+		// This prevents any nil pointer dereference errors
+		val := stringHelpers.RemoveSpecialChars(fmt.Sprintf("%v", p))
+
+		logHandler.InfoLogger.Printf("Adding part to composite ID: [%v]", val)
+		compositeID += val
+		// If you want to ensure a specific format, you can use a format specifier
+		// compositeID += fmt.Sprintf("%v"+Delimiter, p) // Uncomment this line if you want to add a delimiter after each part
+		// compositeID += fmt.Sprintf("%s"+Delimiter, p) // Use %s for string formatting
+		//compositeID += fmt.Sprintf("%v"+Delimiter, p)
 	}
-	// Remove the trailing hyphen
-	if len(compositeID) > 0 {
-		compositeID = compositeID[:len(compositeID)-1]
+
+	logHandler.InfoLogger.Printf("Composite ID created: [%s]", compositeID)
+	if compositeID == "" {
+		logHandler.ErrorLogger.Panic("Composite ID cannot be empty")
 	}
 	return compositeID
 }

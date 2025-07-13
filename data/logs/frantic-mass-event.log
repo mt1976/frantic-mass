@@ -1,218 +1,219 @@
-2025/07/12 12:44:36.096625 userStore_init.go:36: [35m[EVENT][0m Initialised User
-2025/07/12 12:44:36.101340 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
-2025/07/12 12:44:36.101630 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
-2025/07/12 12:44:36.102271 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
-2025/07/12 12:44:36.102551 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
-2025/07/12 12:44:36.102812 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
-2025/07/12 12:44:36.103052 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
-2025/07/12 12:44:36.103283 weightProjectionHistoryStore_init.go:36: [35m[EVENT][0m Initialised weightProjectionHistory
-2025/07/12 12:44:36.103539 dateIndexStore_init.go:36: [35m[EVENT][0m Initialised dateIndex
-2025/07/12 12:44:36.103589 userStore.go:336: [35m[EVENT][0m Cleared down User
-2025/07/12 12:44:36.103636 baselineStore.go:336: [35m[EVENT][0m Cleared down baseline
-2025/07/12 12:44:36.103672 tagStore.go:336: [35m[EVENT][0m Cleared down tag
-2025/07/12 12:44:36.103692 goalStore.go:336: [35m[EVENT][0m Cleared down goal
-2025/07/12 12:44:36.103716 weightStore.go:336: [35m[EVENT][0m Cleared down weight
-2025/07/12 12:44:36.103735 weightProjectionStore.go:336: [35m[EVENT][0m Cleared down weightProjection
-2025/07/12 12:44:36.103753 weightTagStore.go:336: [35m[EVENT][0m Cleared down weightTag
-2025/07/12 12:44:36.103772 weightProjectionHistoryStore.go:336: [35m[EVENT][0m Cleared down weightProjectionHistory
-2025/07/12 12:44:36.103791 dateIndexStore.go:336: [35m[EVENT][0m Cleared down dateIndex
-2025/07/12 12:44:36.216059 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.216094 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {31.702035646584072 Obese 🔴}
-2025/07/12 12:44:36.242997 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.243050 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {31.135927867180786 Obese 🔴}
-2025/07/12 12:44:36.257728 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.257777 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {30.569820087777497 Obese 🔴}
-2025/07/12 12:44:36.269602 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.269643 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {30.00371230837421 Obese 🔴}
-2025/07/12 12:44:36.285334 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.285377 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {29.437604528970926 Overweight 🟠}
-2025/07/12 12:44:36.297322 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.297380 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {28.871496749567637 Overweight 🟠}
-2025/07/12 12:44:36.307160 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.307208 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {28.30538897016435 Overweight 🟠}
-2025/07/12 12:44:36.335242 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.335320 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {27.739281190761062 Overweight 🟠}
-2025/07/12 12:44:36.358159 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.358210 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {27.173173411357777 Overweight 🟠}
-2025/07/12 12:44:36.374890 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.374950 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {26.60706563195449 Overweight 🟠}
-2025/07/12 12:44:36.390133 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.390183 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {26.0409578525512 Overweight 🟠}
-2025/07/12 12:44:36.401796 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.401841 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {25.474850073147916 Overweight 🟠}
-2025/07/12 12:44:36.411219 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.411259 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {24.908742293744627 Overweight 🟠}
-2025/07/12 12:44:36.434212 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.434265 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {24.34263451434134 Normal 🟢}
-2025/07/12 12:44:36.444227 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.444302 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {23.776526734938056 Normal 🟢}
-2025/07/12 12:44:36.473177 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.473224 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {23.210418955534767 Normal 🟢}
-2025/07/12 12:44:36.488216 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.488286 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {22.64431117613148 Normal 🟢}
-2025/07/12 12:44:36.503905 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.503950 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {22.078203396728192 Normal 🟢}
-2025/07/12 12:44:36.527249 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.527336 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {21.512095617324906 Normal 🟢}
-2025/07/12 12:44:36.546830 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.546890 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {20.94598783792162 Normal 🟢}
-2025/07/12 12:44:36.558776 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.558817 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {20.37988005851833 Normal 🟢}
-2025/07/12 12:44:36.577725 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.577768 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {19.813772279115046 Normal 🟢}
-2025/07/12 12:44:36.602803 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.602844 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {19.247664499711757 Normal 🟢}
-2025/07/12 12:44:36.622712 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
-2025/07/12 12:44:36.622755 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
-2025/07/12 12:44:36.626333 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.626370 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.645557 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.645597 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.664418 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.664452 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.693890 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.693949 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.714935 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.714982 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.749063 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.749128 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.775937 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.775996 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.797712 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.797758 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.822473 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.822522 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.850038 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.850081 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.873460 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.873515 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.886360 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.886405 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.919599 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.919651 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.938600 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.938641 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.954365 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.954412 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:36.968186 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:36.968232 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:37.000844 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:37.000902 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:37.018499 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:37.018543 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:37.032297 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:37.032339 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:37.061437 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:37.061483 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:37.080402 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:37.080454 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:37.096116 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:37.096160 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:37.122350 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
-2025/07/12 12:44:37.122404 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
-2025/07/12 12:44:37.154631 dateIndex_job.go:159: [35m[EVENT][0m [dateIndexJob] Running 'dateIndex Job' tasks with database=[frantic-mass-main.db]
-2025/07/12 12:44:37.167670 dateIndex_job.go:168: [35m[EVENT][0m [dateIndexJob] Completed 'dateIndex Job' tasks with database=[frantic-mass-main.db]
-2025/07/12 12:44:37.167868 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
-2025/07/12 12:44:37.167879 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
-2025/07/12 12:44:37.167932 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
-2025/07/12 12:44:37.180220 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) weight(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weights.csv]
-2025/07/12 12:44:37.191941 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
-2025/07/12 12:44:37.197110 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) baseline(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/baselines.csv]
-2025/07/12 12:44:37.202674 exportHelper.go:61: [35m[EVENT][0m Exported (2/2) goal(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/goals.csv]
-2025/07/12 12:44:37.207900 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) tag(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/tags.csv]
-2025/07/12 12:44:37.208303 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100000
-2025/07/12 12:44:37.208319 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100000
-2025/07/12 12:44:37.208322 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100001
-2025/07/12 12:44:37.208326 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100001
-2025/07/12 12:44:37.208330 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100002
-2025/07/12 12:44:37.208333 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100002
-2025/07/12 12:44:37.208336 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100003
-2025/07/12 12:44:37.208339 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100003
-2025/07/12 12:44:37.208342 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100004
-2025/07/12 12:44:37.208345 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100004
-2025/07/12 12:44:37.208347 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100005
-2025/07/12 12:44:37.208349 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100005
-2025/07/12 12:44:37.208352 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100006
-2025/07/12 12:44:37.208354 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100006
-2025/07/12 12:44:37.208357 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100007
-2025/07/12 12:44:37.208359 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100007
-2025/07/12 12:44:37.208363 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100008
-2025/07/12 12:44:37.208367 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100008
-2025/07/12 12:44:37.208370 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100009
-2025/07/12 12:44:37.208373 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100009
-2025/07/12 12:44:37.208376 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100010
-2025/07/12 12:44:37.208379 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100010
-2025/07/12 12:44:37.208382 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100011
-2025/07/12 12:44:37.208385 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100011
-2025/07/12 12:44:37.208387 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100012
-2025/07/12 12:44:37.208390 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100012
-2025/07/12 12:44:37.208392 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100013
-2025/07/12 12:44:37.208394 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100013
-2025/07/12 12:44:37.208397 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100014
-2025/07/12 12:44:37.208399 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100014
-2025/07/12 12:44:37.208402 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100015
-2025/07/12 12:44:37.208404 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100015
-2025/07/12 12:44:37.208406 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100016
-2025/07/12 12:44:37.208409 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100016
-2025/07/12 12:44:37.208411 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100017
-2025/07/12 12:44:37.208414 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100017
-2025/07/12 12:44:37.208417 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100018
-2025/07/12 12:44:37.208420 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100018
-2025/07/12 12:44:37.208422 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100019
-2025/07/12 12:44:37.208425 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100019
-2025/07/12 12:44:37.208427 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100020
-2025/07/12 12:44:37.208430 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100020
-2025/07/12 12:44:37.208433 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100021
-2025/07/12 12:44:37.208436 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100021
-2025/07/12 12:44:37.208438 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100022
-2025/07/12 12:44:37.208440 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100022
-2025/07/12 12:44:37.208443 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100023
-2025/07/12 12:44:37.208445 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100023
-2025/07/12 12:44:37.208448 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100024
-2025/07/12 12:44:37.208450 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100024
-2025/07/12 12:44:37.208452 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100025
-2025/07/12 12:44:37.208455 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100025
-2025/07/12 12:44:37.208457 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100026
-2025/07/12 12:44:37.208459 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100026
-2025/07/12 12:44:37.208462 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100027
-2025/07/12 12:44:37.208464 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100027
-2025/07/12 12:44:37.208467 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100028
-2025/07/12 12:44:37.208469 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100028
-2025/07/12 12:44:37.208472 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100029
-2025/07/12 12:44:37.208475 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100029
-2025/07/12 12:44:37.208477 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100030
-2025/07/12 12:44:37.208479 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100030
-2025/07/12 12:44:37.208482 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100031
-2025/07/12 12:44:37.208484 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100031
-2025/07/12 12:44:37.208487 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100032
-2025/07/12 12:44:37.208489 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100032
-2025/07/12 12:44:37.208492 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100033
-2025/07/12 12:44:37.208494 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100033
-2025/07/12 12:44:37.208496 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100034
-2025/07/12 12:44:37.208498 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100034
-2025/07/12 12:44:37.208505 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100035
-2025/07/12 12:44:37.208508 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100035
-2025/07/12 12:44:37.208510 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100036
-2025/07/12 12:44:37.208513 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100036
-2025/07/12 12:44:37.208515 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100037
-2025/07/12 12:44:37.208518 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100037
-2025/07/12 12:44:37.208520 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100038
-2025/07/12 12:44:37.208522 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100038
-2025/07/12 12:44:37.208524 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100039
-2025/07/12 12:44:37.208527 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100039
-2025/07/12 12:44:37.208529 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100040
-2025/07/12 12:44:37.208532 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100040
-2025/07/12 12:44:37.208534 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100041
-2025/07/12 12:44:37.208536 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100041
-2025/07/12 12:44:37.208538 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100042
-2025/07/12 12:44:37.208542 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100042
-2025/07/12 12:44:37.208545 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100043
-2025/07/12 12:44:37.208547 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100043
-2025/07/12 12:44:37.208550 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100044
-2025/07/12 12:44:37.208553 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100044
-2025/07/12 12:44:37.208556 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100045
-2025/07/12 12:44:37.208559 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100045
-2025/07/12 12:44:37.215187 exportHelper.go:61: [35m[EVENT][0m Exported (46/46) weightProjection(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weightprojections.csv]
-2025/07/12 12:44:37.219567 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) weightTag(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weighttags.csv]
-2025/07/12 12:44:37.224941 exportHelper.go:61: [35m[EVENT][0m Exported (0/0) weightProjectionHistory(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weightprojectionhistorys.csv]
-2025/07/12 12:44:37.229858 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) dateIndex(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/dateindexs.csv]
+2025/07/13 10:22:23.553652 userStore_init.go:36: [35m[EVENT][0m Initialised User
+2025/07/13 10:22:23.558389 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
+2025/07/13 10:22:23.558675 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
+2025/07/13 10:22:23.559255 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
+2025/07/13 10:22:23.559619 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
+2025/07/13 10:22:23.559875 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
+2025/07/13 10:22:23.560127 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
+2025/07/13 10:22:23.560360 weightProjectionHistoryStore_init.go:36: [35m[EVENT][0m Initialised weightProjectionHistory
+2025/07/13 10:22:23.560617 dateIndexStore_init.go:36: [35m[EVENT][0m Initialised dateIndex
+2025/07/13 10:22:23.560686 userStore.go:336: [35m[EVENT][0m Cleared down User
+2025/07/13 10:22:23.560735 baselineStore.go:336: [35m[EVENT][0m Cleared down baseline
+2025/07/13 10:22:23.560755 tagStore.go:336: [35m[EVENT][0m Cleared down tag
+2025/07/13 10:22:23.560772 goalStore.go:336: [35m[EVENT][0m Cleared down goal
+2025/07/13 10:22:23.560790 weightStore.go:336: [35m[EVENT][0m Cleared down weight
+2025/07/13 10:22:23.560808 weightProjectionStore.go:336: [35m[EVENT][0m Cleared down weightProjection
+2025/07/13 10:22:23.560827 weightTagStore.go:336: [35m[EVENT][0m Cleared down weightTag
+2025/07/13 10:22:23.560847 weightProjectionHistoryStore.go:336: [35m[EVENT][0m Cleared down weightProjectionHistory
+2025/07/13 10:22:23.560867 dateIndexStore.go:336: [35m[EVENT][0m Cleared down dateIndex
+2025/07/13 10:22:23.663068 dateIndex_job.go:159: [35m[EVENT][0m [dateIndexJob] Running 'dateIndex Job' tasks with database=[frantic-mass-main.db]
+2025/07/13 10:22:23.675837 dateIndex_job.go:168: [35m[EVENT][0m [dateIndexJob] Completed 'dateIndex Job' tasks with database=[frantic-mass-main.db]
+2025/07/13 10:22:23.694918 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) dateIndex(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/dateindexs.csv]
+2025/07/13 10:22:23.695249 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.695276 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {31.702035646584072 Obese 🔴}
+2025/07/13 10:22:23.736139 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.736187 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {31.135927867180786 Obese 🔴}
+2025/07/13 10:22:23.761934 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.761980 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {30.569820087777497 Obese 🔴}
+2025/07/13 10:22:23.783558 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.783600 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {30.00371230837421 Obese 🔴}
+2025/07/13 10:22:23.820507 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.820545 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {29.437604528970926 Overweight 🟠}
+2025/07/13 10:22:23.845896 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.845959 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {28.871496749567637 Overweight 🟠}
+2025/07/13 10:22:23.878606 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.878670 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {28.30538897016435 Overweight 🟠}
+2025/07/13 10:22:23.906589 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.906654 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {27.739281190761062 Overweight 🟠}
+2025/07/13 10:22:23.926952 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.927168 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {27.173173411357777 Overweight 🟠}
+2025/07/13 10:22:23.971376 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:23.971426 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {26.60706563195449 Overweight 🟠}
+2025/07/13 10:22:24.000118 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.000184 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {26.0409578525512 Overweight 🟠}
+2025/07/13 10:22:24.048611 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.048658 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {25.474850073147916 Overweight 🟠}
+2025/07/13 10:22:24.078341 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.078396 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {24.908742293744627 Overweight 🟠}
+2025/07/13 10:22:24.101911 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.101959 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {24.34263451434134 Normal 🟢}
+2025/07/13 10:22:24.138777 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.138830 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {23.776526734938056 Normal 🟢}
+2025/07/13 10:22:24.168966 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.169013 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {23.210418955534767 Normal 🟢}
+2025/07/13 10:22:24.204499 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.204538 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {22.64431117613148 Normal 🟢}
+2025/07/13 10:22:24.234176 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.234212 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {22.078203396728192 Normal 🟢}
+2025/07/13 10:22:24.268953 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.268992 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {21.512095617324906 Normal 🟢}
+2025/07/13 10:22:24.301263 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.301313 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {20.94598783792162 Normal 🟢}
+2025/07/13 10:22:24.323462 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.323507 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {20.37988005851833 Normal 🟢}
+2025/07/13 10:22:24.362106 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.362154 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {19.813772279115046 Normal 🟢}
+2025/07/13 10:22:24.384526 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.384562 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {19.247664499711757 Normal 🟢}
+2025/07/13 10:22:24.452942 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/13 10:22:24.452977 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/13 10:22:24.456613 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.456653 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:24.487933 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.487974 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:24.530520 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.530563 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:24.552479 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.552520 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:24.596404 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.596445 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:24.633694 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.633740 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:24.658630 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.658666 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:24.696498 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.696558 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:24.724828 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.724885 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:24.974040 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:24.975558 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.225215 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.225273 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.409608 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.409673 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.435272 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.435312 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.478128 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.478169 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.503903 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.503944 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.547562 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.547606 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.571587 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.571629 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.612180 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.612223 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.656026 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.656070 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.688274 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.688310 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.725379 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.725418 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.753423 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.753459 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.790175 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/07/13 10:22:25.790211 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100000: {32.26814342598736 Obese 🔴}
+2025/07/13 10:22:25.831805 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/13 10:22:25.831822 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/13 10:22:25.831881 weight.go:28: [35m[EVENT][0m GetBMI called for Weight_Store ID 100000
+2025/07/13 10:22:25.838121 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) weight(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weights.csv]
+2025/07/13 10:22:25.843375 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) User(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/users.csv]
+2025/07/13 10:22:25.851090 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) baseline(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/baselines.csv]
+2025/07/13 10:22:25.856840 exportHelper.go:61: [35m[EVENT][0m Exported (2/2) goal(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/goals.csv]
+2025/07/13 10:22:25.863965 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) tag(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/tags.csv]
+2025/07/13 10:22:25.864400 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100000
+2025/07/13 10:22:25.864408 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100000
+2025/07/13 10:22:25.864411 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100001
+2025/07/13 10:22:25.864415 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100001
+2025/07/13 10:22:25.864419 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100002
+2025/07/13 10:22:25.864422 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100002
+2025/07/13 10:22:25.864425 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100003
+2025/07/13 10:22:25.864427 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100003
+2025/07/13 10:22:25.864429 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100004
+2025/07/13 10:22:25.864432 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100004
+2025/07/13 10:22:25.864434 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100005
+2025/07/13 10:22:25.864436 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100005
+2025/07/13 10:22:25.864438 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100006
+2025/07/13 10:22:25.864440 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100006
+2025/07/13 10:22:25.864444 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100007
+2025/07/13 10:22:25.864447 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100007
+2025/07/13 10:22:25.864449 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100008
+2025/07/13 10:22:25.864451 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100008
+2025/07/13 10:22:25.864454 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100009
+2025/07/13 10:22:25.864457 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100009
+2025/07/13 10:22:25.864460 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100010
+2025/07/13 10:22:25.864463 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100010
+2025/07/13 10:22:25.864466 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100011
+2025/07/13 10:22:25.864468 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100011
+2025/07/13 10:22:25.864471 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100012
+2025/07/13 10:22:25.864474 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100012
+2025/07/13 10:22:25.864477 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100013
+2025/07/13 10:22:25.864480 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100013
+2025/07/13 10:22:25.864483 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100014
+2025/07/13 10:22:25.864486 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100014
+2025/07/13 10:22:25.864488 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100015
+2025/07/13 10:22:25.864491 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100015
+2025/07/13 10:22:25.864493 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100016
+2025/07/13 10:22:25.864496 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100016
+2025/07/13 10:22:25.864498 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100017
+2025/07/13 10:22:25.864501 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100017
+2025/07/13 10:22:25.864505 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100018
+2025/07/13 10:22:25.864507 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100018
+2025/07/13 10:22:25.864510 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100019
+2025/07/13 10:22:25.864513 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100019
+2025/07/13 10:22:25.864516 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100020
+2025/07/13 10:22:25.864519 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100020
+2025/07/13 10:22:25.864521 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100021
+2025/07/13 10:22:25.864524 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100021
+2025/07/13 10:22:25.864527 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100022
+2025/07/13 10:22:25.864530 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100022
+2025/07/13 10:22:25.864532 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100023
+2025/07/13 10:22:25.864535 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100023
+2025/07/13 10:22:25.864537 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100024
+2025/07/13 10:22:25.864540 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100024
+2025/07/13 10:22:25.864543 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100025
+2025/07/13 10:22:25.864545 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100025
+2025/07/13 10:22:25.864548 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100026
+2025/07/13 10:22:25.864551 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100026
+2025/07/13 10:22:25.864553 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100027
+2025/07/13 10:22:25.864556 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100027
+2025/07/13 10:22:25.864559 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100028
+2025/07/13 10:22:25.864562 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100028
+2025/07/13 10:22:25.864564 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100029
+2025/07/13 10:22:25.864567 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100029
+2025/07/13 10:22:25.864570 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100030
+2025/07/13 10:22:25.864572 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100030
+2025/07/13 10:22:25.864575 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100031
+2025/07/13 10:22:25.864579 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100031
+2025/07/13 10:22:25.864582 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100032
+2025/07/13 10:22:25.864586 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100032
+2025/07/13 10:22:25.864588 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100033
+2025/07/13 10:22:25.864591 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100033
+2025/07/13 10:22:25.864594 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100034
+2025/07/13 10:22:25.864596 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100034
+2025/07/13 10:22:25.864600 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100035
+2025/07/13 10:22:25.864603 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100035
+2025/07/13 10:22:25.864605 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100036
+2025/07/13 10:22:25.864608 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100036
+2025/07/13 10:22:25.864611 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100037
+2025/07/13 10:22:25.864614 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100037
+2025/07/13 10:22:25.864616 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100038
+2025/07/13 10:22:25.864619 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100038
+2025/07/13 10:22:25.864622 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100039
+2025/07/13 10:22:25.864624 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100039
+2025/07/13 10:22:25.864626 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100040
+2025/07/13 10:22:25.864629 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100040
+2025/07/13 10:22:25.864631 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100041
+2025/07/13 10:22:25.864634 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100041
+2025/07/13 10:22:25.864636 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100042
+2025/07/13 10:22:25.864638 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100042
+2025/07/13 10:22:25.864640 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100043
+2025/07/13 10:22:25.864643 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100043
+2025/07/13 10:22:25.864645 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100044
+2025/07/13 10:22:25.864648 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100044
+2025/07/13 10:22:25.864651 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100045
+2025/07/13 10:22:25.864653 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100045
+2025/07/13 10:22:25.872753 exportHelper.go:61: [35m[EVENT][0m Exported (46/46) weightProjection(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weightprojections.csv]
+2025/07/13 10:22:25.880178 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) weightTag(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weighttags.csv]
+2025/07/13 10:22:25.889569 exportHelper.go:61: [35m[EVENT][0m Exported (46/46) weightProjectionHistory(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weightprojectionhistorys.csv]
+2025/07/13 10:22:25.891056 exportHelper.go:61: [35m[EVENT][0m Exported (1/1) dateIndex(s) to [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/dateindexs.csv]

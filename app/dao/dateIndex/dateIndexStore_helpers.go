@@ -2,9 +2,9 @@ package dateIndex
 
 import (
 	"context"
-	"time"
 
 	"github.com/mt1976/frantic-core/dao/actions"
+	"github.com/mt1976/frantic-core/dao/audit"
 	"github.com/mt1976/frantic-core/jobs"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/timing"
@@ -62,37 +62,44 @@ func dateIndexJobProcessor(j jobs.Job) {
 
 	//TODO: Add your job processing code here
 
-	// Get all the sessions
-	// For each session, check the expiry date
-	// If the expiry date is less than now, then delete the session
+	// Add today's date index entry
+	// This is a placeholder for the actual logic to add a date index entry
+	// Replace with the actual implementation as needed
 
-	// dateIndexEntries, err := GetAll()
-	// if err != nil {
-	// 	logHandler.ErrorLogger.Printf("[%v] Error=[%v]", jobs.CodedName(j), err.Error())
-	// 	return
-	// }
-
-	// nodateIndexEntries := len(dateIndexEntries)
-	// if nodateIndexEntries == 0 {
-	// 	logHandler.ServiceLogger.Printf("[%v] No %vs to process", jobs.CodedName(j), domain)
-	// 	clock.Stop(0)
-	// 	return
-	// }
-
-	// for dateIndexEntryIndex, dateIndexRecord := range dateIndexEntries {
-	// 	logHandler.ServiceLogger.Printf("[%v] %v(%v/%v) %v", jobs.CodedName(j), domain, dateIndexEntryIndex+1, nodateIndexEntries, dateIndexRecord.Raw)
-	// 	dateIndexRecord.UpdateWithAction(context.TODO(), audit.GRANT, "Job Processing")
-	// 	dateIndexRecord.UpdateWithAction(context.TODO(), audit.SERVICE, "Job Processing "+j.Name())
-	// 	count++
-	// }
-	// Add a date index entry for today
-	today := time.Now()
-	logHandler.InfoLogger.Printf("[%v] Adding DateIndex for %v", jobs.CodedName(j), today)
-	_, err := New(context.TODO(), today)
+	//today := time.Now()
+	logHandler.InfoLogger.Printf("[%v] Adding DateIndex for %v", jobs.CodedName(j), Today())
+	_, err := New(context.TODO(), Today())
 	if err != nil {
-		logHandler.ErrorLogger.Printf("[%v] Error adding DateIndex for %v: %v", jobs.CodedName(j), today, err)
+		logHandler.ErrorLogger.Printf("[%v] Error adding DateIndex for %v: %v", jobs.CodedName(j), Today(), err)
 	} else {
-		logHandler.InfoLogger.Printf("[%v] DateIndex for %v added successfully", jobs.CodedName(j), today)
+		logHandler.InfoLogger.Printf("[%v] DateIndex for %v added successfully", jobs.CodedName(j), Today())
+		count++
+	}
+
+	dateList, err := GetAll()
+	if err != nil {
+		logHandler.ErrorLogger.Printf("[%v] Error retrieving dateIndex entries: %v", jobs.CodedName(j), err)
+		return
+	}
+
+	if len(dateList) > 0 {
+		logHandler.ServiceLogger.Printf("[%v] Found %d existing dateIndex entries", jobs.CodedName(j), len(dateList))
+	} else {
+		logHandler.ServiceLogger.Printf("[%v] No existing dateIndex entries found", jobs.CodedName(j))
+	}
+
+	for i := range dateList {
+		logHandler.ServiceLogger.Printf("[%v] Processing dateIndex entry: %v", jobs.CodedName(j), dateList[i].Raw)
+		dateIndexRecord, skip, err := categorizeDateIndexRecord(&dateList[i])
+		if err != nil {
+			logHandler.ErrorLogger.Printf("[%v] Error processing dateIndex entry %v: %v", jobs.CodedName(j), dateList[i].Raw, err)
+			continue
+		}
+		if skip {
+			continue
+		} // Set to active for processing
+		_ = dateIndexRecord.UpdateWithAction(context.TODO(), audit.SERVICE, "Job Processing "+j.Name())
+
 		count++
 	}
 

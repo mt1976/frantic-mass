@@ -1,10 +1,23 @@
-2025/07/12 12:44:37.151076 jobs_helpers.go:50: [32m[SERVICE][0m [Schedule] Job "dateIndex Job" - Started
-2025/07/12 12:44:37.154592 dateIndex_job.go:95: [32m[SERVICE][0m [dateIndexJob] Running 'dateIndex Job' job across 1 locations
-2025/07/12 12:44:37.154618 dateIndex_job.go:98: [32m[SERVICE][0m [dateIndexJob] Getting list of databases from 'main.main.GetDatabaseConnections.func35'
-2025/07/12 12:44:37.154625 dateIndex_job.go:104: [32m[SERVICE][0m [dateIndexJob] Running 'dateIndex Job' job across 1 database(s)
-2025/07/12 12:44:37.167656 dateIndexStore_helpers.go:99: [32m[SERVICE][0m [dateIndexJob] Processed 1 dateIndexs
-2025/07/12 12:44:37.167748 jobs_helpers.go:56: [32m[SERVICE][0m [Schedule] Job "dateIndex Job" - Completed
-2025/07/12 12:44:37.167756 jobs_helpers.go:57: [32m[SERVICE][0m [Schedule] Job "dateIndex Job" Scheduled [0 0 * * * *] [At 0 minutes past the hour]
-2025/07/12 12:44:37.229968 jobs_helpers.go:80: [32m[SERVICE][0m [Schedule] Job "User Job" Scheduled [0/30 * * * * *] [Every 30 seconds] (id=1)
-2025/07/12 12:44:37.229994 jobs_helpers.go:80: [32m[SERVICE][0m [Schedule] Job "weightProjection Job" Scheduled [5 0 * * * *] [At 5 seconds past the minute, at 0 minutes past the hour] (id=2)
-2025/07/12 12:44:37.230012 jobs_helpers.go:80: [32m[SERVICE][0m [Schedule] Job "dateIndex Job" Scheduled [0 0 * * * *] [At 0 minutes past the hour] (id=3)
+2025/07/13 10:22:23.659272 jobs_helpers.go:50: [32m[SERVICE][0m [Schedule] Job "dateIndex Job" - Started
+2025/07/13 10:22:23.663033 dateIndex_job.go:95: [32m[SERVICE][0m [dateIndexJob] Running 'dateIndex Job' job across 1 locations
+2025/07/13 10:22:23.663056 dateIndex_job.go:98: [32m[SERVICE][0m [dateIndexJob] Getting list of databases from 'main.main.GetDatabaseConnections.func28'
+2025/07/13 10:22:23.663062 dateIndex_job.go:104: [32m[SERVICE][0m [dateIndexJob] Running 'dateIndex Job' job across 1 database(s)
+2025/07/13 10:22:23.663106 dateIndex.go:34: [32m[SERVICE][0m Categorizing dateIndex record: 2025-07-13 01:00:00 +0100 BST
+2025/07/13 10:22:23.663112 dateIndex.go:40: [32m[SERVICE][0m Processing dateIndex entry: 2025-07-13 01:00:00 +0100 BST
+2025/07/13 10:22:23.675799 dateIndexStore_helpers.go:86: [32m[SERVICE][0m [dateIndexJob] Found 1 existing dateIndex entries
+2025/07/13 10:22:23.675806 dateIndexStore_helpers.go:92: [32m[SERVICE][0m [dateIndexJob] Processing dateIndex entry: 250713102223663101000501059883
+2025/07/13 10:22:23.675811 dateIndex.go:34: [32m[SERVICE][0m Categorizing dateIndex record: 2025-07-13 01:00:00 +0100 BST
+2025/07/13 10:22:23.675816 dateIndex.go:40: [32m[SERVICE][0m Processing dateIndex entry: 2025-07-13 01:00:00 +0100 BST
+2025/07/13 10:22:23.675820 dateIndex.go:47: [32m[SERVICE][0m Skipping inactive dateIndex entry: 2025-07-13 01:00:00 +0100 BST
+2025/07/13 10:22:23.675826 dateIndexStore_helpers.go:106: [32m[SERVICE][0m [dateIndexJob] Processed 1 dateIndexs
+2025/07/13 10:22:23.675915 jobs_helpers.go:56: [32m[SERVICE][0m [Schedule] Job "dateIndex Job" - Completed
+2025/07/13 10:22:23.675921 jobs_helpers.go:57: [32m[SERVICE][0m [Schedule] Job "dateIndex Job" Scheduled [0 0 * * * *] [At 0 minutes past the hour]
+2025/07/13 10:22:23.694926 dateIndex.go:15: [32m[SERVICE][0m Getting today's DateIndex record
+2025/07/13 10:22:23.694954 dateIndex.go:24: [32m[SERVICE][0m Today's DateIndex record found: {100000 b90ccc02f51bea469bfc9f1f6d08f34a6449b089bef88a511a4b4ede513927ec 250713102223663101000501059883 {2025-07-13 10:22:23.663117 +0100 BST sys_service orion 2025-07-13 10:22:23 [{2025-07-13 10:22:23.663117 +0100 BST CREA sys_service orion 2025-07-13 10:22:23 New dateIndex created 2025-07-13 01:00:00 +0100 BST}] 0001-01-01 00:00:00 +0000 UTC    1 1} 2025-07-13 01:00:00 +0100 BST {true}}
+2025/07/13 10:22:23.695039 dateIndex.go:15: [32m[SERVICE][0m Getting today's DateIndex record
+2025/07/13 10:22:23.695174 dateIndex.go:24: [32m[SERVICE][0m Today's DateIndex record found: {100000 b90ccc02f51bea469bfc9f1f6d08f34a6449b089bef88a511a4b4ede513927ec 250713102223663101000501059883 {2025-07-13 10:22:23.663117 +0100 BST sys_service orion 2025-07-13 10:22:23 [{2025-07-13 10:22:23.663117 +0100 BST CREA sys_service orion 2025-07-13 10:22:23 New dateIndex created 2025-07-13 01:00:00 +0100 BST}] 0001-01-01 00:00:00 +0000 UTC    1 1} 2025-07-13 01:00:00 +0100 BST {true}}
+2025/07/13 10:22:24.452825 dateIndex.go:15: [32m[SERVICE][0m Getting today's DateIndex record
+2025/07/13 10:22:24.452876 dateIndex.go:24: [32m[SERVICE][0m Today's DateIndex record found: {100000 b90ccc02f51bea469bfc9f1f6d08f34a6449b089bef88a511a4b4ede513927ec 250713102223663101000501059883 {2025-07-13 10:22:23.663117 +0100 BST sys_service orion 2025-07-13 10:22:23 [{2025-07-13 10:22:23.663117 +0100 BST CREA sys_service orion 2025-07-13 10:22:23 New dateIndex created 2025-07-13 01:00:00 +0100 BST}] 0001-01-01 00:00:00 +0000 UTC    1 1} 2025-07-13 01:00:00 +0100 BST {true}}
+2025/07/13 10:22:25.891159 jobs_helpers.go:80: [32m[SERVICE][0m [Schedule] Job "User Job" Scheduled [0/30 * * * * *] [Every 30 seconds] (id=1)
+2025/07/13 10:22:25.891186 jobs_helpers.go:80: [32m[SERVICE][0m [Schedule] Job "weightProjection Job" Scheduled [5 0 * * * *] [At 5 seconds past the minute, at 0 minutes past the hour] (id=2)
+2025/07/13 10:22:25.891201 jobs_helpers.go:80: [32m[SERVICE][0m [Schedule] Job "dateIndex Job" Scheduled [0 0 * * * *] [At 0 minutes past the hour] (id=3)

@@ -18,9 +18,11 @@ import (
 	"github.com/mt1976/frantic-core/dao/audit"
 	"github.com/mt1976/frantic-core/idHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-core/stringHelpers"
 	"github.com/mt1976/frantic-core/timing"
 	"github.com/mt1976/frantic-mass/app/dao/dateIndex"
 	"github.com/mt1976/frantic-mass/app/dao/weightProjection"
+	"github.com/mt1976/frantic-mass/app/types"
 )
 
 func New(ctx context.Context, di dateIndex.DateIndex, wp weightProjection.WeightProjection) (weightProjectionHistory_Store, error) {
@@ -30,7 +32,7 @@ func New(ctx context.Context, di dateIndex.DateIndex, wp weightProjection.Weight
 	//logHandler.InfoLogger.Printf("New %v (%v=%v)", domain, FIELD_ID, field1)
 	clock := timing.Start(domain, actions.CREATE.GetCode(), fmt.Sprintf("%v", di))
 
-	sessionID := idHelpers.GetUUID()
+	sessionID := wp.CompositeID + types.Delimiter + stringHelpers.RemoveSpecialChars(fmt.Sprintf("%v", di.ID))
 
 	// Create a new struct
 	record := weightProjectionHistory_Store{}

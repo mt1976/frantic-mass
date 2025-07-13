@@ -39,6 +39,11 @@ func New(ctx context.Context, date time.Time) (DateIndex, error) {
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 	record.Date = date
+	updatedRecord, _, err := categorizeDateIndexRecord(&record)
+	if err != nil {
+		logHandler.ErrorLogger.Panic(commonErrors.WrapDAOCreateError(domain, updatedRecord.ID, err))
+	}
+	record = *updatedRecord
 
 	// Record the create action in the audit data
 	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %v", domain, date)))

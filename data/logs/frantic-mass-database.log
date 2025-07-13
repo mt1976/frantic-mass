@@ -1,269 +1,412 @@
-2025/07/12 12:44:36.057901 database_internal.go:30: [37m[DATABASE][0m Database Connection Pool Size [10]
-2025/07/12 12:44:36.066660 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (0)
-2025/07/12 12:44:36.066694 database_internal.go:47: [37m[DATABASE][0m [CONNECT] (re)Opening [main.db] data connection
-2025/07/12 12:44:36.066916 database_internal.go:54: [37m[DATABASE][0m [CONNECT]  Opening [main.db] data connection *{connection:<nil> Name:main databaseName:/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db initialised:false}*
-2025/07/12 12:44:36.093472 database_internal.go:64: [37m[DATABASE][0m [CONNECT]  Connection Pool [map[]]
-2025/07/12 12:44:36.093490 database_internal.go:80: [37m[DATABASE][0m [CONNECTIONPOOL] Adding [main] to connection pool (/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db)
-2025/07/12 12:44:36.093494 database_internal.go:86: [37m[DATABASE][0m [CONNECTIONPOOL] Connection pool [size=1]
-2025/07/12 12:44:36.093498 database_internal.go:70: [37m[DATABASE][0m [CONNECT]  Connection Pool [map[main:0x140003e0150]]
-2025/07/12 12:44:36.093504 database_internal.go:72: [37m[DATABASE][0m [CONNECT]  Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json] true
-2025/07/12 12:44:36.093507 database_internal.go:74: [37m[DATABASE][0m [CONNECT] Opened [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db.db] data connection [codec=json] true
-2025/07/12 12:44:36.101300 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
-2025/07/12 12:44:36.101328 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.101331 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.101619 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
-2025/07/12 12:44:36.101623 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.101625 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.102239 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
-2025/07/12 12:44:36.102250 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.102254 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.102540 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
-2025/07/12 12:44:36.102544 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.102546 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.102799 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
-2025/07/12 12:44:36.102806 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.102808 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.103042 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
-2025/07/12 12:44:36.103045 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.103047 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.103275 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
-2025/07/12 12:44:36.103277 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.103279 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.103530 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
-2025/07/12 12:44:36.103532 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.103534 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.103567 database.go:75: [37m[DATABASE][0m GetAll [Store][[]] [main.db]
-2025/07/12 12:44:36.103624 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.103657 database.go:75: [37m[DATABASE][0m GetAll [tag_Store][[]] [main.db]
-2025/07/12 12:44:36.103681 database.go:75: [37m[DATABASE][0m GetAll [Goal][[]] [main.db]
-2025/07/12 12:44:36.103705 database.go:75: [37m[DATABASE][0m GetAll [Weight_Store][[]] [main.db]
-2025/07/12 12:44:36.103724 database.go:75: [37m[DATABASE][0m GetAll [WeightProjection][[]] [main.db]
-2025/07/12 12:44:36.103743 database.go:75: [37m[DATABASE][0m GetAll [weightTag_Store][[]] [main.db]
-2025/07/12 12:44:36.103761 database.go:75: [37m[DATABASE][0m GetAll [weightProjectionHistory_Store][[]] [main.db]
-2025/07/12 12:44:36.103780 database.go:75: [37m[DATABASE][0m GetAll [DateIndex][[]] [main.db]
-2025/07/12 12:44:36.123749 database.go:101: [37m[DATABASE][0m Create [Store] [main.db] - Start
-2025/07/12 12:44:36.123755 database_internal.go:104: [37m[DATABASE][0m validate [Store] [main.db]
-2025/07/12 12:44:36.123821 database.go:107: [37m[DATABASE][0m Create [Store] [main.db] - End
-2025/07/12 12:44:36.151967 userStore.go:31: [37m[DATABASE][0m Count User
-2025/07/12 12:44:36.151973 database.go:112: [37m[DATABASE][0m Count [Store] [main.db]
-2025/07/12 12:44:36.151977 database.go:114: [37m[DATABASE][0m Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
-2025/07/12 12:44:36.152109 database.go:101: [37m[DATABASE][0m Create [baseline_Store] [main.db] - Start
-2025/07/12 12:44:36.152112 database_internal.go:104: [37m[DATABASE][0m validate [baseline_Store] [main.db]
-2025/07/12 12:44:36.152137 database.go:107: [37m[DATABASE][0m Create [baseline_Store] [main.db] - End
-2025/07/12 12:44:36.167020 database.go:101: [37m[DATABASE][0m Create [Goal] [main.db] - Start
-2025/07/12 12:44:36.167024 database_internal.go:104: [37m[DATABASE][0m validate [Goal] [main.db]
-2025/07/12 12:44:36.167040 database.go:107: [37m[DATABASE][0m Create [Goal] [main.db] - End
-2025/07/12 12:44:36.182652 database.go:101: [37m[DATABASE][0m Create [Goal] [main.db] - Start
-2025/07/12 12:44:36.182656 database_internal.go:104: [37m[DATABASE][0m validate [Goal] [main.db]
-2025/07/12 12:44:36.182667 database.go:107: [37m[DATABASE][0m Create [Goal] [main.db] - End
-2025/07/12 12:44:36.191740 database.go:101: [37m[DATABASE][0m Create [tag_Store] [main.db] - Start
-2025/07/12 12:44:36.191743 database_internal.go:104: [37m[DATABASE][0m validate [tag_Store] [main.db]
-2025/07/12 12:44:36.191755 database.go:107: [37m[DATABASE][0m Create [tag_Store] [main.db] - End
-2025/07/12 12:44:36.206443 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.206514 database.go:101: [37m[DATABASE][0m Create [Weight_Store] [main.db] - Start
-2025/07/12 12:44:36.206517 database_internal.go:104: [37m[DATABASE][0m validate [Weight_Store] [main.db]
-2025/07/12 12:44:36.206530 database.go:107: [37m[DATABASE][0m Create [Weight_Store] [main.db] - End
-2025/07/12 12:44:36.215815 database.go:75: [37m[DATABASE][0m GetAll [Goal][[]] [main.db]
-2025/07/12 12:44:36.215887 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.216071 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.216117 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.216120 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.216131 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.243006 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.243075 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.243078 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.243086 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.257735 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.257813 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.257817 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.257830 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.269608 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.269663 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.269666 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.269673 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.285340 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.285405 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.285408 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.285416 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.297332 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.297409 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.297412 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.297422 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.307167 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.307233 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.307236 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.307244 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.335251 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.335350 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.335354 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.335364 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.358165 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.358231 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.358234 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.358243 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.374898 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.374980 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.374983 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.374991 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.390140 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.390207 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.390210 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.390221 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.401802 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.401860 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.401862 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.401869 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.411227 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.411277 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.411280 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.411287 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.434220 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.434300 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.434313 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.434328 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.444232 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.444327 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.444330 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.444339 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.473184 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.473244 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.473246 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.473255 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.488222 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.488329 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.488334 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.488343 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.503912 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.503970 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.503973 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.503982 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.527269 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.527362 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.527365 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.527372 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.546839 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.546914 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.546920 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.546928 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.558782 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.558835 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.558838 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.558845 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.577731 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.577787 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.577790 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.577797 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.602809 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.602863 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.602865 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.602878 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.622654 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.622692 database.go:75: [37m[DATABASE][0m GetAll [Weight_Store][[]] [main.db]
-2025/07/12 12:44:36.626338 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.626390 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.626393 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.626401 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.645563 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.645620 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.645622 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.645629 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.664423 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.664469 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.664472 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.664478 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.693898 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.693974 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.693977 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.693988 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.714943 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.715008 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.715011 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.715021 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.749073 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.749156 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.749159 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.749171 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.775949 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.776017 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.776020 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.776029 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.797718 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.797778 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.797780 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.797788 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.822482 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.822545 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.822548 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.822557 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.850044 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.850101 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.850103 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.850113 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.873468 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.873540 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.873543 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.873551 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.886366 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.886429 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.886432 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.886440 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.919608 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.919674 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.919677 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.919686 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.938606 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.938659 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.938665 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.938672 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.954373 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.954433 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.954436 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.954442 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:36.968192 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:36.968248 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:36.968250 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:36.968256 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:37.000853 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:37.000928 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:37.000930 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:37.000941 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:37.018505 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:37.018564 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:37.018567 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:37.018576 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:37.032303 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:37.032358 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:37.032361 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:37.032369 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:37.061444 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:37.061503 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:37.061505 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:37.061513 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:37.080409 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:37.080477 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:37.080480 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:37.080489 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:37.096124 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:37.096184 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:37.096186 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:37.096194 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:37.122359 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:37.122428 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
-2025/07/12 12:44:37.122432 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
-2025/07/12 12:44:37.122456 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
-2025/07/12 12:44:37.141637 database.go:101: [37m[DATABASE][0m Create [weightTag_Store] [main.db] - Start
-2025/07/12 12:44:37.141641 database_internal.go:104: [37m[DATABASE][0m validate [weightTag_Store] [main.db]
-2025/07/12 12:44:37.141654 database.go:107: [37m[DATABASE][0m Create [weightTag_Store] [main.db] - End
-2025/07/12 12:44:37.154672 database.go:101: [37m[DATABASE][0m Create [DateIndex] [main.db] - Start
-2025/07/12 12:44:37.154681 database_internal.go:104: [37m[DATABASE][0m validate [DateIndex] [main.db]
-2025/07/12 12:44:37.154692 database.go:107: [37m[DATABASE][0m Create [DateIndex] [main.db] - End
-2025/07/12 12:44:37.167831 database.go:75: [37m[DATABASE][0m GetAll [Weight_Store][[]] [main.db]
-2025/07/12 12:44:37.167919 database.go:75: [37m[DATABASE][0m GetAll [Weight_Store][[]] [main.db]
-2025/07/12 12:44:37.180242 database.go:75: [37m[DATABASE][0m GetAll [Store][[]] [main.db]
-2025/07/12 12:44:37.191990 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
-2025/07/12 12:44:37.197137 database.go:75: [37m[DATABASE][0m GetAll [Goal][[]] [main.db]
-2025/07/12 12:44:37.202691 database.go:75: [37m[DATABASE][0m GetAll [tag_Store][[]] [main.db]
-2025/07/12 12:44:37.207915 database.go:75: [37m[DATABASE][0m GetAll [WeightProjection][[]] [main.db]
-2025/07/12 12:44:37.215228 database.go:75: [37m[DATABASE][0m GetAll [weightTag_Store][[]] [main.db]
-2025/07/12 12:44:37.219586 database.go:75: [37m[DATABASE][0m GetAll [weightProjectionHistory_Store][[]] [main.db]
-2025/07/12 12:44:37.224959 database.go:75: [37m[DATABASE][0m GetAll [DateIndex][[]] [main.db]
+2025/07/13 10:22:23.494310 database_internal.go:30: [37m[DATABASE][0m Database Connection Pool Size [10]
+2025/07/13 10:22:23.503016 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (0)
+2025/07/13 10:22:23.503047 database_internal.go:47: [37m[DATABASE][0m [CONNECT] (re)Opening [main.db] data connection
+2025/07/13 10:22:23.503258 database_internal.go:54: [37m[DATABASE][0m [CONNECT]  Opening [main.db] data connection *{connection:<nil> Name:main databaseName:/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db initialised:false}*
+2025/07/13 10:22:23.548502 database_internal.go:64: [37m[DATABASE][0m [CONNECT]  Connection Pool [map[]]
+2025/07/13 10:22:23.548698 database_internal.go:80: [37m[DATABASE][0m [CONNECTIONPOOL] Adding [main] to connection pool (/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db)
+2025/07/13 10:22:23.548704 database_internal.go:86: [37m[DATABASE][0m [CONNECTIONPOOL] Connection pool [size=1]
+2025/07/13 10:22:23.548708 database_internal.go:70: [37m[DATABASE][0m [CONNECT]  Connection Pool [map[main:0x140003de180]]
+2025/07/13 10:22:23.548715 database_internal.go:72: [37m[DATABASE][0m [CONNECT]  Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json] true
+2025/07/13 10:22:23.548718 database_internal.go:74: [37m[DATABASE][0m [CONNECT] Opened [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db.db] data connection [codec=json] true
+2025/07/13 10:22:23.558369 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
+2025/07/13 10:22:23.558374 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.558377 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.558664 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
+2025/07/13 10:22:23.558667 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.558670 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.559096 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
+2025/07/13 10:22:23.559119 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.559204 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.559609 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
+2025/07/13 10:22:23.559612 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.559615 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.559865 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
+2025/07/13 10:22:23.559868 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.559870 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.560117 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
+2025/07/13 10:22:23.560121 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.560123 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.560349 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
+2025/07/13 10:22:23.560352 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.560354 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.560595 database_internal.go:36: [37m[DATABASE][0m [CONNECT] Opening Connection to [main.db] data (1)
+2025/07/13 10:22:23.560599 database_internal.go:39: [37m[DATABASE][0m [CONNECT] Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.560601 database_internal.go:43: [37m[DATABASE][0m [CONNECT] Connection already open [main], using connection pool [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.560656 database.go:75: [37m[DATABASE][0m GetAll [Store][[]] [main.db]
+2025/07/13 10:22:23.560724 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.560744 database.go:75: [37m[DATABASE][0m GetAll [tag_Store][[]] [main.db]
+2025/07/13 10:22:23.560762 database.go:75: [37m[DATABASE][0m GetAll [Goal][[]] [main.db]
+2025/07/13 10:22:23.560779 database.go:75: [37m[DATABASE][0m GetAll [Weight_Store][[]] [main.db]
+2025/07/13 10:22:23.560798 database.go:75: [37m[DATABASE][0m GetAll [WeightProjection][[]] [main.db]
+2025/07/13 10:22:23.560817 database.go:75: [37m[DATABASE][0m GetAll [weightTag_Store][[]] [main.db]
+2025/07/13 10:22:23.560836 database.go:75: [37m[DATABASE][0m GetAll [weightProjectionHistory_Store][[]] [main.db]
+2025/07/13 10:22:23.560855 database.go:75: [37m[DATABASE][0m GetAll [DateIndex][[]] [main.db]
+2025/07/13 10:22:23.565440 database.go:101: [37m[DATABASE][0m Create [Store] [main.db] - Start
+2025/07/13 10:22:23.565444 database_internal.go:104: [37m[DATABASE][0m validate [Store] [main.db]
+2025/07/13 10:22:23.565483 database.go:107: [37m[DATABASE][0m Create [Store] [main.db] - End
+2025/07/13 10:22:23.581614 userStore.go:31: [37m[DATABASE][0m Count User
+2025/07/13 10:22:23.581628 database.go:112: [37m[DATABASE][0m Count [Store] [main.db]
+2025/07/13 10:22:23.581633 database.go:114: [37m[DATABASE][0m Connection Pool [main] [/Volumes/External HD/Dev/GitHub/frantic-mass//data/database/frantic-mass-main.db] [codec=json]
+2025/07/13 10:22:23.581711 database.go:101: [37m[DATABASE][0m Create [baseline_Store] [main.db] - Start
+2025/07/13 10:22:23.581715 database_internal.go:104: [37m[DATABASE][0m validate [baseline_Store] [main.db]
+2025/07/13 10:22:23.581732 database.go:107: [37m[DATABASE][0m Create [baseline_Store] [main.db] - End
+2025/07/13 10:22:23.609215 database.go:101: [37m[DATABASE][0m Create [Goal] [main.db] - Start
+2025/07/13 10:22:23.609218 database_internal.go:104: [37m[DATABASE][0m validate [Goal] [main.db]
+2025/07/13 10:22:23.609233 database.go:107: [37m[DATABASE][0m Create [Goal] [main.db] - End
+2025/07/13 10:22:23.625685 database.go:101: [37m[DATABASE][0m Create [Goal] [main.db] - Start
+2025/07/13 10:22:23.625694 database_internal.go:104: [37m[DATABASE][0m validate [Goal] [main.db]
+2025/07/13 10:22:23.625702 database.go:107: [37m[DATABASE][0m Create [Goal] [main.db] - End
+2025/07/13 10:22:23.633690 database.go:101: [37m[DATABASE][0m Create [tag_Store] [main.db] - Start
+2025/07/13 10:22:23.633693 database_internal.go:104: [37m[DATABASE][0m validate [tag_Store] [main.db]
+2025/07/13 10:22:23.633715 database.go:107: [37m[DATABASE][0m Create [tag_Store] [main.db] - End
+2025/07/13 10:22:23.648053 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.648126 database.go:101: [37m[DATABASE][0m Create [Weight_Store] [main.db] - Start
+2025/07/13 10:22:23.648129 database_internal.go:104: [37m[DATABASE][0m validate [Weight_Store] [main.db]
+2025/07/13 10:22:23.648138 database.go:107: [37m[DATABASE][0m Create [Weight_Store] [main.db] - End
+2025/07/13 10:22:23.663130 database.go:101: [37m[DATABASE][0m Create [DateIndex] [main.db] - Start
+2025/07/13 10:22:23.663133 database_internal.go:104: [37m[DATABASE][0m validate [DateIndex] [main.db]
+2025/07/13 10:22:23.663143 database.go:107: [37m[DATABASE][0m Create [DateIndex] [main.db] - End
+2025/07/13 10:22:23.675765 database.go:75: [37m[DATABASE][0m GetAll [DateIndex][[]] [main.db]
+2025/07/13 10:22:23.675935 database.go:75: [37m[DATABASE][0m GetAll [DateIndex][[]] [main.db]
+2025/07/13 10:22:23.694931 database.go:75: [37m[DATABASE][0m GetAll [DateIndex][[]] [main.db]
+2025/07/13 10:22:23.694980 database.go:75: [37m[DATABASE][0m GetAll [Goal][[]] [main.db]
+2025/07/13 10:22:23.695043 database.go:75: [37m[DATABASE][0m GetAll [DateIndex][[]] [main.db]
+2025/07/13 10:22:23.695184 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.695254 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.695293 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.695296 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.695308 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.728931 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.728934 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.728949 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:23.736146 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.736207 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.736209 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.736217 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.753753 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.753756 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.753767 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:23.761941 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.761999 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.762002 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.762009 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.774374 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.774379 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.774390 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:23.783563 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.783622 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.783625 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.783633 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.808845 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.808850 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.808859 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:23.820513 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.820565 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.820567 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.820573 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.837549 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.837552 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.837561 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:23.845907 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.845987 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.845990 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.845998 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.857223 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.857228 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.857235 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:23.878620 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.878695 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.878698 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.878707 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.897170 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.897173 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.897184 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:23.906597 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.906674 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.906677 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.906684 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.917563 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.917566 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.917575 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:23.926961 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.927194 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.927199 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.927207 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.954601 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.954605 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.954613 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:23.971385 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:23.971446 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:23.971448 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:23.971454 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:23.988151 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:23.988155 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:23.988165 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.000127 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.000209 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.000211 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.000224 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.026434 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.026438 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.026453 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.048618 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.048676 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.048678 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.048684 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.060099 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.060104 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.060113 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.078351 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.078419 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.078423 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.078434 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.091473 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.091476 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.091488 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.101919 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.101980 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.101982 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.101990 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.125754 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.125757 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.125766 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.138784 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.138850 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.138853 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.138861 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.160556 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.160560 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.160572 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.168973 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.169033 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.169036 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.169045 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.182283 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.182286 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.182295 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.204504 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.204560 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.204562 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.204568 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.222589 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.222593 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.222603 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.234181 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.234228 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.234231 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.234237 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.247815 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.247817 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.247824 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.268959 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.269009 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.269012 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.269017 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.291074 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.291078 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.291086 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.301271 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.301334 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.301337 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.301344 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.315038 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.315041 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.315049 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.323467 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.323527 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.323530 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.323536 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.349308 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.349311 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.349321 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.362114 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.362172 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.362174 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.362181 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.375162 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.375165 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.375172 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.384531 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.384580 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.384582 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.384589 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.424499 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.424502 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.424510 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.452833 database.go:75: [37m[DATABASE][0m GetAll [DateIndex][[]] [main.db]
+2025/07/13 10:22:24.452889 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.452920 database.go:75: [37m[DATABASE][0m GetAll [Weight_Store][[]] [main.db]
+2025/07/13 10:22:24.456619 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.456675 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.456678 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.456687 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.477092 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.477095 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.477103 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.487939 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.487994 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.487996 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.488008 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.505689 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.505692 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.505699 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.530526 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.530582 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.530594 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.530601 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.543763 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.543765 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.543772 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.552485 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.552536 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.552538 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.552545 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.581868 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.581871 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.581880 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.596411 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.596474 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.596477 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.596483 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.612637 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.612639 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.612646 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.633704 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.633760 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.633763 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.633771 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.649628 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.649631 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.649639 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.658635 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.658681 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.658684 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.658690 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.685938 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.685944 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.685959 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.696507 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.696589 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.696592 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.696600 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.711942 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.711947 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.711964 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.724836 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.724909 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.724912 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.724920 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:24.846522 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:24.846527 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:24.846539 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:24.974052 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:24.975587 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:24.975591 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:24.975601 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.122607 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.122613 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.122632 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.225224 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.225299 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.225301 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.225311 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.364579 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.364584 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.364605 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.409617 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.409696 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.409699 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.409707 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.425193 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.425197 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.425207 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.435277 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.435330 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.435332 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.435339 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.468449 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.468452 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.468463 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.478133 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.478196 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.478199 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.478206 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.491721 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.491725 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.491733 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.503908 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.503961 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.503963 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.503970 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.538559 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.538561 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.538570 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.547568 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.547625 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.547627 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.547633 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.562603 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.562606 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.562614 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.571592 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.571648 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.571651 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.571658 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.602250 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.602253 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.602262 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.612186 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.612245 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.612248 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.612254 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.635329 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.635332 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.635340 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.656032 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.656088 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.656091 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.656098 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.679680 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.679682 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.679690 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.688280 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.688326 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.688329 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.688335 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.702842 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.702845 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.702852 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.725387 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.725434 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.725436 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.725446 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.743226 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.743229 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.743238 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.753428 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.753477 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.753479 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.753485 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.768019 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.768021 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.768029 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.790180 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.790228 database.go:101: [37m[DATABASE][0m Create [WeightProjection] [main.db] - Start
+2025/07/13 10:22:25.790230 database_internal.go:104: [37m[DATABASE][0m validate [WeightProjection] [main.db]
+2025/07/13 10:22:25.790236 database.go:107: [37m[DATABASE][0m Create [WeightProjection] [main.db] - End
+2025/07/13 10:22:25.804543 database.go:101: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - Start
+2025/07/13 10:22:25.804546 database_internal.go:104: [37m[DATABASE][0m validate [weightProjectionHistory_Store] [main.db]
+2025/07/13 10:22:25.804554 database.go:107: [37m[DATABASE][0m Create [weightProjectionHistory_Store] [main.db] - End
+2025/07/13 10:22:25.820368 database.go:101: [37m[DATABASE][0m Create [weightTag_Store] [main.db] - Start
+2025/07/13 10:22:25.820371 database_internal.go:104: [37m[DATABASE][0m validate [weightTag_Store] [main.db]
+2025/07/13 10:22:25.820381 database.go:107: [37m[DATABASE][0m Create [weightTag_Store] [main.db] - End
+2025/07/13 10:22:25.831778 database.go:75: [37m[DATABASE][0m GetAll [Weight_Store][[]] [main.db]
+2025/07/13 10:22:25.831867 database.go:75: [37m[DATABASE][0m GetAll [Weight_Store][[]] [main.db]
+2025/07/13 10:22:25.838135 database.go:75: [37m[DATABASE][0m GetAll [Store][[]] [main.db]
+2025/07/13 10:22:25.843389 database.go:75: [37m[DATABASE][0m GetAll [baseline_Store][[]] [main.db]
+2025/07/13 10:22:25.851103 database.go:75: [37m[DATABASE][0m GetAll [Goal][[]] [main.db]
+2025/07/13 10:22:25.856853 database.go:75: [37m[DATABASE][0m GetAll [tag_Store][[]] [main.db]
+2025/07/13 10:22:25.863980 database.go:75: [37m[DATABASE][0m GetAll [WeightProjection][[]] [main.db]
+2025/07/13 10:22:25.872769 database.go:75: [37m[DATABASE][0m GetAll [weightTag_Store][[]] [main.db]
+2025/07/13 10:22:25.880192 database.go:75: [37m[DATABASE][0m GetAll [weightProjectionHistory_Store][[]] [main.db]
+2025/07/13 10:22:25.889589 database.go:75: [37m[DATABASE][0m GetAll [DateIndex][[]] [main.db]

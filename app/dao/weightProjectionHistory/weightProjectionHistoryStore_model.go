@@ -23,8 +23,8 @@ type weightProjectionHistory_Store struct {
 	Raw   string      `storm:"unique"`              // raw ID before encoding
 	Audit audit.Audit `csv:"-"`                     // audit data
 	// Add your fields here
-	DateIndex        dateIndex.DateIndex               `storm:"index"` // Foreign key to DateIndex
-	WeightProjection weightProjection.WeightProjection ``              // Foreign key to WeightProjection
+	DateIndex        dateIndex.DateIndex               `` // Foreign key to DateIndex
+	WeightProjection weightProjection.WeightProjection `` // Foreign key to WeightProjection
 }
 
 // Define the field set as names

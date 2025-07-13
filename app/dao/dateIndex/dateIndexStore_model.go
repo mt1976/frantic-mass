@@ -11,6 +11,7 @@ package dateIndex
 import (
 	"time"
 
+	"github.com/mt1976/frantic-core/dao"
 	audit "github.com/mt1976/frantic-core/dao/audit"
 )
 
@@ -23,7 +24,8 @@ type DateIndex struct {
 	Raw   string      `storm:"unique"`              // raw ID before encoding
 	Audit audit.Audit `csv:"-"`                     // audit data
 	// Add your fields here
-	Date time.Time `storm:"unique,index"` // Date of the index
+	Date    time.Time     `storm:"unique,index"` // Date of the index
+	Current dao.StormBool `storm:"index"`        // Active status
 }
 
 // Define the field set as names
@@ -33,5 +35,6 @@ var (
 	FIELD_Raw   = "Raw"
 	FIELD_Audit = "Audit"
 	// Add your fields here
-	FIELD_Date = "Date"
+	FIELD_Date    = "Date"
+	FIELD_Current = "Current.State"
 )

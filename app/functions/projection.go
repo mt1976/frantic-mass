@@ -7,9 +7,11 @@ import (
 
 	"github.com/mt1976/frantic-core/logHandler"
 	baseline "github.com/mt1976/frantic-mass/app/dao/baseline"
+	"github.com/mt1976/frantic-mass/app/dao/dateIndex"
 	"github.com/mt1976/frantic-mass/app/dao/goal"
 	user "github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/dao/weightProjection"
+	"github.com/mt1976/frantic-mass/app/dao/weightProjectionHistory"
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
@@ -17,6 +19,16 @@ func BuildWeightGoalProjection(user user.Store, weight types.Weight, goal goal.G
 	// Projection function to create weight projections based on user baseline and goal.
 	// This function will create projections for the next n months based on the user's baseline and goal.
 	// It assumes that the user has a baseline set up and a goal defined.
+
+	// Get Today's date
+	today := Today()
+	logHandler.InfoLogger.Printf("Today's date is: %v", today)
+	// Get the Today DateIndex record
+	_, todayRecord, err := dateIndex.GetToday()
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error getting today's DateIndex record:", err)
+		return fmt.Errorf("error getting today's DateIndex: %v", err)
+	}
 
 	// Ensure the user has a baseline set up
 	if user.ID == 0 {
@@ -73,6 +85,14 @@ func BuildWeightGoalProjection(user user.Store, weight types.Weight, goal goal.G
 			return fmt.Errorf("error creating projection for user %d: %v", userID, newProjectionErr)
 		} else {
 			logHandler.InfoLogger.Printf("Projection Created:[%v]", np.CompositeID)
+		}
+		// Update the weight projection history
+		_, err = weightProjectionHistory.New(context.TODO(), todayRecord, np)
+		if err != nil {
+			logHandler.ErrorLogger.Println("Error creating weight projection history:", err)
+			return fmt.Errorf("error creating weight projection history for user %d: %v", userID, err)
+		} else {
+			logHandler.InfoLogger.Printf("Weight Projection History Created:[%v]", np.CompositeID)
 		}
 
 	}

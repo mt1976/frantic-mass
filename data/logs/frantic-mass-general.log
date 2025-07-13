@@ -1,150 +1,383 @@
-2025/07/12 12:44:36.061634 main.go:23: [97m[INFO][0m Start
-2025/07/12 12:44:36.066058 config.go:9: [97m[INFO][0m Configuration retrieval is not implemented yet
-2025/07/12 12:44:36.066379 main.go:28: [97m[INFO][0m Initialising Database Connections
-2025/07/12 12:44:36.066398 initialise.go:19: [97m[INFO][0m Initialising User DAO
-2025/07/12 12:44:36.100936 initialise.go:23: [97m[INFO][0m Initialising Baseline DAO
-2025/07/12 12:44:36.101360 initialise.go:26: [97m[INFO][0m Initialising Tag DAO
-2025/07/12 12:44:36.101640 initialise.go:29: [97m[INFO][0m Initialising Goal DAO
-2025/07/12 12:44:36.102279 initialise.go:32: [97m[INFO][0m Initialising Weight DAO
-2025/07/12 12:44:36.102558 initialise.go:35: [97m[INFO][0m Initialising WeightTag DAO
-2025/07/12 12:44:36.102816 initialise.go:38: [97m[INFO][0m Initialising WeightProjection DAO
-2025/07/12 12:44:36.103057 initialise.go:41: [97m[INFO][0m Initialising WeightProjectionHistory DAO
-2025/07/12 12:44:36.103288 initialise.go:44: [97m[INFO][0m Initialising DateIndex DAO
-2025/07/12 12:44:36.103543 initialise.go:47: [97m[INFO][0m Initialised all DAOs
-2025/07/12 12:44:36.103546 initialise.go:48: [97m[INFO][0m Initialised Functions
-2025/07/12 12:44:36.103550 initialise.go:50: [97m[INFO][0m Initialised Database Connections
-2025/07/12 12:44:36.103553 main.go:36: [97m[INFO][0m Database Connections Initialised Successfully
-2025/07/12 12:44:36.103562 main.go:38: [97m[INFO][0m Reset Database, clearing down existing records
-2025/07/12 12:44:36.103606 cleardown.go:24: [97m[INFO][0m User records cleared successfully
-2025/07/12 12:44:36.103654 cleardown.go:31: [97m[INFO][0m Baseline records cleared successfully
-2025/07/12 12:44:36.103677 cleardown.go:38: [97m[INFO][0m Tag records cleared successfully
-2025/07/12 12:44:36.103700 cleardown.go:45: [97m[INFO][0m Goal records cleared successfully
-2025/07/12 12:44:36.103720 cleardown.go:52: [97m[INFO][0m Weight records cleared successfully
-2025/07/12 12:44:36.103739 cleardown.go:59: [97m[INFO][0m Weight projection records cleared successfully
-2025/07/12 12:44:36.103757 cleardown.go:66: [97m[INFO][0m Weight tag records cleared successfully
-2025/07/12 12:44:36.103776 cleardown.go:73: [97m[INFO][0m Weight projection history records cleared successfully
-2025/07/12 12:44:36.103795 cleardown.go:80: [97m[INFO][0m Date index records cleared successfully
-2025/07/12 12:44:36.103802 cleardown.go:83: [97m[INFO][0m All records cleared successfully
-2025/07/12 12:44:36.103806 cleardown.go:84: [97m[INFO][0m End of cleardown function
-2025/07/12 12:44:36.103810 main.go:45: [97m[INFO][0m Database Cleared Successfully
-2025/07/12 12:44:36.103814 main.go:47: [97m[INFO][0m Creating User and related records
-2025/07/12 12:44:36.103833 weight.go:18: [97m[INFO][0m Setting weight: 114 kg
-2025/07/12 12:44:36.103839 main.go:56: [97m[INFO][0m Creating User with ID: 1001
-2025/07/12 12:44:36.151935 main.go:67: [97m[INFO][0m User Created:[{ID:100000 Key:25103711d5fb86d3bf180d93094283bd72fd4a2c4030322558267b6be6cdf636 Raw:250712124436103845000501089351 Audit:{CreatedAt:2025-07-12 12:44:36.103867 +0100 BST m=+0.049773168 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-12 12:44:36 Updates:[{UpdatedAt:2025-07-12 12:44:36.103867 +0100 BST m=+0.049773168 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-12 12:44:36 UpdateNotes:New User created user_1001@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:user_1001 Email:user_1001@example.com PasswordHash:password_1001}]
-2025/07/12 12:44:36.152018 main.go:85: [97m[INFO][0m Post Import:[1]
-2025/07/12 12:44:36.152025 main.go:88: [97m[INFO][0m Creating Baseline for UserID: 100000
-2025/07/12 12:44:36.166949 main.go:93: [97m[INFO][0m Baseline Created:[{ID:100000 Key:7d116e26c063ffb09ce3ad6cc3b30d8692db3ba71e378bc15990077e7dc0ce36 Raw:250712124436152031000501091121 Audit:{CreatedAt:2025-07-12 12:44:36.15204 +0100 BST m=+0.097946501 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-12 12:44:36 Updates:[{UpdatedAt:2025-07-12 12:44:36.15204 +0100 BST m=+0.097946501 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-12 12:44:36 UpdateNotes:New baseline created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:100000 Height:{Value:187.96} ProjectionPeriod:6 Note:BaselineFor100000}]
-2025/07/12 12:44:36.166987 main.go:96: [97m[INFO][0m Creating Goal for UserID: 100000
-2025/07/12 12:44:36.182590 main.go:102: [97m[INFO][0m Goal Created:[{ID:100000 Key:ae86b247499191d8f161c3e7bf0cb72bf967505e00eb45921088e7a245c91545 Raw:250712124436166993000501075072 Audit:{CreatedAt:2025-07-12 12:44:36.167001 +0100 BST m=+0.112907501 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-12 12:44:36 Updates:[{UpdatedAt:2025-07-12 12:44:36.167001 +0100 BST m=+0.112907501 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-12 12:44:36 UpdateNotes:New goal created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:100000 Name:GoalFor100000 TargetWeight:{Value:90} TargetBMI:{Value:0 Description: Glyph:} TargetDate:2025-08-11 12:44:36.166992 +0100 BST LossPerWeek:{Value:2} Note:This is a test goal to check the goal creation process CompositeID:100000/250712124436166993000501075072 NoProjections:0 AverageWeightLoss:{State:false}}]
-2025/07/12 12:44:36.191678 main.go:109: [97m[INFO][0m Average Goal Created:[{ID:100001 Key:ea6cb4b41d0d488a3c3a03cb9c63566d7bd03980ea6eeb8c7ab758b410fd0fa7 Raw:250712124436182621000501017593 Audit:{CreatedAt:2025-07-12 12:44:36.182637 +0100 BST m=+0.128543584 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-12 12:44:36 Updates:[{UpdatedAt:2025-07-12 12:44:36.182637 +0100 BST m=+0.128543584 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-12 12:44:36 UpdateNotes:New goal created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:100000 Name:AvgGoalFor100000 TargetWeight:{Value:90} TargetBMI:{Value:0 Description: Glyph:} TargetDate:2025-08-11 12:44:36.18262 +0100 BST LossPerWeek:{Value:0} Note:This is an average weight loss goal CompositeID:100000/250712124436182621000501017593 NoProjections:0 AverageWeightLoss:{State:true}}]
-2025/07/12 12:44:36.191694 main.go:112: [97m[INFO][0m Creating Tag
-2025/07/12 12:44:36.206417 main.go:117: [97m[INFO][0m Tag Created:[{ID:100000 Key:f2732bbc6a176db37b1c47c83f66baf6e2567f214635c2f3161f5a3ddc8bdbf4 Raw:250712124436191720000501089110 Audit:{CreatedAt:2025-07-12 12:44:36.191726 +0100 BST m=+0.137631709 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-12 12:44:36 Updates:[{UpdatedAt:2025-07-12 12:44:36.191726 +0100 BST m=+0.137631709 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-12 12:44:36 UpdateNotes:New tag created TagFor100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Name:TagFor100000}]
-2025/07/12 12:44:36.206431 main.go:120: [97m[INFO][0m Creating Weight for UserID: 100000
-2025/07/12 12:44:36.215792 main.go:125: [97m[INFO][0m Weight Created:[{ID:100000 Key:5ed5d7aa14f7c1d1ded67a3856d4520c3573bae78a4765d798ee9c1e0ac3da2a Raw:250712124436206437000501010176 Audit:{CreatedAt:2025-07-12 12:44:36.206492 +0100 BST m=+0.152398459 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-12 12:44:36 Updates:[{UpdatedAt:2025-07-12 12:44:36.206492 +0100 BST m=+0.152398459 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-12 12:44:36 UpdateNotes:New weight created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:100000 RecordedAt:2025-07-12 12:44:36.206437 +0100 BST m=+0.152342959 Weight:{Value:114} BMI:{Value:32.26814342598736 Description:Obese Glyph:🔴} Note:WeightFor 100000}]
-2025/07/12 12:44:36.215807 main.go:129: [97m[INFO][0m Rebuilding Weight Projections for UserID: 100000
-2025/07/12 12:44:36.215879 projection.go:102: [97m[INFO][0m Creating projections for UserID: 100000, GoalID: 100000
-2025/07/12 12:44:36.216041 projection.go:42: [97m[INFO][0m Creating 24 projections for UserID: 100000
-2025/07/12 12:44:36.216046 projection.go:60: [97m[INFO][0m Projection Period: 24 weeks, UserID: 100000, Weight: {114}, Goal Loss Per Week: {2}
-2025/07/12 12:44:36.242967 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮1�]
-2025/07/12 12:44:36.257713 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮2�]
-2025/07/12 12:44:36.269587 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮3�]
-2025/07/12 12:44:36.285318 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮4�]
-2025/07/12 12:44:36.297296 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮5�]
-2025/07/12 12:44:36.307136 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮6�]
-2025/07/12 12:44:36.335215 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮7�]
-2025/07/12 12:44:36.358139 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮8�]
-2025/07/12 12:44:36.374869 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮9�]
-2025/07/12 12:44:36.390112 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮10�]
-2025/07/12 12:44:36.401774 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮11�]
-2025/07/12 12:44:36.411205 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮12�]
-2025/07/12 12:44:36.434191 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮13�]
-2025/07/12 12:44:36.444211 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮14�]
-2025/07/12 12:44:36.473158 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮15�]
-2025/07/12 12:44:36.488197 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮16�]
-2025/07/12 12:44:36.503888 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮17�]
-2025/07/12 12:44:36.527210 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮18�]
-2025/07/12 12:44:36.546809 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮19�]
-2025/07/12 12:44:36.558760 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮20�]
-2025/07/12 12:44:36.577705 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮21�]
-2025/07/12 12:44:36.602784 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮22�]
-2025/07/12 12:44:36.622636 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100000⋮23�]
-2025/07/12 12:44:36.622643 projection.go:80: [97m[INFO][0m Successfully created 24 projections for UserID: 100000
-2025/07/12 12:44:36.622648 projection.go:102: [97m[INFO][0m Creating projections for UserID: 100000, GoalID: 100001
-2025/07/12 12:44:36.622686 projection.go:42: [97m[INFO][0m Creating 24 projections for UserID: 100000
-2025/07/12 12:44:36.622763 weight.go:18: [97m[INFO][0m Setting weight: 0 kg
-2025/07/12 12:44:36.622767 weight.go:18: [97m[INFO][0m Setting weight: 0 kg
-2025/07/12 12:44:36.622770 weight.go:41: [97m[INFO][0m Total weight mass for user 100000: 0 over 0 records
-2025/07/12 12:44:36.622774 weight.go:42: [97m[INFO][0m Total weight loss for user 100000: 0 over 0 records
-2025/07/12 12:44:36.622778 weight.go:43: [97m[INFO][0m Average weight loss for user 100000: NaN kg
-2025/07/12 12:44:36.622782 weight.go:45: [97m[INFO][0m Average weight loss for user 100000: 
-2025/07/12 12:44:36.622786 projection.go:53: [97m[INFO][0m Calculated weekly weight loss for user 100000: 0
-2025/07/12 12:44:36.626312 projection.go:60: [97m[INFO][0m Projection Period: 24 weeks, UserID: 100000, Weight: {114}, Goal Loss Per Week: {0}
-2025/07/12 12:44:36.645543 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮1�]
-2025/07/12 12:44:36.664407 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮2�]
-2025/07/12 12:44:36.693860 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮3�]
-2025/07/12 12:44:36.714914 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮4�]
-2025/07/12 12:44:36.749032 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮5�]
-2025/07/12 12:44:36.775916 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮6�]
-2025/07/12 12:44:36.797693 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮7�]
-2025/07/12 12:44:36.822449 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮8�]
-2025/07/12 12:44:36.850023 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮9�]
-2025/07/12 12:44:36.873440 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮10�]
-2025/07/12 12:44:36.886346 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮11�]
-2025/07/12 12:44:36.919577 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮12�]
-2025/07/12 12:44:36.938586 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮13�]
-2025/07/12 12:44:36.954348 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮14�]
-2025/07/12 12:44:36.968172 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮15�]
-2025/07/12 12:44:37.000819 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮16�]
-2025/07/12 12:44:37.018478 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮17�]
-2025/07/12 12:44:37.032281 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮18�]
-2025/07/12 12:44:37.061418 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮19�]
-2025/07/12 12:44:37.080380 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮20�]
-2025/07/12 12:44:37.096092 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮21�]
-2025/07/12 12:44:37.122324 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮22�]
-2025/07/12 12:44:37.141574 projection.go:75: [97m[INFO][0m Projection Created:[100000⋮100001⋮23�]
-2025/07/12 12:44:37.141584 projection.go:80: [97m[INFO][0m Successfully created 24 projections for UserID: 100000
-2025/07/12 12:44:37.141590 projection.go:110: [97m[INFO][0m Successfully created projections for UserID: 100000
-2025/07/12 12:44:37.141596 main.go:134: [97m[INFO][0m Weight projection rebuilt successfully
-2025/07/12 12:44:37.141604 main.go:136: [97m[INFO][0m Creating WeightTag for UserID: 100000
-2025/07/12 12:44:37.141609 main.go:138: [97m[INFO][0m Creating WeightTag
-2025/07/12 12:44:37.150980 main.go:143: [97m[INFO][0m WeightTag Created:[{ID:100000 Key:a50e61dccda310272aac606d2200966cc081da3fddabb7c56af8628942913da0 Raw:250712124437141613000501039781 Audit:{CreatedAt:2025-07-12 12:44:37.141621 +0100 BST m=+1.087526918 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-12 12:44:37 Updates:[{UpdatedAt:2025-07-12 12:44:37.141621 +0100 BST m=+1.087526918 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-12 12:44:37 UpdateNotes:New weightTag created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} WeightID:100000 TagID:100000}]
-2025/07/12 12:44:37.150999 main.go:150: [97m[INFO][0m Running DateIndex Job
-2025/07/12 12:44:37.154641 dateIndexStore_helpers.go:90: [97m[INFO][0m [dateIndexJob] Adding DateIndex for 2025-07-12 12:44:37.154639 +0100 BST m=+1.100545209
-2025/07/12 12:44:37.167639 dateIndexStore_helpers.go:95: [97m[INFO][0m [dateIndexJob] DateIndex for 2025-07-12 12:44:37.154639 +0100 BST m=+1.100545209 added successfully
-2025/07/12 12:44:37.167763 main.go:156: [97m[INFO][0m DateIndex created successfully
-2025/07/12 12:44:37.167773 main.go:159: [97m[INFO][0m HeightCM 187.96 cm
-2025/07/12 12:44:37.167781 main.go:160: [97m[INFO][0m HeightM 1.88 m
-2025/07/12 12:44:37.167788 main.go:162: [97m[INFO][0m HeightIN 74.00 in
-2025/07/12 12:44:37.167794 main.go:163: [97m[INFO][0m HeightFT 6 ft 2 in
-2025/07/12 12:44:37.167799 main.go:165: [97m[INFO][0m HeightString 187.96 cm
-2025/07/12 12:44:37.167804 main.go:167: [97m[INFO][0m WeightKg 114.00 kg
-2025/07/12 12:44:37.167810 main.go:168: [97m[INFO][0m WeightLbs 251.33 lbs
-2025/07/12 12:44:37.167816 main.go:170: [97m[INFO][0m WeightStone 17 st 13 lbs
-2025/07/12 12:44:37.167823 main.go:171: [97m[INFO][0m WeightString 114.00 kg
-2025/07/12 12:44:37.167886 weight.go:18: [97m[INFO][0m Setting weight: 0 kg
-2025/07/12 12:44:37.167891 weight.go:18: [97m[INFO][0m Setting weight: 0 kg
-2025/07/12 12:44:37.167893 weight.go:41: [97m[INFO][0m Total weight mass for user 100000: 0 over 0 records
-2025/07/12 12:44:37.167897 weight.go:42: [97m[INFO][0m Total weight loss for user 100000: 0 over 0 records
-2025/07/12 12:44:37.167901 weight.go:43: [97m[INFO][0m Average weight loss for user 100000: NaN kg
-2025/07/12 12:44:37.167905 weight.go:45: [97m[INFO][0m Average weight loss for user 100000: 
-2025/07/12 12:44:37.167909 main.go:177: [97m[INFO][0m Average Weight Loss for User 100000: 0
-2025/07/12 12:44:37.167914 main.go:180: [97m[INFO][0m Exporting Data
-2025/07/12 12:44:37.180233 export.go:22: [97m[INFO][0m Weight records exported successfully as CSV
-2025/07/12 12:44:37.191980 export.go:29: [97m[INFO][0m User records exported successfully as CSV
-2025/07/12 12:44:37.197127 export.go:36: [97m[INFO][0m Baseline records exported successfully as CSV
-2025/07/12 12:44:37.202685 export.go:43: [97m[INFO][0m Goal records exported successfully as CSV
-2025/07/12 12:44:37.207909 export.go:50: [97m[INFO][0m Tag records exported successfully as CSV
-2025/07/12 12:44:37.215215 export.go:57: [97m[INFO][0m Weight projection records exported successfully as CSV
-2025/07/12 12:44:37.219578 export.go:64: [97m[INFO][0m Weight tag records exported successfully as CSV
-2025/07/12 12:44:37.224952 export.go:70: [97m[INFO][0m Weight projection history records exported successfully as CSV
-2025/07/12 12:44:37.229891 export.go:76: [97m[INFO][0m Date index records exported successfully as CSV
-2025/07/12 12:44:37.229898 export.go:79: [97m[INFO][0m Data export completed successfully
-2025/07/12 12:44:37.229903 main.go:185: [97m[INFO][0m Data exported successfully
-2025/07/12 12:44:37.229910 main.go:187: [97m[INFO][0m Starting Jobs
-2025/07/12 12:44:37.229916 jobs.go:13: [97m[INFO][0m Starting Jobs
-2025/07/12 12:44:37.229921 jobs_init.go:18: [97m[INFO][0m [Schedule]  - Initialise - Started
-2025/07/12 12:44:37.229927 jobs_init.go:25: [97m[INFO][0m [Schedule] frantic-mass - Initialise - Complete
-2025/07/12 12:44:37.230019 jobs.go:24: [97m[INFO][0m Jobs started successfully
-2025/07/12 12:44:37.230024 main.go:192: [97m[INFO][0m Jobs started successfully
-2025/07/12 12:44:37.230031 main.go:195: [97m[INFO][0m All operations completed successfully
-2025/07/12 12:44:37.230036 main.go:196: [97m[INFO][0m End of main function
+2025/07/13 10:22:23.499398 main.go:24: [97m[INFO][0m Start
+2025/07/13 10:22:23.502440 config.go:9: [97m[INFO][0m Configuration retrieval is not implemented yet
+2025/07/13 10:22:23.502767 main.go:29: [97m[INFO][0m Initialising Database Connections
+2025/07/13 10:22:23.502773 initialise.go:19: [97m[INFO][0m Initialising User DAO
+2025/07/13 10:22:23.558037 initialise.go:23: [97m[INFO][0m Initialising Baseline DAO
+2025/07/13 10:22:23.558406 initialise.go:26: [97m[INFO][0m Initialising Tag DAO
+2025/07/13 10:22:23.558680 initialise.go:29: [97m[INFO][0m Initialising Goal DAO
+2025/07/13 10:22:23.559354 initialise.go:32: [97m[INFO][0m Initialising Weight DAO
+2025/07/13 10:22:23.559625 initialise.go:35: [97m[INFO][0m Initialising WeightTag DAO
+2025/07/13 10:22:23.559880 initialise.go:38: [97m[INFO][0m Initialising WeightProjection DAO
+2025/07/13 10:22:23.560132 initialise.go:41: [97m[INFO][0m Initialising WeightProjectionHistory DAO
+2025/07/13 10:22:23.560365 initialise.go:44: [97m[INFO][0m Initialising DateIndex DAO
+2025/07/13 10:22:23.560622 initialise.go:47: [97m[INFO][0m Initialised all DAOs
+2025/07/13 10:22:23.560626 initialise.go:48: [97m[INFO][0m Initialised Functions
+2025/07/13 10:22:23.560629 initialise.go:50: [97m[INFO][0m Initialised Database Connections
+2025/07/13 10:22:23.560633 main.go:37: [97m[INFO][0m Database Connections Initialised Successfully
+2025/07/13 10:22:23.560637 main.go:39: [97m[INFO][0m Reset Database, clearing down existing records
+2025/07/13 10:22:23.560705 cleardown.go:24: [97m[INFO][0m User records cleared successfully
+2025/07/13 10:22:23.560739 cleardown.go:31: [97m[INFO][0m Baseline records cleared successfully
+2025/07/13 10:22:23.560758 cleardown.go:38: [97m[INFO][0m Tag records cleared successfully
+2025/07/13 10:22:23.560775 cleardown.go:45: [97m[INFO][0m Goal records cleared successfully
+2025/07/13 10:22:23.560794 cleardown.go:52: [97m[INFO][0m Weight records cleared successfully
+2025/07/13 10:22:23.560812 cleardown.go:59: [97m[INFO][0m Weight projection records cleared successfully
+2025/07/13 10:22:23.560831 cleardown.go:66: [97m[INFO][0m Weight tag records cleared successfully
+2025/07/13 10:22:23.560851 cleardown.go:73: [97m[INFO][0m Weight projection history records cleared successfully
+2025/07/13 10:22:23.560870 cleardown.go:80: [97m[INFO][0m Date index records cleared successfully
+2025/07/13 10:22:23.560874 cleardown.go:83: [97m[INFO][0m All records cleared successfully
+2025/07/13 10:22:23.560880 cleardown.go:84: [97m[INFO][0m End of cleardown function
+2025/07/13 10:22:23.560884 main.go:46: [97m[INFO][0m Database Cleared Successfully
+2025/07/13 10:22:23.560888 main.go:48: [97m[INFO][0m Creating User and related records
+2025/07/13 10:22:23.560905 weight.go:18: [97m[INFO][0m Setting weight: 114 kg
+2025/07/13 10:22:23.560920 main.go:57: [97m[INFO][0m Creating User with ID: 1001
+2025/07/13 10:22:23.581578 main.go:68: [97m[INFO][0m User Created:[{ID:100000 Key:33cd6bae731b812f5a65d92ea44d139905d949421b59d5c2a1a0369915dff375 Raw:250713102223560926000501089351 Audit:{CreatedAt:2025-07-13 10:22:23.560948 +0100 BST m=+0.069706835 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-13 10:22:23 Updates:[{UpdatedAt:2025-07-13 10:22:23.560948 +0100 BST m=+0.069706835 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-13 10:22:23 UpdateNotes:New User created user_1001@example.com}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Username:user_1001 Email:user_1001@example.com PasswordHash:password_1001}]
+2025/07/13 10:22:23.581669 main.go:86: [97m[INFO][0m Post Import:[1]
+2025/07/13 10:22:23.581677 main.go:89: [97m[INFO][0m Creating Baseline for UserID: 100000
+2025/07/13 10:22:23.609116 main.go:94: [97m[INFO][0m Baseline Created:[{ID:100000 Key:f8fb4f9b06112b260b28452085aab177c1c8d6ded66f3efb470b15a04b1d624e Raw:250713102223581683000501091121 Audit:{CreatedAt:2025-07-13 10:22:23.581692 +0100 BST m=+0.090450835 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-13 10:22:23 Updates:[{UpdatedAt:2025-07-13 10:22:23.581692 +0100 BST m=+0.090450835 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-13 10:22:23 UpdateNotes:New baseline created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:100000 Height:{Value:187.96} ProjectionPeriod:6 Note:BaselineFor100000}]
+2025/07/13 10:22:23.609158 main.go:97: [97m[INFO][0m Creating Goal for UserID: 100000
+2025/07/13 10:22:23.625639 main.go:103: [97m[INFO][0m Goal Created:[{ID:100000 Key:830fcfbede14bf1b40cc8f342b226f03112dfaa55f065186f53e460e89b2e873 Raw:250713102223609165000501075072 Audit:{CreatedAt:2025-07-13 10:22:23.609173 +0100 BST m=+0.117932835 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-13 10:22:23 Updates:[{UpdatedAt:2025-07-13 10:22:23.609173 +0100 BST m=+0.117932835 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-13 10:22:23 UpdateNotes:New goal created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:100000 Name:GoalFor100000 TargetWeight:{Value:90} TargetBMI:{Value:0 Description: Glyph:} TargetDate:2025-08-12 10:22:23.609164 +0100 BST LossPerWeek:{Value:2} Note:This is a test goal to check the goal creation process CompositeID:100000/250713102223609165000501075072 NoProjections:0 AverageWeightLoss:{State:false}}]
+2025/07/13 10:22:23.633625 main.go:110: [97m[INFO][0m Average Goal Created:[{ID:100001 Key:c922d34a684b29501e140906406b0dad2a1d02c22df6938d0df5cd6daf36d67e Raw:250713102223625664000501017593 Audit:{CreatedAt:2025-07-13 10:22:23.62567 +0100 BST m=+0.134429793 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-13 10:22:23 Updates:[{UpdatedAt:2025-07-13 10:22:23.62567 +0100 BST m=+0.134429793 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-13 10:22:23 UpdateNotes:New goal created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:100000 Name:AvgGoalFor100000 TargetWeight:{Value:90} TargetBMI:{Value:0 Description: Glyph:} TargetDate:2025-08-12 10:22:23.625663 +0100 BST LossPerWeek:{Value:0} Note:This is an average weight loss goal CompositeID:100000/250713102223625664000501017593 NoProjections:0 AverageWeightLoss:{State:true}}]
+2025/07/13 10:22:23.633657 main.go:113: [97m[INFO][0m Creating Tag
+2025/07/13 10:22:23.648020 main.go:118: [97m[INFO][0m Tag Created:[{ID:100000 Key:9555d454403ac5133bd0747ca0bfed57f622cbc35ca03bbe403ce941ca4dbc98 Raw:250713102223633673000501089110 Audit:{CreatedAt:2025-07-13 10:22:23.633677 +0100 BST m=+0.142436876 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-13 10:22:23 Updates:[{UpdatedAt:2025-07-13 10:22:23.633677 +0100 BST m=+0.142436876 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-13 10:22:23 UpdateNotes:New tag created TagFor100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Name:TagFor100000}]
+2025/07/13 10:22:23.648039 main.go:121: [97m[INFO][0m Creating Weight for UserID: 100000
+2025/07/13 10:22:23.659181 main.go:126: [97m[INFO][0m Weight Created:[{ID:100000 Key:17cbca1337708bbe7118f4b0c065e5de271da37940fb16b58f0608c10aa5f554 Raw:250713102223648045000501010176 Audit:{CreatedAt:2025-07-13 10:22:23.648103 +0100 BST m=+0.156862168 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-13 10:22:23 Updates:[{UpdatedAt:2025-07-13 10:22:23.648103 +0100 BST m=+0.156862168 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-13 10:22:23 UpdateNotes:New weight created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} UserID:100000 RecordedAt:2025-07-13 10:22:23.648044 +0100 BST m=+0.156803626 Weight:{Value:114} BMI:{Value:32.26814342598736 Description:Obese Glyph:🔴} Note:WeightFor 100000}]
+2025/07/13 10:22:23.659198 main.go:133: [97m[INFO][0m Running DateIndex Job
+2025/07/13 10:22:23.663093 dateIndexStore_helpers.go:70: [97m[INFO][0m [dateIndexJob] Adding DateIndex for 2025-07-13 01:00:00 +0100 BST
+2025/07/13 10:22:23.675757 dateIndexStore_helpers.go:75: [97m[INFO][0m [dateIndexJob] DateIndex for 2025-07-13 01:00:00 +0100 BST added successfully
+2025/07/13 10:22:23.675929 main.go:139: [97m[INFO][0m DateIndexs created successfully
+2025/07/13 10:22:23.694963 main.go:148: [97m[INFO][0m Today's DateIndex: {ID:100000 Key:b90ccc02f51bea469bfc9f1f6d08f34a6449b089bef88a511a4b4ede513927ec Raw:250713102223663101000501059883 Audit:{CreatedAt:2025-07-13 10:22:23.663117 +0100 BST CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-13 10:22:23 Updates:[{UpdatedAt:2025-07-13 10:22:23.663117 +0100 BST UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-13 10:22:23 UpdateNotes:New dateIndex created 2025-07-13 01:00:00 +0100 BST}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} Date:2025-07-13 01:00:00 +0100 BST Current:{State:true}} [100000]
+2025/07/13 10:22:23.694973 main.go:154: [97m[INFO][0m Rebuilding Weight Projections for UserID: 100000
+2025/07/13 10:22:23.695028 projection.go:122: [97m[INFO][0m Creating projections for UserID: 100000, GoalID: 100000
+2025/07/13 10:22:23.695034 projection.go:25: [97m[INFO][0m Today's date is: 2025-07-13 01:00:00 +0100 BST
+2025/07/13 10:22:23.695209 projection.go:54: [97m[INFO][0m Creating 24 projections for UserID: 100000
+2025/07/13 10:22:23.695214 projection.go:72: [97m[INFO][0m Projection Period: 24 weeks, UserID: 100000, Weight: {114}, Goal Loss Per Week: {2}
+2025/07/13 10:22:23.695230 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.695237 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.695242 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [1]
+2025/07/13 10:22:23.695245 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮1]
+2025/07/13 10:22:23.728873 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮1]
+2025/07/13 10:22:23.736091 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮1]
+2025/07/13 10:22:23.736119 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.736127 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.736132 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [2]
+2025/07/13 10:22:23.736135 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮2]
+2025/07/13 10:22:23.753709 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮2]
+2025/07/13 10:22:23.761902 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮2]
+2025/07/13 10:22:23.761918 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.761923 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.761928 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [3]
+2025/07/13 10:22:23.761931 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮3]
+2025/07/13 10:22:23.774202 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮3]
+2025/07/13 10:22:23.783519 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮3]
+2025/07/13 10:22:23.783540 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.783546 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.783551 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [4]
+2025/07/13 10:22:23.783554 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮4]
+2025/07/13 10:22:23.808805 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮4]
+2025/07/13 10:22:23.820475 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮4]
+2025/07/13 10:22:23.820493 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.820498 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.820502 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [5]
+2025/07/13 10:22:23.820504 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮5]
+2025/07/13 10:22:23.837503 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮5]
+2025/07/13 10:22:23.845743 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮5]
+2025/07/13 10:22:23.845774 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.845832 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.845886 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [6]
+2025/07/13 10:22:23.845891 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮6]
+2025/07/13 10:22:23.857184 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮6]
+2025/07/13 10:22:23.878561 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮6]
+2025/07/13 10:22:23.878588 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.878595 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.878599 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [7]
+2025/07/13 10:22:23.878602 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮7]
+2025/07/13 10:22:23.897128 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮7]
+2025/07/13 10:22:23.906556 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮7]
+2025/07/13 10:22:23.906572 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.906578 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.906582 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [8]
+2025/07/13 10:22:23.906586 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮8]
+2025/07/13 10:22:23.917512 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮8]
+2025/07/13 10:22:23.926915 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮8]
+2025/07/13 10:22:23.926932 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.926939 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.926945 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [9]
+2025/07/13 10:22:23.926948 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮9]
+2025/07/13 10:22:23.954562 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮9]
+2025/07/13 10:22:23.971339 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮9]
+2025/07/13 10:22:23.971358 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.971364 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:23.971369 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [10]
+2025/07/13 10:22:23.971372 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮10]
+2025/07/13 10:22:23.988093 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮10]
+2025/07/13 10:22:24.000059 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮10]
+2025/07/13 10:22:24.000095 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.000104 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.000108 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [11]
+2025/07/13 10:22:24.000114 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮11]
+2025/07/13 10:22:24.026380 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮11]
+2025/07/13 10:22:24.048566 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮11]
+2025/07/13 10:22:24.048591 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.048597 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.048602 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [12]
+2025/07/13 10:22:24.048605 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮12]
+2025/07/13 10:22:24.060023 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮12]
+2025/07/13 10:22:24.078298 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮12]
+2025/07/13 10:22:24.078324 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.078331 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.078335 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [13]
+2025/07/13 10:22:24.078338 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮13]
+2025/07/13 10:22:24.091417 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮13]
+2025/07/13 10:22:24.101866 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮13]
+2025/07/13 10:22:24.101889 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.101896 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.101901 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [14]
+2025/07/13 10:22:24.101904 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮14]
+2025/07/13 10:22:24.125715 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮14]
+2025/07/13 10:22:24.138726 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮14]
+2025/07/13 10:22:24.138752 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.138760 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.138770 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [15]
+2025/07/13 10:22:24.138774 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮15]
+2025/07/13 10:22:24.160490 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮15]
+2025/07/13 10:22:24.168926 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮15]
+2025/07/13 10:22:24.168946 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.168953 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.168958 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [16]
+2025/07/13 10:22:24.168961 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮16]
+2025/07/13 10:22:24.182247 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮16]
+2025/07/13 10:22:24.204467 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮16]
+2025/07/13 10:22:24.204485 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.204490 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.204493 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [17]
+2025/07/13 10:22:24.204496 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮17]
+2025/07/13 10:22:24.222540 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮17]
+2025/07/13 10:22:24.234145 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮17]
+2025/07/13 10:22:24.234159 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.234165 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.234169 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [18]
+2025/07/13 10:22:24.234173 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮18]
+2025/07/13 10:22:24.247783 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮18]
+2025/07/13 10:22:24.268922 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮18]
+2025/07/13 10:22:24.268935 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.268942 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.268946 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [19]
+2025/07/13 10:22:24.268950 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮19]
+2025/07/13 10:22:24.291033 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮19]
+2025/07/13 10:22:24.301225 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮19]
+2025/07/13 10:22:24.301244 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.301251 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.301257 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [20]
+2025/07/13 10:22:24.301260 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮20]
+2025/07/13 10:22:24.315002 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮20]
+2025/07/13 10:22:24.323426 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮20]
+2025/07/13 10:22:24.323443 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.323449 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.323454 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [21]
+2025/07/13 10:22:24.323458 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮21]
+2025/07/13 10:22:24.349258 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮21]
+2025/07/13 10:22:24.362072 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮21]
+2025/07/13 10:22:24.362088 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.362094 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.362098 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [22]
+2025/07/13 10:22:24.362102 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮22]
+2025/07/13 10:22:24.375126 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮22]
+2025/07/13 10:22:24.384496 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮22]
+2025/07/13 10:22:24.384511 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.384516 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.384520 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [23]
+2025/07/13 10:22:24.384522 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100000⋮23]
+2025/07/13 10:22:24.424467 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100000⋮23]
+2025/07/13 10:22:24.452795 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100000⋮23]
+2025/07/13 10:22:24.452808 projection.go:100: [97m[INFO][0m Successfully created 24 projections for UserID: 100000
+2025/07/13 10:22:24.452814 projection.go:122: [97m[INFO][0m Creating projections for UserID: 100000, GoalID: 100001
+2025/07/13 10:22:24.452819 projection.go:25: [97m[INFO][0m Today's date is: 2025-07-13 01:00:00 +0100 BST
+2025/07/13 10:22:24.452914 projection.go:54: [97m[INFO][0m Creating 24 projections for UserID: 100000
+2025/07/13 10:22:24.452996 weight.go:18: [97m[INFO][0m Setting weight: 0 kg
+2025/07/13 10:22:24.453001 weight.go:18: [97m[INFO][0m Setting weight: 0 kg
+2025/07/13 10:22:24.453004 weight.go:41: [97m[INFO][0m Total weight mass for user 100000: 0 over 0 records
+2025/07/13 10:22:24.453009 weight.go:42: [97m[INFO][0m Total weight loss for user 100000: 0 over 0 records
+2025/07/13 10:22:24.453013 weight.go:43: [97m[INFO][0m Average weight loss for user 100000: NaN kg
+2025/07/13 10:22:24.453019 weight.go:45: [97m[INFO][0m Average weight loss for user 100000: 
+2025/07/13 10:22:24.453024 projection.go:65: [97m[INFO][0m Calculated weekly weight loss for user 100000: 0
+2025/07/13 10:22:24.456563 projection.go:72: [97m[INFO][0m Projection Period: 24 weeks, UserID: 100000, Weight: {114}, Goal Loss Per Week: {0}
+2025/07/13 10:22:24.456589 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.456598 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.456605 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [1]
+2025/07/13 10:22:24.456608 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮1]
+2025/07/13 10:22:24.477056 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮1]
+2025/07/13 10:22:24.487894 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮1]
+2025/07/13 10:22:24.487913 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.487920 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.487925 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [2]
+2025/07/13 10:22:24.487929 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮2]
+2025/07/13 10:22:24.505654 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮2]
+2025/07/13 10:22:24.530485 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮2]
+2025/07/13 10:22:24.530503 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.530509 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.530514 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [3]
+2025/07/13 10:22:24.530517 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮3]
+2025/07/13 10:22:24.543728 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮3]
+2025/07/13 10:22:24.552440 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮3]
+2025/07/13 10:22:24.552460 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.552467 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.552471 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [4]
+2025/07/13 10:22:24.552476 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮4]
+2025/07/13 10:22:24.581818 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮4]
+2025/07/13 10:22:24.596370 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮4]
+2025/07/13 10:22:24.596386 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.596393 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.596397 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [5]
+2025/07/13 10:22:24.596400 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮5]
+2025/07/13 10:22:24.612607 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮5]
+2025/07/13 10:22:24.633653 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮5]
+2025/07/13 10:22:24.633676 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.633683 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.633687 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [6]
+2025/07/13 10:22:24.633691 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮6]
+2025/07/13 10:22:24.649600 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮6]
+2025/07/13 10:22:24.658593 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮6]
+2025/07/13 10:22:24.658608 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.658619 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.658624 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [7]
+2025/07/13 10:22:24.658627 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮7]
+2025/07/13 10:22:24.685868 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮7]
+2025/07/13 10:22:24.696399 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮7]
+2025/07/13 10:22:24.696441 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.696480 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.696491 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [8]
+2025/07/13 10:22:24.696494 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮8]
+2025/07/13 10:22:24.711870 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮8]
+2025/07/13 10:22:24.724778 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮8]
+2025/07/13 10:22:24.724801 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.724808 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.724821 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [9]
+2025/07/13 10:22:24.724825 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮9]
+2025/07/13 10:22:24.846465 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮9]
+2025/07/13 10:22:24.973982 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮9]
+2025/07/13 10:22:24.974016 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:24.974026 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:24.974032 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [10]
+2025/07/13 10:22:24.974036 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮10]
+2025/07/13 10:22:25.122512 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮10]
+2025/07/13 10:22:25.225159 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮10]
+2025/07/13 10:22:25.225197 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.225205 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.225209 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [11]
+2025/07/13 10:22:25.225212 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮11]
+2025/07/13 10:22:25.364491 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮11]
+2025/07/13 10:22:25.409562 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮11]
+2025/07/13 10:22:25.409586 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.409592 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.409597 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [12]
+2025/07/13 10:22:25.409600 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮12]
+2025/07/13 10:22:25.425152 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮12]
+2025/07/13 10:22:25.435241 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮12]
+2025/07/13 10:22:25.435254 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.435260 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.435265 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [13]
+2025/07/13 10:22:25.435268 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮13]
+2025/07/13 10:22:25.468403 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮13]
+2025/07/13 10:22:25.478094 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮13]
+2025/07/13 10:22:25.478111 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.478116 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.478121 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [14]
+2025/07/13 10:22:25.478125 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮14]
+2025/07/13 10:22:25.491690 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮14]
+2025/07/13 10:22:25.503872 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮14]
+2025/07/13 10:22:25.503887 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.503892 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.503897 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [15]
+2025/07/13 10:22:25.503900 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮15]
+2025/07/13 10:22:25.538522 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮15]
+2025/07/13 10:22:25.547532 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮15]
+2025/07/13 10:22:25.547545 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.547551 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.547556 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [16]
+2025/07/13 10:22:25.547559 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮16]
+2025/07/13 10:22:25.562573 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮16]
+2025/07/13 10:22:25.571550 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮16]
+2025/07/13 10:22:25.571568 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.571574 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.571580 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [17]
+2025/07/13 10:22:25.571583 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮17]
+2025/07/13 10:22:25.602211 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮17]
+2025/07/13 10:22:25.612142 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮17]
+2025/07/13 10:22:25.612159 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.612165 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.612172 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [18]
+2025/07/13 10:22:25.612176 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮18]
+2025/07/13 10:22:25.635294 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮18]
+2025/07/13 10:22:25.655996 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮18]
+2025/07/13 10:22:25.656009 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.656015 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.656019 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [19]
+2025/07/13 10:22:25.656022 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮19]
+2025/07/13 10:22:25.679573 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮19]
+2025/07/13 10:22:25.688245 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮19]
+2025/07/13 10:22:25.688259 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.688265 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.688269 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [20]
+2025/07/13 10:22:25.688271 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮20]
+2025/07/13 10:22:25.702810 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮20]
+2025/07/13 10:22:25.725345 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮20]
+2025/07/13 10:22:25.725361 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.725367 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.725372 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [21]
+2025/07/13 10:22:25.725375 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮21]
+2025/07/13 10:22:25.743194 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮21]
+2025/07/13 10:22:25.753392 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮21]
+2025/07/13 10:22:25.753407 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.753412 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.753416 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [22]
+2025/07/13 10:22:25.753420 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮22]
+2025/07/13 10:22:25.767984 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮22]
+2025/07/13 10:22:25.790147 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮22]
+2025/07/13 10:22:25.790160 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100000]
+2025/07/13 10:22:25.790165 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [100001]
+2025/07/13 10:22:25.790169 compositeID.go:26: [97m[INFO][0m Adding part to composite ID: [23]
+2025/07/13 10:22:25.790172 compositeID.go:34: [97m[INFO][0m Composite ID created: [100000⋮100001⋮23]
+2025/07/13 10:22:25.804513 projection.go:87: [97m[INFO][0m Projection Created:[100000⋮100001⋮23]
+2025/07/13 10:22:25.820321 projection.go:95: [97m[INFO][0m Weight Projection History Created:[100000⋮100001⋮23]
+2025/07/13 10:22:25.820327 projection.go:100: [97m[INFO][0m Successfully created 24 projections for UserID: 100000
+2025/07/13 10:22:25.820332 projection.go:130: [97m[INFO][0m Successfully created projections for UserID: 100000
+2025/07/13 10:22:25.820336 main.go:159: [97m[INFO][0m Weight projection rebuilt successfully
+2025/07/13 10:22:25.820342 main.go:161: [97m[INFO][0m Creating WeightTag for UserID: 100000
+2025/07/13 10:22:25.820346 main.go:163: [97m[INFO][0m Creating WeightTag
+2025/07/13 10:22:25.831711 main.go:168: [97m[INFO][0m WeightTag Created:[{ID:100000 Key:4c268b66cb086e50b6d2ae59127645a09ba8cbbca307898ad0cfc0407428d672 Raw:250713102225820351000501052805 Audit:{CreatedAt:2025-07-13 10:22:25.820356 +0100 BST m=+2.329123376 CreatedBy:sys_service CreatedOn:orion CreatedAtDisplay:2025-07-13 10:22:25 Updates:[{UpdatedAt:2025-07-13 10:22:25.820356 +0100 BST m=+2.329123376 UpdateAction:CREA UpdatedBy:sys_service UpdatedOn:orion UpdatedAtDisplay:2025-07-13 10:22:25 UpdateNotes:New weightTag created 100000}] DeletedAt:0001-01-01 00:00:00 +0000 UTC DeletedBy: DeletedOn: DeletedAtDisplay: AuditSequence:1 DBVersion:1} WeightID:100000 TagID:100000}]
+2025/07/13 10:22:25.831726 main.go:171: [97m[INFO][0m HeightCM 187.96 cm
+2025/07/13 10:22:25.831731 main.go:172: [97m[INFO][0m HeightM 1.88 m
+2025/07/13 10:22:25.831737 main.go:174: [97m[INFO][0m HeightIN 74.00 in
+2025/07/13 10:22:25.831743 main.go:175: [97m[INFO][0m HeightFT 6 ft 2 in
+2025/07/13 10:22:25.831749 main.go:177: [97m[INFO][0m HeightString 187.96 cm
+2025/07/13 10:22:25.831754 main.go:179: [97m[INFO][0m WeightKg 114.00 kg
+2025/07/13 10:22:25.831760 main.go:180: [97m[INFO][0m WeightLbs 251.33 lbs
+2025/07/13 10:22:25.831765 main.go:182: [97m[INFO][0m WeightStone 17 st 13 lbs
+2025/07/13 10:22:25.831771 main.go:183: [97m[INFO][0m WeightString 114.00 kg
+2025/07/13 10:22:25.831829 weight.go:18: [97m[INFO][0m Setting weight: 0 kg
+2025/07/13 10:22:25.831833 weight.go:18: [97m[INFO][0m Setting weight: 0 kg
+2025/07/13 10:22:25.831836 weight.go:41: [97m[INFO][0m Total weight mass for user 100000: 0 over 0 records
+2025/07/13 10:22:25.831840 weight.go:42: [97m[INFO][0m Total weight loss for user 100000: 0 over 0 records
+2025/07/13 10:22:25.831844 weight.go:43: [97m[INFO][0m Average weight loss for user 100000: NaN kg
+2025/07/13 10:22:25.831849 weight.go:45: [97m[INFO][0m Average weight loss for user 100000: 
+2025/07/13 10:22:25.831854 main.go:189: [97m[INFO][0m Average Weight Loss for User 100000: 0
+2025/07/13 10:22:25.831861 main.go:192: [97m[INFO][0m Exporting Data
+2025/07/13 10:22:25.838130 export.go:22: [97m[INFO][0m Weight records exported successfully as CSV
+2025/07/13 10:22:25.843384 export.go:29: [97m[INFO][0m User records exported successfully as CSV
+2025/07/13 10:22:25.851098 export.go:36: [97m[INFO][0m Baseline records exported successfully as CSV
+2025/07/13 10:22:25.856849 export.go:43: [97m[INFO][0m Goal records exported successfully as CSV
+2025/07/13 10:22:25.863974 export.go:50: [97m[INFO][0m Tag records exported successfully as CSV
+2025/07/13 10:22:25.872763 export.go:57: [97m[INFO][0m Weight projection records exported successfully as CSV
+2025/07/13 10:22:25.880187 export.go:64: [97m[INFO][0m Weight tag records exported successfully as CSV
+2025/07/13 10:22:25.889583 export.go:70: [97m[INFO][0m Weight projection history records exported successfully as CSV
+2025/07/13 10:22:25.891064 export.go:76: [97m[INFO][0m Date index records exported successfully as CSV
+2025/07/13 10:22:25.891068 export.go:79: [97m[INFO][0m Data export completed successfully
+2025/07/13 10:22:25.891072 main.go:197: [97m[INFO][0m Data exported successfully
+2025/07/13 10:22:25.891092 main.go:199: [97m[INFO][0m Starting Jobs
+2025/07/13 10:22:25.891106 jobs.go:13: [97m[INFO][0m Starting Jobs
+2025/07/13 10:22:25.891111 jobs_init.go:18: [97m[INFO][0m [Schedule]  - Initialise - Started
+2025/07/13 10:22:25.891117 jobs_init.go:25: [97m[INFO][0m [Schedule] frantic-mass - Initialise - Complete
+2025/07/13 10:22:25.891207 jobs.go:24: [97m[INFO][0m Jobs started successfully
+2025/07/13 10:22:25.891210 main.go:204: [97m[INFO][0m Jobs started successfully
+2025/07/13 10:22:25.891215 main.go:207: [97m[INFO][0m All operations completed successfully
+2025/07/13 10:22:25.891221 main.go:208: [97m[INFO][0m End of main function
