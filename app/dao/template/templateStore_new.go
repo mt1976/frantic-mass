@@ -22,7 +22,10 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func New(ctx context.Context, field1 int, field2 string) (Template_Store, error) {
+func New() Template_Store {
+	return Template_Store{}
+}
+func Create(ctx context.Context, field1 int, field2 string) (Template_Store, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

@@ -95,7 +95,7 @@ func BuildWeightGoalProjection(user user.User, weight types.Weight, goal goal.Go
 		toGoal := goal.TargetWeight.Minus(trackingWeight) // Calculate the total weight loss needed to reach the goal
 		toGoal = *toGoal.Invert()
 
-		np, newProjectionErr := weightProjection.New(context.TODO(), userID, goal.ID, j, trackingWeight, weeklyWeightLoss, when, fmt.Sprintf("Projection For_%v/%v @ %v", userID, j, weeklyWeightLoss.Value), vstarget, toGoal)
+		np, newProjectionErr := weightProjection.Create(context.TODO(), userID, goal.ID, j, trackingWeight, weeklyWeightLoss, when, fmt.Sprintf("Projection For_%v/%v @ %v", userID, j, weeklyWeightLoss.Value), vstarget, toGoal)
 		if newProjectionErr != nil {
 			logHandler.ErrorLogger.Println(newProjectionErr)
 			return fmt.Errorf("error creating projection for user %d: %v", userID, newProjectionErr)
@@ -103,7 +103,7 @@ func BuildWeightGoalProjection(user user.User, weight types.Weight, goal goal.Go
 			logHandler.InfoLogger.Printf("Projection Created:[%v]", np.CompositeID)
 		}
 		// Update the weight projection history
-		_, err = weightProjectionHistory.New(context.TODO(), todayRecord, np)
+		_, err = weightProjectionHistory.Create(context.TODO(), todayRecord, np)
 		if err != nil {
 			logHandler.ErrorLogger.Println("Error creating weight projection history:", err)
 			return fmt.Errorf("error creating weight projection history for user %d: %v", userID, err)

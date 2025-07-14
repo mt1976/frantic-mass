@@ -42,7 +42,7 @@ func tempalteImportProcessor(inOriginal **DateIndex) (string, error) {
 
 	stringField1 := strconv.Itoa(importedData.Date.Year()) + "-" + strconv.Itoa(int(importedData.Date.Month())) + "-" + strconv.Itoa(importedData.Date.Day())
 
-	_, err := New(context.TODO(), importedData.Date)
+	_, err := Create(context.TODO(), importedData.Date)
 	if err != nil {
 		logHandler.ImportLogger.Panicf("Error importing %v: %v", domain, err.Error())
 		return stringField1, err

@@ -42,7 +42,7 @@ func tempalteImportProcessor(inOriginal **Template_Store) (string, error) {
 
 	stringField1 := strconv.Itoa(importedData.Field1)
 
-	_, err := New(context.TODO(), importedData.Field1, importedData.Field2)
+	_, err := Create(context.TODO(), importedData.Field1, importedData.Field2)
 	if err != nil {
 		logHandler.ImportLogger.Panicf("Error importing %v: %v", domain, err.Error())
 		return stringField1, err

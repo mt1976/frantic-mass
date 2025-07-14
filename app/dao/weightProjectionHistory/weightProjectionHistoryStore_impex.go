@@ -41,7 +41,7 @@ func tempalteImportProcessor(inOriginal **WeightProjectionHistory) (string, erro
 
 	stringField1 := importedData.Raw
 
-	_, err := New(context.TODO(), importedData.DateIndex, importedData.WeightProjection)
+	_, err := Create(context.TODO(), importedData.DateIndex, importedData.WeightProjection)
 	if err != nil {
 		logHandler.ImportLogger.Panicf("Error importing %v: %v", domain, err.Error())
 		return stringField1, err

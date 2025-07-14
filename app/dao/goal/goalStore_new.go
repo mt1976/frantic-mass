@@ -23,7 +23,19 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID int, name string, targetWeight types.Weight, targetDate time.Time, lossPerWeekKg types.Weight, note string, isAverageType bool) (Goal, error) {
+// New creates a new Goal instance
+func New() Goal {
+	return Goal{}
+}
+
+// Create creates a new Goal instance in the database
+// It takes userID, name, targetWeight, targetDate, lossPerWeekKg, note, and isAverageType as parameters
+// It returns the created Goal instance or an error if any occurs
+// It also checks if the DAO is ready for operations
+// It sets the CompositeID and AverageWeightLoss fields based on the provided parameters
+// It calculates the BMI based on the target weight and returns the Goal instance
+
+func Create(ctx context.Context, userID int, name string, targetWeight types.Weight, targetDate time.Time, lossPerWeekKg types.Weight, note string, isAverageType bool) (Goal, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

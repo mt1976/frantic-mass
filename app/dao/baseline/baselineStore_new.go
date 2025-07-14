@@ -22,7 +22,18 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID int, heightCm types.Height, projectionPeriod int, note string) (Baseline, error) {
+// New creates a new Baseline instance
+func New() Baseline {
+	return Baseline{}
+}
+
+// Create creates a new Baseline instance in the database
+// It takes userID, heightCm, projectionPeriod, and note as parameters and returns the created Baseline instance or an error if any occurs
+// It also checks if the DAO is ready for operations
+// It sets the CompositeID and Audit fields based on the provided parameters
+// It returns the created Baseline instance or an error if any occurs
+// It also records the create action in the audit data and saves the instance to the database
+func Create(ctx context.Context, userID int, heightCm types.Height, projectionPeriod int, note string) (Baseline, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

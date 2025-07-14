@@ -21,7 +21,16 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func New(ctx context.Context, name string) (Tag, error) {
+// New creates a new Tag instance
+func New() Tag {
+	return Tag{}
+}
+
+// Create creates a new Tag instance in the database
+// It takes name as a parameter and returns the created Tag instance or an error if any occurs
+// It also checks if the DAO is ready for operations
+
+func Create(ctx context.Context, name string) (Tag, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

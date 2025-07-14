@@ -24,7 +24,11 @@ import (
 	t "github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID, goalID, projectionNo int, weight, amount t.Weight, date time.Time, note, VsTarget string, toGo t.Weight) (WeightProjection, error) {
+func New() WeightProjection {
+	return WeightProjection{}
+}
+
+func Create(ctx context.Context, userID, goalID, projectionNo int, weight, amount t.Weight, date time.Time, note, VsTarget string, toGo t.Weight) (WeightProjection, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

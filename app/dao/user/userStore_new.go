@@ -21,7 +21,17 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func New(ctx context.Context, userName, passwordHash, email string) (User, error) {
+// New creates a new User instance
+func New() User {
+	return User{}
+}
+
+// Create creates a new User instance in the database
+// It takes userName, passwordHash, and email as parameters
+// and returns the created User instance or an error if any occurs
+// It also checks if the DAO is ready for operations
+
+func Create(ctx context.Context, userName, passwordHash, email string) (User, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

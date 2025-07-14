@@ -42,7 +42,7 @@ func tempalteImportProcessor(inOriginal **WeightTag) (string, error) {
 
 	stringField1 := strconv.Itoa(importedData.ID)
 
-	_, err := New(context.TODO(), importedData.WeightID, importedData.TagID)
+	_, err := Create(context.TODO(), importedData.WeightID, importedData.TagID)
 	if err != nil {
 		logHandler.ImportLogger.Panicf("Error importing %v: %v", domain, err.Error())
 		return stringField1, err

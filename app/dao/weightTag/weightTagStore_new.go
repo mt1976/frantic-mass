@@ -21,7 +21,11 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func New(ctx context.Context, weightID int, tagID int) (WeightTag, error) {
+func New() WeightTag {
+	return WeightTag{}
+}
+
+func Create(ctx context.Context, weightID int, tagID int) (WeightTag, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

@@ -22,7 +22,28 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func New(ctx context.Context, date time.Time) (DateIndex, error) {
+// New creates a new DateIndex instance
+func New(date time.Time) DateIndex {
+	// Set the date to the start of the day to avoid time issues
+	di := DateIndex{}
+	di.Date = date.Truncate(24 * time.Hour) // Truncate to the start of the day
+	// if date = today, then set the current flag to true
+	if di.Date.Equal(time.Now().Truncate(24 * time.Hour)) {
+		di.Current.Set(true) // Set the current flag to true if the date is today
+	} else {
+		di.Current.Set(false) // Default to false for other dates
+	}
+	return di
+}
+
+// Create creates a new DateIndex instance in the database
+// It takes a date as a parameter and returns the created DateIndex instance or an error if any occurs
+// It also checks if the DAO is ready for operations
+// It sets the date to the start of the day to avoid time issues
+// It records the create action in the audit data and saves the instance to the database
+// It returns the created DateIndex instance or an error if any occurs
+
+func Create(ctx context.Context, date time.Time) (DateIndex, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -35,10 +56,9 @@ func New(ctx context.Context, date time.Time) (DateIndex, error) {
 	date = date.Truncate(24 * time.Hour) // Truncate to the start of the day
 
 	// Create a new struct
-	record := DateIndex{}
+	record := New(date)
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
-	record.Date = date
 	updatedRecord, _, err := classifyDateIndexRecord(&record)
 	if err != nil {
 		logHandler.ErrorLogger.Panic(commonErrors.WrapDAOCreateError(domain, updatedRecord.ID, err))

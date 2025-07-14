@@ -42,7 +42,7 @@ func tempalteImportProcessor(inOriginal **WeightProjection) (string, error) {
 
 	stringField1 := strconv.Itoa(importedData.ID)
 
-	_, err := New(context.TODO(), importedData.UserID, importedData.GoalID, importedData.ProjectionNo, importedData.Weight, importedData.Amount, importedData.Date, importedData.Note, importedData.VsTarget, importedData.ToGoal)
+	_, err := Create(context.TODO(), importedData.UserID, importedData.GoalID, importedData.ProjectionNo, importedData.Weight, importedData.Amount, importedData.Date, importedData.Note, importedData.VsTarget, importedData.ToGoal)
 	if err != nil {
 		logHandler.ImportLogger.Panicf("Error importing %v: %v", domain, err.Error())
 		return stringField1, err

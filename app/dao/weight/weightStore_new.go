@@ -24,7 +24,11 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID int, weightKg types.Weight, note string, recordedAt time.Time) (Weight, error) {
+func New() Weight {
+	return Weight{}
+}
+
+func Create(ctx context.Context, userID int, weightKg types.Weight, note string, recordedAt time.Time) (Weight, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

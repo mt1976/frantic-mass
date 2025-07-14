@@ -68,7 +68,7 @@ func dateIndexJobProcessor(j jobs.Job) {
 
 	//today := time.Now()
 	logHandler.InfoLogger.Printf("[%v] Adding DateIndex for %v", jobs.CodedName(j), Today())
-	_, err := New(context.TODO(), Today())
+	_, err := Create(context.TODO(), Today())
 	if err != nil {
 		logHandler.ErrorLogger.Printf("[%v] Error adding DateIndex for %v: %v", jobs.CodedName(j), Today(), err)
 	} else {
