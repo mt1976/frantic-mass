@@ -19,10 +19,10 @@ var domain = "dateIndex"
 
 // DateIndex represents a DateIndex entity.
 type DateIndex struct {
-	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
-	Key   string      `storm:"unique"`              // key
-	Raw   string      `storm:"unique"`              // raw ID before encoding
-	Audit audit.Audit `csv:"-"`                     // audit data
+	ID    int         `storm:"id,increment=100"` // primary key with auto increment
+	Key   string      `storm:"unique"`           // key
+	Raw   string      `storm:"unique"`           // raw ID before encoding
+	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
 	Date    time.Time     `storm:"unique,index"` // Date of the index
 	Current dao.StormBool `storm:"index"`        // Active status

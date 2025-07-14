@@ -19,10 +19,10 @@ var domain = "weight"
 
 // Weight represents a Weight entity.
 type Weight struct {
-	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
-	Key   string      `storm:"unique"`              // key
-	Raw   string      `storm:"unique"`              // raw ID before encoding
-	Audit audit.Audit `csv:"-"`                     // audit data
+	ID    int         `storm:"id,increment=100"` // primary key with auto increment
+	Key   string      `storm:"unique"`           // key
+	Raw   string      `storm:"unique"`           // raw ID before encoding
+	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
 	UserID     int          `storm:"index"` // User ID of the person who recorded the weight
 	RecordedAt time.Time    `storm:"index"`

@@ -16,10 +16,10 @@ var domain = "weightTag"
 
 // WeightTag represents a WeightTag entity.
 type WeightTag struct {
-	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
-	Key   string      `storm:"unique"`              // key
-	Raw   string      `storm:"unique"`              // raw ID before encoding
-	Audit audit.Audit `csv:"-"`                     // audit data
+	ID    int         `storm:"id,increment=100"` // primary key with auto increment
+	Key   string      `storm:"unique"`           // key
+	Raw   string      `storm:"unique"`           // raw ID before encoding
+	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
 	WeightID int `storm:"index"`
 	TagID    int `storm:"index"`

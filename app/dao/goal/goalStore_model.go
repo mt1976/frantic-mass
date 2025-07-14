@@ -20,10 +20,10 @@ var domain = "goal"
 
 // Goal represents a Goal entity.
 type Goal struct {
-	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
-	Key   string      `storm:"unique"`              // key
-	Raw   string      `storm:"unique"`              // raw ID before encoding
-	Audit audit.Audit `csv:"-"`                     // audit data
+	ID    int         `storm:"id,increment=100"` // primary key with auto increment
+	Key   string      `storm:"unique"`           // key
+	Raw   string      `storm:"unique"`           // raw ID before encoding
+	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
 	UserID            int      `storm:"index"`  // Foreign key to User
 	Name              string   `storm:"unique"` // Name of the goal

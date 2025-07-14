@@ -18,10 +18,10 @@ var domain = "Template"
 
 // Template_Store represents a Template_Store entity.
 type Template_Store struct {
-	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
-	Key   string      `storm:"unique"`              // key
-	Raw   string      `storm:"unique"`              // raw ID before encoding
-	Audit audit.Audit `csv:"-"`                     // audit data
+	ID    int         `storm:"id,increment=100"` // primary key with auto increment
+	Key   string      `storm:"unique"`           // key
+	Raw   string      `storm:"unique"`           // raw ID before encoding
+	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
 	Field1 int       `csv:"altID" storm:"index"` // user key
 	Field2 string    `storm:"index"`             // user code

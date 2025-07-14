@@ -19,10 +19,10 @@ var domain = "weightProjection"
 
 // WeightProjection represents a WeightProjection entity.
 type WeightProjection struct {
-	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
-	Key   string      `storm:"unique"`              // key
-	Raw   string      `storm:"unique"`              // raw ID before encoding
-	Audit audit.Audit `csv:"-"`                     // audit data
+	ID    int         `storm:"id,increment=100"` // primary key with auto increment
+	Key   string      `storm:"unique"`           // key
+	Raw   string      `storm:"unique"`           // raw ID before encoding
+	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
 
 	CompositeID t.CompositeID `storm:"index"` // Composite ID for unique identification of the projection
