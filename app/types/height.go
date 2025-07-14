@@ -3,53 +3,53 @@ package types
 import "fmt"
 
 type Height struct {
-	Value float64 `json:"value"` // Height in cm
+	CMs float64 `json:"value"` // Height in cm
 }
 
 func (h *Height) CmAsString() string {
-	if h.Value <= 0 {
+	if h.CMs <= 0 {
 		return "0"
 	}
-	return fmt.Sprintf("%.2f cm", h.Value)
+	return fmt.Sprintf("%.2f cm", h.CMs)
 }
 
 func (h *Height) Cm() float64 {
-	if h.Value <= 0 {
+	if h.CMs <= 0 {
 		return 0
 	}
-	return h.Value
+	return h.CMs
 }
 
 func (h *Height) Feet() (int, int) {
-	if h.Value <= 0 {
+	if h.CMs <= 0 {
 		return 0, 0
 	}
-	inchesTotal := h.Value / 2.54
+	inchesTotal := h.CMs / 2.54
 	feet := int(inchesTotal) / 12
 	inches := int(inchesTotal) % 12
 	return feet, inches
 }
 
 func (h *Height) InchesAsString() string {
-	if h.Value <= 0 {
+	if h.CMs <= 0 {
 		return "0"
 	}
-	inches := h.Value / 2.54
+	inches := h.CMs / 2.54
 	return fmt.Sprintf("%.2f in", inches)
 }
 
 func (h *Height) Inches() float64 {
-	if h.Value <= 0 {
+	if h.CMs <= 0 {
 		return 0
 	}
-	return h.Value / 2.54
+	return h.CMs / 2.54
 }
 
 func (h *Height) FeetAsString() string {
-	if h.Value <= 0 {
+	if h.CMs <= 0 {
 		return "0"
 	}
-	inchesTotal := h.Value / 2.54
+	inchesTotal := h.CMs / 2.54
 	feet := int(inchesTotal) / 12
 	inches := int(inchesTotal) % 12
 	if inches == 0 {
@@ -59,71 +59,71 @@ func (h *Height) FeetAsString() string {
 }
 
 func (h *Height) Metres() float64 {
-	if h.Value <= 0 {
+	if h.CMs <= 0 {
 		return 0
 	}
-	return h.Value / 100
+	return h.CMs / 100
 }
 
 func (h *Height) MetresAsString() string {
-	if h.Value <= 0 {
+	if h.CMs <= 0 {
 		return "0"
 	}
-	metres := h.Value / 100
+	metres := h.CMs / 100
 	return fmt.Sprintf("%.2f m", metres)
 }
 
 func (h *Height) String() string {
-	if h.Value <= 0 {
+	if h.CMs <= 0 {
 		return "0"
 	}
-	return fmt.Sprintf("%.2f cm", h.Value)
+	return fmt.Sprintf("%.2f cm", h.CMs)
 }
 
 func (w *Height) EQ(value float64) bool {
-	if w.Value == value {
+	if w.CMs == value {
 		return true
 	}
 	return false
 }
 
 func (w *Height) GT(value float64) bool {
-	if w.Value > value {
+	if w.CMs > value {
 		return true
 	}
 	return false
 }
 
 func (w *Height) LT(value float64) bool {
-	if w.Value < value {
+	if w.CMs < value {
 		return true
 	}
 	return false
 }
 
 func (w *Height) LE(value float64) bool {
-	if w.Value <= value {
+	if w.CMs <= value {
 		return true
 	}
 	return false
 }
 
 func (w *Height) GE(value float64) bool {
-	if w.Value >= value {
+	if w.CMs >= value {
 		return true
 	}
 	return false
 }
 
 func (w *Height) IsZero() bool {
-	if w.Value <= 0 {
+	if w.CMs <= 0 {
 		return true
 	}
 	return false
 }
 
 func (w *Height) Equals(in Height) bool {
-	if w.Value == in.Cm() {
+	if w.CMs == in.Cm() {
 		return true
 	}
 	return false

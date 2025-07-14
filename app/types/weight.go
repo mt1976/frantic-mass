@@ -7,7 +7,7 @@ import (
 )
 
 type Weight struct {
-	Value float64 `json:"value"` // Weight in kg
+	KGs float64 `json:"value"` // Weight in kg
 }
 
 func (w *Weight) Set(value float64) {
@@ -16,41 +16,41 @@ func (w *Weight) Set(value float64) {
 		value = 0
 	}
 	logHandler.InfoLogger.Printf("Setting weight: %v kg", value)
-	w.Value = value
+	w.KGs = value
 }
 func (w *Weight) Kg() float64 {
-	if w.Value <= 0 {
+	if w.KGs <= 0 {
 		return 0
 	}
-	return w.Value
+	return w.KGs
 }
 
 func (w *Weight) KgAsString() string {
-	if w.Value <= 0 {
+	if w.KGs <= 0 {
 		return "0"
 	}
-	return fmt.Sprintf("%.2f kg", w.Value)
+	return fmt.Sprintf("%.2f kg", w.KGs)
 }
 func (w *Weight) LbsAsString() string {
-	if w.Value <= 0 {
+	if w.KGs <= 0 {
 		return "0"
 	}
-	lbs := w.Value * 2.20462
+	lbs := w.KGs * 2.20462
 	return fmt.Sprintf("%.2f lbs", lbs)
 }
 
 func (w *Weight) String() string {
-	if w.Value <= 0 {
+	if w.KGs <= 0 {
 		return "0"
 	}
-	return fmt.Sprintf("%.2f kg", w.Value)
+	return fmt.Sprintf("%.2f kg", w.KGs)
 }
 
 func (w *Weight) Grams() (float64, error) {
-	if w.Value <= 0 {
-		return 0, fmt.Errorf("invalid weight: %v", w.Value)
+	if w.KGs <= 0 {
+		return 0, fmt.Errorf("invalid weight: %v", w.KGs)
 	}
-	return w.Value * 1000, nil
+	return w.KGs * 1000, nil
 }
 
 func (w *Weight) GramsAsString() (string, error) {
@@ -62,10 +62,10 @@ func (w *Weight) GramsAsString() (string, error) {
 }
 
 func (w *Weight) Ounces() (float64, error) {
-	if w.Value <= 0 {
-		return 0, fmt.Errorf("invalid weight: %v", w.Value)
+	if w.KGs <= 0 {
+		return 0, fmt.Errorf("invalid weight: %v", w.KGs)
 	}
-	return w.Value * 35.274, nil
+	return w.KGs * 35.274, nil
 }
 
 func (w *Weight) OuncesAsString() (string, error) {
@@ -77,10 +77,10 @@ func (w *Weight) OuncesAsString() (string, error) {
 }
 
 func (w *Weight) Pounds() (float64, error) {
-	if w.Value <= 0 {
-		return 0, fmt.Errorf("invalid weight: %v", w.Value)
+	if w.KGs <= 0 {
+		return 0, fmt.Errorf("invalid weight: %v", w.KGs)
 	}
-	return w.Value * 2.20462, nil
+	return w.KGs * 2.20462, nil
 }
 
 func (w *Weight) PoundsAsString() (string, error) {
@@ -92,10 +92,10 @@ func (w *Weight) PoundsAsString() (string, error) {
 }
 
 func (w *Weight) Stones() (int, int, error) {
-	if w.Value <= 0 {
-		return 0, 0, fmt.Errorf("invalid weight: %v", w.Value)
+	if w.KGs <= 0 {
+		return 0, 0, fmt.Errorf("invalid weight: %v", w.KGs)
 	}
-	lbs := w.Value * 2.20462
+	lbs := w.KGs * 2.20462
 	stones := int(lbs) / 14
 	pounds := int(lbs) % 14
 	return stones, pounds, nil
@@ -113,74 +113,74 @@ func (w *Weight) StonesAsString() (string, error) {
 }
 
 func (w *Weight) EQ(value float64) bool {
-	if w.Value == value {
+	if w.KGs == value {
 		return true
 	}
 	return false
 }
 
 func (w *Weight) GT(value float64) bool {
-	if w.Value > value {
+	if w.KGs > value {
 		return true
 	}
 	return false
 }
 
 func (w *Weight) LT(value float64) bool {
-	if w.Value < value {
+	if w.KGs < value {
 		return true
 	}
 	return false
 }
 
 func (w *Weight) LE(value float64) bool {
-	if w.Value <= value {
+	if w.KGs <= value {
 		return true
 	}
 	return false
 }
 
 func (w *Weight) GE(value float64) bool {
-	if w.Value >= value {
+	if w.KGs >= value {
 		return true
 	}
 	return false
 }
 
 func (w *Weight) IsZero() bool {
-	return w.Value == 0
+	return w.KGs == 0
 }
 
 func (w *Weight) Equals(in Weight) bool {
-	if w.Value == in.Value {
+	if w.KGs == in.KGs {
 		return true
 	}
 	return false
 }
 
 func (w *Weight) Add(in Weight) Weight {
-	rtn := w.Value + in.Value
-	logHandler.InfoLogger.Printf("Adding weights: %v + %v = %v", w.Value, in.Value, rtn)
-	return Weight{Value: rtn}
+	rtn := w.KGs + in.KGs
+	logHandler.InfoLogger.Printf("Adding weights: %v + %v = %v", w.KGs, in.KGs, rtn)
+	return Weight{KGs: rtn}
 }
 func (w *Weight) AddFloat(in float64) Weight {
-	return Weight{Value: w.Value + in}
+	return Weight{KGs: w.KGs + in}
 }
 
 func (w *Weight) Minus(in Weight) Weight {
-	return Weight{Value: w.Value - in.Value}
+	return Weight{KGs: w.KGs - in.KGs}
 }
 func (w *Weight) MinusFloat(in float64) Weight {
-	return w.Minus(Weight{Value: in})
+	return w.Minus(Weight{KGs: in})
 }
 func (w *Weight) Multiply(in Weight) Weight {
-	return Weight{Value: w.Value * in.Value}
+	return Weight{KGs: w.KGs * in.KGs}
 }
 func (w *Weight) Divide(in Weight) (Weight, error) {
-	if in.Value == 0 {
+	if in.KGs == 0 {
 		return Weight{}, fmt.Errorf("division by zero")
 	}
-	return Weight{Value: w.Value / in.Value}, nil
+	return Weight{KGs: w.KGs / in.KGs}, nil
 }
 
 func (w *Weight) Nil() *Weight {
@@ -194,11 +194,11 @@ func NewWeight(value float64) *Weight {
 }
 
 func (w *Weight) Invert() *Weight {
-	if w.Value == 0 {
+	if w.KGs == 0 {
 		logHandler.ErrorLogger.Println("Cannot invert zero weight")
 		return &Weight{}
 	}
-	inverted := -w.Value
-	logHandler.InfoLogger.Printf("Inverting weight: %v kg to %v kg", w.Value, inverted)
-	return &Weight{Value: inverted}
+	inverted := -w.KGs
+	logHandler.InfoLogger.Printf("Inverting weight: %v kg to %v kg", w.KGs, inverted)
+	return &Weight{KGs: inverted}
 }

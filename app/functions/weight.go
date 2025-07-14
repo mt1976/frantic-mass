@@ -29,7 +29,7 @@ func AverageWeightLoss(userID int) (*types.Weight, error) {
 	totalMass := types.NewWeight(0.0)
 	var count int
 	for i := 0; i < len(w)-1; i++ {
-		if w[i].Weight.GT(w[i+1].Weight.Value) {
+		if w[i].Weight.GT(w[i+1].Weight.KGs) {
 			loss := w[i].Weight.Minus(w[i+1].Weight)
 			totalLoss.Add(loss)
 			count++

@@ -14,23 +14,23 @@ import (
 // - Obesity: BMI >= 30
 // If the BMI value is less than or equal to zero, it is considered invalid and the note is set to "Invalid BMI".
 type BMI struct {
-	Value       float64 `json:"value"` // BMI value
+	BMI         float64 `json:"value"` // BMI value
 	Description string  `json:"text"`  // Textual representation of BMI
 	Glyph       string  `json:"glyph"` // Glyph representation of BMI, if applicable
 }
 
 func (b *BMI) String() string {
-	if b.Value <= 0 {
+	if b.BMI <= 0 {
 		return "0"
 	}
-	return fmt.Sprintf("%.2f", b.Value)
+	return fmt.Sprintf("%.2f", b.BMI)
 }
 
 func (b *BMI) Float() float64 {
-	if b.Value <= 0 {
+	if b.BMI <= 0 {
 		return 0
 	}
-	return b.Value
+	return b.BMI
 }
 
 func (b *BMI) Text() string {
@@ -42,17 +42,17 @@ func (b *BMI) Text() string {
 
 func (b *BMI) set(Value float64) *BMI {
 
-	b.Value = Value
-	if b.Value <= 0 {
+	b.BMI = Value
+	if b.BMI <= 0 {
 		b.Description = "Invalid BMI"
 		b.Glyph = "❌" // Example glyph for invalid BMI
-	} else if b.Value < 18.5 {
+	} else if b.BMI < 18.5 {
 		b.Description = "Underweight"
 		b.Glyph = "⚪️" // Example glyph for underweight
-	} else if b.Value < 24.9 {
+	} else if b.BMI < 24.9 {
 		b.Description = "Normal"
 		b.Glyph = "🟢" // Example glyph for normal weight
-	} else if b.Value < 29.9 {
+	} else if b.BMI < 29.9 {
 		b.Description = "Overweight"
 		b.Glyph = "🟠" // Example glyph for overweight
 	} else {
@@ -64,7 +64,7 @@ func (b *BMI) set(Value float64) *BMI {
 
 func (b *BMI) SetBMIByWeightAndHeight(weightKg float64, heightCm float64) *BMI {
 	if weightKg <= 0 || heightCm <= 0 {
-		b.Value = 0
+		b.BMI = 0
 		b.Description = "Invalid BMI"
 		return b
 	}
@@ -80,54 +80,54 @@ func (b *BMI) SetBMIFromWeightAndHeight(w Weight, h Height) (*BMI, error) {
 	var weightKg float64
 	var heightCm float64
 
-	weightKg = w.Value
-	heightCm = h.Value
+	weightKg = w.KGs
+	heightCm = h.CMs
 
 	return b.SetBMIByWeightAndHeight(weightKg, heightCm), nil
 }
 
 func (b *BMI) EQ(value float64) bool {
-	if b.Value == value {
+	if b.BMI == value {
 		return true
 	}
 	return false
 }
 
 func (b *BMI) GT(value float64) bool {
-	if b.Value > value {
+	if b.BMI > value {
 		return true
 	}
 	return false
 }
 
 func (b *BMI) LT(value float64) bool {
-	if b.Value < value {
+	if b.BMI < value {
 		return true
 	}
 	return false
 }
 
 func (b *BMI) LE(value float64) bool {
-	if b.Value <= value {
+	if b.BMI <= value {
 		return true
 	}
 	return false
 }
 
 func (b *BMI) GE(value float64) bool {
-	if b.Value >= value {
+	if b.BMI >= value {
 		return true
 	}
 	return false
 }
 func (b *BMI) IsZero() bool {
-	if b.Value <= 0 {
+	if b.BMI <= 0 {
 		return true
 	}
 	return false
 }
 func (b *BMI) Equals(in BMI) bool {
-	if b.Value == in.Value {
+	if b.BMI == in.BMI {
 		return true
 	}
 	return false

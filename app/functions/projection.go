@@ -81,10 +81,10 @@ func BuildWeightGoalProjection(user user.User, weight types.Weight, goal goal.Go
 		when := time.Now().Add(time.Duration(j) * (time.Hour * 24) * 7) // Add j weeks to the current date
 		var vstarget string
 		switch {
-		case trackingWeight.LT(goal.TargetWeight.Value):
+		case trackingWeight.LT(goal.TargetWeight.KGs):
 			logHandler.WarningLogger.Printf("Tracking weight %v is less than target weight %v for UserID: %d", trackingWeight, goal.TargetWeight, userID)
 			vstarget = "Below " + goal.TargetWeight.String() + " (Target)"
-		case trackingWeight.GT(goal.TargetWeight.Value):
+		case trackingWeight.GT(goal.TargetWeight.KGs):
 			logHandler.WarningLogger.Printf("Tracking weight %v is greater than target weight %v for UserID: %d", trackingWeight, goal.TargetWeight, userID)
 			vstarget = "Above " + goal.TargetWeight.String() + " (Target)"
 		default:
@@ -95,7 +95,7 @@ func BuildWeightGoalProjection(user user.User, weight types.Weight, goal goal.Go
 		toGoal := goal.TargetWeight.Minus(trackingWeight) // Calculate the total weight loss needed to reach the goal
 		toGoal = *toGoal.Invert()
 
-		np, newProjectionErr := weightProjection.Create(context.TODO(), userID, goal.ID, j, trackingWeight, weeklyWeightLoss, when, fmt.Sprintf("Projection For_%v/%v @ %v", userID, j, weeklyWeightLoss.Value), vstarget, toGoal)
+		np, newProjectionErr := weightProjection.Create(context.TODO(), userID, goal.ID, j, trackingWeight, weeklyWeightLoss, when, fmt.Sprintf("Projection For_%v/%v @ %v", userID, j, weeklyWeightLoss.KGs), vstarget, toGoal)
 		if newProjectionErr != nil {
 			logHandler.ErrorLogger.Println(newProjectionErr)
 			return fmt.Errorf("error creating projection for user %d: %v", userID, newProjectionErr)

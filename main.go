@@ -87,7 +87,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("Creating Baseline for UserID:", userIdentifier)
-	thisBaseline, baselineErr := baseline.Create(context.TODO(), userIdentifier, types.Height{Value: 187.96}, 6, fmt.Sprintf("BaselineFor%v", userIdentifier))
+	thisBaseline, baselineErr := baseline.Create(context.TODO(), userIdentifier, types.Height{CMs: 187.96}, 6, fmt.Sprintf("BaselineFor%v", userIdentifier))
 	if baselineErr != nil {
 		logHandler.ErrorLogger.Println(baselineErr)
 	} else {
@@ -95,7 +95,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("Creating Goal for UserID:", userIdentifier)
-	thisGoal, goalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v", userIdentifier), types.Weight{Value: 90.00}, time.Now().AddDate(0, 0, 30), types.Weight{Value: 2.0}, "This is a test goal to check the goal creation process", false)
+	thisGoal, goalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v", userIdentifier), types.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), types.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
 
 	if goalErr != nil {
 		logHandler.ErrorLogger.Println(goalErr)
@@ -103,7 +103,7 @@ func main() {
 		logHandler.InfoLogger.Printf("Goal Created:[%+v]", thisGoal)
 	}
 
-	avgGoal, avgGoalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("AvgGoalFor%v", userIdentifier), types.Weight{Value: 90.00}, time.Now().AddDate(0, 0, 30), types.Weight{Value: 0}, "This is an average weight loss goal", true)
+	avgGoal, avgGoalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("AvgGoalFor%v", userIdentifier), types.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), types.Weight{KGs: 0}, "This is an average weight loss goal", true)
 	if avgGoalErr != nil {
 		logHandler.ErrorLogger.Println(avgGoalErr)
 	} else {
