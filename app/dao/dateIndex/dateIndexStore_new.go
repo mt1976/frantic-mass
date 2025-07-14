@@ -39,7 +39,7 @@ func New(ctx context.Context, date time.Time) (DateIndex, error) {
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 	record.Date = date
-	updatedRecord, _, err := categorizeDateIndexRecord(&record)
+	updatedRecord, _, err := classifyDateIndexRecord(&record)
 	if err != nil {
 		logHandler.ErrorLogger.Panic(commonErrors.WrapDAOCreateError(domain, updatedRecord.ID, err))
 	}

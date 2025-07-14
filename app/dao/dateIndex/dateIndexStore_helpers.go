@@ -90,7 +90,7 @@ func dateIndexJobProcessor(j jobs.Job) {
 
 	for i := range dateList {
 		logHandler.ServiceLogger.Printf("[%v] Processing dateIndex entry: %v", jobs.CodedName(j), dateList[i].Raw)
-		dateIndexRecord, skip, err := categorizeDateIndexRecord(&dateList[i])
+		dateIndexRecord, skip, err := classifyDateIndexRecord(&dateList[i])
 		if err != nil {
 			logHandler.ErrorLogger.Printf("[%v] Error processing dateIndex entry %v: %v", jobs.CodedName(j), dateList[i].Raw, err)
 			continue

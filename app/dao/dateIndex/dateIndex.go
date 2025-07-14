@@ -11,6 +11,14 @@ func Today() time.Time {
 	return time.Now().Truncate(24 * time.Hour)
 }
 
+func Yesterday() time.Time {
+	return time.Now().AddDate(0, 0, -1).Truncate(24 * time.Hour)
+}
+
+func Tomorrow() time.Time {
+	return time.Now().AddDate(0, 0, 1).Truncate(24 * time.Hour)
+}
+
 func GetToday() (int, DateIndex, error) {
 	logHandler.ServiceLogger.Println("Getting today's DateIndex record")
 	today := Today()
@@ -29,7 +37,30 @@ func GetToday() (int, DateIndex, error) {
 	return 0, DateIndex{}, fmt.Errorf("No DateIndex record found for today: %v", today)
 }
 
-func categorizeDateIndexRecord(dateIndexRecord *DateIndex) (*DateIndex, bool, error) {
+func GetYesterday() (int, DateIndex, error) {
+	logHandler.ServiceLogger.Println("Getting yesterday's DateIndex record")
+	yesterday := Yesterday()
+	record, err := GetAll()
+	if err != nil {
+		logHandler.ErrorLogger.Printf("Error getting yesterday's DateIndex record: %v", err)
+		return 0, DateIndex{}, err
+	}
+	for _, r := range record {
+		if r.Date.Equal(yesterday) && r.Current.IsFalse() {
+			logHandler.ServiceLogger.Printf("Yesterday's DateIndex record found: %v", r)
+			return r.ID, r, nil
+		}
+	}
+	logHandler.ServiceLogger.Printf("No DateIndex record found for yesterday: %v", yesterday)
+	return 0, DateIndex{}, fmt.Errorf("No DateIndex record found for yesterday: %v", yesterday)
+}
+
+func GetTomorrow() (int, DateIndex, error) {
+	logHandler.PanicLogger.Println("Getting tomorrow's DateIndex record,why? - this should not be used")
+	return 0, DateIndex{}, fmt.Errorf("No DateIndex record possibe for tomorrow: %v", Tomorrow())
+}
+
+func classifyDateIndexRecord(dateIndexRecord *DateIndex) (*DateIndex, bool, error) {
 
 	logHandler.ServiceLogger.Printf("Categorizing dateIndex record: %v", dateIndexRecord.Date)
 	// Check if the date is valid and categorize the record
