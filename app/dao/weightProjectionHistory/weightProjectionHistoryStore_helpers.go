@@ -20,40 +20,40 @@ import (
 //TODO: Implement the isDuplicateOf function to process the domain entity
 //TODO: Implement the postGetProcessing function to process the domain entity
 
-func (record *weightProjectionHistory_Store) upgradeProcessing() error {
+func (record *WeightProjectionHistory) upgradeProcessing() error {
 	//TODO: Add any upgrade processing here
 	//This processing is triggered directly after the record has been retrieved from the database
 	return nil
 }
 
-func (record *weightProjectionHistory_Store) defaultProcessing() error {
+func (record *WeightProjectionHistory) defaultProcessing() error {
 	//TODO: Add any default calculations here
 	//This processing is triggered directly before the record is saved to the database
 	return nil
 }
 
-func (record *weightProjectionHistory_Store) validationProcessing() error {
+func (record *WeightProjectionHistory) validationProcessing() error {
 	//TODO: Add any record validation here
 	//This processing is triggered directly before the record is saved to the database and after the default calculations
 	return nil
 }
 
-func (h *weightProjectionHistory_Store) postGetProcessing() error {
+func (h *WeightProjectionHistory) postGetProcessing() error {
 	//TODO: Add any post get processing here
 	//This processing is triggered directly after the record has been retrieved from the database and after the upgrade processing
 	return nil
 }
 
-func (record *weightProjectionHistory_Store) preDeleteProcessing() error {
+func (record *WeightProjectionHistory) preDeleteProcessing() error {
 	//TODO: Add any pre delete processing here
 	//This processing is triggered directly before the record is deleted from the database
 	return nil
 }
 
-func weightProjectionHistoryClone(ctx context.Context, source weightProjectionHistory_Store) (weightProjectionHistory_Store, error) {
+func weightProjectionHistoryClone(ctx context.Context, source WeightProjectionHistory) (WeightProjectionHistory, error) {
 	//TODO: Add any clone processing here
 	panic("Not Implemented")
-	return weightProjectionHistory_Store{}, nil
+	return WeightProjectionHistory{}, nil
 }
 
 func weightProjectionHistoryJobProcessor(j jobs.Job) {

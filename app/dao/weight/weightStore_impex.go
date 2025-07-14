@@ -16,7 +16,7 @@ import (
 
 // tempalteImportProcessor is a helper function to create a new entry instance and save it to the database
 // It should be customised to suit the specific requirements of the entryination table/DAO.
-func tempalteImportProcessor(inOriginal **Weight_Store) (string, error) {
+func tempalteImportProcessor(inOriginal **Weight) (string, error) {
 	//TODO: Build the import processing functionality for the weight_Store data here
 	//
 	importedData := **inOriginal

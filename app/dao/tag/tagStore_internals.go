@@ -21,7 +21,7 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func (record *tag_Store) insertOrUpdate(ctx context.Context, note, activity string, auditAction audit.Action, operation string) error {
+func (record *Tag) insertOrUpdate(ctx context.Context, note, activity string, auditAction audit.Action, operation string) error {
 
 	isCreateOperation := false
 	if strings.EqualFold(operation, actions.CREATE.GetCode()) {
@@ -80,9 +80,9 @@ func (record *tag_Store) insertOrUpdate(ctx context.Context, note, activity stri
 	return nil
 }
 
-func postGetList(recordList *[]tag_Store) ([]tag_Store, error) {
+func postGetList(recordList *[]Tag) ([]Tag, error) {
 	clock := timing.Start(domain, actions.PROCESS.GetCode(), "POSTGET")
-	returnList := []tag_Store{}
+	returnList := []Tag{}
 	for _, record := range *recordList {
 		if err := record.postGet(); err != nil {
 			return nil, err
@@ -93,7 +93,7 @@ func postGetList(recordList *[]tag_Store) ([]tag_Store, error) {
 	return returnList, nil
 }
 
-func (record *tag_Store) postGet() error {
+func (record *Tag) postGet() error {
 
 	upgradeError := record.upgradeProcessing()
 	if upgradeError != nil {
@@ -113,7 +113,7 @@ func (record *tag_Store) postGet() error {
 	return record.postGetProcessing()
 }
 
-func (record *tag_Store) checkForDuplicate() error {
+func (record *Tag) checkForDuplicate() error {
 
 	dao.CheckDAOReadyState(domain, audit.PROCESS, initialised) // Check the DAO has been initialised, Mandatory.
 

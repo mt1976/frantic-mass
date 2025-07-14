@@ -21,7 +21,7 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func New(ctx context.Context, userName, passwordHash, email string) (Store, error) {
+func New(ctx context.Context, userName, passwordHash, email string) (User, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -31,7 +31,7 @@ func New(ctx context.Context, userName, passwordHash, email string) (Store, erro
 	sessionID := idHelpers.GetUUID()
 
 	// Create a new struct
-	record := Store{}
+	record := User{}
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 	record.Username = userName

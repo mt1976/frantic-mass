@@ -21,7 +21,7 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func New(ctx context.Context, weightID int, tagID int) (weightTag_Store, error) {
+func New(ctx context.Context, weightID int, tagID int) (WeightTag, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -31,7 +31,7 @@ func New(ctx context.Context, weightID int, tagID int) (weightTag_Store, error) 
 	sessionID := idHelpers.GetUUID()
 
 	// Create a new struct
-	record := weightTag_Store{}
+	record := WeightTag{}
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 	record.WeightID = weightID

@@ -29,7 +29,7 @@ import (
 
 func Count() (int, error) {
 	logHandler.DatabaseLogger.Printf("Count %v", domain)
-	return activeDB.Count(&weightProjectionHistory_Store{})
+	return activeDB.Count(&WeightProjectionHistory{})
 }
 
 func CountWhere(field string, value any) (int, error) {
@@ -44,15 +44,15 @@ func CountWhere(field string, value any) (int, error) {
 	return len(list), nil
 }
 
-func GetById(id any) (weightProjectionHistory_Store, error) {
+func GetById(id any) (WeightProjectionHistory, error) {
 	return GetBy(FIELD_ID, id)
 }
 
-func GetByKey(key any) (weightProjectionHistory_Store, error) {
+func GetByKey(key any) (WeightProjectionHistory, error) {
 	return GetBy(FIELD_Key, key)
 }
 
-func GetBy(field string, value any) (weightProjectionHistory_Store, error) {
+func GetBy(field string, value any) (WeightProjectionHistory, error) {
 
 	clock := timing.Start(domain, actions.GET.GetCode(), fmt.Sprintf("%v=%v", field, value))
 
@@ -61,45 +61,45 @@ func GetBy(field string, value any) (weightProjectionHistory_Store, error) {
 	if field == FIELD_ID && reflect.TypeOf(value).Name() != "int" {
 		msg := "invalid data type. Expected type of %v is int"
 		logHandler.ErrorLogger.Printf(msg, value)
-		return weightProjectionHistory_Store{}, commonErrors.WrapDAOReadError(domain, field, value, fmt.Errorf(msg, value))
+		return WeightProjectionHistory{}, commonErrors.WrapDAOReadError(domain, field, value, fmt.Errorf(msg, value))
 	}
 
-	if err := dao.IsValidFieldInStruct(field, weightProjectionHistory_Store{}); err != nil {
-		return weightProjectionHistory_Store{}, err
+	if err := dao.IsValidFieldInStruct(field, WeightProjectionHistory{}); err != nil {
+		return WeightProjectionHistory{}, err
 	}
 
-	if err := dao.IsValidTypeForField(field, value, weightProjectionHistory_Store{}); err != nil {
-		return weightProjectionHistory_Store{}, err
+	if err := dao.IsValidTypeForField(field, value, WeightProjectionHistory{}); err != nil {
+		return WeightProjectionHistory{}, err
 	}
 
-	record := weightProjectionHistory_Store{}
+	record := WeightProjectionHistory{}
 	logHandler.DatabaseLogger.Printf("Get %v where (%v=%v)", domain, field, value)
 
 	if err := activeDB.Retrieve(field, value, &record); err != nil {
 		clock.Stop(0)
-		return weightProjectionHistory_Store{}, commonErrors.WrapRecordNotFoundError(domain, field, fmt.Sprintf("%v", value))
+		return WeightProjectionHistory{}, commonErrors.WrapRecordNotFoundError(domain, field, fmt.Sprintf("%v", value))
 	}
 
 	if err := record.postGet(); err != nil {
 		clock.Stop(0)
-		return weightProjectionHistory_Store{}, commonErrors.WrapDAOReadError(domain, field, value, err)
+		return WeightProjectionHistory{}, commonErrors.WrapDAOReadError(domain, field, value, err)
 	}
 
 	clock.Stop(1)
 	return record, nil
 }
 
-func GetAll() ([]weightProjectionHistory_Store, error) {
+func GetAll() ([]WeightProjectionHistory, error) {
 
 	dao.CheckDAOReadyState(domain, audit.GET, initialised) // Check the DAO has been initialised, Mandatory.
 
-	recordList := []weightProjectionHistory_Store{}
+	recordList := []WeightProjectionHistory{}
 
 	clock := timing.Start(domain, actions.GETALL.GetCode(), "ALL")
 
 	if errG := activeDB.GetAll(&recordList); errG != nil {
 		clock.Stop(0)
-		return []weightProjectionHistory_Store{}, commonErrors.WrapNotFoundError(domain, errG)
+		return []WeightProjectionHistory{}, commonErrors.WrapNotFoundError(domain, errG)
 	}
 
 	var errPost error
@@ -113,19 +113,19 @@ func GetAll() ([]weightProjectionHistory_Store, error) {
 	return recordList, nil
 }
 
-func GetAllWhere(field string, value any) ([]weightProjectionHistory_Store, error) {
+func GetAllWhere(field string, value any) ([]WeightProjectionHistory, error) {
 	dao.CheckDAOReadyState(domain, audit.GET, initialised) // Check the DAO has been initialised, Mandatory.
 
-	recordList := []weightProjectionHistory_Store{}
-	resultList := []weightProjectionHistory_Store{}
+	recordList := []WeightProjectionHistory{}
+	resultList := []WeightProjectionHistory{}
 
 	clock := timing.Start(domain, actions.GETALL.GetCode(), fmt.Sprintf("%v=%v", field, value))
 
-	if err := dao.IsValidFieldInStruct(field, weightProjectionHistory_Store{}); err != nil {
+	if err := dao.IsValidFieldInStruct(field, WeightProjectionHistory{}); err != nil {
 		return recordList, err
 	}
 
-	if err := dao.IsValidTypeForField(field, value, weightProjectionHistory_Store{}); err != nil {
+	if err := dao.IsValidTypeForField(field, value, WeightProjectionHistory{}); err != nil {
 		return recordList, err
 	}
 
@@ -133,7 +133,7 @@ func GetAllWhere(field string, value any) ([]weightProjectionHistory_Store, erro
 
 	recordList, err := GetAll()
 	if err != nil {
-		return []weightProjectionHistory_Store{}, err
+		return []WeightProjectionHistory{}, err
 	}
 	count := 0
 
@@ -168,13 +168,13 @@ func DeleteBy(ctx context.Context, field string, value any, note string) error {
 
 	clock := timing.Start(domain, actions.DELETE.GetCode(), fmt.Sprintf("%v=%v", field, value))
 
-	if err := dao.IsValidFieldInStruct(field, weightProjectionHistory_Store{}); err != nil {
+	if err := dao.IsValidFieldInStruct(field, WeightProjectionHistory{}); err != nil {
 		logHandler.ErrorLogger.Print(commonErrors.WrapDAODeleteError(domain, field, value, err).Error())
 		clock.Stop(0)
 		return commonErrors.WrapDAODeleteError(domain, field, value, err)
 	}
 
-	if err := dao.IsValidTypeForField(field, value, weightProjectionHistory_Store{}); err != nil {
+	if err := dao.IsValidTypeForField(field, value, WeightProjectionHistory{}); err != nil {
 		logHandler.ErrorLogger.Print(commonErrors.WrapDAODeleteError(domain, field, value, err).Error())
 		clock.Stop(0)
 		return err
@@ -218,31 +218,31 @@ func DeleteBy(ctx context.Context, field string, value any, note string) error {
 	return nil
 }
 
-func (record *weightProjectionHistory_Store) Spew() {
+func (record *WeightProjectionHistory) Spew() {
 	logHandler.InfoLogger.Printf("[%v] Record=[%+v]", domain, record)
 }
 
-func (record *weightProjectionHistory_Store) Validate() error {
+func (record *WeightProjectionHistory) Validate() error {
 	return record.validationProcessing()
 }
 
-func (record *weightProjectionHistory_Store) Update(ctx context.Context, note string) error {
+func (record *WeightProjectionHistory) Update(ctx context.Context, note string) error {
 	return record.insertOrUpdate(ctx, note, actions.UPDATE.GetCode(), audit.UPDATE, actions.UPDATE.GetCode())
 }
 
-func (record *weightProjectionHistory_Store) UpdateWithAction(ctx context.Context, auditAction audit.Action, note string) error {
+func (record *WeightProjectionHistory) UpdateWithAction(ctx context.Context, auditAction audit.Action, note string) error {
 	return record.insertOrUpdate(ctx, note, actions.UPDATE.GetCode(), auditAction, actions.UPDATE.GetCode())
 }
 
-func (record *weightProjectionHistory_Store) Create(ctx context.Context, note string) error {
+func (record *WeightProjectionHistory) Create(ctx context.Context, note string) error {
 	return record.insertOrUpdate(ctx, note, actions.CREATE.GetCode(), audit.CREATE, actions.CREATE.GetCode())
 }
 
-func (record *weightProjectionHistory_Store) Clone(ctx context.Context) (weightProjectionHistory_Store, error) {
+func (record *WeightProjectionHistory) Clone(ctx context.Context) (WeightProjectionHistory, error) {
 	return weightProjectionHistoryClone(ctx, *record)
 }
 
-func (record *weightProjectionHistory_Store) ExportRecordAsJSON(name string) {
+func (record *WeightProjectionHistory) ExportRecordAsJSON(name string) {
 
 	ID := reflect.ValueOf(*record).FieldByName(FIELD_ID)
 
@@ -289,7 +289,7 @@ func GetLookup(field, value string) (lookup.Lookup, error) {
 }
 
 func Drop() error {
-	return activeDB.Drop(weightProjectionHistory_Store{})
+	return activeDB.Drop(WeightProjectionHistory{})
 }
 
 // GetDatabaseConnections returns a function that fetches the current database instances.
@@ -370,7 +370,7 @@ func ExportRecordsAsCSV() error {
 }
 
 func ImportRecordsFromCSV() error {
-	return importExportHelper.ImportCSV(domain, &weightProjectionHistory_Store{}, tempalteImportProcessor)
+	return importExportHelper.ImportCSV(domain, &WeightProjectionHistory{}, tempalteImportProcessor)
 }
 
 // Worker is a job that is scheduled to run at a predefined interval

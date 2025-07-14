@@ -20,40 +20,40 @@ import (
 //TODO: Implement the isDuplicateOf function to process the domain entity
 //TODO: Implement the postGetProcessing function to process the domain entity
 
-func (record *tag_Store) upgradeProcessing() error {
+func (record *Tag) upgradeProcessing() error {
 	//TODO: Add any upgrade processing here
 	//This processing is triggered directly after the record has been retrieved from the database
 	return nil
 }
 
-func (record *tag_Store) defaultProcessing() error {
+func (record *Tag) defaultProcessing() error {
 	//TODO: Add any default calculations here
 	//This processing is triggered directly before the record is saved to the database
 	return nil
 }
 
-func (record *tag_Store) validationProcessing() error {
+func (record *Tag) validationProcessing() error {
 	//TODO: Add any record validation here
 	//This processing is triggered directly before the record is saved to the database and after the default calculations
 	return nil
 }
 
-func (h *tag_Store) postGetProcessing() error {
+func (h *Tag) postGetProcessing() error {
 	//TODO: Add any post get processing here
 	//This processing is triggered directly after the record has been retrieved from the database and after the upgrade processing
 	return nil
 }
 
-func (record *tag_Store) preDeleteProcessing() error {
+func (record *Tag) preDeleteProcessing() error {
 	//TODO: Add any pre delete processing here
 	//This processing is triggered directly before the record is deleted from the database
 	return nil
 }
 
-func tagClone(ctx context.Context, source tag_Store) (tag_Store, error) {
+func tagClone(ctx context.Context, source Tag) (Tag, error) {
 	//TODO: Add any clone processing here
 	panic("Not Implemented")
-	return tag_Store{}, nil
+	return Tag{}, nil
 }
 
 func tagJobProcessor(j jobs.Job) {

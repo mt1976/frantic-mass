@@ -19,26 +19,26 @@ func FeetInchesToCm(feet, inches int) float64 {
 	return cm
 }
 
-func (record *baseline_Store) HeightAsFeetInches() string {
+func (record *Baseline) HeightAsFeetInches() string {
 	return record.HeightAsFeetInches()
 }
 
-func (record *baseline_Store) HeightAsCm() string {
+func (record *Baseline) HeightAsCm() string {
 	return fmt.Sprintf("%.2f cm", record.Height)
 }
 
-func (record *baseline_Store) HeightAsInches() string {
+func (record *Baseline) HeightAsInches() string {
 	return record.HeightAsInches()
 }
 
-func (record *baseline_Store) HeightAsMetres() string {
+func (record *Baseline) HeightAsMetres() string {
 	return record.HeightAsMetres()
 }
-func (record *baseline_Store) HeightAsString() string {
+func (record *Baseline) HeightAsString() string {
 	return record.HeightAsString()
 }
 
-func GetByUserID(userID int) (*baseline_Store, error) {
+func GetByUserID(userID int) (*Baseline, error) {
 	// This function should implement the logic to retrieve a baseline record by userID
 	// For now, we return nil and nil to avoid compilation errors
 	if userID <= 0 {

@@ -21,7 +21,7 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func (record *Weight_Store) insertOrUpdate(ctx context.Context, note, activity string, auditAction audit.Action, operation string) error {
+func (record *Weight) insertOrUpdate(ctx context.Context, note, activity string, auditAction audit.Action, operation string) error {
 
 	isCreateOperation := false
 	if strings.EqualFold(operation, actions.CREATE.GetCode()) {
@@ -80,9 +80,9 @@ func (record *Weight_Store) insertOrUpdate(ctx context.Context, note, activity s
 	return nil
 }
 
-func postGetList(recordList *[]Weight_Store) ([]Weight_Store, error) {
+func postGetList(recordList *[]Weight) ([]Weight, error) {
 	clock := timing.Start(domain, actions.PROCESS.GetCode(), "POSTGET")
-	returnList := []Weight_Store{}
+	returnList := []Weight{}
 	for _, record := range *recordList {
 		if err := record.postGet(); err != nil {
 			return nil, err
@@ -93,7 +93,7 @@ func postGetList(recordList *[]Weight_Store) ([]Weight_Store, error) {
 	return returnList, nil
 }
 
-func (record *Weight_Store) postGet() error {
+func (record *Weight) postGet() error {
 
 	upgradeError := record.upgradeProcessing()
 	if upgradeError != nil {
@@ -113,7 +113,7 @@ func (record *Weight_Store) postGet() error {
 	return record.postGetProcessing()
 }
 
-func (record *Weight_Store) checkForDuplicate() error {
+func (record *Weight) checkForDuplicate() error {
 
 	dao.CheckDAOReadyState(domain, audit.PROCESS, initialised) // Check the DAO has been initialised, Mandatory.
 

@@ -17,8 +17,8 @@ import (
 
 var domain = "weight"
 
-// Weight_Store represents a Weight_Store entity.
-type Weight_Store struct {
+// Weight represents a Weight entity.
+type Weight struct {
 	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
 	Key   string      `storm:"unique"`              // key
 	Raw   string      `storm:"unique"`              // raw ID before encoding

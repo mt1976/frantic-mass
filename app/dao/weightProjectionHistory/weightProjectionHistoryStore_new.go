@@ -25,7 +25,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, di dateIndex.DateIndex, wp weightProjection.WeightProjection) (weightProjectionHistory_Store, error) {
+func New(ctx context.Context, di dateIndex.DateIndex, wp weightProjection.WeightProjection) (WeightProjectionHistory, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -35,7 +35,7 @@ func New(ctx context.Context, di dateIndex.DateIndex, wp weightProjection.Weight
 	sessionID := wp.CompositeID + types.Delimiter + stringHelpers.RemoveSpecialChars(fmt.Sprintf("%v", di.ID))
 
 	// Create a new struct
-	record := weightProjectionHistory_Store{}
+	record := WeightProjectionHistory{}
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 	record.DateIndex = di

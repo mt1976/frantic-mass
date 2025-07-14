@@ -14,8 +14,8 @@ import (
 
 var domain = "User"
 
-// Store represents a Store entity.
-type Store struct {
+// User represents a User entity.
+type User struct {
 	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
 	Key   string      `storm:"unique"`              // key
 	Raw   string      `storm:"unique"`              // raw ID before encoding

@@ -22,7 +22,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID int, heightCm types.Height, projectionPeriod int, note string) (baseline_Store, error) {
+func New(ctx context.Context, userID int, heightCm types.Height, projectionPeriod int, note string) (Baseline, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -32,7 +32,7 @@ func New(ctx context.Context, userID int, heightCm types.Height, projectionPerio
 	sessionID := idHelpers.GetUUID()
 
 	// Create a new struct
-	record := baseline_Store{}
+	record := Baseline{}
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 	record.Audit = audit.Audit{}

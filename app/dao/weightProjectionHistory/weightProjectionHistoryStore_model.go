@@ -16,8 +16,8 @@ import (
 
 var domain = "weightProjectionHistory"
 
-// weightProjectionHistory_Store represents a weightProjectionHistory_Store entity.
-type weightProjectionHistory_Store struct {
+// WeightProjectionHistory represents a WeightProjectionHistory entity.
+type WeightProjectionHistory struct {
 	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
 	Key   string      `storm:"unique"`              // key
 	Raw   string      `storm:"unique"`              // raw ID before encoding

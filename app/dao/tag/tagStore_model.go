@@ -14,8 +14,8 @@ import (
 
 var domain = "tag"
 
-// tag_Store represents a tag_Store entity.
-type tag_Store struct {
+// Tag represents a Tag entity.
+type Tag struct {
 	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
 	Key   string      `storm:"unique"`              // key
 	Raw   string      `storm:"unique"`              // raw ID before encoding

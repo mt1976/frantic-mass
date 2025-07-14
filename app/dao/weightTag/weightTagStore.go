@@ -29,7 +29,7 @@ import (
 
 func Count() (int, error) {
 	logHandler.DatabaseLogger.Printf("Count %v", domain)
-	return activeDB.Count(&weightTag_Store{})
+	return activeDB.Count(&WeightTag{})
 }
 
 func CountWhere(field string, value any) (int, error) {
@@ -44,15 +44,15 @@ func CountWhere(field string, value any) (int, error) {
 	return len(list), nil
 }
 
-func GetById(id any) (weightTag_Store, error) {
+func GetById(id any) (WeightTag, error) {
 	return GetBy(FIELD_ID, id)
 }
 
-func GetByKey(key any) (weightTag_Store, error) {
+func GetByKey(key any) (WeightTag, error) {
 	return GetBy(FIELD_Key, key)
 }
 
-func GetBy(field string, value any) (weightTag_Store, error) {
+func GetBy(field string, value any) (WeightTag, error) {
 
 	clock := timing.Start(domain, actions.GET.GetCode(), fmt.Sprintf("%v=%v", field, value))
 
@@ -61,45 +61,45 @@ func GetBy(field string, value any) (weightTag_Store, error) {
 	if field == FIELD_ID && reflect.TypeOf(value).Name() != "int" {
 		msg := "invalid data type. Expected type of %v is int"
 		logHandler.ErrorLogger.Printf(msg, value)
-		return weightTag_Store{}, commonErrors.WrapDAOReadError(domain, field, value, fmt.Errorf(msg, value))
+		return WeightTag{}, commonErrors.WrapDAOReadError(domain, field, value, fmt.Errorf(msg, value))
 	}
 
-	if err := dao.IsValidFieldInStruct(field, weightTag_Store{}); err != nil {
-		return weightTag_Store{}, err
+	if err := dao.IsValidFieldInStruct(field, WeightTag{}); err != nil {
+		return WeightTag{}, err
 	}
 
-	if err := dao.IsValidTypeForField(field, value, weightTag_Store{}); err != nil {
-		return weightTag_Store{}, err
+	if err := dao.IsValidTypeForField(field, value, WeightTag{}); err != nil {
+		return WeightTag{}, err
 	}
 
-	record := weightTag_Store{}
+	record := WeightTag{}
 	logHandler.DatabaseLogger.Printf("Get %v where (%v=%v)", domain, field, value)
 
 	if err := activeDB.Retrieve(field, value, &record); err != nil {
 		clock.Stop(0)
-		return weightTag_Store{}, commonErrors.WrapRecordNotFoundError(domain, field, fmt.Sprintf("%v", value))
+		return WeightTag{}, commonErrors.WrapRecordNotFoundError(domain, field, fmt.Sprintf("%v", value))
 	}
 
 	if err := record.postGet(); err != nil {
 		clock.Stop(0)
-		return weightTag_Store{}, commonErrors.WrapDAOReadError(domain, field, value, err)
+		return WeightTag{}, commonErrors.WrapDAOReadError(domain, field, value, err)
 	}
 
 	clock.Stop(1)
 	return record, nil
 }
 
-func GetAll() ([]weightTag_Store, error) {
+func GetAll() ([]WeightTag, error) {
 
 	dao.CheckDAOReadyState(domain, audit.GET, initialised) // Check the DAO has been initialised, Mandatory.
 
-	recordList := []weightTag_Store{}
+	recordList := []WeightTag{}
 
 	clock := timing.Start(domain, actions.GETALL.GetCode(), "ALL")
 
 	if errG := activeDB.GetAll(&recordList); errG != nil {
 		clock.Stop(0)
-		return []weightTag_Store{}, commonErrors.WrapNotFoundError(domain, errG)
+		return []WeightTag{}, commonErrors.WrapNotFoundError(domain, errG)
 	}
 
 	var errPost error
@@ -113,19 +113,19 @@ func GetAll() ([]weightTag_Store, error) {
 	return recordList, nil
 }
 
-func GetAllWhere(field string, value any) ([]weightTag_Store, error) {
+func GetAllWhere(field string, value any) ([]WeightTag, error) {
 	dao.CheckDAOReadyState(domain, audit.GET, initialised) // Check the DAO has been initialised, Mandatory.
 
-	recordList := []weightTag_Store{}
-	resultList := []weightTag_Store{}
+	recordList := []WeightTag{}
+	resultList := []WeightTag{}
 
 	clock := timing.Start(domain, actions.GETALL.GetCode(), fmt.Sprintf("%v=%v", field, value))
 
-	if err := dao.IsValidFieldInStruct(field, weightTag_Store{}); err != nil {
+	if err := dao.IsValidFieldInStruct(field, WeightTag{}); err != nil {
 		return recordList, err
 	}
 
-	if err := dao.IsValidTypeForField(field, value, weightTag_Store{}); err != nil {
+	if err := dao.IsValidTypeForField(field, value, WeightTag{}); err != nil {
 		return recordList, err
 	}
 
@@ -133,7 +133,7 @@ func GetAllWhere(field string, value any) ([]weightTag_Store, error) {
 
 	recordList, err := GetAll()
 	if err != nil {
-		return []weightTag_Store{}, err
+		return []WeightTag{}, err
 	}
 	count := 0
 
@@ -168,13 +168,13 @@ func DeleteBy(ctx context.Context, field string, value any, note string) error {
 
 	clock := timing.Start(domain, actions.DELETE.GetCode(), fmt.Sprintf("%v=%v", field, value))
 
-	if err := dao.IsValidFieldInStruct(field, weightTag_Store{}); err != nil {
+	if err := dao.IsValidFieldInStruct(field, WeightTag{}); err != nil {
 		logHandler.ErrorLogger.Print(commonErrors.WrapDAODeleteError(domain, field, value, err).Error())
 		clock.Stop(0)
 		return commonErrors.WrapDAODeleteError(domain, field, value, err)
 	}
 
-	if err := dao.IsValidTypeForField(field, value, weightTag_Store{}); err != nil {
+	if err := dao.IsValidTypeForField(field, value, WeightTag{}); err != nil {
 		logHandler.ErrorLogger.Print(commonErrors.WrapDAODeleteError(domain, field, value, err).Error())
 		clock.Stop(0)
 		return err
@@ -218,31 +218,31 @@ func DeleteBy(ctx context.Context, field string, value any, note string) error {
 	return nil
 }
 
-func (record *weightTag_Store) Spew() {
+func (record *WeightTag) Spew() {
 	logHandler.InfoLogger.Printf("[%v] Record=[%+v]", domain, record)
 }
 
-func (record *weightTag_Store) Validate() error {
+func (record *WeightTag) Validate() error {
 	return record.validationProcessing()
 }
 
-func (record *weightTag_Store) Update(ctx context.Context, note string) error {
+func (record *WeightTag) Update(ctx context.Context, note string) error {
 	return record.insertOrUpdate(ctx, note, actions.UPDATE.GetCode(), audit.UPDATE, actions.UPDATE.GetCode())
 }
 
-func (record *weightTag_Store) UpdateWithAction(ctx context.Context, auditAction audit.Action, note string) error {
+func (record *WeightTag) UpdateWithAction(ctx context.Context, auditAction audit.Action, note string) error {
 	return record.insertOrUpdate(ctx, note, actions.UPDATE.GetCode(), auditAction, actions.UPDATE.GetCode())
 }
 
-func (record *weightTag_Store) Create(ctx context.Context, note string) error {
+func (record *WeightTag) Create(ctx context.Context, note string) error {
 	return record.insertOrUpdate(ctx, note, actions.CREATE.GetCode(), audit.CREATE, actions.CREATE.GetCode())
 }
 
-func (record *weightTag_Store) Clone(ctx context.Context) (weightTag_Store, error) {
+func (record *WeightTag) Clone(ctx context.Context) (WeightTag, error) {
 	return weightTagClone(ctx, *record)
 }
 
-func (record *weightTag_Store) ExportRecordAsJSON(name string) {
+func (record *WeightTag) ExportRecordAsJSON(name string) {
 
 	ID := reflect.ValueOf(*record).FieldByName(FIELD_ID)
 
@@ -289,7 +289,7 @@ func GetLookup(field, value string) (lookup.Lookup, error) {
 }
 
 func Drop() error {
-	return activeDB.Drop(weightTag_Store{})
+	return activeDB.Drop(WeightTag{})
 }
 
 // GetDatabaseConnections returns a function that fetches the current database instances.
@@ -370,7 +370,7 @@ func ExportRecordsAsCSV() error {
 }
 
 func ImportRecordsFromCSV() error {
-	return importExportHelper.ImportCSV(domain, &weightTag_Store{}, tempalteImportProcessor)
+	return importExportHelper.ImportCSV(domain, &WeightTag{}, tempalteImportProcessor)
 }
 
 // Worker is a job that is scheduled to run at a predefined interval

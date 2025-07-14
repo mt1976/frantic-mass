@@ -8,7 +8,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func (record *Weight_Store) String() string {
+func (record *Weight) String() string {
 	if record == nil {
 		return "Weight_Store is nil"
 	}
@@ -24,7 +24,7 @@ func (record *Weight_Store) String() string {
 		"}"
 }
 
-func (record *Weight_Store) GetBMI() types.BMI {
+func (record *Weight) GetBMI() types.BMI {
 	logHandler.EventLogger.Printf("GetBMI called for Weight_Store ID %d", record.ID)
 	if record == nil {
 		return types.BMI{}

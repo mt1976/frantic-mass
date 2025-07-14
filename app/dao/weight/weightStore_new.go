@@ -24,7 +24,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID int, weightKg types.Weight, note string, recordedAt time.Time) (Weight_Store, error) {
+func New(ctx context.Context, userID int, weightKg types.Weight, note string, recordedAt time.Time) (Weight, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -34,7 +34,7 @@ func New(ctx context.Context, userID int, weightKg types.Weight, note string, re
 	sessionID := idHelpers.GetUUID()
 
 	// Create a new struct
-	record := Weight_Store{}
+	record := Weight{}
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 	record.Audit = audit.Audit{}

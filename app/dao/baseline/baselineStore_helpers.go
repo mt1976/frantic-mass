@@ -20,40 +20,40 @@ import (
 //TODO: Implement the isDuplicateOf function to process the domain entity
 //TODO: Implement the postGetProcessing function to process the domain entity
 
-func (record *baseline_Store) upgradeProcessing() error {
+func (record *Baseline) upgradeProcessing() error {
 	//TODO: Add any upgrade processing here
 	//This processing is triggered directly after the record has been retrieved from the database
 	return nil
 }
 
-func (record *baseline_Store) defaultProcessing() error {
+func (record *Baseline) defaultProcessing() error {
 	//TODO: Add any default calculations here
 	//This processing is triggered directly before the record is saved to the database
 	return nil
 }
 
-func (record *baseline_Store) validationProcessing() error {
+func (record *Baseline) validationProcessing() error {
 	//TODO: Add any record validation here
 	//This processing is triggered directly before the record is saved to the database and after the default calculations
 	return nil
 }
 
-func (h *baseline_Store) postGetProcessing() error {
+func (h *Baseline) postGetProcessing() error {
 	//TODO: Add any post get processing here
 	//This processing is triggered directly after the record has been retrieved from the database and after the upgrade processing
 	return nil
 }
 
-func (record *baseline_Store) preDeleteProcessing() error {
+func (record *Baseline) preDeleteProcessing() error {
 	//TODO: Add any pre delete processing here
 	//This processing is triggered directly before the record is deleted from the database
 	return nil
 }
 
-func baselineClone(ctx context.Context, source baseline_Store) (baseline_Store, error) {
+func baselineClone(ctx context.Context, source Baseline) (Baseline, error) {
 	//TODO: Add any clone processing here
 	panic("Not Implemented")
-	return baseline_Store{}, nil
+	return Baseline{}, nil
 }
 
 func baselineJobProcessor(j jobs.Job) {

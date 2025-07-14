@@ -20,41 +20,41 @@ import (
 //TODO: Implement the isDuplicateOf function to process the domain entity
 //TODO: Implement the postGetProcessing function to process the domain entity
 
-func (record *Weight_Store) upgradeProcessing() error {
+func (record *Weight) upgradeProcessing() error {
 	//TODO: Add any upgrade processing here
 	//This processing is triggered directly after the record has been retrieved from the database
 	return nil
 }
 
-func (record *Weight_Store) defaultProcessing() error {
+func (record *Weight) defaultProcessing() error {
 	//TODO: Add any default calculations here
 	//This processing is triggered directly before the record is saved to the database
 	return nil
 }
 
-func (record *Weight_Store) validationProcessing() error {
+func (record *Weight) validationProcessing() error {
 	//TODO: Add any record validation here
 	//This processing is triggered directly before the record is saved to the database and after the default calculations
 	return nil
 }
 
-func (record *Weight_Store) postGetProcessing() error {
+func (record *Weight) postGetProcessing() error {
 	//TODO: Add any post get processing here
 	//This processing is triggered directly after the record has been retrieved from the database and after the upgrade processing
 	record.BMI = record.GetBMI() // Ensure BMI is calculated after retrieval
 	return nil
 }
 
-func (record *Weight_Store) preDeleteProcessing() error {
+func (record *Weight) preDeleteProcessing() error {
 	//TODO: Add any pre delete processing here
 	//This processing is triggered directly before the record is deleted from the database
 	return nil
 }
 
-func weightClone(ctx context.Context, source Weight_Store) (Weight_Store, error) {
+func weightClone(ctx context.Context, source Weight) (Weight, error) {
 	//TODO: Add any clone processing here
 	panic("Not Implemented")
-	return Weight_Store{}, nil
+	return Weight{}, nil
 }
 
 func weightJobProcessor(j jobs.Job) {

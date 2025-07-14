@@ -7,7 +7,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func (record *Store) StartingWeight() (types.Weight, error) {
+func (record *User) StartingWeight() (types.Weight, error) {
 	// This function returns the starting weight of the user as an appropriate string.
 
 	userID := record.ID
@@ -22,7 +22,7 @@ func (record *Store) StartingWeight() (types.Weight, error) {
 		return types.Weight{}, fmt.Errorf("No weight records found for user ID %d", userID)
 	}
 	// Find earliest weight record
-	var earliestRecord *w.Weight_Store
+	var earliestRecord *w.Weight
 	for _, wr := range weightRecords {
 		if earliestRecord == nil || wr.RecordedAt.Before(earliestRecord.RecordedAt) {
 			earliestRecord = &wr

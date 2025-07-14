@@ -21,7 +21,7 @@ import (
 	"github.com/mt1976/frantic-core/timing"
 )
 
-func (record *weightProjectionHistory_Store) insertOrUpdate(ctx context.Context, note, activity string, auditAction audit.Action, operation string) error {
+func (record *WeightProjectionHistory) insertOrUpdate(ctx context.Context, note, activity string, auditAction audit.Action, operation string) error {
 
 	isCreateOperation := false
 	if strings.EqualFold(operation, actions.CREATE.GetCode()) {
@@ -80,9 +80,9 @@ func (record *weightProjectionHistory_Store) insertOrUpdate(ctx context.Context,
 	return nil
 }
 
-func postGetList(recordList *[]weightProjectionHistory_Store) ([]weightProjectionHistory_Store, error) {
+func postGetList(recordList *[]WeightProjectionHistory) ([]WeightProjectionHistory, error) {
 	clock := timing.Start(domain, actions.PROCESS.GetCode(), "POSTGET")
-	returnList := []weightProjectionHistory_Store{}
+	returnList := []WeightProjectionHistory{}
 	for _, record := range *recordList {
 		if err := record.postGet(); err != nil {
 			return nil, err
@@ -93,7 +93,7 @@ func postGetList(recordList *[]weightProjectionHistory_Store) ([]weightProjectio
 	return returnList, nil
 }
 
-func (record *weightProjectionHistory_Store) postGet() error {
+func (record *WeightProjectionHistory) postGet() error {
 
 	upgradeError := record.upgradeProcessing()
 	if upgradeError != nil {
@@ -113,7 +113,7 @@ func (record *weightProjectionHistory_Store) postGet() error {
 	return record.postGetProcessing()
 }
 
-func (record *weightProjectionHistory_Store) checkForDuplicate() error {
+func (record *WeightProjectionHistory) checkForDuplicate() error {
 
 	dao.CheckDAOReadyState(domain, audit.PROCESS, initialised) // Check the DAO has been initialised, Mandatory.
 

@@ -15,8 +15,8 @@ import (
 
 var domain = "baseline"
 
-// baseline_Store represents a baseline_Store entity.
-type baseline_Store struct {
+// Baseline represents a Baseline entity.
+type Baseline struct {
 	ID    int         `storm:"id,increment=100000"` // primary key with auto increment
 	Key   string      `storm:"unique"`              // key
 	Raw   string      `storm:"unique"`              // raw ID before encoding
