@@ -53,13 +53,12 @@ func Create(ctx context.Context, userID, goalID, projectionNo int, weight, amoun
 	record.ToGoal = toGo // Set the total weight loss needed to reach the goal
 	// Create a composite ID for unique identification of the projection
 	//record.CompositeID = fmt.Sprintf("%d/%d/%d", userID, goalID, projectionNo)
-	cid := types.NewCompositeIDFromParts(userID, goalID, projectionNo)
-	record.CompositeID = cid.String()
+	record.CompositeID = types.NewCompositeIDFromParts(userID, goalID, projectionNo)
 
 	record.BMI = record.GetBMI() // Calculate BMI based on the projected weight
 
 	// Record the create action in the audit data
-	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %v", domain, cid)))
+	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %v", domain, record.CompositeID.String())))
 	if auditErr != nil {
 		// Log and panic if there is an error creating the status instance
 		logHandler.ErrorLogger.Panic(commonErrors.WrapDAOUpdateAuditError(domain, record.ID, auditErr))

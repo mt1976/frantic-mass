@@ -12,6 +12,7 @@ import (
 	audit "github.com/mt1976/frantic-core/dao/audit"
 	"github.com/mt1976/frantic-mass/app/dao/dateIndex"
 	"github.com/mt1976/frantic-mass/app/dao/weightProjection"
+	"github.com/mt1976/frantic-mass/app/types"
 )
 
 var domain = "weightProjectionHistory"
@@ -23,8 +24,9 @@ type WeightProjectionHistory struct {
 	Raw   string      `storm:"unique"`              // raw ID before encoding
 	Audit audit.Audit `csv:"-"`                     // audit data
 	// Add your fields here
-	DateIndex        dateIndex.DateIndex               `` // Foreign key to DateIndex
-	WeightProjection weightProjection.WeightProjection `` // Foreign key to WeightProjection
+	CompositeID      types.CompositeID                 `storm:"index"` // Composite ID for unique identification of the projection
+	DateIndex        dateIndex.DateIndex               ``              // Foreign key to DateIndex
+	WeightProjection weightProjection.WeightProjection ``              // Foreign key to WeightProjection
 }
 
 // Define the field set as names

@@ -46,6 +46,10 @@ func (c CompositeID) String() string {
 	return string(c)
 }
 
+func (c CompositeID) Set(in string) CompositeID {
+	return c
+}
+
 // NewCompositeID creates a new CompositeID from the given parts
 func NewCompositeIDFromParts(parts ...any) CompositeID {
 	return CompositeID(NewCompositeID(parts...))

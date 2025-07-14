@@ -18,7 +18,6 @@ import (
 	"github.com/mt1976/frantic-core/dao/audit"
 	"github.com/mt1976/frantic-core/idHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
-	"github.com/mt1976/frantic-core/stringHelpers"
 	"github.com/mt1976/frantic-core/timing"
 	"github.com/mt1976/frantic-mass/app/dao/dateIndex"
 	"github.com/mt1976/frantic-mass/app/dao/weightProjection"
@@ -36,14 +35,14 @@ func Create(ctx context.Context, di dateIndex.DateIndex, wp weightProjection.Wei
 	//logHandler.InfoLogger.Printf("New %v (%v=%v)", domain, FIELD_ID, field1)
 	clock := timing.Start(domain, actions.CREATE.GetCode(), fmt.Sprintf("%v", di))
 
-	sessionID := wp.CompositeID + types.Delimiter + stringHelpers.RemoveSpecialChars(fmt.Sprintf("%v", di.ID))
-
 	// Create a new struct
 	record := WeightProjectionHistory{}
-	record.Key = idHelpers.Encode(sessionID)
-	record.Raw = sessionID
+
 	record.DateIndex = di
 	record.WeightProjection = wp
+	record.CompositeID = types.NewCompositeIDFromParts(wp.UserID, wp.GoalID, wp.ProjectionNo, di.ID)
+	record.Raw = record.CompositeID.String()
+	record.Key = idHelpers.Encode(record.Raw)
 
 	// Record the create action in the audit data
 	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %v", domain, di)))

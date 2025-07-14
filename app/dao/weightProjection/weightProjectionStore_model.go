@@ -24,17 +24,20 @@ type WeightProjection struct {
 	Raw   string      `storm:"unique"`              // raw ID before encoding
 	Audit audit.Audit `csv:"-"`                     // audit data
 	// Add your fields here
-	UserID       int       `storm:"index"` // Foreign key to User
-	GoalID       int       `storm:"index"` // Foreign key to Goal
-	ProjectionNo int       `storm:"index"` // Projection number, used for tracking multiple projections for the same goal
-	Weight       t.Weight  // Projected weight in kilograms
-	Date         time.Time `storm:"index"` // Date of the projection
-	Note         string    // Additional notes for the projection
-	CompositeID  string    `storm:"index"` // Composite ID for unique identification of the projection
-	BMI          t.BMI     // Body Mass Index, calculated from the projected weight
-	Amount       t.Weight  // Amount of weight loss or gain projected
-	VsTarget     string    // Comparison against target weight for the goal
-	ToGoal       t.Weight  // Total weight loss that still needs to be achieved to reach the goal
+
+	CompositeID t.CompositeID `storm:"index"` // Composite ID for unique identification of the projection
+	// Foreign keys
+	UserID       int `storm:"index"` // Foreign key to User
+	GoalID       int `storm:"index"` // Foreign key to Goal
+	ProjectionNo int `storm:"index"` // Projection number, used for tracking multiple projections for the same goal
+
+	Weight   t.Weight  // Projected weight in kilograms
+	Date     time.Time `storm:"index"` // Date of the projection
+	Note     string    // Additional notes for the projection
+	BMI      t.BMI     // Body Mass Index, calculated from the projected weight
+	Amount   t.Weight  // Amount of weight loss or gain projected
+	VsTarget string    // Comparison against target weight for the goal
+	ToGoal   t.Weight  // Total weight loss that still needs to be achieved to reach the goal
 }
 
 // Define the field set as names
