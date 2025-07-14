@@ -81,7 +81,6 @@ func UserJobProcessor(j jobs.Job) {
 
 	for UserEntryIndex, UserRecord := range UserEntries {
 		logHandler.ServiceLogger.Printf("[%v] %v(%v/%v) %v", jobs.CodedName(j), domain, UserEntryIndex+1, noUserEntries, UserRecord.Raw)
-		UserRecord.UpdateWithAction(context.TODO(), audit.GRANT, "Job Processing")
 		UserRecord.UpdateWithAction(context.TODO(), audit.SERVICE, "Job Processing "+j.Name())
 		count++
 	}

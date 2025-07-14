@@ -10,14 +10,14 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/stringHelpers"
 	"github.com/mt1976/frantic-core/timing"
-	"github.com/mt1976/frantic-mass/app/dao/weightProjection"
+	"github.com/mt1976/frantic-mass/app/dao/weightProjectionHistory"
 )
 
-// TODO: Rename the weightProjection struct to a more appropriate name for the job RENAME "weightProjection" TO THE NAME OF THE DOMAIN ENTITY
-// TODO: Rename the weightProjection struct to a more appropriate name for the job RENAME "weightProjection" TO THE NAME OF THE DOMAIN ENTITY
-// TODO: Rename the weightProjection struct to a more appropriate name for the job RENAME "weightProjection" TO THE NAME OF THE DOMAIN ENTITY
+// TODO: Rename the weightProjectionHistory struct to a more appropriate name for the job RENAME "weightProjectionHistory" TO THE NAME OF THE DOMAIN ENTITY
+// TODO: Rename the weightProjectionHistory struct to a more appropriate name for the job RENAME "weightProjectionHistory" TO THE NAME OF THE DOMAIN ENTITY
+// TODO: Rename the weightProjectionHistory struct to a more appropriate name for the job RENAME "weightProjectionHistory" TO THE NAME OF THE DOMAIN ENTITY
 
-// WeightProjectionJob represents a job that can be scheduled and run periodically.
+// weightProjectionHistoryJob represents a job that can be scheduled and run periodically.
 //
 // Fields:
 //
@@ -47,9 +47,9 @@ import (
 //
 // Example usage:
 //
-//	job := &WeightProjectionJob{}
+//	job := &weightProjectionHistoryJob{}
 //	job.Service()()
-type WeightProjectionJob struct {
+type weightProjectionHistoryJob struct {
 	// Uncomment the following line for multi-database jobs
 	databaseAccessors []func() ([]*database.DB, error)
 }
@@ -59,8 +59,8 @@ type WeightProjectionJob struct {
 // Returns:
 //
 //	string: The name of the job.
-func (j *WeightProjectionJob) Name() string {
-	return "weightProjection Job"
+func (j *weightProjectionHistoryJob) Name() string {
+	return "weightProjectionHistory Job"
 }
 
 // Schedule returns the schedule for the job in cron format.
@@ -68,7 +68,7 @@ func (j *WeightProjectionJob) Name() string {
 // Returns:
 //
 //	string: The schedule for the job in quartz cron format.
-func (j *WeightProjectionJob) Schedule() string {
+func (j *weightProjectionHistoryJob) Schedule() string {
 	// Every 30 seconds
 	return "5 0 * * * *"
 }
@@ -78,8 +78,8 @@ func (j *WeightProjectionJob) Schedule() string {
 // Returns:
 //
 //	string: A description of the job.
-func (j *WeightProjectionJob) Description() string {
-	return "weightProjection Job, This is a weightProjection job that can be used as a starting point for creating new jobs."
+func (j *weightProjectionHistoryJob) Description() string {
+	return "weightProjectionHistory Job, This is a weightProjectionHistory job that can be used as a starting point for creating new jobs."
 }
 
 // Run executes the job. Starts a timing clock, runs pre-processing, processes the job, runs post-processing, and stops the clock.
@@ -87,7 +87,7 @@ func (j *WeightProjectionJob) Description() string {
 // Returns:
 //
 //	error: An error if any step fails, otherwise nil.
-func (j *WeightProjectionJob) Run() error {
+func (j *weightProjectionHistoryJob) Run() error {
 	clock := timing.Start(jobs.CodedName(j), actions.PROCESS.GetCode(), j.Description())
 	jobs.PreRun(j)
 
@@ -103,12 +103,12 @@ func (j *WeightProjectionJob) Run() error {
 			}
 			logHandler.ServiceLogger.Printf("[%v] Running '%v' job across %v database(s)", jobs.CodedName(j), j.Name(), len(dbList))
 			for _, db := range dbList {
-				runweightProjectionJob(j, db)
+				runweightProjectionHistoryJob(j, db)
 			}
 		}
 
 	} else {
-		runweightProjectionJob(j, nil)
+		runweightProjectionHistoryJob(j, nil)
 	}
 	jobs.PostRun(j)
 	clock.Stop(1)
@@ -120,7 +120,7 @@ func (j *WeightProjectionJob) Run() error {
 // Returns:
 //
 //	func(): A function that runs the job and logs any errors.
-func (j *WeightProjectionJob) Service() func() {
+func (j *weightProjectionHistoryJob) Service() func() {
 	return func() {
 		err := j.Run()
 		if err != nil {
@@ -137,18 +137,18 @@ func (j *WeightProjectionJob) Service() func() {
 // Parameters:
 //
 //	fn func() ([]*database.DB, error): A function that returns a slice of pointers to `database.DB` and an error.
-func (job *WeightProjectionJob) AddDatabaseAccessFunctions(fn func() ([]*database.DB, error)) {
+func (job *weightProjectionHistoryJob) AddDatabaseAccessFunctions(fn func() ([]*database.DB, error)) {
 	job.databaseAccessors = append(job.databaseAccessors, fn)
 }
 
-// runweightProjectionJob is the main function that processes the job.
+// runweightProjectionHistoryJob is the main function that processes the job.
 //
-// This function is called by the Run method of the weightProjectionJob struct to perform the main processing logic of the job.
+// This function is called by the Run method of the weightProjectionHistoryJob struct to perform the main processing logic of the job.
 //
 // Parameters:
 //
-//	j *weightProjectionJob: A pointer to the weightProjectionJob instance that is being processed.
-func runweightProjectionJob(j *WeightProjectionJob, db *database.DB) {
+//	j *weightProjectionHistoryJob: A pointer to the weightProjectionHistoryJob instance that is being processed.
+func runweightProjectionHistoryJob(j *weightProjectionHistoryJob, db *database.DB) {
 	// This is the main function
 	jobName := stringHelpers.SQuote(j.Name())
 	appName := cfg.GetApplication_Name()
@@ -159,7 +159,7 @@ func runweightProjectionJob(j *WeightProjectionJob, db *database.DB) {
 		logHandler.EventLogger.Printf("[%v] Running %v tasks with database=[%v-%v.db]", jobs.CodedName(j), jobName, appName, db.Name)
 	}
 
-	weightProjection.Worker(j, db)
+	weightProjectionHistory.Worker(j, db)
 
 	// Report the completion of the job
 	if db == nil {
