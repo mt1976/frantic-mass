@@ -1,4 +1,0 @@
-ID|Key|Raw|UserID|Name|TargetWeight.Value|TargetBMI.Value|TargetBMI.Description|TargetBMI.Glyph|TargetDate|LossPerWeek.Value|Note|CompositeID|NoProjections|AverageWeightLoss.State
-100000|29c0716d0496f4d335b17ca53b2dad5612757a56b0bcd6006d970335ffe39b2b|250714082452353241000501075072|100000|GoalFor100000|90|0|||2025-08-13T08:24:52.35324+01:00|2|This is a test goal to check the goal creation process|100000/250714082452353241000501075072|0|false
-100001|dff2f4de799a1fd96a67220e9ac7eb7cb0ca1debfff4d5122e9a1adc9368b9a7|250714082452363039000501017593|100000|AvgGoalFor100000|90|0|||2025-08-13T08:24:52.363036+01:00|0|This is an average weight loss goal|100000/250714082452363039000501017593|0|true
-# Generated (2) goals at 08:24:54 2025-07-14 by 501_matttownsend on orion(*nix)

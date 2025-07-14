@@ -192,3 +192,13 @@ func NewWeight(value float64) *Weight {
 	w.Set(value)
 	return w
 }
+
+func (w *Weight) Invert() *Weight {
+	if w.Value == 0 {
+		logHandler.ErrorLogger.Println("Cannot invert zero weight")
+		return &Weight{}
+	}
+	inverted := -w.Value
+	logHandler.InfoLogger.Printf("Inverting weight: %v kg to %v kg", w.Value, inverted)
+	return &Weight{Value: inverted}
+}

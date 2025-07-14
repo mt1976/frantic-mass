@@ -24,7 +24,7 @@ import (
 	t "github.com/mt1976/frantic-mass/app/types"
 )
 
-func New(ctx context.Context, userID, goalID, projectionNo int, weight, amount t.Weight, date time.Time, note string) (WeightProjection, error) {
+func New(ctx context.Context, userID, goalID, projectionNo int, weight, amount t.Weight, date time.Time, note, VsTarget string, toGo t.Weight) (WeightProjection, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -45,6 +45,8 @@ func New(ctx context.Context, userID, goalID, projectionNo int, weight, amount t
 	record.Amount = amount
 	record.Date = date
 	record.Note = note
+	record.VsTarget = VsTarget
+	record.ToGoal = toGo // Set the total weight loss needed to reach the goal
 	// Create a composite ID for unique identification of the projection
 	//record.CompositeID = fmt.Sprintf("%d/%d/%d", userID, goalID, projectionNo)
 	cid := types.NewCompositeIDFromParts(userID, goalID, projectionNo)

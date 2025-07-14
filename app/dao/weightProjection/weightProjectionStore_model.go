@@ -33,6 +33,8 @@ type WeightProjection struct {
 	CompositeID  string    `storm:"index"` // Composite ID for unique identification of the projection
 	BMI          t.BMI     // Body Mass Index, calculated from the projected weight
 	Amount       t.Weight  // Amount of weight loss or gain projected
+	VsTarget     string    // Comparison against target weight for the goal
+	ToGoal       t.Weight  // Total weight loss that still needs to be achieved to reach the goal
 }
 
 // Define the field set as names
@@ -51,4 +53,6 @@ var (
 	FIELD_CompositeID  = "CompositeID"
 	FIELD_BMI          = "BMI"
 	FIELD_Amount       = "Amount"
+	FIELD_VsTarget     = "VsTarget"
+	FIELD_ToGoal       = "ToGoal"
 )
