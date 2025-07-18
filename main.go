@@ -3,8 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
+	"net/http"
 	"time"
 
+	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/middleware"
 	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
@@ -18,6 +21,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/jobs"
 	"github.com/mt1976/frantic-mass/app/types"
 	"github.com/mt1976/frantic-mass/app/web/controllers"
+	"github.com/mt1976/frantic-mass/app/web/handlers"
 )
 
 func main() {
@@ -217,14 +221,22 @@ func main() {
 
 	godump.Dump(uv)
 
-	dl, err := controllers.Launcher(context.TODO())
-	if err != nil {
-		logHandler.ErrorLogger.Println("Error creating DisplayLauncher view:", err)
-	} else {
-		logHandler.EventLogger.Println("DisplayLauncher view created successfully")
-	}
-
-	godump.Dump(dl)
 	logHandler.InfoLogger.Println("End of main function")
+
+	r := chi.NewRouter()
+	r.Use(middleware.Logger)
+	r.Use(middleware.RequestID)
+	r.Use(middleware.RealIP)
+	r.Use(middleware.Recoverer)
+
+	// Set a timeout value on the request context (ctx), that will signal
+	// through ctx.Done() that the request has timed out and further
+	// processing should be stopped.
+	r.Use(middleware.Timeout(60 * time.Second))
+	r.Get("/", handlers.Launcher)
+	r.Get("/test", handlers.Dummy)
+	r.NotFound(handlers.NotFound)
+	r.MethodNotAllowed(handlers.MethodNotAllowed)
+	http.ListenAndServe(":3000", r)
 
 }

@@ -1,8 +1,8 @@
 package views
 
 type UserChooser struct {
-	Users  []User
-	Common Common
+	Users       []User
+	SessionData AppContext
 }
 
 type User struct {
@@ -12,7 +12,7 @@ type User struct {
 
 func CreateUserChooser() UserChooser {
 	view := UserChooser{}
-	view.Common.SetDefaults() // Initialize the Common view with defaults
+	view.SessionData.SetDefaults() // Initialize the Common view with defaults
 	view.Users = []User{}
 	return view
 }

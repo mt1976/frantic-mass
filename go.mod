@@ -5,6 +5,7 @@ go 1.24.4
 require github.com/asdine/storm/v3 v3.2.1 // indirect
 
 require (
+	github.com/go-chi/chi/v5 v5.2.2 // indirect
 	github.com/gopherjs/gopherjs v1.17.2 // indirect
 	github.com/jtolds/gls v4.20.0+incompatible // indirect
 )
@@ -13,6 +14,7 @@ require (
 	github.com/BurntSushi/toml v1.5.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.9 // indirect
 	github.com/galsondor/go-ascii v0.0.0-20151210013816-e2eb5175fb10 // indirect
+	github.com/go-chi/chi v1.5.5
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.27.0 // indirect

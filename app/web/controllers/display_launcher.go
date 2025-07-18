@@ -12,10 +12,11 @@ func Launcher(ctx context.Context) (views.DisplayLauncher, error) {
 	godump.Dump(view)
 
 	// Set the common fields for the view
-	view.Common.Title = "Display Launcher"
-	view.Common.Keywords = "display, launcher"
-	view.Common.Status = 200 // OK
-	view.Common.Success = true
+	view.Common.PageTitle = "Display Launcher"
+	view.Common.PageKeywords = "display, launcher"
+	view.Common.PageSummary = "Launch the application"
+	view.Common.HttpStatusCode = 200 // OK
+	view.Common.WasSuccessful = true
 
 	return view, nil
 }
