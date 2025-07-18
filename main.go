@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/dao/dateIndex"
@@ -16,6 +17,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/jobs"
 	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/web/controllers"
 )
 
 func main() {
@@ -205,6 +207,24 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("All operations completed successfully")
+
+	uv, err := controllers.UserChooser(context.TODO())
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error creating UserChooser view:", err)
+	} else {
+		logHandler.EventLogger.Println("UserChooser view created successfully")
+	}
+
+	godump.Dump(uv)
+
+	dl, err := controllers.Launcher(context.TODO())
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error creating DisplayLauncher view:", err)
+	} else {
+		logHandler.EventLogger.Println("DisplayLauncher view created successfully")
+	}
+
+	godump.Dump(dl)
 	logHandler.InfoLogger.Println("End of main function")
 
 }
