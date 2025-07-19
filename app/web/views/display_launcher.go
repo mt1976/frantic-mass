@@ -13,6 +13,6 @@ func CreateDisplayLauncher() DisplayLauncher {
 	view := DisplayLauncher{}
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "launcher"
-	view.Context.PageActions.Add(helpers.NewAction("Launch", "Start the application", glyphs.Default, "/launch", "POST", "launchApp()"))
+	view.Context.PageActions.Add(helpers.NewAction("Launch", "Start the application", glyphs.Default, "/users", "POST", ""))
 	return view
 }

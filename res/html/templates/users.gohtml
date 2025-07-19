@@ -13,23 +13,27 @@
       }
     </style>
     </head>
-    <body class="nes-bg-dark">
+    <body class="nes-bg-dark" style="padding: 20px; margin: 10px;">
         <div class="nes-container with-title is-rounded is-centered">
-            <h2>Welcome to the {{.Context.AppName}} Launcher</h2>
+            <h1>{{.Context.AppName}}</h1>
             <br>
             <div class="nes-container with-title is-rounded is-centered">
-                <p class="title nes-text is-primary">{{.Context.AppName}}</h1>
-            <p>{{.Context.AppDescription}}</p>
+                <p class="title nes-text is-primary">{{.Context.PageTitle}}</p>
+                <br>
+                {{range .Users}}
+                <a href="/userselected/{{.ID}}" class="nes-btn" style="width: 100%;">{{.Name}}&nbsp;<small class="nes-text is-disabled">{{.ID}}</small></a>
+                <br><br>
+                {{end}}
             </div>
             <br>
-            <p>Click below to start {{.Context.AppName}}.</p>
 
             <!-- Range through the page actions from the context -->
             {{if .Context.PageActions.Actions}}
+              
                     {{range .Context.PageActions.Actions}}
-                    <a href="{{.FormAction}}" class="nes-btn is-primary">{{.Name}}</a>
-                            <!--<button type="submit" class="nes-btn is-primary" onclick='{{.OnClick}}' formaction="{{.FormAction}}" method="{{.Method}}">{{.Name}}</button>-->
+                            <button type="button" class="nes-btn is-primary" onclick='{{.OnClick}}'>{{.Name}}</button>
                     {{end}}
+         
             {{else}}
                 <p>No actions available.</p>
             {{end}}

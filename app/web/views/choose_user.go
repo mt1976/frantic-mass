@@ -16,6 +16,7 @@ type User struct {
 func CreateUserChooser() UserChooser {
 	view := UserChooser{}
 	view.Context.SetDefaults() // Initialize the Common view with defaults
+	view.Context.TemplateName = "users"
 	view.Users = []User{}
 	return view
 }

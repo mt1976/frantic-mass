@@ -72,6 +72,14 @@ func main() {
 
 	userIdentifier = thisUser.ID
 	logHandler.InfoLogger.Printf("User Created:[%+v]", thisUser)
+
+	thisUser2, newRedErr := user.Create(context.TODO(), fmt.Sprintf("user_%v", 102), fmt.Sprintf("password_%v", 102), fmt.Sprintf("user_%v@example.com", 102))
+	if newRedErr != nil {
+		logHandler.ErrorLogger.Println(newRedErr)
+	}
+
+	logHandler.InfoLogger.Printf("User Created:[%+v]", thisUser2)
+
 	//	}
 
 	// user.ExportRecordsAsCSV()
@@ -212,7 +220,7 @@ func main() {
 
 	logHandler.InfoLogger.Println("All operations completed successfully")
 
-	uv, err := controllers.UserChooser(context.TODO())
+	uv, err := controllers.Users(context.TODO())
 	if err != nil {
 		logHandler.ErrorLogger.Println("Error creating UserChooser view:", err)
 	} else {
@@ -234,6 +242,7 @@ func main() {
 	// processing should be stopped.
 	r.Use(middleware.Timeout(60 * time.Second))
 	r.Get("/", handlers.Launcher)
+	r.Get("/users", handlers.UserChooser)
 	r.Get("/test", handlers.Dummy)
 	r.NotFound(handlers.NotFound)
 	r.MethodNotAllowed(handlers.MethodNotAllowed)

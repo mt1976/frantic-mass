@@ -13,7 +13,7 @@ type Action struct {
 	Name        string        // Name of the action, e.g., "Create", "Update", "Delete"
 	Description string        // Description of what the action does
 	Icon        string        // Icon representing the action, e.g., "fa-plus", "fa-edit"
-	URL         template.HTML // URL to navigate to when the action is triggered
+	FormAction  template.HTML // URL to navigate to when the action is triggered
 	Method      string        // HTTP method used for the action, e.g., "GET", "POST"
 	OnClick     template.JS   // JavaScript function to call when the action is clicked, if applicable
 }
@@ -46,7 +46,7 @@ func NewAction(name, description string, icon glyphs.Glyph, url, method, onClick
 
 	returnAction.Icon = icon.Name() // Set the icon name
 
-	returnAction.URL = template.HTML(template.HTMLEscapeString(url))
+	returnAction.FormAction = template.HTML(template.HTMLEscapeString(url))
 	if method == "" {
 		method = "GET" // Default method if none is provided
 	}
@@ -57,7 +57,7 @@ func NewAction(name, description string, icon glyphs.Glyph, url, method, onClick
 	returnAction.OnClick = template.JS(onClick) // Set the JavaScript function to call when the action is clicked
 
 	// Log the creation of the action
-	logHandler.InfoLogger.Printf("Action created: %s (%s)(%s)(%s)", returnAction.Name, returnAction.URL, returnAction.OnClick, returnAction.Method)
+	logHandler.InfoLogger.Printf("Action created: %s (%s)(%s)(%s)", returnAction.Name, returnAction.FormAction, returnAction.OnClick, returnAction.Method)
 
 	return returnAction
 }
@@ -67,7 +67,7 @@ func (a *Actions) Add(action Action) {
 		logHandler.ErrorLogger.Println("Action UUID cannot be nil")
 		return
 	}
-	if action.Name == "" || action.URL == "" {
+	if action.Name == "" || action.FormAction == "" {
 		logHandler.ErrorLogger.Println("Action name and URL cannot be empty")
 		return
 	}
@@ -77,7 +77,7 @@ func (a *Actions) Add(action Action) {
 	if action.OnClick == "" {
 		action.OnClick = "return false;" // Default JavaScript function if none is provided
 	}
-	logHandler.InfoLogger.Printf("Adding action: %s (%s)(%s)(%s)", action.Name, action.URL, action.OnClick, action.Method)
+	logHandler.InfoLogger.Printf("Adding action: %s (%s)(%s)(%s)", action.Name, action.FormAction, action.OnClick, action.Method)
 
 	a.Actions = append(a.Actions, action)
 }

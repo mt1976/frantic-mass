@@ -10,8 +10,8 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/views"
 )
 
-// UserChooser build the page content for the choose user page.
-func UserChooser(ctx context.Context) (views.UserChooser, error) {
+// Users build the page content for the choose user page.
+func Users(ctx context.Context) (views.UserChooser, error) {
 	view := views.CreateUserChooser()
 	godump.Dump(view)
 	// Get the list of users from the user package

@@ -25,7 +25,7 @@ func Launcher(w http.ResponseWriter, r *http.Request) {
 	// Write a simple response
 	w.WriteHeader(dl.Context.HttpStatusCode) // Set the HTTP status code
 
-	executeTemplateResponse(dl, dl.Context, w)
+	render(dl, dl.Context, w)
 
 	logHandler.InfoLogger.Println("Dummy router executed successfully")
 }

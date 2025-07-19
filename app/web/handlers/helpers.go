@@ -41,7 +41,7 @@ func fetchTemplate(view views.AppContext) *template.Template {
 	return tmpl
 }
 
-func executeTemplateResponse(data any, dataContext views.AppContext, w http.ResponseWriter) {
+func render(data any, dataContext views.AppContext, w http.ResponseWriter) {
 	template := fetchTemplate(dataContext)
 	if template == nil {
 		logHandler.ErrorLogger.Println("Failed to get template, using default response")
@@ -62,5 +62,13 @@ func executeTemplateResponse(data any, dataContext views.AppContext, w http.Resp
 		logHandler.ErrorLogger.Println("Error rendering page:", templateError)
 		return
 	}
+
+	w.Header().Set("Content-Type", "text/html")
+	w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
+	w.Header().Set("Pragma", "no-cache")
+	w.Header().Set("Expires", "0")
+	// Write a simple response
+	w.WriteHeader(dataContext.HttpStatusCode) // Set the HTTP status code
+
 	logHandler.InfoLogger.Println("Template executed successfully")
 }
