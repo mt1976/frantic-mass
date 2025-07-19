@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/application"
 	"github.com/mt1976/frantic-core/commonConfig"
 	"github.com/mt1976/frantic-core/dateHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/paths"
 	"github.com/mt1976/frantic-core/stringHelpers"
+	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
 type AppContext struct {
@@ -59,6 +59,7 @@ type AppContext struct {
 	TemplatePath     string // URL path of the current page
 	TemplateName     string // Name of the template used for rendering the page
 	TemplateFilePath string
+	PageActions      helpers.Actions // Actions available on the current page, such as buttons or links
 }
 
 var cache *commonConfig.Settings
@@ -81,7 +82,7 @@ func init() {
 			cacheChecksum = getCacheChecksum(cache)
 		}
 	}
-	godump.Dump(cache, "Cache Configuration", cacheChecksum)
+	//godump.Dump(cache, "Cache Configuration", cacheChecksum)
 }
 
 func getCacheChecksum(cache *commonConfig.Settings) string {
@@ -178,6 +179,7 @@ func (c *AppContext) SetDefaults() {
 	c.TemplatePath = paths.HTML().String()
 	logHandler.InfoLogger.Printf("Template Path: %s", c.TemplatePath)
 	c.TemplateName = "error" // Default template name, can be overridden by specific views
+	c.PageActions = helpers.Actions{}
 }
 
 func (c *AppContext) AddError(err string) {
@@ -191,15 +193,4 @@ func (c *AppContext) AddMessage(msg string) {
 
 func (c *AppContext) AddNotification(notification string) {
 	c.UserAlerts = append(c.UserAlerts, notification)
-}
-
-func (c *AppContext) GetPageTemplatePath() string {
-	if c.TemplatePath == "" {
-		return "/"
-	}
-	//xx := fmt.Sprintf("%s"+paths.Seperator()+"%s.html", c.TemplatePath, c.TemplateName)
-	yy := paths.HTMLPage(c.TemplateName)
-	c.TemplateFilePath = yy
-	logHandler.InfoLogger.Printf("Template Path: %s", yy)
-	return yy
 }

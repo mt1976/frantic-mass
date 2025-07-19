@@ -1,0 +1,66 @@
+package handlers
+
+import (
+	"html/template"
+	"net/http"
+
+	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-mass/app/web/views"
+)
+
+var templateSuffix = ".gohtml"
+
+func fetchTemplate(view views.AppContext) *template.Template {
+	// This function returns the template path based on the request
+	// For this example, we are just returning a hardcoded template path
+
+	templateRequest := view.TemplateName
+
+	logHandler.InfoLogger.Printf("Requesting template: %s", templateRequest)
+	if templateRequest == "" {
+		logHandler.ErrorLogger.Println("Template request is empty, using default template")
+		templateRequest = "default_template"                                                             // Fallback to a default template
+		return template.Must(template.New(templateRequest).ParseFiles(templateRequest + templateSuffix)) // Fallback to a default template
+	}
+
+	root := view.TemplatePath
+	if root == "" {
+		logHandler.ErrorLogger.Println("Root path is empty, using current directory")
+		root = "." // Fallback to current directory if root is not set
+	}
+
+	logHandler.InfoLogger.Printf("Using template path: %s", view.TemplatePath)
+
+	tmpl := template.Must(template.ParseFiles(root + templateRequest + templateSuffix))
+	if tmpl == nil {
+		logHandler.ErrorLogger.Printf("Failed to load template %s from %s", templateRequest, root+templateRequest+templateSuffix)
+		return nil // Return nil if the template could not be loaded
+	}
+	logHandler.InfoLogger.Printf("Template %s loaded successfully from %v", templateRequest, root+templateRequest+templateSuffix)
+
+	return tmpl
+}
+
+func executeTemplateResponse(data any, dataContext views.AppContext, w http.ResponseWriter) {
+	template := fetchTemplate(dataContext)
+	if template == nil {
+		logHandler.ErrorLogger.Println("Failed to get template, using default response")
+		_, _ = w.Write([]byte("Error loading template. Please try again later.\n"))
+		return
+	}
+
+	//godump.Dump(template, data, dataContext, w)
+
+	templateError := template.Execute(w, data)
+	if templateError != nil {
+		logHandler.ErrorLogger.Printf("Error executing template: '%v'", templateError)
+		w.Header().Set("Content-Type", "text/html")
+		w.WriteHeader(http.StatusInternalServerError) // Set the HTTP status code to 500 Internal Server Error
+		_, _ = w.Write([]byte("Error rendering page. Please try again later.\n"))
+		_, _ = w.Write([]byte("Error details: " + templateError.Error() + "\n"))
+		_, _ = w.Write([]byte("\nPlease check the server logs for more details.\n"))
+		logHandler.ErrorLogger.Println("Error rendering page:", templateError)
+		return
+	}
+	logHandler.InfoLogger.Println("Template executed successfully")
+}

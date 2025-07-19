@@ -19,6 +19,7 @@ require (
 	github.com/go-playground/validator/v10 v10.27.0 // indirect
 	github.com/gocarina/gocsv v0.0.0-20240520201108-78e41c74b4b1 // indirect
 	github.com/goforj/godump v1.5.0
+	github.com/google/uuid v1.6.0
 	github.com/jsuar/go-cron-descriptor v0.1.0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mt1976/frantic-core v1.2.71
