@@ -243,7 +243,7 @@ func main() {
 	r.Use(middleware.Timeout(60 * time.Second))
 	r.Get("/", handlers.Launcher)
 	r.Get("/users", handlers.UserChooser)
-	r.Get("/profile/{id}", handlers.Dummy) // Placeholder for user profile handler
+	r.Get("/profile/{id}", handlers.Profile) // Placeholder for user profile handler
 	r.Get("/test", handlers.Dummy)
 	r.NotFound(handlers.NotFound)
 	r.MethodNotAllowed(handlers.MethodNotAllowed)

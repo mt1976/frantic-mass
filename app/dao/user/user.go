@@ -7,6 +7,8 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
+var Nil = User{}
+
 func (record *User) StartingWeight() (types.Weight, error) {
 	// This function returns the starting weight of the user as an appropriate string.
 
