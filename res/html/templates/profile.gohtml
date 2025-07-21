@@ -27,10 +27,19 @@
                 This is the profile page for {{.User.Name}}. <small class="nes-text is-disabled">[{{.User.ID}}]</small>
                 <br><br>
                 There is where we will display the user's information, such as:
-                <br>
+                <br><br>
                 <pre>
 Username: ????
 Email: ??????
+BMI: ????
+Starting Weight: ????
+Current Weight: ????
+Starting Weight: ????
+For each Goal, we will display:
+Goal Name: ???? : Actions [View Detail, Edit, Delete]
+Goal Target Weight: ????
+Progress as a percentage: ????
+Progress as a weight difference: ????
                 </pre>
                 <br>
                 <br>
@@ -38,7 +47,7 @@ Email: ??????
                 <br>
             </div>
             <br>
-
+            Page Actions Will Include: New Goal, New Weight Entry, Edit User profile
             <!-- Range through the page actions from the context -->
             {{if .Context.PageActions.Actions}}
               

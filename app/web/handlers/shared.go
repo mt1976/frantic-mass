@@ -43,6 +43,7 @@ func NotFound(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNotFound) // Set the HTTP status code to 404 Not Found
 	_, _ = w.Write([]byte("404 Not Found\n"))
 	logHandler.ErrorLogger.Println("404 Not Found: The requested resource could not be found.")
+	logHandler.ErrorLogger.Printf("Requested URL: %s, Method: %s", r.URL.Path, r.Method)
 }
 
 func MethodNotAllowed(w http.ResponseWriter, r *http.Request) {
