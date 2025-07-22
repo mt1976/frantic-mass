@@ -66,3 +66,48 @@
  <!-- Minimal theme switcher -->
     <script src="/my.js/minimal-theme-switcher.js"></script>
 {{end}}
+
+{{define "errors"}}
+    <!-- Display any errors -->
+    {{if .Context.UserErrorMessages}}
+        <article>
+
+            <header style="background-color:red;padding-bottom:0px;margin-bottom: 0px;"><p style="color:white;margin-bottom: 10px;"><strong>ERRORS</strong></p></header>
+            <ul>
+                {{range .Context.UserErrorMessages}}
+                    <li><p class="pico-color-red-500" style="margin-top: 18px;">{{.}}</p></li>
+                {{end}}
+            </ul>
+        </article>
+    {{end}}
+{{end}}
+
+{{define "messages"}}
+    <!-- Display any errors -->
+    {{if .Context.UserMessages}}
+        <article>
+
+            <header style="background-color:blue;padding-bottom:0px;margin-bottom: 0px;"><p style="color:white;margin-bottom: 10px;"><strong>MESSAGES</strong></p></header>
+            <ul>
+                {{range .Context.UserMessages}}
+                    <li><p class="pico-color-blue-500" style="margin-top: 18px;">{{.}}</p></li>
+                {{end}}
+            </ul>
+        </article>
+    {{end}}
+{{end}}
+
+{{define "alerts"}}
+    <!-- Display any alerts -->
+    {{if .Context.UserAlerts}}
+        <article>
+
+            <header style="background-color:amber;padding-bottom:0px;margin-bottom: 0px;"><p style="color:white;margin-bottom: 10px;"><strong>ALERTS</strong></p></header>
+            <ul>
+                {{range .Context.UserAlerts}}
+                    <li><p class="pico-color-amber-500" style="margin-top: 18px;">{{.}}</p></li>
+                {{end}}
+            </ul>
+        </article>
+    {{end}}
+{{end}}

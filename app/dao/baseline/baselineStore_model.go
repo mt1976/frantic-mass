@@ -9,6 +9,8 @@ package baseline
 //TODO: Update the FIELD_ constants to match the domain entity
 
 import (
+	"time"
+
 	audit "github.com/mt1976/frantic-core/dao/audit"
 	"github.com/mt1976/frantic-mass/app/types"
 )
@@ -25,6 +27,7 @@ type Baseline struct {
 	UserID           int          `storm:"index"` // Foreign key
 	Height           types.Height // Height in centimeters
 	ProjectionPeriod int          // Projection period in months
+	DateOfBirth      time.Time    // Date of birth
 	Note             string
 }
 
@@ -38,5 +41,6 @@ var (
 	FIELD_UserID           = "UserID"
 	FIELD_Height           = "Height"
 	FIELD_ProjectionPeriod = "ProjectionPeriod"
+	FIELD_DateOfBirth      = "DateOfBirth"
 	FIELD_Note             = "Note"
 )

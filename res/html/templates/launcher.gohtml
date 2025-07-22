@@ -12,8 +12,13 @@
 
                 <p>Click below to start {{.Context.AppName}}.</p>
             </article>
+    {{template "errors" .}}
+        {{template "messages" .}}
+        {{template "alerts" .}}
             {{template "pageactions" .}}
     </body>
+
+
     {{template "footer" .}}
     {{template "scripts" .}}
 </html>

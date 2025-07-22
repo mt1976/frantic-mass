@@ -18,6 +18,12 @@
                         class="nes-text is-disabled">{{.ID}}</small></a>
                 <br><br>
                 {{end}} */}}
+
+                <p>BMI: {{.BMI}}</p>
+                <p>Weight: {{.CurrentWeight}}</p>
+                <p>Height: {{.Height}}</p>
+                <p>Date of Birth: {{.DateOfBirth}}</p>
+                <p>Age: {{.Age}}</p>
                 This is the profile page for {{.User.Name}}. <small class="nes-text is-disabled">[{{.User.ID}}]</small>
                 <br><br>
                 There is where we will display the user's information, such as: BMI, Weight, Goals, and other relevant data.
@@ -27,9 +33,14 @@
                 An overview of the users Goals, their current weight, and their progress towards their goals.
                 
             </article>
+        {{template "errors" .}}
+        {{template "messages" .}}
+        {{template "alerts" .}}
+
             {{template "pageactions" .}}
     
     </body>
+
    {{template "footer" .}}
     {{template "scripts" .}}
 </html>
