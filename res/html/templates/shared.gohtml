@@ -1,0 +1,68 @@
+<!-- shared html for templates -->
+
+{{define "head"}}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="/pico.css/pico.min.css">
+    <link rel="stylesheet" href="/pico.css/pico.colors.min.css">
+    <link rel="stylesheet" href="/pico.css/pico.conditional.min.css">
+    <link rel="stylesheet" href="/glyphs/bootstrap-icons.min.css">
+    <title>{{.Context.AppName}} - {{.Context.PageTitle}}</title>
+</head>
+{{end}}
+
+{{define "footer"}}
+<footer>
+    <!-- Display the version and powered by information -->
+    <article>
+        <small class="pico-color-grey-150">Version: {{.Context.AppVersion}} {{.Context.Delimiter}} {{.Context.AppReleaseDate}} {{.Context.Delimiter}} {{.Context.AppEnvironment}} {{.Context.Delimiter}} {{.Context.FormattedDate}}</small>
+        <br>
+ <nav>
+        <ul>
+          <li>
+            <details class="dropdown">
+              <summary role="button" class="secondary">Theme</summary>
+              <ul>
+                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+                <li><a href="#" data-theme-switcher="light">Light</a></li>
+                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </nav>
+    </article>
+</footer>
+{{end}}
+
+
+{{define "pageactions"}}
+    <!-- Range through the page actions from the context -->
+    <article>
+        {{if .Context.PageActions.Actions}}
+        
+                <aside>
+                    <nav><ul>
+                    {{range .Context.PageActions.Actions}}
+                    <li><a href="{{.FormAction}}" role="button" style="width: 100%;" class="" onclick='{{.OnClick}}' FormAction="{{.FormAction}}" method="{{.Method}}" >{{if .Icon}}{{.Icon}}&nbsp;{{end}}{{.Name}}</a></li>
+                    {{end}}
+                    </ul></nav>
+                </aside>
+   
+        {{else}}
+            <p class="pico-color-grey-500">No actions available.</p>
+        {{end}}
+    </article>
+{{end}}
+
+{{define "bodyStyle"}}
+    padding: 20px; margin: 10px;
+{{end}}
+
+{{define "scripts"}}
+ <!-- Minimal theme switcher -->
+    <script src="/my.js/minimal-theme-switcher.js"></script>
+{{end}}

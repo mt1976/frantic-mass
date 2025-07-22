@@ -7,6 +7,8 @@ import (
 	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/user"
+	"github.com/mt1976/frantic-mass/app/web/glyphs"
+	"github.com/mt1976/frantic-mass/app/web/helpers"
 	"github.com/mt1976/frantic-mass/app/web/views"
 )
 
@@ -53,10 +55,12 @@ func Users(ctx context.Context) (views.UserChooser, error) {
 			continue // Skip deleted users
 		}
 		// Append the user to the view's Users slice
-		view.Users = append(view.Users, views.User{
+		addview := views.User{
 			ID:   u.ID,
 			Name: u.Username,
-		})
+		}
+		addview.Actions.Add(helpers.NewAction(u.Username, "View User "+u.Username, glyphs.Launch, "/profile/"+fmt.Sprint(u.ID), helpers.GET, ""))
+		view.Users = append(view.Users, addview)
 	}
 
 	// If no users were added, return an empty view

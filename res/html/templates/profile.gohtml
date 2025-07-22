@@ -1,71 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>{{.Context.AppName}} - {{.Context.PageTitle}}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
-         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-            <style>
-      html, body, pre, code, kbd, samp {
-          font-family: "Press Start 2P", cursive;
-      }
-    </style>
-    </head>
-    <body class="nes-bg-dark" style="padding: 20px; margin: 10px;">
-        <div class="nes-container with-title is-rounded is-centered">
-            <h1>{{.Context.AppName}}</h1>
-            <br>
-            <div class="nes-container with-title is-rounded is-centered">
+
+   {{template "head" .}}
+
+
+    <body style="{{template "bodyStyle" .}}">
+            <hgroup>
+                <h1>{{.Context.AppName}}</h1>
+                <p>{{.Context.PageTitle}} - {{.User.Name}}</p>
+            </hgroup>
+    
+            <article>
                 <p class="title nes-text is-primary">{{.Context.PageTitle}} - {{.User.Name}}</p>
                 <br>
                 {{/* {{range .Users}}
-                <a href="/profile/{{.ID}}" class="nes-btn" style="width: 100%;">{{.Name}}&nbsp;<small class="nes-text is-disabled">{{.ID}}</small></a>
+                <a href="/profile/{{.ID}}" class="nes-btn" style="width: 100%;">{{.Name}}&nbsp;<small
+                        class="nes-text is-disabled">{{.ID}}</small></a>
                 <br><br>
                 {{end}} */}}
                 This is the profile page for {{.User.Name}}. <small class="nes-text is-disabled">[{{.User.ID}}]</small>
                 <br><br>
-                There is where we will display the user's information, such as:
+                There is where we will display the user's information, such as: BMI, Weight, Goals, and other relevant data.
                 <br><br>
-                <pre>
-Username: ????
-Email: ??????
-BMI: ????
-Starting Weight: ????
-Current Weight: ????
-Starting Weight: ????
-For each Goal, we will display:
-Goal Name: ???? : Actions [View Detail, Edit, Delete]
-Goal Target Weight: ????
-Progress as a percentage: ????
-Progress as a weight difference: ????
-                </pre>
                 <br>
                 <br>
                 An overview of the users Goals, their current weight, and their progress towards their goals.
-                <br>
-            </div>
-            <br>
-            Page Actions Will Include: New Goal, New Weight Entry, Edit User profile
-            <!-- Range through the page actions from the context -->
-            {{if .Context.PageActions.Actions}}
-              
-                    {{range .Context.PageActions.Actions}}
-                            <button type="button" class="nes-btn is-primary" onclick='{{.OnClick}}'>{{.Name}}</button>
-                    {{end}}
-         
-            {{else}}
-                <p>No actions available.</p>
-            {{end}}
-            <br><br>
-            <p class="nes-text is-disabled"><small>Version: {{.Context.AppVersion}}</small></p>
-        </div>
-        <script>
-            function launchApp() {
-                alert('Launching {{.Context.AppName}}...');
-                // Add your launch logic here
-            }
-        </script>
+                
+            </article>
+            {{template "pageactions" .}}
+    
     </body>
+   {{template "footer" .}}
+    {{template "scripts" .}}
 </html>

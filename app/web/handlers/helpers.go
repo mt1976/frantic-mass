@@ -10,11 +10,11 @@ import (
 
 var templateSuffix = ".gohtml"
 
-func fetchTemplate(view views.AppContext) *template.Template {
+func fetchTemplate(appContext views.AppContext) *template.Template {
 	// This function returns the template path based on the request
 	// For this example, we are just returning a hardcoded template path
 
-	templateRequest := view.TemplateName
+	templateRequest := appContext.TemplateName
 
 	logHandler.InfoLogger.Printf("Requesting template: %s", templateRequest)
 	if templateRequest == "" {
@@ -23,15 +23,18 @@ func fetchTemplate(view views.AppContext) *template.Template {
 		return template.Must(template.New(templateRequest).ParseFiles(templateRequest + templateSuffix)) // Fallback to a default template
 	}
 
-	root := view.TemplatePath
+	root := appContext.TemplatePath
 	if root == "" {
 		logHandler.ErrorLogger.Println("Root path is empty, using current directory")
 		root = "." // Fallback to current directory if root is not set
 	}
 
-	logHandler.InfoLogger.Printf("Using template path: %s", view.TemplatePath)
+	logHandler.InfoLogger.Printf("Using template path: %s", appContext.TemplatePath)
 
-	tmpl := template.Must(template.ParseFiles(root + templateRequest + templateSuffix))
+	sharedTemplate := root + "shared" + templateSuffix
+	logHandler.InfoLogger.Printf("Loading shared template from: %s", sharedTemplate)
+
+	tmpl := template.Must(template.ParseFiles(root+templateRequest+templateSuffix, sharedTemplate))
 	if tmpl == nil {
 		logHandler.ErrorLogger.Printf("Failed to load template %s from %s", templateRequest, root+templateRequest+templateSuffix)
 		return nil // Return nil if the template could not be loaded

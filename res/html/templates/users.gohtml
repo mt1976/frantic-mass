@@ -1,50 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>{{.Context.AppName}} - {{.Context.PageTitle}}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
-         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-            <style>
-      html, body, pre, code, kbd, samp {
-          font-family: "Press Start 2P", cursive;
-      }
-    </style>
-    </head>
-    <body class="nes-bg-dark" style="padding: 20px; margin: 10px;">
-        <div class="nes-container with-title is-rounded is-centered">
-            <h1>{{.Context.AppName}}</h1>
-            <br>
-            <div class="nes-container with-title is-rounded is-centered">
-                <p class="title nes-text is-primary">{{.Context.PageTitle}}</p>
-                <br>
-                {{range .Users}}
-                <a href="/profile/{{.ID}}" class="nes-btn" style="width: 100%;">{{.Name}}&nbsp;<small class="nes-text is-disabled">{{.ID}}</small></a>
-                <br><br>
-                {{end}}
-            </div>
-            <br>
+   {{template "head" .}}
+    <body style="{{template "bodyStyle" .}}">
+            <hgroup>
+                <h1>{{.Context.AppName}}</h1>
+                <p>{{.Context.PageTitle}}</p>
+            </hgroup>
 
-            <!-- Range through the page actions from the context -->
-            {{if .Context.PageActions.Actions}}
-              
-                    {{range .Context.PageActions.Actions}}
-                            <button type="button" class="nes-btn is-primary" onclick='{{.OnClick}}'>{{.Name}}</button>
+            <article>
+          
+                <aside>
+                    <nav>
+                    <ul>
+                    {{range .Users}}
+                        {{if .Actions}}
+                           {{range .Actions.Actions}}
+                                <li><a href="{{.FormAction}}" role="button" style="width: 100%;" class="outline">{{.Icon}} {{.Name}}</a></li>
+                            {{end}}
+                        {{end}}
                     {{end}}
-         
-            {{else}}
-                <p>No actions available.</p>
-            {{end}}
-            <br><br>
-            <p class="nes-text is-disabled"><small>Version: {{.Context.AppVersion}}</small></p>
-        </div>
-        <script>
-            function launchApp() {
-                alert('Launching {{.Context.AppName}}...');
-                // Add your launch logic here
-            }
-        </script>
+                    </ul>
+                    </nav>
+                </aside>
+            </article>
+
+            {{template "pageactions" .}}
+   
     </body>
+   {{template "footer" .}}
+    {{template "scripts" .}}
 </html>

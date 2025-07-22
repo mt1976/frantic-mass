@@ -1,46 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>{{.Context.AppName}} - {{.Context.PageTitle}}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
-         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-            <style>
-      html, body, pre, code, kbd, samp {
-          font-family: "Press Start 2P", cursive;
-      }
-    </style>
-    </head>
-    <body class="nes-bg-dark">
-        <div class="nes-container with-title is-rounded is-centered">
-            <h2>Welcome to the {{.Context.AppName}} Launcher</h2>
-            <br>
-            <div class="nes-container with-title is-rounded is-centered">
-                <p class="title nes-text is-primary">{{.Context.AppName}}</h1>
-            <p>{{.Context.AppDescription}}</p>
-            </div>
-            <br>
-            <p>Click below to start {{.Context.AppName}}.</p>
+   {{template "head" .}}
 
-            <!-- Range through the page actions from the context -->
-            {{if .Context.PageActions.Actions}}
-                    {{range .Context.PageActions.Actions}}
-                    <a href="{{.FormAction}}" class="nes-btn is-primary">{{.Name}}</a>
-                            <!--<button type="submit" class="nes-btn is-primary" onclick='{{.OnClick}}' formaction="{{.FormAction}}" method="{{.Method}}">{{.Name}}</button>-->
-                    {{end}}
-            {{else}}
-                <p>No actions available.</p>
-            {{end}}
-            <br><br>
-            <p class="nes-text is-disabled"><small>Version: {{.Context.AppVersion}}</small></p>
-        </div>
-        <script>
-            function launchApp() {
-                alert('Launching {{.Context.AppName}}...');
-                // Add your launch logic here
-            }
-        </script>
+    <body style="{{template "bodyStyle" .}}">
+            <hgroup>
+                <h1>Welcome to the {{.Context.AppName}} Launcher</h1>
+                <p>{{.Context.AppName}}</p>
+            </hgroup>
+            <article>
+                <p>{{.Context.AppDescription}}</p>
+
+                <p>Click below to start {{.Context.AppName}}.</p>
+            </article>
+            {{template "pageactions" .}}
     </body>
+    {{template "footer" .}}
+    {{template "scripts" .}}
 </html>

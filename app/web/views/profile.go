@@ -3,6 +3,8 @@ package views
 import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/user"
+	"github.com/mt1976/frantic-mass/app/web/glyphs"
+	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
 type Profile struct {
@@ -44,6 +46,8 @@ func BuildProfile(userId int) Profile {
 	view.Context.PageSummary = "Display the user information for the selected user."
 	view.Context.HttpStatusCode = 200 // OK
 	view.Context.WasSuccessful = true
+
+	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, "/users", helpers.GET, ""))
 
 	logHandler.InfoLogger.Println("Profile view created for user ID:", userId)
 
