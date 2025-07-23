@@ -5,13 +5,13 @@ import (
 	"net/http"
 
 	"github.com/mt1976/frantic-core/logHandler"
-	"github.com/mt1976/frantic-mass/app/web/controllers"
+	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
 
 func Dummy(w http.ResponseWriter, r *http.Request) {
 	// This is a dummy router function
 
-	dl, err := controllers.Launcher(context.TODO())
+	dl, err := viewProvider.Launcher(context.TODO())
 	if err != nil {
 		logHandler.ErrorLogger.Println("Error creating DisplayLauncher view:", err)
 	} else {

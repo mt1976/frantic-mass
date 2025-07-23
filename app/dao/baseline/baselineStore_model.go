@@ -28,6 +28,7 @@ type Baseline struct {
 	Height           types.Height // Height in centimeters
 	ProjectionPeriod int          // Projection period in months
 	DateOfBirth      time.Time    // Date of birth
+	PivotDate        time.Time    // Pivot date for projections
 	Note             string
 }
 

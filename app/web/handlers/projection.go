@@ -7,7 +7,7 @@ import (
 
 	"github.com/go-chi/chi"
 	"github.com/mt1976/frantic-core/logHandler"
-	"github.com/mt1976/frantic-mass/app/web/controllers"
+	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
 
 func Projection(w http.ResponseWriter, r *http.Request) {
@@ -36,7 +36,7 @@ func Projection(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	dl, err := controllers.Projection(context.TODO(), userIdInt, goalIDInt)
+	dl, err := viewProvider.Projection(context.TODO(), userIdInt, goalIDInt)
 	if err != nil {
 		logHandler.ErrorLogger.Println("Error creating Projection view:", err)
 	} else {

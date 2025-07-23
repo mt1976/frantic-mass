@@ -5,12 +5,12 @@ import (
 	"net/http"
 
 	"github.com/mt1976/frantic-core/logHandler"
-	"github.com/mt1976/frantic-mass/app/web/views"
+	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 )
 
 var templateSuffix = ".gohtml"
 
-func fetchTemplate(appContext views.AppContext) *template.Template {
+func fetchTemplate(appContext contentProvider.AppContext) *template.Template {
 	// This function returns the template path based on the request
 	// For this example, we are just returning a hardcoded template path
 
@@ -44,7 +44,7 @@ func fetchTemplate(appContext views.AppContext) *template.Template {
 	return tmpl
 }
 
-func render(data any, dataContext views.AppContext, w http.ResponseWriter) {
+func render(data any, dataContext contentProvider.AppContext, w http.ResponseWriter) {
 	template := fetchTemplate(dataContext)
 	if template == nil {
 		logHandler.ErrorLogger.Println("Failed to get template, using default response")

@@ -29,7 +29,7 @@ Frantic Mass is a health and fitness tracking application written in Go. It prov
 - `app/functions/` — Core business logic and utility functions
 - `app/jobs/` — Background jobs and scheduled tasks
 - `app/types/` — Type definitions for core entities
-- `app/web/` — Web controllers, handlers, views, and static assets
+- `app/web/` — Web handlers, viewProviders, contentProviders, and static assets
 - `data/` — Backups, configs, database, logs, and dumps
 - `exec/` — Platform-specific executables
 - `res/` — HTML templates, images, and JavaScript resources

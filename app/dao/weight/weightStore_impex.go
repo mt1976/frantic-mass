@@ -39,6 +39,7 @@ func tempalteImportProcessor(inOriginal **Weight) (string, error) {
 
 	// Return the created entry and nil error
 	//logHandler.ImportLogger.Printf("Imported %v [%+v]", domain, importedData)
+	//godump.Dump(importedData)
 
 	stringField1 := strconv.Itoa(importedData.ID)
 

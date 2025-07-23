@@ -8,7 +8,6 @@ import (
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
-	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/dao/dateIndex"
@@ -20,7 +19,6 @@ import (
 	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/jobs"
 	"github.com/mt1976/frantic-mass/app/types"
-	"github.com/mt1976/frantic-mass/app/web/controllers"
 	"github.com/mt1976/frantic-mass/app/web/handlers"
 )
 
@@ -57,7 +55,7 @@ func main() {
 	// The user ID will be used for the rest of the operations
 	// You can also change the weight and goal values as per your requirements
 
-	currentWeight := types.NewWeight(114.0)
+	//currentWeight := types.NewWeight(114.0)
 
 	userIdentifier := 1001 // This is the user ID we will use for the rest of the operations
 	logHandler.InfoLogger.Println("Creating User with ID:", userIdentifier)
@@ -153,13 +151,22 @@ func main() {
 		logHandler.InfoLogger.Printf("Tag Created:[%+v]", thisTag)
 	}
 
-	logHandler.InfoLogger.Println("Creating Weight for UserID:", userIdentifier)
-	thisWeight, weightErr := weight.Create(context.TODO(), userIdentifier, *currentWeight, fmt.Sprintf("WeightFor %v", userIdentifier), time.Now())
-	if weightErr != nil {
-		logHandler.ErrorLogger.Println(weightErr)
+	// Import a CSV file of Weight records
+	logHandler.InfoLogger.Println("Importing Weight Records from CSV")
+	err = weight.ImportRecordsFromCSV()
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error importing weight records from CSV:", err)
 	} else {
-		logHandler.InfoLogger.Printf("Weight Created:[%+v]", thisWeight)
+		logHandler.InfoLogger.Println("Weight records imported successfully from CSV")
 	}
+
+	// logHandler.InfoLogger.Println("Creating Weight for UserID:", userIdentifier)
+	// thisWeight, weightErr := weight.Create(context.TODO(), userIdentifier, *currentWeight, fmt.Sprintf("WeightFor %v", userIdentifier), time.Now())
+	// if weightErr != nil {
+	// 	logHandler.ErrorLogger.Println(weightErr)
+	// } else {
+	// 	logHandler.InfoLogger.Printf("Weight Created:[%+v]", thisWeight)
+	// }
 
 	// CREATE A today DATEINDEX
 
@@ -174,7 +181,7 @@ func main() {
 		logHandler.InfoLogger.Printf("DateIndexs created successfully")
 	}
 
-	_ = dateIndex.ExportRecordsAsCSV()
+	//_ = dateIndex.ExportRecordsAsCSV()
 
 	tdID, td, tdErr := dateIndex.GetToday()
 	if tdErr != nil {
@@ -184,6 +191,12 @@ func main() {
 	}
 
 	//os.Exit(0) // Exit the program successfully
+	thisWeight, err := functions.FetchLatestWeightRecord(thisUser.ID)
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error fetching latest weight record:", err)
+	} else {
+		logHandler.InfoLogger.Printf("Latest Weight Record for UserID %d: %+v", thisUser.ID, thisWeight)
+	}
 
 	// Rebuild the weight projection
 	logHandler.InfoLogger.Println("Rebuilding Weight Projections for UserID:", userIdentifier)
@@ -217,20 +230,22 @@ func main() {
 	logHandler.InfoLogger.Println("WeightStone", stones)
 	logHandler.InfoLogger.Println("WeightString", thisWeight.Weight.String())
 
-	loss, lossErr := functions.AverageWeightLoss(userIdentifier)
+	avg, tot, lossErr := functions.AverageWeightLoss(userIdentifier)
 	if lossErr != nil {
 		logHandler.ErrorLogger.Println(lossErr)
 	} else {
-		logHandler.InfoLogger.Printf("Average Weight Loss for User %d: %s", userIdentifier, loss.KgAsString())
+		logHandler.InfoLogger.Printf("Average Weight Loss for User %d: %s", userIdentifier, avg.KgAsString())
+		logHandler.InfoLogger.Printf("Total Weight Loss for User %d: %s", userIdentifier, tot.KgAsString())
 	}
 
-	logHandler.InfoLogger.Println("Exporting Data")
-	err = functions.ExportData()
-	if err != nil {
-		logHandler.ErrorLogger.Println("Error exporting data:", err)
-	} else {
-		logHandler.InfoLogger.Println("Data exported successfully")
-	}
+	// logHandler.InfoLogger.Println("Exporting Data")
+	// err = functions.ExportDataSnapshot()
+	// if err != nil {
+	// 	logHandler.ErrorLogger.Println("Error exporting data:", err)
+	// } else {
+	// 	logHandler.InfoLogger.Println("Data exported successfully")
+	// }
+
 	logHandler.InfoLogger.Println("Starting Jobs")
 	err = functions.StartJobs(context.TODO(), common)
 	if err != nil {
@@ -241,14 +256,14 @@ func main() {
 
 	logHandler.InfoLogger.Println("All operations completed successfully")
 
-	uv, err := controllers.Users(context.TODO())
-	if err != nil {
-		logHandler.ErrorLogger.Println("Error creating UserChooser view:", err)
-	} else {
-		logHandler.EventLogger.Println("UserChooser view created successfully")
-	}
+	// uv, err := viewProvider.Users(context.TODO())
+	// if err != nil {
+	// 	logHandler.ErrorLogger.Println("Error creating UserChooser view:", err)
+	// } else {
+	// 	logHandler.EventLogger.Println("UserChooser view created successfully")
+	// }
 
-	godump.Dump(uv)
+	// godump.Dump(uv)
 
 	logHandler.InfoLogger.Println("End of main function")
 

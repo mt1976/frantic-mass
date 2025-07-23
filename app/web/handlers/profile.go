@@ -7,7 +7,7 @@ import (
 
 	"github.com/go-chi/chi"
 	"github.com/mt1976/frantic-core/logHandler"
-	"github.com/mt1976/frantic-mass/app/web/controllers"
+	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
 
 func Profile(w http.ResponseWriter, r *http.Request) {
@@ -26,7 +26,7 @@ func Profile(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	dl, err := controllers.Profile(context.TODO(), userId)
+	dl, err := viewProvider.Profile(context.TODO(), userId)
 	if err != nil {
 		logHandler.ErrorLogger.Println("Error creating Profile view:", err)
 	} else {

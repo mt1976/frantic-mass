@@ -56,7 +56,7 @@ func BuildWeightGoalProjection(user user.User, weight types.Weight, goal goal.Go
 	weeklyWeightLoss := goal.LossPerWeek
 	if goal.AverageWeightLoss.IsTrue() {
 		// If the goal is an average weight loss goal, we calculate the weekly weight loss based on the target weight and the number of weeks.
-		avgWeightLoss, err := AverageWeightLoss(userID)
+		avgWeightLoss, _, err := AverageWeightLoss(userID)
 		if err != nil {
 			logHandler.ErrorLogger.Println("Error calculating average weight loss for user:", userID, err)
 			return fmt.Errorf("error calculating average weight loss for user %d: %v", userID, err)

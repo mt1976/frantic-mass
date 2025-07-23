@@ -171,6 +171,7 @@ func (w *Weight) Minus(in Weight) Weight {
 	return Weight{KGs: w.KGs - in.KGs}
 }
 func (w *Weight) MinusFloat(in float64) Weight {
+	logHandler.InfoLogger.Printf("Subtracting weight: %v - %v = %v", w.KGs, in, w.KGs-in)
 	return w.Minus(Weight{KGs: in})
 }
 func (w *Weight) Multiply(in Weight) Weight {

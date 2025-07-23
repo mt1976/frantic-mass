@@ -42,6 +42,8 @@ func tempalteImportProcessor(inOriginal **Baseline) (string, error) {
 	// Return the created entry and nil error
 	//logHandler.ImportLogger.Printf("Imported %v [%+v]", domain, importedData)
 
+	//godump.Dump(importedData)
+
 	stringField1 := strconv.Itoa(importedData.UserID) // Assuming UserID is the field to be returned as a string
 	if importedData.Height.LE(0) {
 		logHandler.ImportLogger.Panicf("Invalid HeightCm for %v: %v", domain, importedData.Height)

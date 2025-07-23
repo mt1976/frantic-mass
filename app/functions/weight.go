@@ -9,7 +9,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
-func AverageWeightLoss(userID int) (*types.Weight, error) {
+func AverageWeightLoss(userID int) (avg *types.Weight, tot *types.Weight, err error) {
 	// This function will calculate the average weight loss for a user
 	// based on their historical weight data.
 	// It will return the average weight loss in kilograms.
@@ -20,33 +20,51 @@ func AverageWeightLoss(userID int) (*types.Weight, error) {
 	w, err := weight.GetAllWhere(weight.FIELD_UserID, userID)
 	if err != nil {
 		logHandler.ErrorLogger.Printf("Error retrieving weight data for user %d: %v", userID, err)
-		return &types.Weight{}, err
+		return &types.Weight{}, &types.Weight{}, err
 	}
 	if len(w) == 0 {
 		logHandler.ErrorLogger.Printf("No weight data found for user %d", userID)
-		return &types.Weight{}, nil
+		return &types.Weight{}, &types.Weight{}, nil
 	}
+
+	w = weight.FilterDeletedRecords(w)
+	w = weight.SortByDateAscending(w)
 	//var totalLoss *types.Weight
 	//var totalMass *types.Weight
-	totalLoss := types.NewWeight(0.0)
+	//totalLoss := types.NewWeight(0.0)
 	totalMass := types.NewWeight(0.0)
 	var count int
+	startingWeight := types.NewWeight(w[0].Weight.KGs)
+	endingWeight := types.NewWeight(w[len(w)-1].Weight.KGs)
 	for i := 0; i < len(w)-1; i++ {
+		if i == 0 {
+			startingWeight.Set(w[i].Weight.KGs)
+		}
 		if w[i].Weight.GT(w[i+1].Weight.KGs) {
-			loss := w[i].Weight.Minus(w[i+1].Weight)
-			totalLoss.Add(loss)
+			//loss := w[i].Weight.Minus(w[i+1].Weight)
+			//totalLoss.Add(loss)
 			count++
 		}
 		logHandler.InfoLogger.Printf("Weight record %d: %v", i, w[i].Weight.String())
 		logHandler.InfoLogger.Printf("Weight recorded %d: %v", i+1, w[i+1].Audit.CreatedAt.String())
 		totalMass.Add(w[i].Weight)
 	}
-	logHandler.InfoLogger.Printf("Total weight mass for user %d: %v over %d records", userID, totalMass.String(), count)
-	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v over %d records", userID, totalLoss.String(), count)
+	logHandler.InfoLogger.Printf("Starting weight for user %d: %v", userID, startingWeight.String())
+	logHandler.InfoLogger.Printf("Ending weight for user %d: %v", userID, endingWeight.String())
+
+	totalLoss := endingWeight.MinusFloat(startingWeight.KGs)
+	totalLoss = *totalLoss.Invert()
+	//godump.Dump(totalLoss)
+	totalLossString := totalLoss.KgAsString()
+	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v over %d records", userID, totalLossString, count)
+	//logHandler.InfoLogger.Printf("Total weight mass for user %d: %v over %d records", userID, totalMass.String(), count)
+	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v over %d records", userID, totalLoss.KgAsString(), count)
 	logHandler.InfoLogger.Printf("Average weight loss for user %d: %v kg", userID, totalLoss.Kg()/float64(count))
 	stas, _ := totalLoss.StonesAsString()
-	logHandler.InfoLogger.Printf("Average weight loss for user %d: %v", userID, stas)
-	return totalLoss, nil
+	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v", userID, stas)
+	avg = types.NewWeight(totalLoss.Kg() / float64(count))
+	//os.Exit(0) // Exit the program successfully
+	return avg, &totalLoss, nil
 }
 
 func FetchLatestWeightRecord(userID int) (weight.Weight, error) {

@@ -4,13 +4,13 @@ import (
 	"net/http"
 
 	"github.com/mt1976/frantic-core/logHandler"
-	"github.com/mt1976/frantic-mass/app/web/controllers"
+	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
 
 func UserChooser(w http.ResponseWriter, r *http.Request) {
 
 	// This is the handler for the choose user page
-	uc, err := controllers.Users(r.Context())
+	uc, err := viewProvider.Users(r.Context())
 	if err != nil {
 		http.Error(w, "Error creating UserChooser view", http.StatusInternalServerError)
 		return

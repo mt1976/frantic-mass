@@ -78,3 +78,47 @@ func GetComplex(...func(*index.Options)) ([]Weight, error) {
 
 	return recordList, nil
 }
+
+func SortByDateAscending(projections []Weight) []Weight {
+	if projections == nil {
+		return nil
+	}
+	sorted := make([]Weight, len(projections))
+	copy(sorted, projections)
+	for i := 0; i < len(sorted)-1; i++ {
+		for j := i + 1; j < len(sorted); j++ {
+			if sorted[i].RecordedAt.After(sorted[j].RecordedAt) {
+				sorted[i], sorted[j] = sorted[j], sorted[i]
+			}
+		}
+	}
+	logHandler.InfoLogger.Printf("Sorted %d weight records by date in ascending order", len(sorted))
+	return sorted
+}
+
+func FilterByUserID(projections []Weight, userId int) []Weight {
+	if projections == nil {
+		return nil
+	}
+	filtered := make([]Weight, 0)
+	for _, projection := range projections {
+		if projection.UserID == userId {
+			filtered = append(filtered, projection)
+		}
+	}
+	return filtered
+}
+
+func FilterDeletedRecords(records []Weight) []Weight {
+	if records == nil {
+		return nil
+	}
+	filtered := make([]Weight, 0)
+	for _, record := range records {
+		if record.Audit.DeletedBy == "" {
+			filtered = append(filtered, record)
+		}
+	}
+	logHandler.InfoLogger.Printf("Filtered %d deleted records, %d records remaining", len(records)-len(filtered), len(filtered))
+	return filtered
+}

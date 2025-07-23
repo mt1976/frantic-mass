@@ -1,0 +1,25 @@
+package viewProvider
+
+import (
+	"context"
+
+	"github.com/mt1976/frantic-mass/app/web/contentProvider"
+)
+
+func Profile(ctx context.Context, userId int) (contentProvider.Profile, error) {
+
+	//godump.Dump(view)
+	view := contentProvider.Profile{}
+	var err error
+	// Set the common fields for the view
+	view.Context.PageTitle = "User Profile"
+	view.Context.PageKeywords = "user, profile"
+	view.Context.PageSummary = "Display the user information for the selected user."
+	view.Context.HttpStatusCode = 200 // OK
+	view.Context.WasSuccessful = true
+	view.Context.TemplateName = "profile"
+
+	view, err = contentProvider.BuildProfile(view, userId)
+
+	return view, err
+}

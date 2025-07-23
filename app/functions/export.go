@@ -13,7 +13,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/dao/weightTag"
 )
 
-func ExportData() error {
+func ExportDataSnapshot() error {
 
 	err := weight.ExportRecordsAsCSV()
 	if err != nil {
