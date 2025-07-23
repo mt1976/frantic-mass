@@ -1,6 +1,6 @@
 module github.com/mt1976/frantic-mass
 
-go 1.24.4
+go 1.24.5
 
 require github.com/asdine/storm/v3 v3.2.1 // indirect
 
