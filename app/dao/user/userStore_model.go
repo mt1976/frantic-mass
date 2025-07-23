@@ -21,9 +21,11 @@ type User struct {
 	Raw   string      `storm:"unique"`           // raw ID before encoding
 	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
-	Username     string `storm:"unique"`
-	Email        string `storm:"unique"`
-	PasswordHash string
+	Username          string `storm:"unique"`
+	Email             string `storm:"unique"`
+	PasswordHash      string
+	Name              string `storm:"index"` // name for indexing
+	MeasurementSystem int
 }
 
 // Define the field set as names
@@ -33,7 +35,9 @@ var (
 	FIELD_Raw   = "Raw"
 	FIELD_Audit = "Audit"
 	// Add your fields here
-	FIELD_Username     = "Username"
-	FIELD_Email        = "Email"
-	FIELD_PasswordHash = "PasswordHash"
+	FIELD_Username          = "Username"
+	FIELD_Email             = "Email"
+	FIELD_PasswordHash      = "PasswordHash"
+	FIELD_Name              = "Name"
+	FIELD_MeasurementSystem = "MeasurementSystem"
 )

@@ -3,28 +3,34 @@ package contentProvider
 import (
 	"time"
 
+	"github.com/goforj/godump"
+	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/functions"
+	"github.com/mt1976/frantic-mass/app/types"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
 type Profile struct {
-	User              User
-	Context           AppContext
-	BMI               string
-	BMINote           string
-	BMIStatus         string
-	CurrentWeight     string
-	Height            string
-	DateOfBirth       string
-	Age               int
-	NoGoals           int
-	Goals             []Goal
-	TotalWeightLoss   string // Total weight loss in kg
-	AverageWeightLoss string // Average weight loss in kg
+	User                      User
+	Context                   AppContext
+	BMI                       string
+	BMINote                   string
+	BMIStatus                 string
+	CurrentWeight             string
+	Height                    string
+	DateOfBirth               string
+	Age                       int
+	NoGoals                   int
+	Goals                     []Goal
+	TotalWeightLoss           string // Total weight loss in kg
+	AverageWeightLoss         string // Average weight loss in kg
+	MeasurementSystemsLookup  lookup.Lookup
+	MeasurementSystem         int // Measurement system selected by the user
+	MeasurementSystemSelected lookup.LookupData
 }
 
 type Goal struct {
@@ -48,7 +54,7 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, "/users", helpers.GET, ""))
 
 	// Here you would typically fetch the user data based on userId
-	UserRecord, err := user.GetBy(user.FIELD_ID, userId)
+	userDetails, err := user.GetBy(user.FIELD_ID, userId)
 	if err != nil {
 		view.Context.WasSuccessful = false
 		view.Context.HttpStatusCode = 404 // Not Found
@@ -57,7 +63,7 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 		logHandler.ErrorLogger.Println("Error fetching user:", err)
 		return view, nil
 	}
-	if UserRecord.ID == 0 {
+	if userDetails.ID == 0 {
 		view.Context.WasSuccessful = false
 		view.Context.HttpStatusCode = 404 // Not Found
 		view.Context.AddError("User not found")
@@ -66,8 +72,8 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 		return view, nil
 	}
 
-	view.User.ID = UserRecord.ID
-	view.User.Name = UserRecord.Username
+	view.User.ID = userDetails.ID
+	view.User.Name = userDetails.Username
 	// Add more fields as necessary
 
 	view.Context.PageTitle = "User Profile"
@@ -85,6 +91,17 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 		return view, nil
 	}
 
+	view.MeasurementSystemsLookup = types.MeasurementSystemsLookup
+	view.MeasurementSystem = userDetails.MeasurementSystem
+	if view.MeasurementSystem < 0 || view.MeasurementSystem >= len(types.MeasurementSystems) {
+		logHandler.ErrorLogger.Println("Invalid measurement system for user ID:", userId)
+		view.MeasurementSystem = 0 // Default to the first measurement system
+	} else {
+		logHandler.InfoLogger.Println("Measurement system for user ID:", userId, "is", types.MeasurementSystems[view.MeasurementSystem].Value)
+		view.MeasurementSystemSelected = view.MeasurementSystemsLookup.Data[view.MeasurementSystem]
+		logHandler.InfoLogger.Println("Measurement system selected:", view.MeasurementSystemSelected.Value)
+		view.MeasurementSystemsLookup.Data[view.MeasurementSystem].Selected = true // Mark the selected measurement system
+	}
 	// Get the latest weight record for the user
 	latestWeight, err := functions.FetchLatestWeightRecord(userId)
 	if err != nil {
@@ -163,6 +180,8 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 	}
 
 	logHandler.InfoLogger.Println("Profile view created for user ID:", userId)
+
+	godump.Dump(view, "Profile View")
 
 	return view, nil
 }
