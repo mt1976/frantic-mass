@@ -13,5 +13,5 @@ services:
       - /Volumes/External HD/Docker/Shared/dumps/frantic-mass:/app/data/dumps
       - /Volumes/External HD/Docker/Shared/logs:/app/data/logs
     ports:
-      - 5059:5059
+      - 3000:3000
     restart: unless-stopped
