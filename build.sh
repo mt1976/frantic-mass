@@ -2,13 +2,13 @@
 #chmod +x ./go-executable-build.sh
 #then we can use it ./go-executable-build.sh yourpackage
 #!/usr/bin/env bash
-package="github.com/mt1976/cosmic-orange"
-package_name="cosmic-orange"
+package="github.com/mt1976/frantic-mass"
+package_name="frantic-mass"
 NOW=$(date +"%y%m")
 figlet4go -str "Building"
-echo Building Windows x86_64
+echo Building Apple Silicon Arm64
 go-winres simply --icon images/app.png
-env GOOS=windows GOARCH=amd64 go build -o "./"$package_name".exe" $package
+env GOOS=darwin GOARCH=arm64 go build -o "./"$package_name $package
 echo Building Crossplatform
 
 #the full list of the platforms: https://golang.org/doc/install/source#environment
