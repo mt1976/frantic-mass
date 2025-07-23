@@ -4,3 +4,6 @@ var Default Glyph = Glyph{iconName: "bi bi-circle"}        // Default icon if no
 var Nil Glyph = Glyph{iconName: ""}                        // Nil icon to represent no icon
 var Launch Glyph = Glyph{iconName: "bi bi-rocket-takeoff"} // Icon for launching actions
 var Back Glyph = Glyph{iconName: "bi bi-arrow-left"}       // Icon for back actions
+var Edit Glyph = Glyph{iconName: "bi bi-pencil"}           // Icon for edit actions
+var Delete Glyph = Glyph{iconName: "bi bi-trash"}          // Icon for delete actions
+var Projection Glyph = Glyph{iconName: "bi bi-graph-up"}   // Icon for projection actions

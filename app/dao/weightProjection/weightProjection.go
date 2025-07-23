@@ -31,3 +31,47 @@ func (record *WeightProjection) GetBMI() t.BMI {
 	}
 	return record.BMI
 }
+
+// view.Projections = weightProjection.SortByDateAscending(view.Projections)
+// 	view.Projections = weightProjection.FilterByGoalID(view.Projections, goalId)
+
+// SortByDateAscending sorts the projections by date in ascending order
+func SortByDateAscending(projections []WeightProjection) []WeightProjection {
+	if projections == nil {
+		return nil
+	}
+	sorted := make([]WeightProjection, len(projections))
+	copy(sorted, projections)
+	for i := 0; i < len(sorted)-1; i++ {
+		for j := i + 1; j < len(sorted); j++ {
+			if sorted[i].Date.After(sorted[j].Date) {
+				sorted[i], sorted[j] = sorted[j], sorted[i]
+			}
+		}
+	}
+	return sorted
+}
+func FilterByGoalID(projections []WeightProjection, goalId int) []WeightProjection {
+	if projections == nil {
+		return nil
+	}
+	filtered := make([]WeightProjection, 0)
+	for _, projection := range projections {
+		if projection.GoalID == goalId {
+			filtered = append(filtered, projection)
+		}
+	}
+	return filtered
+}
+func FilterByUserID(projections []WeightProjection, userId int) []WeightProjection {
+	if projections == nil {
+		return nil
+	}
+	filtered := make([]WeightProjection, 0)
+	for _, projection := range projections {
+		if projection.UserID == userId {
+			filtered = append(filtered, projection)
+		}
+	}
+	return filtered
+}

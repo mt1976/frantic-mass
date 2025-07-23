@@ -11,27 +11,78 @@
             </hgroup>
     
             <article>
-                <p class="title nes-text is-primary">{{.Context.PageTitle}} - {{.User.Name}}</p>
-                <br>
-                {{/* {{range .Users}}
-                <a href="/profile/{{.ID}}" class="nes-btn" style="width: 100%;">{{.Name}}&nbsp;<small
-                        class="nes-text is-disabled">{{.ID}}</small></a>
-                <br><br>
-                {{end}} */}}
+                        <hgroup>
 
-                <p>BMI: {{.BMI}}</p>
-                <p>Weight: {{.CurrentWeight}}</p>
-                <p>Height: {{.Height}}</p>
-                <p>Date of Birth: {{.DateOfBirth}}</p>
-                <p>Age: {{.Age}}</p>
-                This is the profile page for {{.User.Name}}. <small class="nes-text is-disabled">[{{.User.ID}}]</small>
-                <br><br>
-                There is where we will display the user's information, such as: BMI, Weight, Goals, and other relevant data.
-                <br><br>
-                <br>
-                <br>
-                An overview of the users Goals, their current weight, and their progress towards their goals.
+            <h2>Profile:</h2>
+                </hgroup>
+                <form>
+                <label>ID<input name="id" type="text" value="{{.User.ID}}" readonly/></label>
+                <label>Name<input name="name" type="text" value="{{.User.Name}}" readonly/></label>
+
+                <label>Date of Birth<input name="dob" type="text" value="{{.DateOfBirth}}" readonly/></label>
+                <label>Age<input name="age" type="text" value="{{.Age}}" readonly/></label>
+
+                <label>Height<input name="height" type="text" value="{{.Height}}" readonly/></label>
+                <label>Weight<input name="weight" type="text" value="{{.CurrentWeight}}" readonly/></label>
+
+    
+
+                <label>BMI<fieldset class="grid">
+                <input name="bmi" type="text" value="{{.BMI}}" readonly/>
+                <input name="bmiNote" type="text" value="{{.BMINote}}" readonly/>
+                <input name="bmiStatus" type="text" value="{{.BMIStatus}}" readonly/>
+ 
                 
+                </fieldset></label>
+              
+
+         
+         
+
+                </form>
+                <article>
+                <h2>Goals&nbsp;<small class="pico-color-grey-500">[{{.NoGoals}}]</small></h2>
+                {{if eq .NoGoals 0}}
+                    <p class="nes-text is-error">No goals set for this user.</p>
+                {{else}}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="text-align: center;">Name</th>
+                                <th class="text-align: center;">Target</th>
+       
+                                <th class="text-align: center;">BMI</th>
+                                <th class="text-align: center;">Loss Per Week</th>
+                                <th class="text-align: center;">Date</th>
+                                <th class="text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{range .Goals}}
+                            <tr>
+                                <td>{{.Name}}</td>
+                                <td>{{.TargetWeight}}</td>
+                                       <td>{{.TargetBMIStatus}} {{.TargetBMI}}</td>
+                                <td>{{.LossPerWeek}}</td>
+                         
+                                <td>{{.TargetDate.Format "02 Jan 2006"}}</td>
+                                <td>
+                                        <div role="group" style="display: flex; justify-content: center; align-items: center; border-radius: 100px;">
+                                        {{if .Actions}}
+                                        {{range .Actions.Actions}}
+                                            <a href="{{.FormAction}}" role="button" style="" class="outline" onclick='{{.OnClick}}' FormAction="{{.FormAction}}" method="{{.Method}}" >{{if .Icon}}{{.Icon}}{{end}}</a>
+                                        {{end}}
+                                        {{else}}
+                                            <span class="nes-text is-disabled">No actions available</span>
+                                        {{end}}
+                                        </div>
+                                </td>
+                            </tr>
+                            {{end}}
+                        </tbody>
+                    </table>
+                {{end}}
+                </article>                
             </article>
         {{template "errors" .}}
         {{template "messages" .}}

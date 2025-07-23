@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   {{template "head" .}}
+
+
+    <body style="{{template "bodyStyle" .}}">
+            <hgroup>
+                <h1>{{.Context.AppName}}</h1>
+                <p>{{.Context.PageTitle}} - {{.User.Name}} - {{.Goal.Name}}</p>
+            </hgroup>
+    
+            <article>
+                        <hgroup>
+            <h2>Projection:</h2>
+                </hgroup>
+                <form>
+                <label>Name<input name="name" type="text" value="{{.User.Name}}" readonly/></label>
+                <label>Goal<input name="goal" type="text" value="{{.Goal.Name}}" readonly/></label>
+                <article>
+                    <hgroup>
+                    <h3>Target:</h3>
+                    <p>{{.Goal.Description}}</p>
+                    </hgroup>
+  <table>
+                        <thead>
+                            <tr>
+                                <th class="text-align: center;">Name</th>
+                                <th class="text-align: center;">Target</th>
+       
+                                <th class="text-align: center;">BMI</th>
+                                <th class="text-align: center;">Loss Per Week</th>
+                                <th class="text-align: center;">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                       
+                            <tr>
+                                <td>{{.Goal.Name}}</td>
+                                <td>{{.Goal.TargetWeight}}</td>
+                                       <td>{{.Goal.TargetBMIStatus}} {{.Goal.TargetBMI}}</td>
+                                <td>{{.Goal.LossPerWeek}}</td>
+                         
+                                <td>{{.Goal.TargetDate.Format "02 Jan 2006"}}</td>
+                               
+                            </tr>
+                       
+                        </tbody>
+                    </table>
+
+
+
+                    </article>
+                    <article>
+                        <hgroup>
+                            <h3>Projections:</h3>
+                        </hgroup>
+                       <table>
+                           <thead>
+                               <tr>
+                                   <th class="text-align: center;">Date</th>
+                                   <th class="text-align: center;">Weight</th>
+                                   <th class="text-align: center;">BMI</th>
+
+           <th class="text-align: center;">To Goal</th>
+                                      <th class="text-align: center;">Note</th>
+                           
+
+                               </tr>
+                           </thead>
+                           <tbody>
+                               {{range .Projections}}
+                               <tr>
+                                   <td>{{.Date.Format "02 Jan 2006"}}</td>
+                                   <td>{{.Weight.KgAsString}}</td>
+                                   <td>{{.BMI.Glyph}} {{.BMI.String}}</td>
+                                   <td>{{.ToGoal.KgAsString}}</td>
+
+                                   <td>{{.VsTarget}}</td>
+                               </tr>
+                               {{end}}
+                           </tbody>
+                       </table>
+
+                    </article>
+                </form>
+   
+
+    
+
+                             
+            </article>
+        {{template "errors" .}}
+        {{template "messages" .}}
+        {{template "alerts" .}}
+
+            {{template "pageactions" .}}
+    
+    </body>
+
+   {{template "footer" .}}
+    {{template "scripts" .}}
+</html>

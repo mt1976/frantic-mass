@@ -20,6 +20,7 @@ import (
 	"github.com/mt1976/frantic-core/idHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/timing"
+	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/types"
 )
 
@@ -54,6 +55,25 @@ func Create(ctx context.Context, userID int, name string, targetWeight types.Wei
 	record.TargetDate = targetDate
 	record.LossPerWeek = lossPerWeekKg
 	record.Note = note
+
+	// Get the current basline for the user
+	baseline, err := baseline.GetByUserID(userID)
+	if err != nil {
+		// Log and panic if there is an error retrieving the baseline
+		logHandler.ErrorLogger.Panic(commonErrors.WrapDAOReadError(domain, FIELD_UserID, userID, err))
+	}
+	if baseline.Height.LE(0) {
+		logHandler.ErrorLogger.Panicf("No height found for user ID %d, cannot calculate BMI", userID)
+	}
+
+	bmiPtr, err := record.TargetBMI.SetBMIFromWeightAndHeight(record.TargetWeight, baseline.Height)
+	if err != nil {
+		logHandler.ErrorLogger.Panicf("Error calculating BMI for user ID %d: %v", userID, err)
+	}
+	if bmiPtr != nil {
+		record.TargetBMI = *bmiPtr
+	}
+
 	// Create a composite ID for unique identification of the goal
 	record.CompositeID = fmt.Sprintf("%d/%s", userID, sessionID)
 	record.AverageWeightLoss.Set(isAverageType)

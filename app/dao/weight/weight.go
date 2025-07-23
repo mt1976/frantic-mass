@@ -3,7 +3,13 @@ package weight
 import (
 	"fmt"
 
+	"github.com/asdine/storm/index"
+	"github.com/mt1976/frantic-core/commonErrors"
+	"github.com/mt1976/frantic-core/dao"
+	"github.com/mt1976/frantic-core/dao/actions"
+	"github.com/mt1976/frantic-core/dao/audit"
 	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-core/timing"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/types"
 )
@@ -47,4 +53,28 @@ func (record *Weight) GetBMI() types.BMI {
 		record.BMI.SetBMIFromWeightAndHeight(record.Weight, bl.Height) // Example height in cm
 	}
 	return record.BMI
+}
+
+func GetComplex(...func(*index.Options)) ([]Weight, error) {
+
+	dao.CheckDAOReadyState(domain, audit.GET, initialised) // Check the DAO has been initialised, Mandatory.
+
+	recordList := []Weight{}
+
+	clock := timing.Start(domain, actions.GETALL.GetCode(), "ALL")
+
+	if errG := activeDB.GetAll(&recordList); errG != nil {
+		clock.Stop(0)
+		return []Weight{}, commonErrors.WrapNotFoundError(domain, errG)
+	}
+
+	var errPost error
+	if recordList, errPost = postGetList(&recordList); errPost != nil {
+		clock.Stop(0)
+		return nil, errPost
+	}
+
+	clock.Stop(len(recordList))
+
+	return recordList, nil
 }

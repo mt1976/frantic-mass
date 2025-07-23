@@ -11,6 +11,7 @@ package baseline
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/mt1976/frantic-core/commonErrors"
 	"github.com/mt1976/frantic-core/dao"
@@ -33,7 +34,7 @@ func New() Baseline {
 // It sets the CompositeID and Audit fields based on the provided parameters
 // It returns the created Baseline instance or an error if any occurs
 // It also records the create action in the audit data and saves the instance to the database
-func Create(ctx context.Context, userID int, heightCm types.Height, projectionPeriod int, note string) (Baseline, error) {
+func Create(ctx context.Context, userID int, heightCm types.Height, projectionPeriod int, note string, dateOfBirth time.Time) (Baseline, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -51,6 +52,7 @@ func Create(ctx context.Context, userID int, heightCm types.Height, projectionPe
 	record.Height = heightCm
 	record.ProjectionPeriod = projectionPeriod
 	record.Note = note
+	record.DateOfBirth = dateOfBirth
 
 	// Record the create action in the audit data
 	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %v", domain, userID)))

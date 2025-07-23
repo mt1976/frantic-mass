@@ -11,6 +11,7 @@ require (
 
 require (
 	github.com/BurntSushi/toml v1.5.0 // indirect
+	github.com/asdine/storm v2.1.2+incompatible
 	github.com/gabriel-vasile/mimetype v1.4.9 // indirect
 	github.com/galsondor/go-ascii v0.0.0-20151210013816-e2eb5175fb10 // indirect
 	github.com/go-chi/chi v1.5.5
@@ -31,7 +32,7 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/crypto v0.40.0 // indirect
-	golang.org/x/exp v0.0.0-20250717185816-542afb5b7346 // indirect
+	golang.org/x/exp v0.0.0-20250718183923-645b1fa84792 // indirect
 	golang.org/x/net v0.42.0 // indirect
 	golang.org/x/sys v0.34.0 // indirect
 	golang.org/x/text v0.27.0 // indirect

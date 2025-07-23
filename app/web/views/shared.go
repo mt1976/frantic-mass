@@ -2,6 +2,7 @@ package views
 
 import (
 	"fmt"
+	"strconv"
 	"time"
 
 	"github.com/mt1976/frantic-core/application"
@@ -193,4 +194,24 @@ func (c *AppContext) AddMessage(msg string) {
 
 func (c *AppContext) AddNotification(notification string) {
 	c.UserAlerts = append(c.UserAlerts, notification)
+}
+
+// AgeFromDOB calculates the age in years given a date of birth
+func AgeFromDOB(dob time.Time) int {
+	now := time.Now()
+	age := now.Year() - dob.Year()
+
+	// Check if the birthday has occurred yet this year
+	if now.YearDay() < dob.YearDay() {
+		age--
+	}
+
+	return age
+}
+
+func IntToString(i int) string {
+	if i == 0 {
+		return ""
+	}
+	return strconv.Itoa(i)
 }

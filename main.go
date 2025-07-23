@@ -100,12 +100,24 @@ func main() {
 		logHandler.InfoLogger.Printf("Post Import:[%+v]", cdrop)
 	}
 
+	//Set Date of Birth to 27/02/1976
+	dob := time.Date(1976, 2, 27, 0, 0, 0, 0, time.UTC)
+	logHandler.InfoLogger.Println("Setting Date of Birth for UserID:", userIdentifier, "to", dob)
+
 	logHandler.InfoLogger.Println("Creating Baseline for UserID:", userIdentifier)
-	thisBaseline, baselineErr := baseline.Create(context.TODO(), userIdentifier, types.Height{CMs: 187.96}, 6, fmt.Sprintf("BaselineFor%v", userIdentifier))
+	thisBaseline, baselineErr := baseline.Create(context.TODO(), userIdentifier, types.Height{CMs: 187.96}, 6, fmt.Sprintf("BaselineFor%v", userIdentifier), dob)
 	if baselineErr != nil {
 		logHandler.ErrorLogger.Println(baselineErr)
 	} else {
 		logHandler.InfoLogger.Printf("Baseline Created:[%+v]", thisBaseline)
+	}
+
+	logHandler.InfoLogger.Println("Creating Baseline for UserID:", thisUser2.ID)
+	thisBaseline2, baselineErr2 := baseline.Create(context.TODO(), thisUser2.ID, types.Height{CMs: 170.96}, 6, fmt.Sprintf("BaselineFor%v", thisUser2.ID), dob)
+	if baselineErr2 != nil {
+		logHandler.ErrorLogger.Println(baselineErr2)
+	} else {
+		logHandler.InfoLogger.Printf("Baseline Created:[%+v]", thisBaseline2)
 	}
 
 	logHandler.InfoLogger.Println("Creating Goal for UserID:", userIdentifier)
@@ -115,6 +127,15 @@ func main() {
 		logHandler.ErrorLogger.Println(goalErr)
 	} else {
 		logHandler.InfoLogger.Printf("Goal Created:[%+v]", thisGoal)
+	}
+
+	logHandler.InfoLogger.Println("Creating Goal for UserID:", userIdentifier)
+	thisGoal2, goalErr2 := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v2", userIdentifier), types.Weight{KGs: 86.00}, time.Now().AddDate(0, 0, 30), types.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
+
+	if goalErr2 != nil {
+		logHandler.ErrorLogger.Println(goalErr2)
+	} else {
+		logHandler.InfoLogger.Printf("Goal Created:[%+v]", thisGoal2)
 	}
 
 	avgGoal, avgGoalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("AvgGoalFor%v", userIdentifier), types.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), types.Weight{KGs: 0}, "This is an average weight loss goal", true)
@@ -251,6 +272,8 @@ func main() {
 	r.Handle("/pico.js/*", http.StripPrefix("/pico.js/", http.FileServer(http.Dir("./node_modules/@picocss/pico/js"))))
 	r.Handle("/my.js/*", http.StripPrefix("/my.js/", http.FileServer(http.Dir("./res/js"))))
 	r.Handle("/glyphs/*", http.StripPrefix("/glyphs/", http.FileServer(http.Dir("./node_modules/bootstrap-icons/font"))))
+	r.Handle("/images/*", http.StripPrefix("/images/", http.FileServer(http.Dir("./res/images"))))
+	r.Get("/goal/projection/{id}/{goal}", handlers.Projection) // Projection handler for goals
 	http.ListenAndServe(":3000", r)
 
 }

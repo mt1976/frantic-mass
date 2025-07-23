@@ -6,6 +6,7 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/dao/user"
+	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
@@ -14,10 +15,28 @@ type Profile struct {
 	User          User
 	Context       AppContext
 	BMI           string
+	BMINote       string
+	BMIStatus     string
 	CurrentWeight string
 	Height        string
 	DateOfBirth   string
 	Age           int
+	NoGoals       int
+	Goals         []Goal
+}
+
+type Goal struct {
+	ID              int
+	Description     string
+	Name            string          // Name of the goal
+	TargetWeight    string          // Target weight in kilograms
+	TargetBMI       string          // Target BMI
+	TargetBMINote   string          // Note for the target BMI
+	TargetBMIStatus string          // Status for the target BMI
+	TargetDate      time.Time       // Target date for achieving the goal
+	LossPerWeek     string          // Desired weight loss per week in kilograms
+	IsDefault       bool            // Type of goal, e.g., user-defined or average weight loss goal
+	Actions         helpers.Actions // Actions available for the user, such as edit or delete
 }
 
 func BuildProfile(userId int) Profile {
@@ -65,8 +84,19 @@ func BuildProfile(userId int) Profile {
 		return view
 	}
 
-	view.BMI = ""                // Placeholder for BMI calculation
-	view.CurrentWeight = "100kg" // Placeholder for current weight
+	// Get the latest weight record for the user
+	latestWeight, err := functions.FetchLatestWeightRecord(userId)
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error fetching latest weight record:", err)
+		view.Context.AddError("Error fetching latest weight record")
+		view.Context.AddMessage("Please try again later.")
+		return view
+	}
+
+	view.BMI = latestWeight.BMI.String()                  // Placeholder for BMI calculation
+	view.BMINote = latestWeight.BMI.Description           // Placeholder for BMI note
+	view.BMIStatus = latestWeight.BMI.Glyph               // Placeholder for BMI status
+	view.CurrentWeight = latestWeight.Weight.KgAsString() // Placeholder for current weight
 	if baseline.Height.IsZero() {
 		logHandler.ErrorLogger.Println("Height not set for user ID:", userId)
 		view.Height = "Not set"
@@ -84,20 +114,39 @@ func BuildProfile(userId int) Profile {
 	view.DateOfBirth = baseline.DateOfBirth.Format("02/01/2006") // Format the date as needed
 	view.Age = AgeFromDOB(baseline.DateOfBirth)
 
+	// Fetch the user's goals
+	goals, err := functions.GetGoals(userId)
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error fetching user goals:", err)
+		view.Context.AddError("Error fetching user goals")
+		view.Context.AddMessage("Please try again later.")
+		return view
+	}
+	view.NoGoals = len(goals)
+	if view.NoGoals > 0 {
+		view.Goals = make([]Goal, view.NoGoals)
+		for i, g := range goals {
+			view.Goals[i] = Goal{
+				ID:              g.ID,
+				Description:     g.Note,
+				Name:            g.Name,
+				TargetWeight:    g.TargetWeight.KgAsString(),
+				TargetBMI:       g.TargetBMI.String(),
+				TargetBMINote:   g.TargetBMI.Description,
+				TargetBMIStatus: g.TargetBMI.Glyph,
+				TargetDate:      g.TargetDate,
+				LossPerWeek:     g.LossPerWeek.KgAsString(),
+				IsDefault:       g.AverageWeightLoss.IsTrue(),
+			}
+			view.Goals[i].Actions = helpers.Actions{}
+			view.Goals[i].Actions.Add(helpers.NewAction("Projection", "View Projection", glyphs.Projection, "/goal/projection/"+IntToString(userId)+"/"+IntToString(g.ID), helpers.GET, ""))
+			view.Goals[i].Actions.Add(helpers.NewAction("Edit", "Edit Goal", glyphs.Edit, "/goal/edit/"+IntToString(g.ID), helpers.GET, ""))
+			view.Goals[i].Actions.Add(helpers.NewAction("Delete", "Delete Goal", glyphs.Delete, "/goal/delete/"+IntToString(g.ID), helpers.GET, ""))
+			logHandler.InfoLogger.Printf("Goal %d: %s, Target Weight: %s, Target Date: %s", g.ID, g.Name, g.TargetWeight.KgAsString(), g.TargetDate.Format("02 Jan 2006"))
+		}
+	}
+
 	logHandler.InfoLogger.Println("Profile view created for user ID:", userId)
 
 	return view
-}
-
-// AgeFromDOB calculates the age in years given a date of birth
-func AgeFromDOB(dob time.Time) int {
-	now := time.Now()
-	age := now.Year() - dob.Year()
-
-	// Check if the birthday has occurred yet this year
-	if now.YearDay() < dob.YearDay() {
-		age--
-	}
-
-	return age
 }
