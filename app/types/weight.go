@@ -40,9 +40,9 @@ func (w *Weight) LbsAsString() string {
 }
 
 func (w *Weight) String() string {
-	if w.KGs <= 0 {
-		return "0"
-	}
+	// if w.KGs <= 0 {
+	// 	return "0"
+	// }
 	return fmt.Sprintf("%.2f kg", w.KGs)
 }
 
@@ -168,6 +168,7 @@ func (w *Weight) AddFloat(in float64) Weight {
 }
 
 func (w *Weight) Minus(in Weight) Weight {
+	logHandler.InfoLogger.Printf("Subtracting weights: %v - %v = %v", w.KGs, in.KGs, w.KGs-in.KGs)
 	return Weight{KGs: w.KGs - in.KGs}
 }
 func (w *Weight) MinusFloat(in float64) Weight {

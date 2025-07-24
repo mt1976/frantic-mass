@@ -42,8 +42,46 @@
          
 
                 </form>
-                <article>
-                <h2>Goals&nbsp;<small class="pico-color-grey-500">[{{.NoGoals}}]</small></h2>
+
+                <details name="Weight">
+                <summary><h2>Weights&nbsp;<small class="pico-color-grey-500">[{{len .Measurements}}]</small></h2></summary>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="text-align: center;">Date</th>
+                                <th class="text-align: center;">Weight</th>
+                                <th class="text-align: center;">BMI</th>
+                                <th class="text-align: center;">Loss</th>
+                                <th class="text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{range .Measurements}}
+                            <tr>
+                                <td>{{.RecordedAt.Format "02 Jan 2006"}}</td>
+                                <td>{{.Weight.String}}</td>
+                                <td>{{.BMI.Glyph}} {{.BMI.String}}</td>
+                                <td>{{if .LossSinceLastMeasurement}}{{.LossSinceLastMeasurement.String}}{{else}}N/A{{end}}</td>
+                                <td>    
+                                    <div role="group" style="display: flex; justify-content: center; align-items: center; border-radius: 100px;">
+                                    {{if .Actions}}
+                                    {{range .Actions.Actions}}
+                                        <a href="{{.FormAction}}" role="button" class="outline" onclick='{{.OnClick}}' FormAction="{{.FormAction}}" method="{{.Method}}">{{if .Icon}}{{.Icon}}{{end}}</a>
+                                    {{end}}
+                                    {{else}}
+                                        <span class="nes-text is-disabled">No actions available</span>
+                                    {{end}}
+                                    </div>
+                                </td>
+                            </tr>
+                            {{end}}
+                        </tbody>
+                    </table>
+                </details>
+
+
+                <details name="Goals">
+                <summary><h2>Goals&nbsp;<small class="pico-color-grey-500">[{{.NoGoals}}]</small></h2></summary>
                 {{if eq .NoGoals 0}}
                     <p class="nes-text is-error">No goals set for this user.</p>
                 {{else}}
@@ -84,7 +122,7 @@
                         </tbody>
                     </table>
                 {{end}}
-                </article>                
+                </details>                
             </article>
 
         {{template "alerts" .}}

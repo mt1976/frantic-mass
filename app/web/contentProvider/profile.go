@@ -3,11 +3,11 @@ package contentProvider
 import (
 	"time"
 
-	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/dao/user"
+	"github.com/mt1976/frantic-mass/app/dao/weight"
 	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/types"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
@@ -31,6 +31,17 @@ type Profile struct {
 	MeasurementSystemsLookup  lookup.Lookup
 	MeasurementSystem         int // Measurement system selected by the user
 	MeasurementSystemSelected lookup.LookupData
+	Measurements              []Measurement // List of measurements for the user
+}
+
+type Measurement struct {
+	ID                       int
+	RecordedAt               time.Time
+	Weight                   types.Weight // Weight in kilograms
+	BMI                      types.BMI    // Body Mass Index
+	Note                     string
+	LossSinceLastMeasurement types.Weight
+	Actions                  helpers.Actions // Actions available for the measurement, such as edit or delete
 }
 
 type Goal struct {
@@ -181,7 +192,40 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 
 	logHandler.InfoLogger.Println("Profile view created for user ID:", userId)
 
-	godump.Dump(view, "Profile View")
+	// Fetch the user's measurements
+	userWeights, err := weight.GetAllWhere(weight.FIELD_UserID, userId)
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error fetching user weights:", err)
+		view.Context.AddError("Error fetching user weights")
+		view.Context.AddMessage("Please try again later.")
+		return view, nil
+	}
+	userWeights = weight.SortByDateAscending(userWeights)
+	if len(userWeights) == 0 {
+		logHandler.InfoLogger.Println("No weight records found for user ID:", userId)
+		view.Context.AddMessage("No weight records found for this user.")
+	} else {
+		logHandler.InfoLogger.Printf("Found %d weight records for user ID: %d", len(userWeights), userId)
+		view.Measurements = make([]Measurement, len(userWeights))
+		for i, w := range userWeights {
+			view.Measurements[i] = Measurement{
+				ID:         w.ID,
+				RecordedAt: w.RecordedAt,
+				Weight:     w.Weight,
+				BMI:        w.BMI,
+				Note:       w.Note,
+			}
+			if i > 0 {
+				// Calculate the weight loss since the last measurement
+				view.Measurements[i].LossSinceLastMeasurement = view.Measurements[i-1].Weight.Minus(w.Weight)
+			} else {
+				view.Measurements[i].LossSinceLastMeasurement = *types.NewWeight(0) // No previous measurement, so set to zero
+			}
+			view.Measurements[i].Actions.Add(helpers.NewAction("View", "View Measurement", glyphs.View, "/weight/view/"+IntToString(w.ID), helpers.GET, ""))
+			logHandler.InfoLogger.Printf("Measurement %d: Recorded At: %s, Weight: %s, BMI: %s", w.ID, w.RecordedAt.Format("02 Jan 2006"), w.Weight.KgAsString(), w.BMI.String())
+		}
+	}
+	//godump.Dump(view, "Profile View")
 
 	return view, nil
 }

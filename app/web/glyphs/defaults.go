@@ -7,3 +7,4 @@ var Back Glyph = Glyph{iconName: "bi bi-arrow-left"}       // Icon for back acti
 var Edit Glyph = Glyph{iconName: "bi bi-pencil"}           // Icon for edit actions
 var Delete Glyph = Glyph{iconName: "bi bi-trash"}          // Icon for delete actions
 var Projection Glyph = Glyph{iconName: "bi bi-graph-up"}   // Icon for projection actions
+var View Glyph = Glyph{iconName: "bi bi-eye"}              // Icon for view actions
