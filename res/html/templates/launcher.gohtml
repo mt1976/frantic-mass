@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
    {{template "head" .}}
-
     <body style="{{template "bodyStyle" .}}">
             <hgroup>
                 <h1>Welcome to the {{.Context.AppName}} Launcher</h1>
@@ -9,16 +8,11 @@
             </hgroup>
             <article>
                 <p>{{.Context.AppDescription}}</p>
-
                 <p>Click below to start {{.Context.AppName}}.</p>
             </article>
-    {{template "errors" .}}
-        {{template "messages" .}}
         {{template "alerts" .}}
-            {{template "pageactions" .}}
+        {{template "pageactions" .}}
     </body>
-
-
     {{template "footer" .}}
     {{template "scripts" .}}
 </html>

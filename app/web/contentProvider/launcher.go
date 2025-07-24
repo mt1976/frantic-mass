@@ -12,6 +12,7 @@ type DisplayLauncher struct {
 func CreateDisplayLauncher(view DisplayLauncher) (DisplayLauncher, error) {
 	view.Context.SetDefaults()        // Initialize the Common view with defaults
 	view.Context.HttpStatusCode = 200 // OK
+	view.Context.TemplateName = "launcher"
 	view.Context.PageActions.Add(helpers.NewAction("Launch", "Start the application", glyphs.Nil, "/users", helpers.GET, ""))
 	return view, nil
 }

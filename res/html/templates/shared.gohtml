@@ -10,32 +10,33 @@
     <link rel="stylesheet" href="/pico.css/pico.colors.min.css">
     <link rel="stylesheet" href="/pico.css/pico.conditional.min.css">
     <link rel="stylesheet" href="/glyphs/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/my.css/custom.css">
     <title>{{.Context.AppName}} - {{.Context.PageTitle}}</title>
 </head>
 {{end}}
 
 {{define "footer"}}
-<footer>
+{{/* <footer> */}}
     <!-- Display the version and powered by information -->
-    <article>
-        <small class="pico-color-grey-150">Version: {{.Context.AppVersion}} {{.Context.Delimiter}} {{.Context.AppReleaseDate}} {{.Context.Delimiter}} {{.Context.AppEnvironment}} {{.Context.Delimiter}} {{.Context.FormattedDate}}</small>
-        <br>
- <nav>
-        <ul>
-          <li>
-            <details class="dropdown">
-              <summary role="button" class="secondary">Theme</summary>
-              <ul>
-                <li><a href="#" data-theme-switcher="auto">Auto</a></li>
-                <li><a href="#" data-theme-switcher="light">Light</a></li>
-                <li><a href="#" data-theme-switcher="dark">Dark</a></li>
-              </ul>
-            </details>
-          </li>
-        </ul>
+    <article style="text-align: center;  padding-top: 6px; padding-bottom: 6px;">
+        <nav>
+            <ul>
+                <li style="display: inline-block; padding-bottom: 6px; padding-top: 6px; padding-left: 10px; padding-right: 10px;">
+                    <details class="dropdown" data-tooltip="Select Theme" style="display: inline-block;">
+                    <summary role="button" class="secondary outline" style="cursor: pointer; padding: 2px;padding-left: 5px;padding-right: 4px;border: 0px;"><i class="bi bi-gear"></i></summary>
+                    <ul>
+                        <li><a href="#" data-theme-switcher="auto"><i class="bi bi-circle-half"></i> Auto</a></li>
+                        <li><a href="#" data-theme-switcher="light"><i class="bi bi-sun"></i> Light</a></li>
+                        <li><a href="#" data-theme-switcher="dark"><i class="bi bi-moon"></i> Dark</a></li>
+                    </ul>
+                    </details>
+                    &nbsp;&nbsp;<small class="pico-color-grey-200">{{.Context.AppName}} {{.Context.Delimiter}} Version: {{.Context.AppVersion}} {{.Context.Delimiter}} {{.Context.AppReleaseDate}} {{.Context.Delimiter}} {{.Context.AppEnvironment}} {{.Context.Delimiter}} {{.Context.FormattedDate}}</small>
+                </li>
+            </ul>
+
       </nav>
     </article>
-</footer>
+{{/* </footer> */}}
 {{end}}
 
 
@@ -67,47 +68,43 @@
     <script src="/my.js/minimal-theme-switcher.js"></script>
 {{end}}
 
-{{define "errors"}}
+{{define "alerts"}}
+    {{if .Context.HasMessages}}
+    <article>
+        <header style="padding-bottom:0px;margin-bottom: 0px;background-color: #E0E3E7;"><p style="color:#6F7887;margin-bottom: 10px;"><strong>Messages</strong></p></header>
+    {{end}}
+    
     <!-- Display any errors -->
     {{if .Context.UserErrorMessages}}
-        <article>
-
-            <header style="background-color:red;padding-bottom:0px;margin-bottom: 0px;"><p style="color:white;margin-bottom: 10px;"><strong>ERRORS</strong></p></header>
-            <ul>
                 {{range .Context.UserErrorMessages}}
-                    <li><p class="pico-color-red-500" style="margin-top: 18px;">{{.}}</p></li>
+                    <p class="danger" style="margin-top: 18px;"><i class="bi bi-sign-stop-fill"></i> {{.}}</p>
                 {{end}}
-            </ul>
-        </article>
     {{end}}
-{{end}}
-
-{{define "messages"}}
     <!-- Display any errors -->
     {{if .Context.UserMessages}}
-        <article>
-
-            <header style="background-color:blue;padding-bottom:0px;margin-bottom: 0px;"><p style="color:white;margin-bottom: 10px;"><strong>MESSAGES</strong></p></header>
-            <ul>
                 {{range .Context.UserMessages}}
-                    <li><p class="pico-color-blue-500" style="margin-top: 18px;">{{.}}</p></li>
+                    <p class="information" style="margin-top: 18px;"><i class="bi bi-info-square-fill"></i> {{.}}</p>
                 {{end}}
-            </ul>
-        </article>
     {{end}}
-{{end}}
-
-{{define "alerts"}}
     <!-- Display any alerts -->
     {{if .Context.UserAlerts}}
-        <article>
-
-            <header style="background-color:amber;padding-bottom:0px;margin-bottom: 0px;"><p style="color:white;margin-bottom: 10px;"><strong>ALERTS</strong></p></header>
-            <ul>
                 {{range .Context.UserAlerts}}
-                    <li><p class="pico-color-amber-500" style="margin-top: 18px;">{{.}}</p></li>
+                    <p class="warning" style="margin-top: 18px;"><i class="bi bi-exclamation-triangle-fill"></i> {{.}}</p>
                 {{end}}
-            </ul>
-        </article>
     {{end}}
+    <!-- Display any success messages -->
+    {{if .Context.UserSuccessMessages}}
+                {{range .Context.UserSuccessMessages}}
+                    <p class="success" style="margin-top: 18px;"><i class="bi bi-check-circle-fill"></i> {{.}}</p>
+                {{end}}
+    {{end}}
+
+    {{if .Context.HasMessages}}
+    </article>
+    {{end}}
+    <!-- Lets test all message types -->
+                    {{/* <p class="danger" style="margin-top: 18px;"><i class="bi bi-sign-stop-fill"></i> TEST</p>
+                    <p class="information" style="margin-top: 18px;"><i class="bi bi-info-square-fill"></i> TEST</p>
+                    <p class="warning" style="margin-top: 18px;"><i class="bi bi-exclamation-triangle-fill"></i> TEST</p>
+                    <p class="success" style="margin-top: 18px;"><i class="bi bi-check-circle-fill"></i> TEST</p> */}}
 {{end}}

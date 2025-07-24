@@ -283,6 +283,8 @@ func main() {
 	r.Get("/test", handlers.Dummy)
 	r.NotFound(handlers.NotFound)
 	r.MethodNotAllowed(handlers.MethodNotAllowed)
+	//r.Handle("/favicon.ico", http.FileServer(http.Dir("./res/images")))
+	r.Handle("/my.css/*", http.StripPrefix("/my.css/", http.FileServer(http.Dir("./res/css"))))
 	r.Handle("/pico.css/*", http.StripPrefix("/pico.css/", http.FileServer(http.Dir("./node_modules/@picocss/pico/css"))))
 	r.Handle("/pico.js/*", http.StripPrefix("/pico.js/", http.FileServer(http.Dir("./node_modules/@picocss/pico/js"))))
 	r.Handle("/my.js/*", http.StripPrefix("/my.js/", http.FileServer(http.Dir("./res/js"))))

@@ -1,0 +1,58 @@
+
+
+
+.danger {
+  background-color: #f8d7da;
+  border-left: 10px solid #721c24;
+  padding: 10px;
+  border-radius: 5px;
+  color: #721c24;
+}
+
+.information {
+  background-color: #d1ecf1;
+  border-left: 10px solid #0c5460;
+  padding: 10px;
+  border-radius: 5px;
+  color: #0c5460;
+}
+
+.success {
+  background-color: #d4edda;
+  border-left: 10px solid #155724;
+  padding: 10px;
+  border-radius: 5px;
+  color: #155724;
+}
+
+.warning {
+  background-color: #fff3cd;
+  border-left: 10px solid #856404;
+  padding: 10px;
+  border-radius: 5px;
+  color: #856404;
+}
+
+.light {
+  background-color: #f8f9fa;
+  border-left: 10px solid #6c757d;
+  padding: 10px;
+  border-radius: 5px;
+  color: #6c757d;
+}
+
+.dark {
+  background-color: #343a40;
+  border-left: 10px solid #212529;
+  padding: 10px;
+  border-radius: 5px;
+  color: #f8f9fa;
+}
+
+.primary {
+  background-color: #cce5ff;
+  border-left: 10px solid #004085;
+  padding: 10px;
+  border-radius: 5px;
+  color: #004085;
+}

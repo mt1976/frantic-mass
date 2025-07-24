@@ -16,7 +16,6 @@ func Users(ctx context.Context) (contentProvider.UserChooser, error) {
 	view.Context.PageKeywords = "user, choose, select"
 	view.Context.HttpStatusCode = 200 // OK
 	view.Context.WasSuccessful = true
-	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "users"
 
 	view, err = contentProvider.CreateUserChooser(view)

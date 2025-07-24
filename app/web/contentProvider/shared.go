@@ -37,9 +37,11 @@ type AppContext struct {
 	UserLocale string // Locale for the application, used for internationalization
 	UserTheme  string
 
-	UserErrorMessages []string
-	UserMessages      []string
-	UserAlerts        []string
+	UserErrorMessages   []string // Error messages for the user
+	UserMessages        []string // General messages for the user
+	UserAlerts          []string // Alerts or notifications for the user
+	UserSuccessMessages []string // Messages indicating successful operations
+	HasMessages         bool     // Flag to indicate if there are any messages to display
 
 	WasSuccessful  bool
 	HttpStatusCode int // HTTP status code
@@ -133,6 +135,8 @@ func (c *AppContext) SetDefaults() {
 	c.UserErrorMessages = []string{}
 	c.UserMessages = []string{}
 	c.UserAlerts = []string{}
+	c.UserSuccessMessages = []string{}
+	c.HasMessages = false
 
 	c.WasSuccessful = true
 	c.HttpStatusCode = 200 // OK
@@ -185,15 +189,27 @@ func (c *AppContext) SetDefaults() {
 
 func (c *AppContext) AddError(err string) {
 	c.UserErrorMessages = append(c.UserErrorMessages, err)
+	c.HasMessages = true
+	logHandler.ErrorLogger.Println("Error added to context:", err)
 	c.WasSuccessful = false
 }
 
 func (c *AppContext) AddMessage(msg string) {
 	c.UserMessages = append(c.UserMessages, msg)
+	c.HasMessages = true
+	logHandler.InfoLogger.Println("Message added to context:", msg)
 }
 
 func (c *AppContext) AddNotification(notification string) {
 	c.UserAlerts = append(c.UserAlerts, notification)
+	c.HasMessages = true
+	logHandler.InfoLogger.Println("Notification added to context:", notification)
+}
+
+func (c *AppContext) AddSuccess(success string) {
+	c.UserSuccessMessages = append(c.UserSuccessMessages, success)
+	c.HasMessages = true
+	logHandler.InfoLogger.Println("Success added to context:", success)
 }
 
 // AgeFromDOB calculates the age in years given a date of birth

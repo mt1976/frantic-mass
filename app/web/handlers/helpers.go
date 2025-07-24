@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"net/http"
 
+	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 )
@@ -34,12 +35,17 @@ func fetchTemplate(appContext contentProvider.AppContext) *template.Template {
 	sharedTemplate := root + "shared" + templateSuffix
 	logHandler.InfoLogger.Printf("Loading shared template from: %s", sharedTemplate)
 
-	tmpl := template.Must(template.ParseFiles(root+templateRequest+templateSuffix, sharedTemplate))
+	requestTemplate := root + templateRequest + templateSuffix
+	logHandler.InfoLogger.Printf("Loading request template from: %s", requestTemplate)
+
+	godump.Dump(appContext)
+
+	tmpl := template.Must(template.ParseFiles(requestTemplate, sharedTemplate))
 	if tmpl == nil {
-		logHandler.ErrorLogger.Printf("Failed to load template %s from %s", templateRequest, root+templateRequest+templateSuffix)
+		logHandler.ErrorLogger.Printf("Failed to load template %s from %s", templateRequest, requestTemplate)
 		return nil // Return nil if the template could not be loaded
 	}
-	logHandler.InfoLogger.Printf("Template %s loaded successfully from %v", templateRequest, root+templateRequest+templateSuffix)
+	logHandler.InfoLogger.Printf("Template %s loaded successfully from %v", templateRequest, requestTemplate)
 
 	return tmpl
 }
