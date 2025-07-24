@@ -1,6 +1,8 @@
 package contentProvider
 
 import (
+	"encoding/json"
+	"html/template"
 	"time"
 
 	"github.com/mt1976/frantic-core/dao/lookup"
@@ -226,6 +228,63 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 		}
 	}
 	//godump.Dump(view, "Profile View")
+	view.Context.PageHasChart = true
+	view.Context.ChartID = "weightLossChart"
+	// convert measurements to DataPoint format for chart generation
+	var dataPoints []DataPoint
+	for _, m := range view.Measurements {
+		dataPoints = append(dataPoints, DataPoint{
+			Time:  m.RecordedAt,
+			Value: m.Weight.KGs,
+		})
+	}
+	if len(dataPoints) == 0 {
+		logHandler.ErrorLogger.Println("No measurements available for user ID:", userId)
+		view.Context.PageHasChart = false
+		view.Context.ChartData = ""
+	} else {
+		logHandler.InfoLogger.Println("Measurements found for user ID:", userId, "with", len(dataPoints), "data points")
+	}
+
+	result, _ := GenerateScatterData(dataPoints)
+
+	// Print as JSON
+	jsonOutput, _ := json.MarshalIndent(result, "", "  ")
+
+	view.Context.ChartData = template.JS(jsonOutput)
+	if view.Context.ChartData == "" {
+		logHandler.ErrorLogger.Println("No chart data available for user ID:", userId)
+		view.Context.PageHasChart = false
+	} else {
+		logHandler.InfoLogger.Println("Chart data generated successfully for user ID:", userId)
+	}
 
 	return view, nil
+}
+
+type DataPoint struct {
+	Time  time.Time
+	Value float64
+}
+
+type ScatterData struct {
+	X    []string  `json:"x"`
+	Y    []float64 `json:"y"`
+	Type string    `json:"type"`
+}
+
+func GenerateScatterData(points []DataPoint) (ScatterData, error) {
+	var x []string
+	var y []float64
+
+	for _, point := range points {
+		x = append(x, point.Time.Format("2006-01-02 15:04:05")) // Match the required format
+		y = append(y, point.Value)
+	}
+
+	return ScatterData{
+		X:    x,
+		Y:    y,
+		Type: "scatter",
+	}, nil
 }

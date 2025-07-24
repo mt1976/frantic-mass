@@ -11,9 +11,8 @@
             </hgroup>
     
             <article>
-                        <hgroup>
-
-            <h2>Profile:</h2>
+                <hgroup>
+                    <h2>Profile:</h2>
                 </hgroup>
                 <form>
                 <label>ID<input name="id" type="text" value="{{.User.ID}}" readonly/></label>
@@ -124,9 +123,9 @@
                 {{end}}
                 </details>                
             </article>
-
+        {{template "chart" .}}
         {{template "alerts" .}}
-            {{template "pageactions" .}}
+        {{template "pageactions" .}}
     </body>
    {{template "footer" .}}
     {{template "scripts" .}}

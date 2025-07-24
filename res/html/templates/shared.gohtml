@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/pico.css/pico.conditional.min.css">
     <link rel="stylesheet" href="/glyphs/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/my.css/custom.css">
+    {{if .Context.PageHasChart}}<script src='https://cdn.plot.ly/plotly-3.0.1.min.js'></script>{{end}}
     <title>{{.Context.AppName}} - {{.Context.PageTitle}}</title>
 </head>
 {{end}}
@@ -66,6 +67,12 @@
 {{define "scripts"}}
  <!-- Minimal theme switcher -->
     <script src="/my.js/minimal-theme-switcher.js"></script>
+       {{if .Context.PageHasChart}}
+        <script>
+        var data = [{{.Context.ChartData}}];
+        Plotly.newPlot('{{.Context.ChartID}}', data);
+        </script>
+    {{end}}
 {{end}}
 
 {{define "alerts"}}
@@ -108,3 +115,13 @@
                     <p class="warning" style="margin-top: 18px;"><i class="bi bi-exclamation-triangle-fill"></i> TEST</p>
                     <p class="success" style="margin-top: 18px;"><i class="bi bi-check-circle-fill"></i> TEST</p> */}}
 {{end}}
+
+{{define "chart"}}
+    {{if .Context.PageHasChart}}
+        <article>
+            <h2>Weight Loss Progress</h2>
+            <div id="{{.Context.ChartID}}"></div>
+        </article>
+    {{end}}
+{{end}}
+

@@ -2,6 +2,7 @@ package contentProvider
 
 import (
 	"fmt"
+	"html/template"
 	"strconv"
 	"time"
 
@@ -63,6 +64,9 @@ type AppContext struct {
 	TemplateName     string // Name of the template used for rendering the page
 	TemplateFilePath string
 	PageActions      helpers.Actions // Actions available on the current page, such as buttons or links
+	PageHasChart     bool            // Flag to indicate if the page has a chart to display
+	ChartID          string          // ID of the chart to be displayed on the page
+	ChartData        template.JS     // Data for the chart to be displayed on the page
 }
 
 var cache *commonConfig.Settings
