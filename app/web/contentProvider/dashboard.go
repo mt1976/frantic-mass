@@ -1,10 +1,10 @@
 package contentProvider
 
 import (
-	"encoding/json"
-	"html/template"
+	"fmt"
 	"time"
 
+	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
@@ -13,27 +13,31 @@ import (
 	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/types"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
+	"github.com/mt1976/frantic-mass/app/web/graphs"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
 type Profile struct {
-	User                      User
-	Context                   AppContext
-	BMI                       string
-	BMINote                   string
-	BMIStatus                 string
-	CurrentWeight             string
-	Height                    string
-	DateOfBirth               string
-	Age                       int
-	NoGoals                   int
-	Goals                     []Goal
-	TotalWeightLoss           string // Total weight loss in kg
-	AverageWeightLoss         string // Average weight loss in kg
-	MeasurementSystemsLookup  lookup.Lookup
-	MeasurementSystem         int // Measurement system selected by the user
-	MeasurementSystemSelected lookup.LookupData
-	Measurements              []Measurement // List of measurements for the user
+	User                 User
+	Context              AppContext
+	BMI                  string
+	BMINote              string
+	BMIStatus            string
+	CurrentWeight        string
+	Height               string
+	DateOfBirth          string
+	Age                  int
+	NoGoals              int
+	Goals                []Goal
+	TotalWeightLoss      string // Total weight loss in kg
+	AverageWeightLoss    string // Average weight loss in kg
+	WeightSystemLookup   lookup.Lookup
+	WeightSystem         int // Measurement system selected by the user
+	WeightSystemSelected lookup.LookupData
+	HeightSystemLookup   lookup.Lookup
+	HeightSystem         int // Height measurement system selected by the user
+	HeightSystemSelected lookup.LookupData
+	Measurements         []Measurement // List of measurements for the user
 }
 
 type Measurement struct {
@@ -60,9 +64,9 @@ type Goal struct {
 	Actions         helpers.Actions // Actions available for the user, such as edit or delete
 }
 
-func BuildProfile(view Profile, userId int) (Profile, error) {
+func BuildUserDashboard(view Profile, userId int) (Profile, error) {
 	view.Context.SetDefaults() // Initialize the Common view with defaults
-	view.Context.TemplateName = "profile"
+	view.Context.TemplateName = "dashboard"
 	view.User = User{}
 	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, "/users", helpers.GET, ""))
 
@@ -89,9 +93,10 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 	view.User.Name = userDetails.Username
 	// Add more fields as necessary
 
-	view.Context.PageTitle = "User Profile"
-	view.Context.PageKeywords = "user, profile"
-	view.Context.PageSummary = "Display the user information for the selected user."
+	view.Context.PageTitle = "User Dashboard - " + userDetails.Username
+	view.Context.PageDescription = "Dashboard for user " + userDetails.Username
+	view.Context.PageKeywords = "user, dashboard"
+	view.Context.PageSummary = "Dashboard of the user's information for the selected user as well as their goals and measurements."
 	view.Context.HttpStatusCode = 200 // OK
 	view.Context.WasSuccessful = true
 
@@ -104,17 +109,8 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 		return view, nil
 	}
 
-	view.MeasurementSystemsLookup = types.WeightSystemsLookup
-	view.MeasurementSystem = userDetails.WeightSystem
-	if view.MeasurementSystem < 0 || view.MeasurementSystem >= len(types.WeightMeasurementSystems) {
-		logHandler.ErrorLogger.Println("Invalid measurement system for user ID:", userId)
-		view.MeasurementSystem = 0 // Default to the first measurement system
-	} else {
-		logHandler.InfoLogger.Println("Measurement system for user ID:", userId, "is", types.WeightMeasurementSystems[view.MeasurementSystem].Value)
-		view.MeasurementSystemSelected = view.MeasurementSystemsLookup.Data[view.MeasurementSystem]
-		logHandler.InfoLogger.Println("Measurement system selected:", view.MeasurementSystemSelected.Value)
-		view.MeasurementSystemsLookup.Data[view.MeasurementSystem].Selected = true // Mark the selected measurement system
-	}
+	view = setWeightSystem(view, userDetails, userId)
+	view = setupHeightSystem(view, userDetails, userId)
 	// Get the latest weight record for the user
 	latestWeight, err := functions.FetchLatestWeightRecord(userId)
 	if err != nil {
@@ -228,63 +224,69 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 		}
 	}
 	//godump.Dump(view, "Profile View")
-	view.Context.PageHasChart = true
-	view.Context.ChartID = "weightLossChart"
-	// convert measurements to DataPoint format for chart generation
-	var dataPoints []DataPoint
-	for _, m := range view.Measurements {
-		dataPoints = append(dataPoints, DataPoint{
-			Time:  m.RecordedAt,
-			Value: m.Weight.KGs,
-		})
-	}
-	if len(dataPoints) == 0 {
-		logHandler.ErrorLogger.Println("No measurements available for user ID:", userId)
-		view.Context.PageHasChart = false
-		view.Context.ChartData = ""
-	} else {
-		logHandler.InfoLogger.Println("Measurements found for user ID:", userId, "with", len(dataPoints), "data points")
-	}
-
-	result, _ := GenerateScatterData(dataPoints)
-
-	// Print as JSON
-	jsonOutput, _ := json.MarshalIndent(result, "", "  ")
-
-	view.Context.ChartData = template.JS(jsonOutput)
-	if view.Context.ChartData == "" {
-		logHandler.ErrorLogger.Println("No chart data available for user ID:", userId)
-		view.Context.PageHasChart = false
-	} else {
-		logHandler.InfoLogger.Println("Chart data generated successfully for user ID:", userId)
-	}
+	view = buildDashboardChart(view, userWeights, "Weight Loss Progress")
 
 	return view, nil
+
 }
 
-type DataPoint struct {
-	Time  time.Time
-	Value float64
-}
+func buildDashboardChart(view Profile, weights []weight.Weight, chartTitle string) Profile {
+	view.Context.PageHasChart = true
+	view.Context.ChartID = "weightLossChart"
+	view.Context.ChartTitle = chartTitle
 
-type ScatterData struct {
-	X    []string  `json:"x"`
-	Y    []float64 `json:"y"`
-	Type string    `json:"type"`
-}
+	config := graphs.NewLegendConfig(0.5, "reversed", 16, "paper")
 
-func GenerateScatterData(points []DataPoint) (ScatterData, error) {
-	var x []string
-	var y []float64
-
-	for _, point := range points {
-		x = append(x, point.Time.Format("2006-01-02 15:04:05")) // Match the required format
-		y = append(y, point.Value)
+	// Refactor to use the graphs package
+	graphData := graphs.Trace{}
+	graphData.Name = chartTitle
+	graphData.Shape = "scatter"
+	graphData.XIsTime = true // X values are time-based
+	for _, w := range weights {
+		ds := w.RecordedAt.Format(graphs.TIMESERIES_FORMAT)
+		ws := fmt.Sprintf("%v", w.Weight.Kg())
+		graphData.AddXYText(ds, ws, w.Weight.KgAsString())
 	}
+	var err error
+	view.Context.ChartData, err = graphs.GeneratePlotlyScript([]graphs.Trace{graphData}, config, view.Context.ChartID)
 
-	return ScatterData{
-		X:    x,
-		Y:    y,
-		Type: "scatter",
-	}, nil
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error generating Plotly script:", err)
+		view.Context.AddError("Error generating chart data")
+		view.Context.AddMessage("Please try again later.")
+		return view
+	}
+	godump.Dump(view.Context.ChartData)
+
+	return view
+}
+
+func setWeightSystem(view Profile, userDetails user.User, userId int) Profile {
+	view.WeightSystemLookup = types.WeightSystemsLookup
+	view.WeightSystem = userDetails.WeightSystem
+	if view.WeightSystem < 0 || view.WeightSystem >= len(types.WeightMeasurementSystems) {
+		logHandler.ErrorLogger.Println("Invalid measurement system for user ID:", userId)
+		view.WeightSystem = 0 // Default to the first measurement system
+	} else {
+		logHandler.InfoLogger.Println("Measurement system for user ID:", userId, "is", types.WeightMeasurementSystems[view.WeightSystem].Value)
+		view.WeightSystemSelected = view.WeightSystemLookup.Data[view.WeightSystem]
+		logHandler.InfoLogger.Println("Measurement system selected:", view.WeightSystemSelected.Value)
+		view.WeightSystemLookup.Data[view.WeightSystem].Selected = true // Mark the selected measurement system
+	}
+	return view
+}
+
+func setupHeightSystem(view Profile, userDetails user.User, userId int) Profile {
+	view.HeightSystemLookup = types.HeightSystemsLookup
+	view.HeightSystem = userDetails.HeightSystem
+	if view.HeightSystem < 0 || view.HeightSystem >= len(types.HeightMeasurementSystems) {
+		logHandler.ErrorLogger.Println("Invalid height measurement system for user ID:", userId)
+		view.HeightSystem = 0 // Default to the first height measurement system
+	} else {
+		logHandler.InfoLogger.Println("Height measurement system for user ID:", userId, "is", types.HeightMeasurementSystems[view.HeightSystem].Value)
+		view.HeightSystemSelected = view.HeightSystemLookup.Data[view.HeightSystem]
+		logHandler.InfoLogger.Println("Height measurement system selected:", view.HeightSystemSelected.Value)
+		view.HeightSystemLookup.Data[view.HeightSystem].Selected = true // Mark the selected height measurement system
+	}
+	return view
 }

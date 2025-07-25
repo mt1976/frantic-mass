@@ -69,8 +69,7 @@
     <script src="/my.js/minimal-theme-switcher.js"></script>
        {{if .Context.PageHasChart}}
         <script>
-        var data = [{{.Context.ChartData}}];
-        Plotly.newPlot('{{.Context.ChartID}}', data);
+        {{.Context.ChartData}}
         </script>
     {{end}}
 {{end}}
@@ -119,7 +118,7 @@
 {{define "chart"}}
     {{if .Context.PageHasChart}}
         <article>
-            <h2>Weight Loss Progress</h2>
+            <h2>{{.Context.ChartTitle}}</h2>
             <div id="{{.Context.ChartID}}"></div>
         </article>
     {{end}}

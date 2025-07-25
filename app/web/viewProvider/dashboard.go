@@ -6,7 +6,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 )
 
-func Profile(ctx context.Context, userId int) (contentProvider.Profile, error) {
+func Dashboard(ctx context.Context, userId int) (contentProvider.Profile, error) {
 
 	//godump.Dump(view)
 	view := contentProvider.Profile{}
@@ -19,7 +19,7 @@ func Profile(ctx context.Context, userId int) (contentProvider.Profile, error) {
 	view.Context.WasSuccessful = true
 	view.Context.TemplateName = "profile"
 
-	view, err = contentProvider.BuildProfile(view, userId)
+	view, err = contentProvider.BuildUserDashboard(view, userId)
 
 	return view, err
 }

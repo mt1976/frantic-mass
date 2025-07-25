@@ -16,9 +16,10 @@ import (
 )
 
 type AppContext struct {
-	PageTitle    string
-	PageSummary  string
-	PageKeywords string
+	PageTitle       string
+	PageDescription string // Description of the page, used for SEO and metadata
+	PageSummary     string
+	PageKeywords    string
 
 	Author    string
 	Copyright string // Copyright information for the application
@@ -67,6 +68,7 @@ type AppContext struct {
 	PageHasChart     bool            // Flag to indicate if the page has a chart to display
 	ChartID          string          // ID of the chart to be displayed on the page
 	ChartData        template.JS     // Data for the chart to be displayed on the page
+	ChartTitle       string          // Title of the chart to be displayed on the page
 }
 
 var cache *commonConfig.Settings
@@ -234,4 +236,32 @@ func IntToString(i int) string {
 		return ""
 	}
 	return strconv.Itoa(i)
+}
+
+// / Charting Fiddling
+type DataPoint struct {
+	Time  time.Time
+	Value float64
+}
+
+type ScatterData struct {
+	X    []string  `json:"x"`
+	Y    []float64 `json:"y"`
+	Type string    `json:"type"`
+}
+
+func GenerateScatterData(points []DataPoint) (ScatterData, error) {
+	var x []string
+	var y []float64
+
+	for _, point := range points {
+		x = append(x, point.Time.Format("2006-01-02 15:04:05")) // Match the required format
+		y = append(y, point.Value)
+	}
+
+	return ScatterData{
+		X:    x,
+		Y:    y,
+		Type: "scatter",
+	}, nil
 }
