@@ -105,7 +105,7 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 	}
 
 	view.MeasurementSystemsLookup = types.MeasurementSystemsLookup
-	view.MeasurementSystem = userDetails.MeasurementSystem
+	view.MeasurementSystem = userDetails.WeightSystem
 	if view.MeasurementSystem < 0 || view.MeasurementSystem >= len(types.MeasurementSystems) {
 		logHandler.ErrorLogger.Println("Invalid measurement system for user ID:", userId)
 		view.MeasurementSystem = 0 // Default to the first measurement system
