@@ -60,8 +60,7 @@ func AverageWeightLoss(userID int) (avg *types.Weight, tot *types.Weight, err er
 	//logHandler.InfoLogger.Printf("Total weight mass for user %d: %v over %d records", userID, totalMass.String(), count)
 	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v over %d records", userID, totalLoss.KgAsString(), count)
 	logHandler.InfoLogger.Printf("Average weight loss for user %d: %v kg", userID, totalLoss.Kg()/float64(count))
-	stas, _ := totalLoss.StonesAsString()
-	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v", userID, stas)
+	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v", userID, totalLoss.StonesAsString())
 	avg = types.NewWeight(totalLoss.Kg() / float64(count))
 	//os.Exit(0) // Exit the program successfully
 	return avg, &totalLoss, nil

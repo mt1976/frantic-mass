@@ -53,12 +53,12 @@ func (w *Weight) Grams() (float64, error) {
 	return w.KGs * 1000, nil
 }
 
-func (w *Weight) GramsAsString() (string, error) {
+func (w *Weight) GramsAsString() string {
 	grams, err := w.Grams()
 	if err != nil {
-		return "", err
+		return "0 g"
 	}
-	return fmt.Sprintf("%.2f g", grams), nil
+	return fmt.Sprintf("%.2f g", grams)
 }
 
 func (w *Weight) Ounces() (float64, error) {
@@ -68,12 +68,12 @@ func (w *Weight) Ounces() (float64, error) {
 	return w.KGs * 35.274, nil
 }
 
-func (w *Weight) OuncesAsString() (string, error) {
+func (w *Weight) OuncesAsString() string {
 	ounces, err := w.Ounces()
 	if err != nil {
-		return "", err
+		return "0 oz"
 	}
-	return fmt.Sprintf("%.2f oz", ounces), nil
+	return fmt.Sprintf("%.2f oz", ounces)
 }
 
 func (w *Weight) Pounds() (float64, error) {
@@ -101,15 +101,15 @@ func (w *Weight) Stones() (int, int, error) {
 	return stones, pounds, nil
 }
 
-func (w *Weight) StonesAsString() (string, error) {
+func (w *Weight) StonesAsString() string {
 	stones, pounds, err := w.Stones()
 	if err != nil {
-		return "", err
+		return "0 st"
 	}
 	if pounds == 0 {
-		return fmt.Sprintf("%d st", stones), nil
+		return fmt.Sprintf("%d st", stones)
 	}
-	return fmt.Sprintf("%d st %d lbs", stones, pounds), nil
+	return fmt.Sprintf("%d st %d lbs", stones, pounds)
 }
 
 func (w *Weight) EQ(value float64) bool {
@@ -203,4 +203,49 @@ func (w *Weight) Invert() *Weight {
 	inverted := -w.KGs
 	logHandler.InfoLogger.Printf("Inverting weight: %v kg to %v kg", w.KGs, inverted)
 	return &Weight{KGs: inverted}
+}
+
+func (w *Weight) ToString(preference int) string {
+	// Base on the preference, and the measurement system, return the weight as a string
+	for _, ms := range MeasurementSystems {
+		if ms.Key == preference {
+			if ms.Function != nil {
+				result, err := ms.Function(w)
+				if err != nil {
+					logHandler.ErrorLogger.Printf("Error converting weight: %v", err)
+					return "Error"
+				}
+				return result
+			}
+			logHandler.ErrorLogger.Printf("No function defined for measurement system: %v", ms.Value)
+			return "No function defined"
+		}
+	}
+	logHandler.ErrorLogger.Printf("Invalid measurement system preference: %v", preference)
+
+	return "NaN" // Not a Number, if preference is invalid
+}
+
+func (w *Weight) MilligramsAsString() string {
+	mgs := w.KGs * 1e6
+	return fmt.Sprintf("%.2f mg", mgs)
+}
+
+func (w *Weight) TonnesAsString() string {
+	tonnes := w.KGs / 1000
+	return fmt.Sprintf("%.2f t", tonnes)
+}
+
+func (w *Weight) LbmAsString() string {
+	lbm := w.KGs * 2.20462 // Convert kg to lbm
+	return fmt.Sprintf("%.2f lbm", lbm)
+}
+
+func (w *Weight) TroyOzAsString() string {
+	troyOz := w.KGs * 32.1507 // Convert kg to troy ounces
+	return fmt.Sprintf("%.2f troy oz", troyOz)
+}
+func (w *Weight) CwtAsString() string {
+	cwt := w.KGs * 0.0220462 // Convert kg to hundredweight
+	return fmt.Sprintf("%.2f cwt", cwt)
 }
