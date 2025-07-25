@@ -207,7 +207,7 @@ func (w *Weight) Invert() *Weight {
 
 func (w *Weight) ToString(preference int) string {
 	// Base on the preference, and the measurement system, return the weight as a string
-	for _, ms := range MeasurementSystems {
+	for _, ms := range WeightMeasurementSystems {
 		if ms.Key == preference {
 			if ms.Function != nil {
 				result, err := ms.Function(w)

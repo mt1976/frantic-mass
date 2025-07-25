@@ -104,13 +104,13 @@ func BuildProfile(view Profile, userId int) (Profile, error) {
 		return view, nil
 	}
 
-	view.MeasurementSystemsLookup = types.MeasurementSystemsLookup
+	view.MeasurementSystemsLookup = types.WeightSystemsLookup
 	view.MeasurementSystem = userDetails.WeightSystem
-	if view.MeasurementSystem < 0 || view.MeasurementSystem >= len(types.MeasurementSystems) {
+	if view.MeasurementSystem < 0 || view.MeasurementSystem >= len(types.WeightMeasurementSystems) {
 		logHandler.ErrorLogger.Println("Invalid measurement system for user ID:", userId)
 		view.MeasurementSystem = 0 // Default to the first measurement system
 	} else {
-		logHandler.InfoLogger.Println("Measurement system for user ID:", userId, "is", types.MeasurementSystems[view.MeasurementSystem].Value)
+		logHandler.InfoLogger.Println("Measurement system for user ID:", userId, "is", types.WeightMeasurementSystems[view.MeasurementSystem].Value)
 		view.MeasurementSystemSelected = view.MeasurementSystemsLookup.Data[view.MeasurementSystem]
 		logHandler.InfoLogger.Println("Measurement system selected:", view.MeasurementSystemSelected.Value)
 		view.MeasurementSystemsLookup.Data[view.MeasurementSystem].Selected = true // Mark the selected measurement system

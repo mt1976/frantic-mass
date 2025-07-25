@@ -217,7 +217,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("HeightCM", thisBaseline.Height.CmAsString())
-	logHandler.InfoLogger.Println("HeightM", thisBaseline.Height.MetresAsString())
+	logHandler.InfoLogger.Println("HeightM", thisBaseline.Height.MetersAsString())
 
 	logHandler.InfoLogger.Println("HeightIN", thisBaseline.Height.InchesAsString())
 	logHandler.InfoLogger.Println("HeightFT", thisBaseline.Height.FeetAsString())
@@ -226,8 +226,7 @@ func main() {
 
 	logHandler.InfoLogger.Println("WeightKg", thisWeight.Weight.KgAsString())
 	logHandler.InfoLogger.Println("WeightLbs", thisWeight.Weight.LbsAsString())
-	stones, _ := thisWeight.Weight.StonesAsString()
-	logHandler.InfoLogger.Println("WeightStone", stones)
+	logHandler.InfoLogger.Println("WeightStone", thisWeight.Weight.StonesAsString())
 	logHandler.InfoLogger.Println("WeightString", thisWeight.Weight.String())
 
 	avg, tot, lossErr := functions.AverageWeightLoss(userIdentifier)

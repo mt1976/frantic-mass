@@ -6,18 +6,34 @@ import "github.com/mt1976/frantic-core/dao/lookup"
 // Version: 0.2.0
 // Updated on: 2021-09-10
 
-var MeasurementSystems []MeasurementSystem
-var MeasurementSystemsLookup lookup.Lookup
+var WeightMeasurementSystems []WeightMeasurementSystem
+var HeightMeasurementSystems []HeightMeasurementSystem
+var WeightSystemsLookup lookup.Lookup
+var HeightSystemsLookup lookup.Lookup
 
-type MeasurementSystem struct {
+type WeightMeasurementSystem struct {
 	Key      int
 	Value    string
 	Code     string // Optional: if you need a code representation
 	Function func(w *Weight) (string, error)
 }
 
+type HeightMeasurementSystem struct {
+	Key      int
+	Value    string
+	Code     string // Optional: if you need a code representation
+	Function func(h *Height) (string, error)
+}
+
 func init() {
-	MeasurementSystems = []MeasurementSystem{
+	setupWeights()
+
+	setupHeights()
+
+}
+
+func setupWeights() {
+	WeightMeasurementSystems = []WeightMeasurementSystem{
 		{Key: 0, Value: "(kg) Kilogram", Code: "kg", Function: func(w *Weight) (string, error) { return w.KgAsString(), nil }},
 		{Key: 1, Value: "(lbs) Pounds", Code: "lbs", Function: func(w *Weight) (string, error) { return w.LbsAsString(), nil }},
 		{Key: 2, Value: "(stone) Stones", Code: "stn", Function: func(w *Weight) (string, error) { return w.StonesAsString(), nil }},
@@ -30,16 +46,38 @@ func init() {
 		{Key: 10, Value: "(cwt) Hundredweight", Code: "cwt", Function: func(w *Weight) (string, error) { return w.CwtAsString(), nil }},
 	}
 	// Build the lookup for measurement systems
-	MeasurementSystemsLookup = lookup.Lookup{
-		Data: make([]lookup.LookupData, len(MeasurementSystems)),
+	WeightSystemsLookup = lookup.Lookup{
+		Data: make([]lookup.LookupData, len(WeightMeasurementSystems)),
 	}
-	for i, ms := range MeasurementSystems {
-		MeasurementSystemsLookup.Data[i] = lookup.LookupData{}
-		MeasurementSystemsLookup.Data[i].Key = IntToString(ms.Key)
-		MeasurementSystemsLookup.Data[i].Value = ms.Value
-		MeasurementSystemsLookup.Data[i].AltID = IntToString(ms.Key)                   // Optional: if you need an alternative ID
-		MeasurementSystemsLookup.Data[i].Description = ms.Value + " (" + ms.Code + ")" // Optional: if you need a code representation
-		MeasurementSystemsLookup.Data[i].ObjectDomain = "MeasurementSystem"            // Optional: if you need to specify the domain
-		MeasurementSystemsLookup.Data[i].Selected = false                              // Default to not selected
+	for i, ms := range WeightMeasurementSystems {
+		WeightSystemsLookup.Data[i] = lookup.LookupData{}
+		WeightSystemsLookup.Data[i].Key = IntToString(ms.Key)
+		WeightSystemsLookup.Data[i].Value = ms.Value
+		WeightSystemsLookup.Data[i].AltID = IntToString(ms.Key)                   // Optional: if you need an alternative ID
+		WeightSystemsLookup.Data[i].Description = ms.Value + " (" + ms.Code + ")" // Optional: if you need a code representation
+		WeightSystemsLookup.Data[i].ObjectDomain = "MeasurementSystem"            // Optional: if you need to specify the domain
+		WeightSystemsLookup.Data[i].Selected = false                              // Default to not selected
+	}
+}
+
+func setupHeights() {
+	HeightMeasurementSystems = []HeightMeasurementSystem{
+		{Key: 0, Value: "(cm) Centimeters", Code: "cm", Function: func(h *Height) (string, error) { return h.CmAsString(), nil }},
+		{Key: 1, Value: "(in) Inches", Code: "in", Function: func(h *Height) (string, error) { return h.InchesAsString(), nil }},
+		{Key: 2, Value: "(ft) Feet", Code: "ft", Function: func(h *Height) (string, error) { return h.FeetAsString(), nil }},
+		{Key: 3, Value: "(m) Meters", Code: "m", Function: func(h *Height) (string, error) { return h.MetersAsString(), nil }},
+	}
+	// Build the lookup for height measurement systems
+	HeightSystemsLookup = lookup.Lookup{
+		Data: make([]lookup.LookupData, len(HeightMeasurementSystems)),
+	}
+	for i, ms := range HeightMeasurementSystems {
+		HeightSystemsLookup.Data[i] = lookup.LookupData{}
+		HeightSystemsLookup.Data[i].Key = IntToString(ms.Key)
+		HeightSystemsLookup.Data[i].Value = ms.Value
+		HeightSystemsLookup.Data[i].AltID = IntToString(ms.Key)                   // Optional: if you need an alternative ID
+		HeightSystemsLookup.Data[i].Description = ms.Value + " (" + ms.Code + ")" // Optional: if you need a code representation
+		HeightSystemsLookup.Data[i].ObjectDomain = "MeasurementSystem"            // Optional: if you need to specify the domain
+		HeightSystemsLookup.Data[i].Selected = false                              // Default to not selected
 	}
 }
