@@ -8,6 +8,7 @@ import (
 	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
+	"github.com/mt1976/frantic-mass/app/dao/goal"
 	"github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/dao/weight"
 	"github.com/mt1976/frantic-mass/app/functions"
@@ -224,31 +225,59 @@ func BuildUserDashboard(view Profile, userId int) (Profile, error) {
 		}
 	}
 	//godump.Dump(view, "Profile View")
-	view = buildDashboardChart(view, userWeights, "Weight Loss Progress")
+	view = buildDashboardChart(view, userWeights, goals, "Weight Loss Progress")
 
 	return view, nil
 
 }
 
-func buildDashboardChart(view Profile, weights []weight.Weight, chartTitle string) Profile {
+func buildDashboardChart(view Profile, weights []weight.Weight, goals []goal.Goal, chartTitle string) Profile {
 	view.Context.PageHasChart = true
 	view.Context.ChartID = "weightLossChart"
 	view.Context.ChartTitle = chartTitle
+
+	traces := []graphs.Trace{}
 
 	config := graphs.NewLegendConfig(0.5, "reversed", 16, "paper")
 
 	// Refactor to use the graphs package
 	graphData := graphs.Trace{}
-	graphData.Name = chartTitle
+	graphData.Name = "Weight Loss"
 	graphData.Shape = "scatter"
 	graphData.XIsTime = true // X values are time-based
+	noWeights := len(weights)
 	for _, w := range weights {
 		ds := w.RecordedAt.Format(graphs.TIMESERIES_FORMAT)
 		ws := fmt.Sprintf("%v", w.Weight.Kg())
 		graphData.AddXYText(ds, ws, w.Weight.KgAsString())
 	}
+	traces = append(traces, graphData)
+
+	// For each goal, add a horizontal line at the target weight
+	for _, goal := range goals {
+		if !goal.TargetWeight.IsZero() {
+			// String to float conversion
+			logHandler.InfoLogger.Printf("Processing goal: %s with target weight %s", goal.Name, goal.TargetWeight)
+			graphData := graphs.Trace{}
+			graphData.Name = fmt.Sprintf("%s - %v", goal.Name, goal.TargetWeight.KgAsString())
+			graphData.Shape = "scatter"
+			graphData.XIsTime = true // X values are time-based
+			// Add a horizontal line for the target weight
+			for i := 0; i < noWeights; i++ {
+				ds := weights[i].RecordedAt.Format(graphs.TIMESERIES_FORMAT)
+				ws := fmt.Sprintf("%v", goal.TargetWeight.Kg())
+
+				graphData.AddXYText(ds, ws, fmt.Sprintf("Goal: %s", goal.Name))
+			}
+			traces = append(traces, graphData)
+			logHandler.InfoLogger.Printf("Added goal line for %s at target weight %s", goal.Name, goal.TargetWeight.KgAsString())
+		} else {
+			logHandler.WarningLogger.Printf("Goal %s has no target weight set, skipping", goal.Name)
+		}
+	}
+
 	var err error
-	view.Context.ChartData, err = graphs.GeneratePlotlyScript([]graphs.Trace{graphData}, config, view.Context.ChartID)
+	view.Context.ChartData, err = graphs.GeneratePlotlyScript(traces, config, view.Context.ChartID)
 
 	if err != nil {
 		logHandler.ErrorLogger.Println("Error generating Plotly script:", err)

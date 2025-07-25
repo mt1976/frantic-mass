@@ -95,11 +95,20 @@ func GeneratePlotlyScript(traces []Trace, legend LegendConfig, divID string) (te
 	sb.WriteString(fmt.Sprintf("    traceorder: '%s',\n", legend.TraceOrder))
 	sb.WriteString(fmt.Sprintf("    font: {size: %d},\n", legend.FontSize))
 	sb.WriteString(fmt.Sprintf("    yref: '%s'\n", legend.YRef))
+
 	sb.WriteString("  }\n")
+	sb.WriteString("};\n\n")
+	// Configuration object
+	sb.WriteString("var config = {\n")
+	if legend.Responsive {
+		sb.WriteString("  responsive: true,\n")
+	} else {
+		sb.WriteString("  responsive: false,\n")
+	}
 	sb.WriteString("};\n\n")
 
 	// Plot call with dynamic divID
-	sb.WriteString(fmt.Sprintf("Plotly.newPlot('%s', data, layout);", divID))
+	sb.WriteString(fmt.Sprintf("Plotly.newPlot('%s', data, layout, config);", divID))
 	// Minify the script before returning as template.JS
 
 	godump.Dump(sb.String())

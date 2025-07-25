@@ -5,6 +5,7 @@ type LegendConfig struct {
 	TraceOrder string
 	FontSize   int
 	YRef       string
+	Responsive bool
 }
 
 // legend := NewLegendConfig(0.5, "reversed", 16, "paper")
@@ -22,6 +23,7 @@ func NewLegendConfig(yStepSize float64, order string, fontSize int, yref string)
 		TraceOrder: order,
 		FontSize:   fontSize,
 		YRef:       yref,
+		Responsive: true,
 	}
 }
 
@@ -42,5 +44,9 @@ func (l LegendConfig) WithFontSize(size int) LegendConfig {
 
 func (l LegendConfig) WithYRef(yref string) LegendConfig {
 	l.YRef = yref
+	return l
+}
+func (l LegendConfig) WithResponsive(responsive bool) LegendConfig {
+	l.Responsive = responsive
 	return l
 }

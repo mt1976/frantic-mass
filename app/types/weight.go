@@ -249,3 +249,17 @@ func (w *Weight) CwtAsString() string {
 	cwt := w.KGs * 0.0220462 // Convert kg to hundredweight
 	return fmt.Sprintf("%.2f cwt", cwt)
 }
+
+func NewWeightFromString(value string) (*Weight, error) {
+	var w Weight
+	_, err := fmt.Sscanf(value, "%f", &w.KGs)
+	if err != nil {
+		logHandler.ErrorLogger.Printf("Error parsing weight from string: %v", err)
+		return nil, fmt.Errorf("invalid weight format: %s", value)
+	}
+	if w.KGs < 0 {
+		logHandler.ErrorLogger.Println("Negative weight value provided, setting to zero.")
+		w.KGs = 0
+	}
+	return &w, nil
+}
