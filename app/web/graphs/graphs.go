@@ -109,9 +109,17 @@ func GeneratePlotlyScript(traces []Trace, legend LegendConfig, divID string) (te
 
 	// Plot call with dynamic divID
 	sb.WriteString(fmt.Sprintf("Plotly.newPlot('%s', data, layout, config);", divID))
-	// Minify the script before returning as template.JS
 
 	godump.Dump(sb.String())
 
-	return template.JS(sb.String()), nil
+	// Minify the script
+	minifiedScript, err := mini.String("text/javascript", sb.String())
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error minifying Plotly script:", err)
+		return "", err
+	}
+
+	godump.Dump(minifiedScript)
+
+	return template.JS(minifiedScript), nil
 }
