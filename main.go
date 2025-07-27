@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"io"
 	"net/http"
 	"time"
 
@@ -271,6 +272,16 @@ func main() {
 	r.Use(middleware.RequestID)
 	r.Use(middleware.RealIP)
 	r.Use(middleware.Recoverer)
+	//r.Use(middleware.Compress(5, "gzip"))
+
+	// /* means to compress all content types that can be compressed.
+	compressor := middleware.NewCompressor(5, "/*")
+	compressor.SetEncoder("br", func(w io.Writer, level int) io.Writer {
+		params := brotli_enc.NewBrotliParams()
+		params.SetQuality(level)
+		return brotli_enc.NewBrotliWriter(params, w)
+	})
+	r.Use(compressor.Handler)
 
 	// Set a timeout value on the request context (ctx), that will signal
 	// through ctx.Done() that the request has timed out and further

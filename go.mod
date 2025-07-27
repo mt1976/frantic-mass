@@ -10,6 +10,7 @@ require (
 	github.com/tdewolff/minify/v2 v2.23.10 // indirect
 	github.com/tdewolff/parse v2.3.4+incompatible // indirect
 	github.com/tdewolff/parse/v2 v2.8.1 // indirect
+	gopkg.in/kothar/brotli-go.v0 v0.0.0-20170728081549-771231d473d6 // indirect
 )
 
 require (
