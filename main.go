@@ -274,20 +274,21 @@ func main() {
 	r.Use(middleware.RequestID)
 	r.Use(middleware.RealIP)
 	r.Use(middleware.Recoverer)
-	//r.Use(middleware.Compress(5, "gzip"))
-	r.Use(my_middleware.MinifyHTMLMiddleware())
-	// // /* means to compress all content types that can be compressed.
-	compressor := middleware.NewCompressor(5, "/*")
-	compressor.SetEncoder("br", func(w io.Writer, level int) io.Writer {
-		params := brotli_enc.NewBrotliParams()
-		params.SetQuality(level)
-		return brotli_enc.NewBrotliWriter(params, w)
-	})
-	r.Use(compressor.Handler)
+	if common.GetServer_Compression() {
+		//r.Use(middleware.Compress(5, "gzip"))
+		r.Use(my_middleware.MinifyHTMLMiddleware())
+		// // /* means to compress all content types that can be compressed.
+		compressor := middleware.NewCompressor(5, "/*")
+		compressor.SetEncoder("br", func(w io.Writer, level int) io.Writer {
+			params := brotli_enc.NewBrotliParams()
+			params.SetQuality(level)
+			return brotli_enc.NewBrotliWriter(params, w)
+		})
+		r.Use(compressor.Handler)
+	} else {
+		logHandler.InfoLogger.Println("Compression is disabled")
+	}
 
-	// I WANT TO CREATE A MIDDLEWARE THAT WILL COMPRESS ALL RESPONSES MINIFY
-
-	//godump.Dump(compressor)
 	// Set a timeout value on the request context (ctx), that will signal
 	// through ctx.Done() that the request has timed out and further
 	// processing should be stopped.

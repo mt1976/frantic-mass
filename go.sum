@@ -19,6 +19,8 @@ github.com/galsondor/go-ascii v0.0.0-20151210013816-e2eb5175fb10 h1:wg8EZEM/8jNk
 github.com/galsondor/go-ascii v0.0.0-20151210013816-e2eb5175fb10/go.mod h1:TQf0oGo0I2KYcJfUbnOgrnHZrxhfVu6TW9z6q+k1I/M=
 github.com/go-chi/chi v1.5.5 h1:vOB/HbEMt9QqBqErz07QehcOKHaWFtuj87tTDVz2qXE=
 github.com/go-chi/chi v1.5.5/go.mod h1:C9JqLr3tIYjDOZpzn+BCuxY8z8vmca43EeMgyZt7irw=
+github.com/go-chi/chi/v5 v5.2.2 h1:CMwsvRVTbXVytCk1Wd72Zy1LAsAh9GxMmSNWLHCG618=
+github.com/go-chi/chi/v5 v5.2.2/go.mod h1:L2yAIGWB3H+phAw1NxKwWM+7eUH/lU8pOMm5hHcoops=
 github.com/go-playground/assert/v2 v2.2.0 h1:JvknZsQTYeFEAhQwI4qEt9cyV5ONwRHC+lYKSsYSR8s=
 github.com/go-playground/assert/v2 v2.2.0/go.mod h1:VDjEfimB/XKnb+ZQfWdccd7VUvScMdVu0Titje2rxJ4=
 github.com/go-playground/locales v0.14.1 h1:EWaQ/wswjilfKLTECiXz7Rh+3BjFhfDFKv/oXslEjJA=
@@ -53,6 +55,8 @@ github.com/leodido/go-urn v1.4.0 h1:WT9HwE9SGECu3lg4d/dIA+jxlljEa1/ffXKmRjqdmIQ=
 github.com/leodido/go-urn v1.4.0/go.mod h1:bvxc+MVxLKB4z00jd1z+Dvzr47oO32F/QSNjSBOlFxI=
 github.com/mt1976/frantic-core v1.2.71 h1:PKjfAv+I8ttr80YjCjr4NNzMCTpxD9/Whic5IR7fm2M=
 github.com/mt1976/frantic-core v1.2.71/go.mod h1:K7VwBS3qq6pfZojZ4fROC9yk7bFsYU+qjUMOjQ2HWwY=
+github.com/mt1976/frantic-core v1.2.72 h1:UMKPF1t/vJ2VtfnxfxODItxS/ZaguMr9Gn/z1ZHS/fw=
+github.com/mt1976/frantic-core v1.2.72/go.mod h1:5xoRGljAnVuYb2fUK0AqkamH858QzBYyx9HznGYfFUc=
 github.com/mt1976/trnsl8r_connect v1.3.3 h1:vxBec3QVaFL86GfuheHOmO7fbr+utkCDtXdFhqt02sI=
 github.com/mt1976/trnsl8r_connect v1.3.3/go.mod h1:6lQO/t4MpDmMpvjvQewOwcwv8gqpEn1aM0tOgQui/XI=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=

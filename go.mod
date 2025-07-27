@@ -5,12 +5,16 @@ go 1.24.5
 require github.com/asdine/storm/v3 v3.2.1 // indirect
 
 require (
+	github.com/tdewolff/minify/v2 v2.23.10
+	gopkg.in/kothar/brotli-go.v0 v0.0.0-20170728081549-771231d473d6
+)
+
+require (
+	github.com/go-chi/chi/v5 v5.2.2 // indirect
 	github.com/gopherjs/gopherjs v1.17.2 // indirect
 	github.com/jtolds/gls v4.20.0+incompatible // indirect
-	github.com/tdewolff/minify/v2 v2.23.10 // indirect
 	github.com/tdewolff/parse v2.3.4+incompatible // indirect
 	github.com/tdewolff/parse/v2 v2.8.1 // indirect
-	gopkg.in/kothar/brotli-go.v0 v0.0.0-20170728081549-771231d473d6 // indirect
 )
 
 require (
@@ -27,7 +31,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/jsuar/go-cron-descriptor v0.1.0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
-	github.com/mt1976/frantic-core v1.2.71
+	github.com/mt1976/frantic-core v1.2.72
 	github.com/mt1976/trnsl8r_connect v1.3.3
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect

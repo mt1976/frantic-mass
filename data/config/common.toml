@@ -28,6 +28,7 @@ host = "127.0.0.1"
 port = 5059
 protocol = "http"
 environment = "development"
+compression = true
 
 [Translation]
 locale = "en_GB"
