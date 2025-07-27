@@ -12,10 +12,10 @@ import (
 	user "github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/dao/weightProjection"
 	"github.com/mt1976/frantic-mass/app/dao/weightProjectionHistory"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
-func BuildWeightGoalProjection(user user.User, weight types.Weight, goal goal.Goal) error {
+func BuildWeightGoalProjection(user user.User, weight measures.Weight, goal goal.Goal) error {
 	// Projection function to create weight projections based on user baseline and goal.
 	// This function will create projections for the next n months based on the user's baseline and goal.
 	// It assumes that the user has a baseline set up and a goal defined.
@@ -117,7 +117,7 @@ func BuildWeightGoalProjection(user user.User, weight types.Weight, goal goal.Go
 	return nil
 }
 
-func BuildWeightGoalsProjections(user user.User, weight types.Weight) error {
+func BuildWeightGoalsProjections(user user.User, weight measures.Weight) error {
 	// Projections function to create weight projections based on user baseline and goal.
 	// This function will create projections for the next n months based on the user's baseline and goal.
 	// It assumes that the user has a baseline set up and a goal defined.

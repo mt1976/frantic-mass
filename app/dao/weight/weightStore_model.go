@@ -12,7 +12,7 @@ import (
 	"time"
 
 	audit "github.com/mt1976/frantic-core/dao/audit"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
 var domain = "weight"
@@ -24,10 +24,10 @@ type Weight struct {
 	Raw   string      `storm:"unique"`           // raw ID before encoding
 	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
-	UserID     int          `storm:"index"` // User ID of the person who recorded the weight
-	RecordedAt time.Time    `storm:"index"`
-	Weight     types.Weight // Weight in kilograms
-	BMI        types.BMI    // Body Mass Index
+	UserID     int             `storm:"index"` // User ID of the person who recorded the weight
+	RecordedAt time.Time       `storm:"index"`
+	Weight     measures.Weight // Weight in kilograms
+	BMI        measures.BMI    // Body Mass Index
 	Note       string
 }
 

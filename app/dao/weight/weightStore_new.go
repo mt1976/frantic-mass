@@ -21,14 +21,14 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/timing"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
 func New() Weight {
 	return Weight{}
 }
 
-func Create(ctx context.Context, userID int, weightKg types.Weight, note string, recordedAt time.Time) (Weight, error) {
+func Create(ctx context.Context, userID int, weightKg measures.Weight, note string, recordedAt time.Time) (Weight, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -64,7 +64,7 @@ func Create(ctx context.Context, userID int, weightKg types.Weight, note string,
 		logHandler.ErrorLogger.Panic(fmt.Errorf("no height found for user ID %d", userID))
 	}
 
-	BMI := types.BMI{}
+	BMI := measures.BMI{}
 	xx, err := BMI.SetBMIFromWeightAndHeight(weightKg, bl.Height) // Calculate BMI based on the weight and user ID
 	if err != nil {
 		// Log and panic if there is an error calculating the BMI

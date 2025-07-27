@@ -12,7 +12,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/dao/weight"
 	"github.com/mt1976/frantic-mass/app/functions"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/graphs"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
@@ -44,10 +44,10 @@ type Profile struct {
 type Measurement struct {
 	ID                       int
 	RecordedAt               time.Time
-	Weight                   types.Weight // Weight in kilograms
-	BMI                      types.BMI    // Body Mass Index
+	Weight                   measures.Weight // Weight in kilograms
+	BMI                      measures.BMI    // Body Mass Index
 	Note                     string
-	LossSinceLastMeasurement types.Weight
+	LossSinceLastMeasurement measures.Weight
 	Actions                  helpers.Actions // Actions available for the measurement, such as edit or delete
 }
 
@@ -218,7 +218,7 @@ func BuildUserDashboard(view Profile, userId int) (Profile, error) {
 				// Calculate the weight loss since the last measurement
 				view.Measurements[i].LossSinceLastMeasurement = view.Measurements[i-1].Weight.Minus(w.Weight)
 			} else {
-				view.Measurements[i].LossSinceLastMeasurement = *types.NewWeight(0) // No previous measurement, so set to zero
+				view.Measurements[i].LossSinceLastMeasurement = *measures.NewWeight(0) // No previous measurement, so set to zero
 			}
 			view.Measurements[i].Actions.Add(helpers.NewAction("View", "View Measurement", glyphs.View, "/weight/view/"+IntToString(w.ID), helpers.GET, ""))
 			logHandler.InfoLogger.Printf("Measurement %d: Recorded At: %s, Weight: %s, BMI: %s", w.ID, w.RecordedAt.Format("02 Jan 2006"), w.Weight.KgAsString(), w.BMI.String())
@@ -291,13 +291,13 @@ func buildDashboardChart(view Profile, weights []weight.Weight, goals []goal.Goa
 }
 
 func setWeightSystem(view Profile, userDetails user.User, userId int) Profile {
-	view.WeightSystemLookup = types.WeightSystemsLookup
+	view.WeightSystemLookup = measures.WeightSystemsLookup
 	view.WeightSystem = userDetails.WeightSystem
-	if view.WeightSystem < 0 || view.WeightSystem >= len(types.WeightMeasurementSystems) {
+	if view.WeightSystem < 0 || view.WeightSystem >= len(measures.WeightMeasurementSystems) {
 		logHandler.ErrorLogger.Println("Invalid measurement system for user ID:", userId)
 		view.WeightSystem = 0 // Default to the first measurement system
 	} else {
-		logHandler.InfoLogger.Println("Measurement system for user ID:", userId, "is", types.WeightMeasurementSystems[view.WeightSystem].Value)
+		logHandler.InfoLogger.Println("Measurement system for user ID:", userId, "is", measures.WeightMeasurementSystems[view.WeightSystem].Value)
 		view.WeightSystemSelected = view.WeightSystemLookup.Data[view.WeightSystem]
 		logHandler.InfoLogger.Println("Measurement system selected:", view.WeightSystemSelected.Value)
 		view.WeightSystemLookup.Data[view.WeightSystem].Selected = true // Mark the selected measurement system
@@ -306,13 +306,13 @@ func setWeightSystem(view Profile, userDetails user.User, userId int) Profile {
 }
 
 func setupHeightSystem(view Profile, userDetails user.User, userId int) Profile {
-	view.HeightSystemLookup = types.HeightSystemsLookup
+	view.HeightSystemLookup = measures.HeightSystemsLookup
 	view.HeightSystem = userDetails.HeightSystem
-	if view.HeightSystem < 0 || view.HeightSystem >= len(types.HeightMeasurementSystems) {
+	if view.HeightSystem < 0 || view.HeightSystem >= len(measures.HeightMeasurementSystems) {
 		logHandler.ErrorLogger.Println("Invalid height measurement system for user ID:", userId)
 		view.HeightSystem = 0 // Default to the first height measurement system
 	} else {
-		logHandler.InfoLogger.Println("Height measurement system for user ID:", userId, "is", types.HeightMeasurementSystems[view.HeightSystem].Value)
+		logHandler.InfoLogger.Println("Height measurement system for user ID:", userId, "is", measures.HeightMeasurementSystems[view.HeightSystem].Value)
 		view.HeightSystemSelected = view.HeightSystemLookup.Data[view.HeightSystem]
 		logHandler.InfoLogger.Println("Height measurement system selected:", view.HeightSystemSelected.Value)
 		view.HeightSystemLookup.Data[view.HeightSystem].Selected = true // Mark the selected height measurement system

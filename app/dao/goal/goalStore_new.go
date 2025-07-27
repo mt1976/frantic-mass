@@ -21,7 +21,7 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/timing"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
 // New creates a new Goal instance
@@ -36,7 +36,7 @@ func New() Goal {
 // It sets the CompositeID and AverageWeightLoss fields based on the provided parameters
 // It calculates the BMI based on the target weight and returns the Goal instance
 
-func Create(ctx context.Context, userID int, name string, targetWeight types.Weight, targetDate time.Time, lossPerWeekKg types.Weight, note string, isAverageType bool) (Goal, error) {
+func Create(ctx context.Context, userID int, name string, targetWeight measures.Weight, targetDate time.Time, lossPerWeekKg measures.Weight, note string, isAverageType bool) (Goal, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

@@ -11,7 +11,7 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/timing"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
 func (record *Weight) String() string {
@@ -30,10 +30,10 @@ func (record *Weight) String() string {
 		"}"
 }
 
-func (record *Weight) GetBMI() types.BMI {
+func (record *Weight) GetBMI() measures.BMI {
 	logHandler.EventLogger.Printf("GetBMI called for Weight_Store ID %d", record.ID)
 	if record == nil {
-		return types.BMI{}
+		return measures.BMI{}
 	}
 	// Recalculate BMI if it is not set
 	if record.BMI.IsZero() {
@@ -41,11 +41,11 @@ func (record *Weight) GetBMI() types.BMI {
 		bl, err := baseline.GetByUserID(record.UserID)
 		if err != nil {
 			logHandler.ErrorLogger.Printf("Error retrieving baseline height for user %d: %v", record.UserID, err)
-			return types.BMI{}
+			return measures.BMI{}
 		}
 		if bl.Height.LE(0) {
 			logHandler.ErrorLogger.Printf("No height found for user ID %d, cannot calculate BMI", record.UserID)
-			return types.BMI{}
+			return measures.BMI{}
 		}
 		logHandler.ErrorLogger.Printf("BMI is not set for weight record ID %d, recalculating...", record.ID)
 		// Assuming we have a method to calculate BMI based on weight and height

@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"io"
 	"net/http"
 	"time"
 
@@ -19,7 +18,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/dao/weightTag"
 	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/jobs"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 	"github.com/mt1976/frantic-mass/app/web/handlers"
 )
 
@@ -104,7 +103,7 @@ func main() {
 	logHandler.InfoLogger.Println("Setting Date of Birth for UserID:", userIdentifier, "to", dob)
 
 	logHandler.InfoLogger.Println("Creating Baseline for UserID:", userIdentifier)
-	thisBaseline, baselineErr := baseline.Create(context.TODO(), userIdentifier, types.Height{CMs: 187.96}, 6, fmt.Sprintf("BaselineFor%v", userIdentifier), dob)
+	thisBaseline, baselineErr := baseline.Create(context.TODO(), userIdentifier, measures.Height{CMs: 187.96}, 6, fmt.Sprintf("BaselineFor%v", userIdentifier), dob)
 	if baselineErr != nil {
 		logHandler.ErrorLogger.Println(baselineErr)
 	} else {
@@ -112,7 +111,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("Creating Baseline for UserID:", thisUser2.ID)
-	thisBaseline2, baselineErr2 := baseline.Create(context.TODO(), thisUser2.ID, types.Height{CMs: 170.96}, 6, fmt.Sprintf("BaselineFor%v", thisUser2.ID), dob)
+	thisBaseline2, baselineErr2 := baseline.Create(context.TODO(), thisUser2.ID, measures.Height{CMs: 170.96}, 6, fmt.Sprintf("BaselineFor%v", thisUser2.ID), dob)
 	if baselineErr2 != nil {
 		logHandler.ErrorLogger.Println(baselineErr2)
 	} else {
@@ -120,7 +119,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("Creating Goal for UserID:", userIdentifier)
-	thisGoal, goalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v", userIdentifier), types.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), types.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
+	thisGoal, goalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v", userIdentifier), measures.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
 
 	if goalErr != nil {
 		logHandler.ErrorLogger.Println(goalErr)
@@ -129,7 +128,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("Creating Goal for UserID:", userIdentifier)
-	thisGoal2, goalErr2 := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v2", userIdentifier), types.Weight{KGs: 86.00}, time.Now().AddDate(0, 0, 30), types.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
+	thisGoal2, goalErr2 := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v2", userIdentifier), measures.Weight{KGs: 86.00}, time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
 
 	if goalErr2 != nil {
 		logHandler.ErrorLogger.Println(goalErr2)
@@ -137,7 +136,7 @@ func main() {
 		logHandler.InfoLogger.Printf("Goal Created:[%+v]", thisGoal2)
 	}
 
-	avgGoal, avgGoalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("AvgGoalFor%v", userIdentifier), types.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), types.Weight{KGs: 0}, "This is an average weight loss goal", true)
+	avgGoal, avgGoalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("AvgGoalFor%v", userIdentifier), measures.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 0}, "This is an average weight loss goal", true)
 	if avgGoalErr != nil {
 		logHandler.ErrorLogger.Println(avgGoalErr)
 	} else {
@@ -272,16 +271,16 @@ func main() {
 	r.Use(middleware.RequestID)
 	r.Use(middleware.RealIP)
 	r.Use(middleware.Recoverer)
-	//r.Use(middleware.Compress(5, "gzip"))
+	r.Use(middleware.Compress(5, "gzip"))
 
-	// /* means to compress all content types that can be compressed.
-	compressor := middleware.NewCompressor(5, "/*")
-	compressor.SetEncoder("br", func(w io.Writer, level int) io.Writer {
-		params := brotli_enc.NewBrotliParams()
-		params.SetQuality(level)
-		return brotli_enc.NewBrotliWriter(params, w)
-	})
-	r.Use(compressor.Handler)
+	// // /* means to compress all content types that can be compressed.
+	// compressor := middleware.NewCompressor(5, "/*")
+	// compressor.SetEncoder("br", func(w io.Writer, level int) io.Writer {
+	// 	params := brotli_enc.NewBrotliParams()
+	// 	params.SetQuality(level)
+	// 	return brotli_enc.NewBrotliWriter(params, w)
+	// })
+	// r.Use(compressor.Handler)
 
 	// Set a timeout value on the request context (ctx), that will signal
 	// through ctx.Done() that the request has timed out and further

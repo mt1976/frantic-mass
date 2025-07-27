@@ -12,7 +12,7 @@ import (
 	"time"
 
 	audit "github.com/mt1976/frantic-core/dao/audit"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
 var domain = "baseline"
@@ -24,11 +24,11 @@ type Baseline struct {
 	Raw   string      `storm:"unique"`           // raw ID before encoding
 	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
-	UserID           int          `storm:"index"` // Foreign key
-	Height           types.Height // Height in centimeters
-	ProjectionPeriod int          // Projection period in months
-	DateOfBirth      time.Time    // Date of birth
-	PivotDate        time.Time    // Pivot date for projections
+	UserID           int             `storm:"index"` // Foreign key
+	Height           measures.Height // Height in centimeters
+	ProjectionPeriod int             // Projection period in months
+	DateOfBirth      time.Time       // Date of birth
+	PivotDate        time.Time       // Pivot date for projections
 	Note             string
 }
 

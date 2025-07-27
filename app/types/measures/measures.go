@@ -1,6 +1,10 @@
-package types
+package measures
 
-import "github.com/mt1976/frantic-core/dao/lookup"
+import (
+	"strconv"
+
+	"github.com/mt1976/frantic-core/dao/lookup"
+)
 
 // Data Access Object User
 // Version: 0.2.0
@@ -80,4 +84,11 @@ func setupHeights() {
 		HeightSystemsLookup.Data[i].ObjectDomain = "MeasurementSystem"            // Optional: if you need to specify the domain
 		HeightSystemsLookup.Data[i].Selected = false                              // Default to not selected
 	}
+}
+
+func IntToString(i int) string {
+	if i == 0 {
+		return ""
+	}
+	return strconv.Itoa(i)
 }

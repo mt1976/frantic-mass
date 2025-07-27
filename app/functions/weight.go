@@ -6,10 +6,10 @@ import (
 
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/weight"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
-func AverageWeightLoss(userID int) (avg *types.Weight, tot *types.Weight, err error) {
+func AverageWeightLoss(userID int) (avg *measures.Weight, tot *measures.Weight, err error) {
 	// This function will calculate the average weight loss for a user
 	// based on their historical weight data.
 	// It will return the average weight loss in kilograms.
@@ -20,11 +20,11 @@ func AverageWeightLoss(userID int) (avg *types.Weight, tot *types.Weight, err er
 	w, err := weight.GetAllWhere(weight.FIELD_UserID, userID)
 	if err != nil {
 		logHandler.ErrorLogger.Printf("Error retrieving weight data for user %d: %v", userID, err)
-		return &types.Weight{}, &types.Weight{}, err
+		return &measures.Weight{}, &measures.Weight{}, err
 	}
 	if len(w) == 0 {
 		logHandler.ErrorLogger.Printf("No weight data found for user %d", userID)
-		return &types.Weight{}, &types.Weight{}, nil
+		return &measures.Weight{}, &measures.Weight{}, nil
 	}
 
 	w = weight.FilterDeletedRecords(w)
@@ -32,10 +32,10 @@ func AverageWeightLoss(userID int) (avg *types.Weight, tot *types.Weight, err er
 	//var totalLoss *types.Weight
 	//var totalMass *types.Weight
 	//totalLoss := types.NewWeight(0.0)
-	totalMass := types.NewWeight(0.0)
+	totalMass := measures.NewWeight(0.0)
 	var count int
-	startingWeight := types.NewWeight(w[0].Weight.KGs)
-	endingWeight := types.NewWeight(w[len(w)-1].Weight.KGs)
+	startingWeight := measures.NewWeight(w[0].Weight.KGs)
+	endingWeight := measures.NewWeight(w[len(w)-1].Weight.KGs)
 	for i := 0; i < len(w)-1; i++ {
 		if i == 0 {
 			startingWeight.Set(w[i].Weight.KGs)
@@ -61,7 +61,7 @@ func AverageWeightLoss(userID int) (avg *types.Weight, tot *types.Weight, err er
 	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v over %d records", userID, totalLoss.KgAsString(), count)
 	logHandler.InfoLogger.Printf("Average weight loss for user %d: %v kg", userID, totalLoss.Kg()/float64(count))
 	logHandler.InfoLogger.Printf("Total weight loss for user %d: %v", userID, totalLoss.StonesAsString())
-	avg = types.NewWeight(totalLoss.Kg() / float64(count))
+	avg = measures.NewWeight(totalLoss.Kg() / float64(count))
 	//os.Exit(0) // Exit the program successfully
 	return avg, &totalLoss, nil
 }

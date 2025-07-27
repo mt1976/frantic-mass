@@ -13,6 +13,7 @@ import (
 
 	audit "github.com/mt1976/frantic-core/dao/audit"
 	t "github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
 var domain = "weightProjection"
@@ -31,13 +32,13 @@ type WeightProjection struct {
 	GoalID       int `storm:"index"` // Foreign key to Goal
 	ProjectionNo int `storm:"index"` // Projection number, used for tracking multiple projections for the same goal
 
-	Weight   t.Weight  // Projected weight in kilograms
-	Date     time.Time `storm:"index"` // Date of the projection
-	Note     string    // Additional notes for the projection
-	BMI      t.BMI     // Body Mass Index, calculated from the projected weight
-	Amount   t.Weight  // Amount of weight loss or gain projected
-	VsTarget string    // Comparison against target weight for the goal
-	ToGoal   t.Weight  // Total weight loss that still needs to be achieved to reach the goal
+	Weight   measures.Weight // Projected weight in kilograms
+	Date     time.Time       `storm:"index"` // Date of the projection
+	Note     string          // Additional notes for the projection
+	BMI      measures.BMI    // Body Mass Index, calculated from the projected weight
+	Amount   measures.Weight // Amount of weight loss or gain projected
+	VsTarget string          // Comparison against target weight for the goal
+	ToGoal   measures.Weight // Total weight loss that still needs to be achieved to reach the goal
 }
 
 // Define the field set as names

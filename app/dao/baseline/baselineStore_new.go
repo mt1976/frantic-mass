@@ -20,7 +20,7 @@ import (
 	"github.com/mt1976/frantic-core/idHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/timing"
-	"github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
 // New creates a new Baseline instance
@@ -34,7 +34,7 @@ func New() Baseline {
 // It sets the CompositeID and Audit fields based on the provided parameters
 // It returns the created Baseline instance or an error if any occurs
 // It also records the create action in the audit data and saves the instance to the database
-func Create(ctx context.Context, userID int, heightCm types.Height, projectionPeriod int, note string, dateOfBirth time.Time) (Baseline, error) {
+func Create(ctx context.Context, userID int, heightCm measures.Height, projectionPeriod int, note string, dateOfBirth time.Time) (Baseline, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

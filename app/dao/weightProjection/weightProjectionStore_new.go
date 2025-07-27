@@ -21,14 +21,14 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/timing"
 	"github.com/mt1976/frantic-mass/app/types"
-	t "github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
 func New() WeightProjection {
 	return WeightProjection{}
 }
 
-func Create(ctx context.Context, userID, goalID, projectionNo int, weight, amount t.Weight, date time.Time, note, VsTarget string, toGo t.Weight) (WeightProjection, error) {
+func Create(ctx context.Context, userID, goalID, projectionNo int, weight, amount measures.Weight, date time.Time, note, VsTarget string, toGo measures.Weight) (WeightProjection, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 

@@ -13,7 +13,7 @@ import (
 
 	"github.com/mt1976/frantic-core/dao"
 	audit "github.com/mt1976/frantic-core/dao/audit"
-	t "github.com/mt1976/frantic-mass/app/types"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
 var domain = "goal"
@@ -25,12 +25,12 @@ type Goal struct {
 	Raw   string      `storm:"unique"`           // raw ID before encoding
 	Audit audit.Audit `csv:"-"`                  // audit data
 	// Add your fields here
-	UserID            int       `storm:"index"`  // Foreign key to User
-	Name              string    `storm:"unique"` // Name of the goal
-	TargetWeight      t.Weight  // Target weight in kilograms
-	TargetBMI         t.BMI     // Target BMI
-	TargetDate        time.Time // Target date for achieving the goal
-	LossPerWeek       t.Weight  // Desired weight loss per week in kilograms
+	UserID            int             `storm:"index"`  // Foreign key to User
+	Name              string          `storm:"unique"` // Name of the goal
+	TargetWeight      measures.Weight // Target weight in kilograms
+	TargetBMI         measures.BMI    // Target BMI
+	TargetDate        time.Time       // Target date for achieving the goal
+	LossPerWeek       measures.Weight // Desired weight loss per week in kilograms
 	Note              string
 	CompositeID       string        // Composite ID for unique identification of the goal
 	NoProjections     int           // Projection Period in weeks, used for calculating the target date based on the current weight and loss per week
