@@ -2,7 +2,9 @@ package handlers
 
 import (
 	"context"
+	"net"
 	"net/http"
+	"strings"
 
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/web/viewProvider"
@@ -55,4 +57,20 @@ func MethodNotAllowed(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusMethodNotAllowed) // Set the HTTP status code to 405 Method Not Allowed
 	_, _ = w.Write([]byte("405 Method Not Allowed\n"))
 	logHandler.ErrorLogger.Println("405 Method Not Allowed: The requested method is not allowed for the requested resource.")
+}
+
+// isRequestFromLocalhost checks if the request came from localhost
+func isRequestFromLocalhost(r *http.Request) bool {
+	host, _, err := net.SplitHostPort(r.RemoteAddr)
+	if err != nil {
+		// fallback to basic IP check
+		host = r.RemoteAddr
+	}
+	ip := net.ParseIP(host)
+	return ip != nil && (ip.IsLoopback() || isLocalhostString(host))
+}
+
+// covers cases where RemoteAddr might be just "127.0.0.1"
+func isLocalhostString(host string) bool {
+	return host == "127.0.0.1" || host == "::1" || strings.HasPrefix(host, "localhost")
 }

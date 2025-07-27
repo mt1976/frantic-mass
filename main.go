@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
+	"os/signal"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -270,6 +272,13 @@ func main() {
 	logHandler.InfoLogger.Println("End of main function")
 
 	r := chi.NewRouter()
+
+	// Create the HTTP server
+	server := &http.Server{
+		Addr:    ":" + common.GetServer_PortString(),
+		Handler: r,
+	}
+
 	r.Use(middleware.Logger)
 	r.Use(middleware.RequestID)
 	r.Use(middleware.RealIP)
@@ -285,6 +294,7 @@ func main() {
 			return brotli_enc.NewBrotliWriter(params, w)
 		})
 		r.Use(compressor.Handler)
+		logHandler.InfoLogger.Println("Compression is enabled, using Brotli and MinifyHTMLMiddleware, all responses will be compressed")
 	} else {
 		logHandler.InfoLogger.Println("Compression is disabled")
 	}
@@ -297,6 +307,21 @@ func main() {
 	r.Get("/users", handlers.UserChooser)
 	r.Get("/profile/{id}", handlers.Profile) // Placeholder for user profile handler
 	r.Get("/test", handlers.Dummy)
+	// Inject shutdown function into handler
+	r.Handle("/shutdown", handlers.ShutdownHandler(func() {
+		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		defer cancel()
+		if err := server.Shutdown(ctx); err != nil {
+			logHandler.ErrorLogger.Println("Error during shutdown:", err)
+		}
+	}))
+	r.NotFound(handlers.NotFound)
+	r.MethodNotAllowed(handlers.MethodNotAllowed)
+	//r.Handle("/favicon.ico", http.FileServer(http.Dir("./res/images")))
+	r.Handle("/my.css/*", http.StripPrefix("/my.css/", http.FileServer(http.Dir("./res/css"))))
+	r.Handle("/pico.css/*", http.StripPrefix("/pico.css/", http.FileServer(http.Dir("./node_modules/@picocss/pico/css"))))
+	r.Handle("/pico.js/*", http.StripPrefix("/pico.js/", http.FileServer(http.Dir("./node_modules/@picocss/pico/js"))))
+	r.Handle("/my.js/*", http.StripPrefix("/my.js/", http.FileServer(http.Dir("./res/js"))))
 	r.NotFound(handlers.NotFound)
 	r.MethodNotAllowed(handlers.MethodNotAllowed)
 	//r.Handle("/favicon.ico", http.FileServer(http.Dir("./res/images")))
@@ -307,6 +332,32 @@ func main() {
 	r.Handle("/glyphs/*", http.StripPrefix("/glyphs/", http.FileServer(http.Dir("./node_modules/bootstrap-icons/font"))))
 	r.Handle("/images/*", http.StripPrefix("/images/", http.FileServer(http.Dir("./res/images"))))
 	r.Get("/goal/projection/{id}/{goal}", handlers.Projection) // Projection handler for goals
-	http.ListenAndServe(":3000", r)
+	logHandler.InfoLogger.Println("Starting server on port", common.GetServer_Port())
+	// Start the server
+	http.Handle("/", r)
+	// Use the port from the configuration
 
+	// Shutdown on SIGINT
+	go func() {
+		stop := make(chan os.Signal, 1)
+		signal.Notify(stop, os.Interrupt)
+		<-stop
+		logHandler.WarningLogger.Println("Interrupt received. Shutting down...")
+		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		defer cancel()
+		server.Shutdown(ctx)
+		os.Exit(0) // Exit the program successfully
+		logHandler.InfoLogger.Println("Server shut down cleanly")
+	}()
+
+	logHandler.InfoLogger.Printf("Server is running at http://127.0.0.1:%v", common.GetServer_PortString())
+
+	if err := server.ListenAndServe(); err != http.ErrServerClosed {
+		logHandler.ErrorLogger.Println("Server error:", err)
+	}
+	logHandler.InfoLogger.Println("Server shut down cleanly")
+
+	// If you want to use a specific port, you can uncomment the line below
+	//http.ListenAndServe(":3000", r)
+	//os.Exit(0) // Exit the program successfully
 }
