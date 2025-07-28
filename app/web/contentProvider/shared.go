@@ -239,6 +239,18 @@ func IntToString(i int) string {
 	return strconv.Itoa(i)
 }
 
+func StringToInt(s string) (int, error) {
+	if s == "" {
+		return 0, nil // Return 0 if the string is empty
+	}
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		logHandler.ErrorLogger.Printf("Error converting string '%s' to int: %v", s, err)
+		return 0, err // Return 0 and the error if conversion fails
+	}
+	return i, nil
+}
+
 // / Charting Fiddling
 type DataPoint struct {
 	Time  time.Time

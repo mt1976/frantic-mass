@@ -10,6 +10,8 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
+var ProjectionURI = "/goal/projection/{id}/{goalId}" // Define the URI for the projection
+
 type Projection struct {
 	User        User
 	Goal        Goal

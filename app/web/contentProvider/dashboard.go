@@ -183,8 +183,11 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			if g.AverageWeightLoss.IsTrue() {
 				view.Goals[i].LossPerWeek = view.AverageWeightLoss
 			}
+			uri := ProjectionURI // Use the defined URI for the projection
+			uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", userId))
+			uri = ReplacePathParam(uri, "goalId", fmt.Sprintf("%d", g.ID))
 			view.Goals[i].Actions = helpers.Actions{}
-			view.Goals[i].Actions.Add(helpers.NewAction("Projection", "View Projection", glyphs.Projection, "/goal/projection/"+IntToString(userId)+"/"+IntToString(g.ID), helpers.GET, ""))
+			view.Goals[i].Actions.Add(helpers.NewAction("Projection", "View Projection", glyphs.Projection, uri, helpers.GET, ""))
 			view.Goals[i].Actions.Add(helpers.NewAction("Edit", "Edit Goal", glyphs.Edit, "/goal/edit/"+IntToString(g.ID), helpers.GET, ""))
 			view.Goals[i].Actions.Add(helpers.NewAction("Delete", "Delete Goal", glyphs.Delete, "/goal/delete/"+IntToString(g.ID), helpers.GET, ""))
 			logHandler.InfoLogger.Printf("Goal %d: %s, Target Weight: %s, Target Date: %s", g.ID, g.Name, g.TargetWeight.KgAsString(), g.TargetDate.Format("02 Jan 2006"))
@@ -226,6 +229,11 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			logHandler.InfoLogger.Printf("Measurement %d: Recorded At: %s, Weight: %s, BMI: %s", w.ID, w.RecordedAt.Format("02 Jan 2006"), w.Weight.KgAsString(), w.BMI.String())
 		}
 	}
+	view.Context.PageActions.Add(helpers.NewAction("Weight", "Add Weight Measurement", glyphs.Add, "/weight/add/"+IntToString(userId), helpers.GET, ""))
+	view.Context.PageActions.Add(helpers.NewAction("Goal", "Add Weight Goal", glyphs.Add, "/goal/add/"+IntToString(userId), helpers.GET, ""))
+	uURI := ReplacePathParam(UserURI, "id", IntToString(userId))
+
+	view.Context.PageActions.Add(helpers.NewAction("User", "Edit User Details", glyphs.Edit, uURI, helpers.GET, ""))
 	//godump.Dump(view, "Profile View")
 	view = buildDashboardChart(view, userWeights, goals, "Weight Loss Progress")
 

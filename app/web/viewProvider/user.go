@@ -22,3 +22,19 @@ func Users(ctx context.Context) (contentProvider.UserChooser, error) {
 
 	return view, err
 }
+
+func GetUserView(ctx context.Context, userID string) (contentProvider.UserView, error) {
+	view := contentProvider.UserView{}
+	var err error
+	// Set the common fields for the view
+	view.Context.PageTitle = "View/Edit User " + userID
+	view.Context.PageSummary = "View or edit the user information."
+	view.Context.PageKeywords = "user, edit"
+	view.Context.HttpStatusCode = 200 // OK
+	view.Context.WasSuccessful = true
+	view.Context.TemplateName = "user"
+
+	view, err = contentProvider.UserEdit(view, userID)
+
+	return view, err
+}

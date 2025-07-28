@@ -43,19 +43,17 @@
 
 {{define "pageactions"}}
     <!-- Range through the page actions from the context -->
-    <article style="padding-bottom: 1px;padding-top: 1px;">
         {{if .Context.PageActions.Actions}}
-        
-                <aside>
-                    <nav><ul>
+    <article style="padding-bottom: 1px">
+            <div role="group">  
                     {{range .Context.PageActions.Actions}}
-                    <li><a href="{{.FormAction}}" role="button" style="width: 100%;" class="" onclick='{{.OnClick}}' FormAction="{{.FormAction}}" method="{{.Method}}" >{{if .Icon}}{{.Icon}}&nbsp;{{end}}{{.Name}}</a></li>
+                    <a href="{{.FormAction}}" role="button" style="width: 100%;" class="outline" onclick='{{.OnClick}}' FormAction="{{.FormAction}}" method="{{.Method}}" >{{if .Icon}}{{.Icon}}&nbsp;{{end}}{{.Name}}</a>
                     {{end}}
-                    </ul></nav>
-                </aside>
-   
+            </div>
         {{else}}
-            <p class="pico-color-grey-300" style="padding-top: 4px;padding-bottom: 4px; margin-bottom: 0px; display: flex;align-items: center;  height: 2rem;"><i>No actions available</i></p>
+            <article style="padding-bottom: 10px; padding-top: 10px;">
+
+            <p class="pico-color-grey-300" style="padding-top: 0px;padding-bottom: 0px; margin-bottom: 0px; display: flex;align-items: center;  height: 2rem;"><i>No actions available</i></p>
         {{end}}
     </article>
 {{end}}
