@@ -306,7 +306,7 @@ func main() {
 	r.Use(middleware.Timeout(60 * time.Second))
 	r.Get(contentProvider.LauncherURI, handlers.Launcher)
 	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
-	r.Get(contentProvider.DashboardURI, handlers.UserDashboard) // Placeholder for user dashboard handler
+	r.Get(contentProvider.DashboardURI, handlers.Dashboard) // Placeholder for user dashboard handler
 	r.Get("/test", handlers.Dummy)
 	// Inject shutdown function into handler
 	r.Handle("/shutdown", handlers.ShutdownHandler(func() {
