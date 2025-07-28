@@ -10,7 +10,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
 
-func Profile(w http.ResponseWriter, r *http.Request) {
+func UserDashboard(w http.ResponseWriter, r *http.Request) {
 	// This is a dummy router function
 	id := chi.URLParam(r, "id") // Get the user ID from the URL parameter
 

@@ -18,6 +18,8 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
+var DashboardURI = "/dash/{id}" // Define the URI for the user profile
+
 type Profile struct {
 	User                 User
 	Context              AppContext

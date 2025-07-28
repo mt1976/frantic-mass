@@ -22,7 +22,7 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "projection"
 	view.User = User{}
-	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, "/users", helpers.GET, ""))
+	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, UserChooserURI, helpers.GET, ""))
 
 	// Here you would typically fetch the user data based on userId
 	UserRecord, err := user.GetBy(user.FIELD_ID, userId)

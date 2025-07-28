@@ -22,6 +22,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/jobs"
 	"github.com/mt1976/frantic-mass/app/types/measures"
+	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 	"github.com/mt1976/frantic-mass/app/web/handlers"
 	my_middleware "github.com/mt1976/frantic-mass/app/web/middleware"
 	brotli_enc "gopkg.in/kothar/brotli-go.v0/enc"
@@ -303,9 +304,9 @@ func main() {
 	// through ctx.Done() that the request has timed out and further
 	// processing should be stopped.
 	r.Use(middleware.Timeout(60 * time.Second))
-	r.Get("/", handlers.Launcher)
-	r.Get("/users", handlers.UserChooser)
-	r.Get("/profile/{id}", handlers.Profile) // Placeholder for user profile handler
+	r.Get(contentProvider.LauncherURI, handlers.Launcher)
+	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
+	r.Get(contentProvider.DashboardURI, handlers.UserDashboard) // Placeholder for user dashboard handler
 	r.Get("/test", handlers.Dummy)
 	// Inject shutdown function into handler
 	r.Handle("/shutdown", handlers.ShutdownHandler(func() {

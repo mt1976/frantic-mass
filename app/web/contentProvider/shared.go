@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/mt1976/frantic-core/application"
@@ -264,4 +265,10 @@ func GenerateScatterData(points []DataPoint) (ScatterData, error) {
 		Y:    y,
 		Type: "scatter",
 	}, nil
+}
+
+// ReplacePathParam replaces a placeholder like {key} in the path template with the provided value.
+func ReplacePathParam(template, key, value string) string {
+	placeholder := "{" + key + "}"
+	return strings.ReplaceAll(template, placeholder, value)
 }
