@@ -3,6 +3,7 @@ package measures
 import (
 	"strconv"
 
+	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/dao/lookup"
 )
 
@@ -33,7 +34,8 @@ func init() {
 	setupWeights()
 
 	setupHeights()
-
+	godump.Dump(WeightSystemsLookup)
+	godump.Dump(HeightSystemsLookup)
 }
 
 func setupWeights() {

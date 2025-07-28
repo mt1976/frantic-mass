@@ -30,6 +30,8 @@ type Action struct {
 	FormAction  template.HTML // URL to navigate to when the action is triggered
 	Method      string        // HTTP method used for the action, e.g., "GET", "POST"
 	OnClick     template.JS   // JavaScript function to call when the action is clicked, if applicable
+	Class       template.HTML // CSS class to apply to the action button
+	Style       template.CSS  // Inline style for the action button, if needed
 }
 
 type Actions struct {
@@ -39,7 +41,7 @@ type Actions struct {
 // NewAction creates a new Action with the provided parameters.
 // It validates the input and generates a UUID for the action.
 
-func NewAction(name, description string, icon glyphs.Glyph, url string, method Method, onClick string) Action {
+func NewAction(name, description string, icon glyphs.Glyph, url string, method Method, onClick, class, style string) Action {
 
 	returnAction := Action{}
 	var err error
@@ -76,6 +78,9 @@ func NewAction(name, description string, icon glyphs.Glyph, url string, method M
 		onClick = "" // Default JavaScript function if none is provided
 	}
 	returnAction.OnClick = template.JS(onClick) // Set the JavaScript function to call when the action is clicked
+
+	returnAction.Class = template.HTML(class) // Set the CSS class for the action button
+	returnAction.Style = template.CSS(style)  // Set the inline style for the action button
 
 	// Log the creation of the action
 	logHandler.InfoLogger.Printf("Action created: %s (%s)(%s)(%s)", returnAction.Name, returnAction.FormAction, returnAction.OnClick, returnAction.Method)

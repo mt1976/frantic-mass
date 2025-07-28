@@ -307,6 +307,7 @@ func main() {
 	r.Get(contentProvider.LauncherURI, handlers.Launcher)
 	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
 	r.Get(contentProvider.DashboardURI, handlers.Dashboard) // Placeholder for user dashboard handler
+	r.Get(contentProvider.UserURI, handlers.User)           // Placeholder for user edit handler
 	r.Get("/test", handlers.Dummy)
 	// Inject shutdown function into handler
 	r.Handle("/shutdown", handlers.ShutdownHandler(func() {

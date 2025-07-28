@@ -9,12 +9,15 @@ import (
 
 	"github.com/mt1976/frantic-core/application"
 	"github.com/mt1976/frantic-core/commonConfig"
+	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/dateHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/paths"
 	"github.com/mt1976/frantic-core/stringHelpers"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
+
+var Locales = lookup.Lookup{}
 
 type AppContext struct {
 	PageTitle       string
@@ -93,6 +96,24 @@ func init() {
 		}
 	}
 	//godump.Dump(cache, "Cache Configuration", cacheChecksum)
+
+	// Get Supports Translation locales from the common configuration
+	if cache.GetTranslation_PermittedLocales() != nil {
+		// Parse the permitted locales from the configuration
+		locales := cache.GetTranslation_PermittedLocales()
+		for _, locale := range locales {
+			// Add each locale to the Locales lookup
+			lookupData := lookup.LookupData{
+				Key:      locale.Key,
+				Value:    locale.Name,
+				Selected: locale.Key == cache.GetApplication_Locale(), // Mark as selected if it matches
+			}
+			Locales.Data = append(Locales.Data, lookupData)
+		}
+	} else {
+		logHandler.ErrorLogger.Println("No permitted locales found in the configuration")
+	}
+
 }
 
 func getCacheChecksum(cache *commonConfig.Settings) string {

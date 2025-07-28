@@ -34,7 +34,7 @@ func GetUserView(ctx context.Context, userID string) (contentProvider.UserView, 
 	view.Context.WasSuccessful = true
 	view.Context.TemplateName = "user"
 
-	view, err = contentProvider.UserEdit(view, userID)
+	view, err = contentProvider.GetUser(view, userID)
 
 	return view, err
 }

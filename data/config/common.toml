@@ -72,6 +72,10 @@ name = "Polish (Poland)"
 [[Translation.Permitted.Locales]]
 key = "es_ES"
 name = "Spanish (Spain)"
+[[Translation.Permitted.Locales]]
+key = "en_GB"
+name = "English (United Kingdom)"
+
 
 [Assets]
 logo = "co-logo.png"

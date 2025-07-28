@@ -23,7 +23,7 @@ func UserChooser(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func UserEdit(w http.ResponseWriter, r *http.Request) {
+func User(w http.ResponseWriter, r *http.Request) {
 
 	userID := chi.URLParam(r, "id") // Get the user ID from the URL parameter
 	if userID == "" {
