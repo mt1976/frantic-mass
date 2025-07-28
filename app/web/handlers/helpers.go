@@ -1,11 +1,15 @@
 package handlers
 
 import (
+	"fmt"
 	"html/template"
 	"net/http"
+	"time"
 
 	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-mass/app/dao/baseline"
+	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 )
 
@@ -80,4 +84,23 @@ func render(data any, dataContext contentProvider.AppContext, w http.ResponseWri
 	w.WriteHeader(dataContext.HttpStatusCode) // Set the HTTP status code
 
 	logHandler.InfoLogger.Println("Template executed successfully")
+}
+
+func ValidateSameDateAsBasline(date time.Time, userID int, cont contentProvider.AppContext) (error, contentProvider.AppContext) {
+	// Check if the provided date matches the baseline date
+	baseline, err := baseline.GetByUserID(userID)
+	if err != nil {
+		logHandler.ErrorLogger.Printf("Error retrieving baseline for user %d: %v", userID, err)
+		cont.AddError(fmt.Sprintf("Error retrieving baseline for user %d: %v", userID, err))
+		return fmt.Errorf("error retrieving baseline for user %d: %v", userID, err), cont
+	}
+
+	// Validate the date against the baseline
+	if err := functions.CheckSameWeekday(date, baseline.PivotDate); err != nil {
+		logHandler.ErrorLogger.Printf("Date validation failed for user %d: %v", userID, err)
+		cont.AddError(fmt.Sprintf("Date (%v) is not same day of week as baseline: %v [%v]", date, baseline.PivotDate, err))
+		return err, cont
+	}
+
+	return nil, cont
 }
