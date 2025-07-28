@@ -20,7 +20,7 @@ import (
 
 var DashboardURI = "/dash/{id}" // Define the URI for the user profile
 
-type Profile struct {
+type Dashboard struct {
 	User                 User
 	Context              AppContext
 	BMI                  string
@@ -67,7 +67,7 @@ type Goal struct {
 	Actions         helpers.Actions // Actions available for the user, such as edit or delete
 }
 
-func BuildUserDashboard(view Profile, userId int) (Profile, error) {
+func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "dashboard"
 	view.User = User{}
@@ -233,7 +233,7 @@ func BuildUserDashboard(view Profile, userId int) (Profile, error) {
 
 }
 
-func buildDashboardChart(view Profile, weights []weight.Weight, goals []goal.Goal, chartTitle string) Profile {
+func buildDashboardChart(view Dashboard, weights []weight.Weight, goals []goal.Goal, chartTitle string) Dashboard {
 	view.Context.PageHasChart = true
 	view.Context.ChartID = "weightLossChart"
 	view.Context.ChartTitle = chartTitle
@@ -292,7 +292,7 @@ func buildDashboardChart(view Profile, weights []weight.Weight, goals []goal.Goa
 	return view
 }
 
-func setWeightSystem(view Profile, userDetails user.User, userId int) Profile {
+func setWeightSystem(view Dashboard, userDetails user.User, userId int) Dashboard {
 	view.WeightSystemLookup = measures.WeightSystemsLookup
 	view.WeightSystem = userDetails.WeightSystem
 	if view.WeightSystem < 0 || view.WeightSystem >= len(measures.WeightMeasurementSystems) {
@@ -307,7 +307,7 @@ func setWeightSystem(view Profile, userDetails user.User, userId int) Profile {
 	return view
 }
 
-func setupHeightSystem(view Profile, userDetails user.User, userId int) Profile {
+func setupHeightSystem(view Dashboard, userDetails user.User, userId int) Dashboard {
 	view.HeightSystemLookup = measures.HeightSystemsLookup
 	view.HeightSystem = userDetails.HeightSystem
 	if view.HeightSystem < 0 || view.HeightSystem >= len(measures.HeightMeasurementSystems) {

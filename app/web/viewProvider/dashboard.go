@@ -6,10 +6,10 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 )
 
-func Dashboard(ctx context.Context, userId int) (contentProvider.Profile, error) {
+func Dashboard(ctx context.Context, userId int) (contentProvider.Dashboard, error) {
 
 	//godump.Dump(view)
-	view := contentProvider.Profile{}
+	view := contentProvider.Dashboard{}
 	var err error
 	// Set the common fields for the view
 	view.Context.PageTitle = "User Profile"
