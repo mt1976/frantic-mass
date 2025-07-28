@@ -259,7 +259,7 @@ func buildDashboardChart(view Profile, weights []weight.Weight, goals []goal.Goa
 	for _, goal := range goals {
 		if !goal.TargetWeight.IsZero() {
 			// String to float conversion
-			logHandler.InfoLogger.Printf("Processing goal: %s with target weight %s", goal.Name, goal.TargetWeight)
+			logHandler.InfoLogger.Printf("Processing goal: %s with target weight %s", goal.Name, goal.TargetWeight.KgAsString())
 			graphData := graphs.Trace{}
 			graphData.Name = fmt.Sprintf("%s - %v", goal.Name, goal.TargetWeight.KgAsString())
 			graphData.Shape = "scatter"

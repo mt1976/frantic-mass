@@ -43,7 +43,7 @@
 
 {{define "pageactions"}}
     <!-- Range through the page actions from the context -->
-    <article>
+    <article style="padding-bottom: 1px;padding-top: 1px;">
         {{if .Context.PageActions.Actions}}
         
                 <aside>
@@ -55,7 +55,7 @@
                 </aside>
    
         {{else}}
-            <p class="pico-color-grey-500">No actions available.</p>
+            <p class="pico-color-grey-300" style="padding-top: 4px;padding-bottom: 4px; margin-bottom: 0px; display: flex;align-items: center;  height: 2rem;"><i>No actions available</i></p>
         {{end}}
     </article>
 {{end}}
@@ -76,26 +76,26 @@
 
 {{define "alerts"}}
     {{if .Context.HasMessages}}
-    <article>
+    <article style="padding-bottom: 1px;">
         <header style="padding-bottom:0px;margin-bottom: 0px;background-color: #E0E3E7;"><p style="color:#6F7887;margin-bottom: 10px;"><strong>Messages</strong></p></header>
     {{end}}
     
     <!-- Display any errors -->
     {{if .Context.UserErrorMessages}}
                 {{range .Context.UserErrorMessages}}
-                    <p class="danger" style="margin-top: 18px;"><i class="bi bi-sign-stop-fill"></i> {{.}}</p>
+                    <p class="danger" style="margin-top: 18px;display: flex;align-items: center;  height: 3rem;"><i class="bi bi-sign-stop" style="padding-right: 8px;font-size: 1.5em;"></i> {{.}}</p>
                 {{end}}
     {{end}}
     <!-- Display any errors -->
     {{if .Context.UserMessages}}
                 {{range .Context.UserMessages}}
-                    <p class="information" style="margin-top: 18px;"><i class="bi bi-info-square-fill"></i> {{.}}</p>
+                    <p class="information" style="margin-top: 18px;display: flex;align-items: center;  height: 3rem;"><i class="bi bi-info-square" style="padding-right: 8px;font-size: 1.5em;"></i> {{.}}</p>
                 {{end}}
     {{end}}
     <!-- Display any alerts -->
     {{if .Context.UserAlerts}}
                 {{range .Context.UserAlerts}}
-                    <p class="warning" style="margin-top: 18px;"><i class="bi bi-exclamation-triangle-fill"></i> {{.}}</p>
+                    <p class="warning" style="margin-top: 18px;display: flex;align-items: center;  height: 3rem;"><i class="bi bi-exclamation-triangle" style="padding-right: 8px;font-size: 1.5em;"></i> {{.}}</p>
                 {{end}}
     {{end}}
     <!-- Display any success messages -->
