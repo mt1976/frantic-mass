@@ -10,6 +10,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types/measures"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
+	"github.com/mt1976/frantic-mass/app/web/styleHelper"
 )
 
 var UserURI = "/user/{id}" // Define the URI for the user chooser
@@ -89,8 +90,8 @@ func GetUser(view UserView, userID string) (UserView, error) {
 	view.Context.AddMessage(fmt.Sprintf("Found user %s", view.User.Username))
 	uri := DashboardURI // Use the defined URI for the dashboard
 	uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", view.User.ID))
-	view.Context.PageActions.Add(helpers.NewAction("Back", "Back to User Chooser", glyphs.Back, uri, helpers.GET, "", "secondary", "border: 0px;margin-right: 0px;margin-left: 0px; padding: 10px;"))
-	view.Context.PageActions.Add(helpers.NewAction("Submit", "Submit User Changes", glyphs.Save, "/user/edit/"+fmt.Sprintf("%d", view.User.ID), helpers.POST, "", "", "border: 0px;margin-right: 0px;margin-left: 0px; padding: 10px;"))
+	view.Context.PageActions.Add(helpers.NewAction("Back", "Back to User Chooser", glyphs.Back, uri, helpers.GET, "", styleHelper.Secondary, styleHelper.Button))
+	view.Context.PageActions.Add(helpers.NewAction("Submit", "Submit User Changes", glyphs.Save, "/user/edit/"+fmt.Sprintf("%d", view.User.ID), helpers.POST, "", styleHelper.None, styleHelper.Button))
 	logHandler.InfoLogger.Println("UserEdit view created successfully with user", view.User.Username)
 	// Return the populated view
 

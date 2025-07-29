@@ -16,6 +16,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/graphs"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
+	csshelper "github.com/mt1976/frantic-mass/app/web/styleHelper"
 )
 
 var DashboardURI = "/dash/{id}" // Define the URI for the user profile
@@ -71,7 +72,7 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "dashboard"
 	view.User = User{}
-	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, UserChooserURI, helpers.GET, "", "", ""))
+	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, UserChooserURI, helpers.GET, "", csshelper.None, csshelper.Button))
 
 	// Here you would typically fetch the user data based on userId
 	userDetails, err := user.GetBy(user.FIELD_ID, userId)
@@ -187,9 +188,9 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", userId))
 			uri = ReplacePathParam(uri, "goalId", fmt.Sprintf("%d", g.ID))
 			view.Goals[i].Actions = helpers.Actions{}
-			view.Goals[i].Actions.Add(helpers.NewAction("Projection", "View Projection", glyphs.Projection, uri, helpers.GET, "", "", ""))
-			view.Goals[i].Actions.Add(helpers.NewAction("Edit", "Edit Goal", glyphs.Edit, "/goal/edit/"+IntToString(g.ID), helpers.GET, "", "", ""))
-			view.Goals[i].Actions.Add(helpers.NewAction("Delete", "Delete Goal", glyphs.Delete, "/goal/delete/"+IntToString(g.ID), helpers.GET, "", "", ""))
+			view.Goals[i].Actions.Add(helpers.NewAction("Projection", "View Projection", glyphs.Projection, uri, helpers.GET, "", csshelper.None, csshelper.Button))
+			view.Goals[i].Actions.Add(helpers.NewAction("Edit", "Edit Goal", glyphs.Edit, "/goal/edit/"+IntToString(g.ID), helpers.GET, "", csshelper.None, csshelper.Button))
+			view.Goals[i].Actions.Add(helpers.NewAction("Delete", "Delete Goal", glyphs.Delete, "/goal/delete/"+IntToString(g.ID), helpers.GET, "", csshelper.None, csshelper.Button))
 			logHandler.InfoLogger.Printf("Goal %d: %s, Target Weight: %s, Target Date: %s", g.ID, g.Name, g.TargetWeight.KgAsString(), g.TargetDate.Format("02 Jan 2006"))
 		}
 	}
@@ -225,15 +226,15 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			} else {
 				view.Measurements[i].LossSinceLastMeasurement = *measures.NewWeight(0) // No previous measurement, so set to zero
 			}
-			view.Measurements[i].Actions.Add(helpers.NewAction("View", "View Measurement", glyphs.View, "/weight/view/"+IntToString(w.ID), helpers.GET, "", "", ""))
+			view.Measurements[i].Actions.Add(helpers.NewAction("View", "View Measurement", glyphs.View, "/weight/view/"+IntToString(w.ID), helpers.GET, "", csshelper.None, csshelper.Button))
 			logHandler.InfoLogger.Printf("Measurement %d: Recorded At: %s, Weight: %s, BMI: %s", w.ID, w.RecordedAt.Format("02 Jan 2006"), w.Weight.KgAsString(), w.BMI.String())
 		}
 	}
-	view.Context.PageActions.Add(helpers.NewAction("Weight", "Add Weight Measurement", glyphs.Add, "/weight/add/"+IntToString(userId), helpers.GET, "", "", ""))
-	view.Context.PageActions.Add(helpers.NewAction("Goal", "Add Weight Goal", glyphs.Add, "/goal/add/"+IntToString(userId), helpers.GET, "", "", ""))
+	view.Context.PageActions.Add(helpers.NewAction("Weight", "Add Weight Measurement", glyphs.Add, "/weight/add/"+IntToString(userId), helpers.GET, "", csshelper.None, csshelper.Button))
+	view.Context.PageActions.Add(helpers.NewAction("Goal", "Add Weight Goal", glyphs.Add, "/goal/add/"+IntToString(userId), helpers.GET, "", csshelper.None, csshelper.Button))
 	uURI := ReplacePathParam(UserURI, "id", IntToString(userId))
 
-	view.Context.PageActions.Add(helpers.NewAction("User", "Edit User Details", glyphs.Edit, uURI, helpers.GET, "", "", ""))
+	view.Context.PageActions.Add(helpers.NewAction("User", "Edit User Details", glyphs.Edit, uURI, helpers.GET, "", csshelper.None, csshelper.Button))
 	//godump.Dump(view, "Profile View")
 	view = buildDashboardChart(view, userWeights, goals, "Weight Loss Progress")
 

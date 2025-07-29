@@ -6,6 +6,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
+	csshelper "github.com/mt1976/frantic-mass/app/web/styleHelper"
 )
 
 type Method string
@@ -41,7 +42,7 @@ type Actions struct {
 // NewAction creates a new Action with the provided parameters.
 // It validates the input and generates a UUID for the action.
 
-func NewAction(name, description string, icon glyphs.Glyph, url string, method Method, onClick, class, style string) Action {
+func NewAction(name, description string, icon glyphs.Glyph, url string, method Method, onClick string, class csshelper.Class, style csshelper.CSSHelper) Action {
 
 	returnAction := Action{}
 	var err error
@@ -79,8 +80,8 @@ func NewAction(name, description string, icon glyphs.Glyph, url string, method M
 	}
 	returnAction.OnClick = template.JS(onClick) // Set the JavaScript function to call when the action is clicked
 
-	returnAction.Class = template.HTML(class) // Set the CSS class for the action button
-	returnAction.Style = template.CSS(style)  // Set the inline style for the action button
+	returnAction.Class = class.Style() // Set the CSS class for the action button
+	returnAction.Style = style.Style() // Set the inline style for the action button
 
 	// Log the creation of the action
 	logHandler.InfoLogger.Printf("Action created: %s (%s)(%s)(%s)", returnAction.Name, returnAction.FormAction, returnAction.OnClick, returnAction.Method)

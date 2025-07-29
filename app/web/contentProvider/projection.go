@@ -8,6 +8,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
+	csshelper "github.com/mt1976/frantic-mass/app/web/styleHelper"
 )
 
 var ProjectionURI = "/goal/projection/{id}/{goalId}" // Define the URI for the projection
@@ -24,7 +25,7 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "projection"
 	view.User = User{}
-	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, UserChooserURI, helpers.GET, "", "", ""))
+	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, UserChooserURI, helpers.GET, "", csshelper.None, csshelper.Button))
 
 	// Here you would typically fetch the user data based on userId
 	UserRecord, err := user.GetBy(user.FIELD_ID, userId)

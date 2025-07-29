@@ -7,6 +7,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
+	csshelper "github.com/mt1976/frantic-mass/app/web/styleHelper"
 )
 
 var UserChooserURI = "/users" // Define the URI for the user chooser
@@ -71,7 +72,7 @@ func CreateUserChooser(view UserChooser) (UserChooser, error) {
 		}
 		// Replace the placeholder with the actual user ID
 		uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", u.ID))
-		addview.Actions.Add(helpers.NewAction(u.Username, "View User "+u.Username, glyphs.Launch, uri, helpers.GET, "", "", ""))
+		addview.Actions.Add(helpers.NewAction(u.Username, "View User "+u.Username, glyphs.Launch, uri, helpers.GET, "", csshelper.None, csshelper.Button))
 		view.Users = append(view.Users, addview)
 	}
 
