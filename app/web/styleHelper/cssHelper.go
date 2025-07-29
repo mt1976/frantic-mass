@@ -7,7 +7,7 @@ type CSSHelper struct {
 	style template.CSS // Inline style for the CSS helper, if needed
 }
 
-var Button = CSSHelper{"border: 0px;margin-right: 0px;margin-left: 0px; padding: 10px;"}
+var BUTTON = CSSHelper{"border: 0px;margin-right: 0px;margin-left: 0px; padding: 10px;"}
 
 func (c CSSHelper) Style() template.CSS {
 	return template.CSS(c.style)

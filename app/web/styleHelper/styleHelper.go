@@ -11,9 +11,9 @@ func (s Class) Style() template.HTML {
 	return s.style
 }
 
-var Primary = Class{"primary"}
-var Secondary = Class{"secondary"}
-var Primary_Outline = Class{"primary outline"}
-var Secondary_Outline = Class{"secondary outline"}
-var None = Class{""}
-var Default = None // Default class for actions, can be used when no specific style is needed
+var PRIMARY = Class{"primary"}
+var SECONDARY = Class{"secondary"}
+var PRIMARY_OUTLINE = Class{"primary outline"}
+var SECONDARY_OUTLINE = Class{"secondary outline"}
+var NONE = Class{""}
+var DEFAULT = NONE // Default class for actions, can be used when no specific style is needed

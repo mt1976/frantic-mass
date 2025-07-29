@@ -90,8 +90,8 @@ func GetUser(view UserView, userID string) (UserView, error) {
 	view.Context.AddMessage(fmt.Sprintf("Found user %s", view.User.Username))
 	uri := DashboardURI // Use the defined URI for the dashboard
 	uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", view.User.ID))
-	view.Context.PageActions.Add(helpers.NewAction("Back", "Back to User Chooser", glyphs.Back, uri, helpers.GET, "", styleHelper.Secondary, styleHelper.Button))
-	view.Context.PageActions.Add(helpers.NewAction("Submit", "Submit User Changes", glyphs.Save, "/user/edit/"+fmt.Sprintf("%d", view.User.ID), helpers.POST, "", styleHelper.None, styleHelper.Button))
+	view.Context.PageActions.Add(helpers.NewAction("Back", "Back to User Chooser", glyphs.Back, uri, helpers.GET, "", styleHelper.SECONDARY, styleHelper.BUTTON))
+	view.Context.PageActions.Add(helpers.NewAction("Submit", "Submit User Changes", glyphs.Save, "/user/edit/"+fmt.Sprintf("%d", view.User.ID), helpers.POST, "", styleHelper.NONE, styleHelper.BUTTON))
 	logHandler.InfoLogger.Println("UserEdit view created successfully with user", view.User.Username)
 	// Return the populated view
 

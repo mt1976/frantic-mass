@@ -72,7 +72,7 @@ func CreateUserChooser(view UserChooser) (UserChooser, error) {
 		}
 		// Replace the placeholder with the actual user ID
 		uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", u.ID))
-		addview.Actions.Add(helpers.NewAction(u.Username, "View User "+u.Username, glyphs.Launch, uri, helpers.GET, "", csshelper.None, csshelper.Button))
+		addview.Actions.Add(helpers.NewAction(u.Username, "View User "+u.Username, glyphs.Launch, uri, helpers.GET, "", csshelper.NONE, csshelper.BUTTON))
 		view.Users = append(view.Users, addview)
 	}
 
