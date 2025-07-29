@@ -2,21 +2,23 @@ package styleHelper
 
 import "html/template"
 
-type CSSHelper struct {
+type CSS struct {
 	// Add fields as needed for CSS helper functionality
 	style template.CSS // Inline style for the CSS helper, if needed
 }
 
-var BUTTON = CSSHelper{"border: 0px;margin-right: 0px;margin-left: 0px; padding: 10px;"}
-
-func (c CSSHelper) Style() template.CSS {
-	return template.CSS(c.style)
+func (c CSS) BUTTON() template.CSS {
+	return template.CSS("border: 0px;margin-right: 0px;margin-left: 0px; padding: 10px;")
 }
 
-func (c CSSHelper) None() template.CSS {
+func (c CSS) NONE() template.CSS {
 	return template.CSS("")
 }
 
-func (c CSSHelper) Default() template.CSS {
-	return c.None() // Default class for actions, can be used when no specific style is needed
+func (c CSS) DEFAULT() template.CSS {
+	return c.NONE() // Default class for actions, can be used when no specific style is needed
+}
+
+func (c CSS) EMPTY() template.CSS {
+	return c.NONE() // Empty class, can be used when no specific style is needed
 }

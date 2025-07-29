@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"reflect"
+	"runtime"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -308,6 +310,7 @@ func main() {
 	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
 	r.Get(contentProvider.DashboardURI, handlers.Dashboard) // Placeholder for user dashboard handler
 	r.Get(contentProvider.UserURI, handlers.User)           // Placeholder for user edit handler
+	r.Get(contentProvider.GoalURI, handlers.Goal)           // Placeholder for goal edit handler
 	r.Get("/test", handlers.Dummy)
 	// Inject shutdown function into handler
 	r.Handle("/shutdown", handlers.ShutdownHandler(func() {
@@ -352,6 +355,15 @@ func main() {
 		logHandler.InfoLogger.Println("Server shut down cleanly")
 	}()
 
+	// Walk through all registered routes and print them
+	err = chi.Walk(r, func(method string, route string, handler http.Handler, middlewares ...func(http.Handler) http.Handler) error {
+		fmt.Printf("Registered route: %8s %30s %v\n", method, route, getHandlerName(handler))
+		return nil
+	})
+	if err != nil {
+		fmt.Printf("Failed to walk routes: %v\n", err)
+	}
+
 	logHandler.InfoLogger.Printf("Server is running at http://127.0.0.1:%v", common.GetServer_PortString())
 
 	if err := server.ListenAndServe(); err != http.ErrServerClosed {
@@ -362,4 +374,11 @@ func main() {
 	// If you want to use a specific port, you can uncomment the line below
 	//http.ListenAndServe(":3000", r)
 	//os.Exit(0) // Exit the program successfully
+}
+
+func getHandlerName(h http.Handler) string {
+	if handlerFunc, ok := h.(http.HandlerFunc); ok {
+		return runtime.FuncForPC(reflect.ValueOf(handlerFunc).Pointer()).Name()
+	}
+	return fmt.Sprintf("%T", h)
 }

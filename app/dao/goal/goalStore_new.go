@@ -47,8 +47,10 @@ func Create(ctx context.Context, userID int, name string, targetWeight measures.
 
 	// Create a new struct
 	record := Goal{}
-	record.Key = idHelpers.Encode(sessionID)
-	record.Raw = sessionID
+	// Create a composite ID for unique identification of the goal
+	record.CompositeID = fmt.Sprintf("%d/%s", userID, sessionID)
+	record.Key = idHelpers.Encode(record.CompositeID)
+	record.Raw = record.CompositeID
 	record.UserID = userID
 	record.Name = name
 	record.TargetWeight = targetWeight
@@ -74,8 +76,6 @@ func Create(ctx context.Context, userID int, name string, targetWeight measures.
 		record.TargetBMI = *bmiPtr
 	}
 
-	// Create a composite ID for unique identification of the goal
-	record.CompositeID = fmt.Sprintf("%d/%s", userID, sessionID)
 	record.AverageWeightLoss.Set(isAverageType)
 
 	// Record the create action in the audit data

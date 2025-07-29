@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   {{template "head" .}}
+
+
+    <body style="{{template "bodyStyle" .}}">
+            <form action="/goal/{{.Goal.ID}}" method="POST" id="userForm" class="form">
+
+            <hgroup>
+                <h1>{{.Context.AppName}}</h1>
+                <p>{{.Context.PageTitle}} - {{.User.Name}}</p>
+            </hgroup>
+    
+            <article>
+                <hgroup>
+                    <h2>Goal Information:</h2>
+                </hgroup>
+                    
+                    <small>{{.Context.UserLocale}}</small>
+
+
+                    {{/* Height           measures.Height // Height in centimeters
+	ProjectionPeriod int             // Projection period in months
+	DateOfBirth      time.Time       // Date of birth
+	PivotDate        time.Time       // Pivot date for projections
+	Note             string */}}
+                   
+
+           
+              
+            </article>
+        {{template "chart" .}}
+        {{template "alerts" .}}
+        {{template "pageactions" .}}
+             </form>
+    </body>
+   {{template "footer" .}}
+    {{template "scripts" .}}
+</html>

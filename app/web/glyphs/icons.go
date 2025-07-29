@@ -12,7 +12,7 @@ func (i Glyph) Name() string {
 // It validates the input and returns an Icon instance.
 func NewIcon(name string) Glyph {
 	if name == "" {
-		return Nil // Return Nil icon if no name is provided
+		return NIL // Return Nil icon if no name is provided
 	}
 	return Glyph{iconName: name}
 }

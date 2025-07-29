@@ -62,7 +62,9 @@
                                 <td>{{.BMI.Glyph}} {{.BMI.String}}</td>
                                 <td>{{if .LossSinceLastMeasurement}}{{.LossSinceLastMeasurement.String}}{{else}}N/A{{end}}</td>
                                 <td>    
-                                    <div role="group" style="display: flex; justify-content: center; align-items: center; border-radius: 100px;">
+                                    {{/* <div role="group" style="display: flex; justify-content: center; align-items: center; border-radius: 100px;"> */}}
+                                    <div role="group">
+
                                     {{if .Actions}}
                                     {{range .Actions.Actions}}
                                         <a href="{{.FormAction}}" role="button" class="outline" onclick='{{.OnClick}}' FormAction="{{.FormAction}}" method="{{.Method}}">{{if .Icon}}{{.Icon}}{{end}}</a>
@@ -106,7 +108,8 @@
                          
                                 <td>{{.TargetDate.Format "02 Jan 2006"}}</td>
                                 <td>
-                                        <div role="group" style="display: flex; justify-content: center; align-items: center; border-radius: 100px;">
+                                        {{/* <div role="group" style="display: flex; justify-content: center; align-items: center; border-radius: 100px;"> */}}
+                                        <div role="group">
                                         {{if .Actions}}
                                         {{range .Actions.Actions}}
                                             <a href="{{.FormAction}}" role="button" style="" class="outline" onclick='{{.OnClick}}' FormAction="{{.FormAction}}" method="{{.Method}}" >{{if .Icon}}{{.Icon}}{{end}}</a>

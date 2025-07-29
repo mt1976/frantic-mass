@@ -6,15 +6,14 @@ import (
 	"github.com/google/uuid"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
-	csshelper "github.com/mt1976/frantic-mass/app/web/styleHelper"
 )
 
 type Method string
 
 const (
-	GET    Method = "GET"
-	POST   Method = "POST"
-	PUT    Method = "PUT"
+	READ   Method = "GET"
+	CREATE Method = "POST"
+	UPDATE Method = "PUT"
 	DELETE Method = "DELETE"
 	PATCH  Method = "PATCH"
 )
@@ -42,7 +41,7 @@ type Actions struct {
 // NewAction creates a new Action with the provided parameters.
 // It validates the input and generates a UUID for the action.
 
-func NewAction(name, description string, icon glyphs.Glyph, url string, method Method, onClick string, class csshelper.Class, style csshelper.CSSHelper) Action {
+func NewAction(name, description string, icon glyphs.Glyph, url string, method Method, onClick string, class template.HTML, style template.CSS) Action {
 
 	returnAction := Action{}
 	var err error
@@ -53,12 +52,12 @@ func NewAction(name, description string, icon glyphs.Glyph, url string, method M
 	}
 
 	// Default to a Nil icon if none is provided
-	if icon != glyphs.Nil {
+	if icon != glyphs.NIL {
 		logHandler.InfoLogger.Printf("Using icon: %s for action: %s", icon.Name(), name)
 		returnAction.Icon = template.HTML("<i class=\"" + icon.Name() + "\"></i>") // Set the icon for the action
 	} else {
 		logHandler.InfoLogger.Printf("No icon provided for action: %s, using default icon", name)
-		returnAction.Icon = template.HTML(glyphs.Nil.Name()) // Use default icon if none is provided
+		returnAction.Icon = template.HTML(glyphs.NIL.Name()) // Use default icon if none is provided
 	}
 
 	// Generate a new UUID for the action
@@ -80,8 +79,8 @@ func NewAction(name, description string, icon glyphs.Glyph, url string, method M
 	}
 	returnAction.OnClick = template.JS(onClick) // Set the JavaScript function to call when the action is clicked
 
-	returnAction.Class = class.Style() // Set the CSS class for the action button
-	returnAction.Style = style.Style() // Set the inline style for the action button
+	returnAction.Class = class // Set the CSS class for the action button
+	returnAction.Style = style // Set the inline style for the action button
 
 	// Log the creation of the action
 	logHandler.InfoLogger.Printf("Action created: %s (%s)(%s)(%s)", returnAction.Name, returnAction.FormAction, returnAction.OnClick, returnAction.Method)

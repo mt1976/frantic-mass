@@ -15,6 +15,7 @@ import (
 	"github.com/mt1976/frantic-core/paths"
 	"github.com/mt1976/frantic-core/stringHelpers"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
+	"github.com/mt1976/frantic-mass/app/web/styleHelper"
 )
 
 var Locales = lookup.Lookup{}
@@ -77,6 +78,8 @@ type AppContext struct {
 
 var cache *commonConfig.Settings
 var cacheChecksum string
+var css styleHelper.CSS
+var style styleHelper.CLASS
 
 func init() {
 	// Initialize the Common struct with default values
