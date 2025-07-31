@@ -130,7 +130,7 @@
                         {{range .Context.Breadcrumbs}}
                             <li class="breadcrumb-item" style="padding-top: 6px; padding-bottom: 6px;">
                                 {{if .URL}}
-                                    <a href="{{.URL}}" title="{{.Hover}}">{{.Title}}</a>
+                                    <a href="{{.URL}}" data-tooltip="{{.Hover}}">{{.Title}}</a>
                                 {{else}}
                                     <span>{{.Title}}</span>
                                 {{end}}
@@ -143,8 +143,8 @@
         <article>
                 <nav aria-label="breadcrumb">
                     <ul>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            <span>No breadcrumbs available</span>
+                        <li class="breadcrumb-item" style="padding-top: 0px; padding-bottom: 0px;">
+                               <span>No breadcrumbs available</span>
                         </li>
                     </ul>
                 </nav>

@@ -239,6 +239,9 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 	//godump.Dump(view, "Profile View")
 	view = buildDashboardChart(view, userWeights, goals, "Weight Loss Progress")
 
+	view.Context.AddBreadcrumb("Users", "Choose a new user", UserChooserURI)
+	view.Context.AddBreadcrumb("Dashboard", "Return to Dashboard", "")
+
 	return view, nil
 
 }

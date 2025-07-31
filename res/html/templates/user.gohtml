@@ -11,7 +11,8 @@
                 <h1>{{.Context.AppName}}</h1>
                 <p>{{.Context.PageTitle}} - {{.User.Name}}</p>
             </hgroup>
-    
+                {{template "breadcrumbs" .}}
+
             <article>
                 <hgroup>
                     <h2>User Information:</h2>

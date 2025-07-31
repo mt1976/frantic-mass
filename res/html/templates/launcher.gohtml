@@ -6,6 +6,8 @@
                 <h1>Welcome to the {{.Context.AppName}} Launcher</h1>
                 <p>{{.Context.AppName}}</p>
             </hgroup>
+                        {{template "breadcrumbs" .}}
+
             <article>
                 <p>{{.Context.AppDescription}}</p>
                 <p>Click below to start {{.Context.AppName}}.</p>
