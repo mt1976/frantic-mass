@@ -10,3 +10,4 @@ var Projection Glyph = Glyph{iconName: "bi bi-graph-up"}   // Icon for projectio
 var View Glyph = Glyph{iconName: "bi bi-eye"}              // Icon for view actions
 var Add Glyph = Glyph{iconName: "bi bi-plus"}              // Icon for adding new items
 var Save Glyph = Glyph{iconName: "bi bi-save"}             // Icon for saving actions
+var Goal Glyph = Glyph{iconName: "bi bi-flag"}             // Icon for goal-related actions

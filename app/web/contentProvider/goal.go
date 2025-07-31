@@ -13,18 +13,24 @@ import (
 var GoalURI = "/goal/{id}" // Define the URI for the user chooser
 
 type GoalView struct {
-	ID   int
-	User user.User
-	Goal goal.Goal
+	ID       int
+	User     user.User
+	UserID   int    // User ID for the goal
+	UserName string // Name of the user for display purposes
+	Goal     goal.Goal
 
 	Context AppContext
 }
 
 func GetGoal(view GoalView, goalID string) (GoalView, error) {
+
+	thisURI := ReplacePathParam(GoalURI, "id", goalID)
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "goal"
+	view.Context.PageTitle = "Goal Details"
+	view.Context.PageDescription = "View and manage your goal details"
 
-	userIdInt, err := StringToInt(goalID)
+	userGoalID, err := StringToInt(goalID)
 	if err != nil {
 		logHandler.ErrorLogger.Println("Error converting goalID to int:", err)
 		view.Context.AddError("Invalid goal ID format")
@@ -35,7 +41,7 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 
 	view.User = user.User{}
 
-	UserGoalRecord, err := goal.GetBy(goal.FIELD_ID, userIdInt)
+	UserGoalRecord, err := goal.GetBy(goal.FIELD_ID, userGoalID)
 	if err != nil {
 		logHandler.ErrorLogger.Println("Error fetching goal:", err)
 		view.Context.AddError("Error fetching goal")
@@ -46,6 +52,24 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 	}
 
 	view.Goal = UserGoalRecord
+
+	userIdInt := UserGoalRecord.UserID
+	UserRecord, err := user.GetBy(user.FIELD_ID, userIdInt)
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error fetching user:", err)
+		view.Context.AddError("Error fetching user")
+		view.Context.AddMessage("An error occurred while fetching user details. Please try again later.")
+		view.Context.HttpStatusCode = 500 // Internal Server Error
+		view.Context.WasSuccessful = false
+		return view, nil
+	}
+
+	view.User = UserRecord
+	view.UserID = UserRecord.ID
+	view.UserName = UserRecord.Name
+	if view.UserName == "" {
+		view.UserName = UserRecord.Username // Fallback to username if name is not set
+	}
 
 	// Fetch the user's baseline data
 
@@ -60,6 +84,16 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 	view.Context.PageActions.Add(helpers.NewAction("Submit", "Submit Goal Changes", glyphs.Save, "/goal/edit/"+fmt.Sprintf("%d", view.Goal.ID), helpers.CREATE, "", style.DEFAULT(), css.NONE()))
 	logHandler.InfoLogger.Println("GoalEdit view created successfully with goal", view.Goal.Name)
 	// Return the populated view
+
+	// view.Context.Breadcrumbs = []Breadcrumb{
+	// 	{Title: "Dashboard", URL: DashboardURI},
+	// 	{Title: "Goal", URL: GoalURI},
+	// 	{Title: view.Goal.Name, URL: fmt.Sprintf("/goal/%d", view.Goal.ID)},
+	// }
+	view.Context.AddBreadcrumb("Users", "Choose a new user", UserChooserURI)
+	view.Context.AddBreadcrumb("Dashboard", "Return to Dashboard", ReplacePathParam(DashboardURI, "id", IntToString(view.UserID)))
+	view.Context.AddBreadcrumb("Goal", "View Goal Details", thisURI)
+	view.Context.AddBreadcrumb(view.Goal.Name, "", "")
 
 	return view, nil
 }

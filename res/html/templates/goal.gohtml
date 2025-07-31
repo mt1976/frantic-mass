@@ -9,26 +9,60 @@
 
             <hgroup>
                 <h1>{{.Context.AppName}}</h1>
-                <p>{{.Context.PageTitle}} - {{.User.Name}}</p>
+                <p>{{.Context.PageTitle}} {{.Context.Delimiter}} {{.UserName}} {{.Context.Delimiter}} {{.Goal.Name}}</p>
             </hgroup>
-    
+            {{template "breadcrumbs" .}}
             <article>
                 <hgroup>
                     <h2>Goal Information:</h2>
                 </hgroup>
                     
-                    <small>{{.Context.UserLocale}}</small>
+{{/* 
+Name              string          `storm:"unique"` // Name of the goal
+	TargetWeight      measures.Weight // Target weight in kilograms
+	TargetBMI         measures.BMI    // Target BMI
+	TargetDate        time.Time       // Target date for achieving the goal
+	LossPerWeek       measures.Weight // Desired weight loss per week in kilograms
+	Note              string
+	CompositeID       string        // Composite ID for unique identification of the goal
+	NoProjections     int           // Projection Period in weeks, used for calculating the target date based on the current weight and loss per week
+	AverageWeightLoss dao.StormBool // Type of goal, e.g., user-defined or average weight loss goal
+            
+                    */}}
 
-
-                    {{/* Height           measures.Height // Height in centimeters
-	ProjectionPeriod int             // Projection period in months
-	DateOfBirth      time.Time       // Date of birth
-	PivotDate        time.Time       // Pivot date for projections
-	Note             string */}}
-                   
-
-           
-              
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="{{.Goal.Name}}" required>
+                </div>  
+                <div class="form-group">
+                    <label for="targetWeight">Target Weight (kg):</label>
+                    <input type="number" id="targetWeight" name="targetWeight" value="{{.Goal.TargetWeight.KGs}}" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="targetBMI">Target BMI: {{.Goal.TargetBMI.Glyph}}</label>
+                    <input type="number" id="targetBMI" name="targetBMI" value="{{.Goal.TargetBMI.BMI}}" step="0.1" required>
+                </div>
+                 <div class="form-group">
+                    <label for="targetDate">Target Date:</label>
+                    <input type="date" id="targetDate" name="targetDate" value='{{.Goal.TargetDate.Format "2006-01-02"}}' required>
+                </div>
+                <div class="form-group">
+                    <label for="lossPerWeek">Desired Weight Loss per Week (kg):</label>
+                    <input type="number" id="lossPerWeek" name="lossPerWeek" value="{{.Goal.LossPerWeek.KGs}}" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Note:</label>
+                    <textarea id="note" name="note">{{.Goal.Note}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="noProjections">Projection Period (weeks):</label>
+                    <input type="number" id="noProjections" name="noProjections" value="{{.Goal.NoProjections}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="averageWeightLoss">Average Weight Loss Goal: {{.Goal.AverageWeightLoss.State}}</label>
+                    <input type="checkbox" id="averageWeightLoss" name="averageWeightLoss" {{if eq .Goal.AverageWeightLoss.State "true"}}checked{{end}}>
+                </div>
+          
             </article>
         {{template "chart" .}}
         {{template "alerts" .}}

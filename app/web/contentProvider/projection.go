@@ -121,5 +121,7 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 
 	logHandler.InfoLogger.Println("Projection view created for user ID:", userId, "and goal ID:", goalId)
 
+	view.Context.PageActions.Add(helpers.NewAction("Goal", "View more detail on the current goal", glyphs.Goal, ReplacePathParam(GoalURI, "id", IntToString(view.Goal.ID)), helpers.READ, "", style.PRIMARY(), css.NONE()))
+
 	return view, nil
 }

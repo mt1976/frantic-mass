@@ -74,6 +74,37 @@ type AppContext struct {
 	ChartID          string          // ID of the chart to be displayed on the page
 	ChartData        template.JS     // Data for the chart to be displayed on the page
 	ChartTitle       string          // Title of the chart to be displayed on the page
+	Breadcrumbs      []Breadcrumb    // Breadcrumbs for navigation, each containing a title and URL
+}
+
+type Breadcrumb struct {
+	Title string // Title of the breadcrumb item
+	Hover string // Hover text for the breadcrumb item
+	URL   string // URL of the breadcrumb item
+}
+
+func (c *AppContext) AddBreadcrumb(title, hover, url string) {
+	// Add a breadcrumb to the context
+	breadcrumb := Breadcrumb{
+		Title: title,
+		Hover: hover,
+		URL:   url,
+	}
+	c.Breadcrumbs = append(c.Breadcrumbs, breadcrumb)
+	logHandler.InfoLogger.Printf("Added breadcrumb: %s (%s) - %s", title, hover, url)
+
+}
+
+func (c *AppContext) RemoveBreadcrumb(title string) {
+	// Remove a breadcrumb from the context by title
+	for i, breadcrumb := range c.Breadcrumbs {
+		if breadcrumb.Title == title {
+			c.Breadcrumbs = append(c.Breadcrumbs[:i], c.Breadcrumbs[i+1:]...)
+			logHandler.InfoLogger.Printf("Removed breadcrumb: %s", title)
+			return
+		}
+	}
+	logHandler.WarningLogger.Printf("Breadcrumb not found: %s", title)
 }
 
 var cache *commonConfig.Settings

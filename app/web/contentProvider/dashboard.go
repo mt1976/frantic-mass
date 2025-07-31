@@ -190,7 +190,7 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			view.Goals[i].Actions.Add(helpers.NewAction("Projection", "View Projection", glyphs.Projection, uri, helpers.READ, "", style.DEFAULT(), css.NONE()))
 
 			goalURI := ReplacePathParam(GoalURI, "id", IntToString(g.ID))
-			view.Goals[i].Actions.Add(helpers.NewAction("Edit", "Edit Goal", glyphs.Edit, goalURI, helpers.READ, "", style.DEFAULT(), css.NONE()))
+			view.Goals[i].Actions.Add(helpers.NewAction("View", "View Goal Information", glyphs.Goal, goalURI, helpers.READ, "", style.DEFAULT(), css.NONE()))
 			view.Goals[i].Actions.Add(helpers.NewAction("Delete", "Delete Goal", glyphs.Delete, goalURI, helpers.DELETE, "", style.DEFAULT(), css.NONE()))
 			logHandler.InfoLogger.Printf("Goal %d: %s, Target Weight: %s, Target Date: %s", g.ID, g.Name, g.TargetWeight.KgAsString(), g.TargetDate.Format("02 Jan 2006"))
 		}
