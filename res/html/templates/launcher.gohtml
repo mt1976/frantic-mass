@@ -13,7 +13,7 @@
                 <p>Click below to start {{.Context.AppName}}.</p>
             </article>
         {{template "alerts" .}}
-        {{template "pageactions" .}}
+        {{template "actions" .Context.PageActions}}
     </body>
     {{template "footer" .}}
     {{template "scripts" .}}

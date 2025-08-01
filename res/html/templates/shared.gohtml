@@ -41,12 +41,12 @@
 {{end}}
 
 
-{{define "pageactions"}}
+{{define "actions"}}
     <!-- Range through the page actions from the context -->
-        {{if .Context.PageActions.Actions}}
+        {{if .Actions}}
         <article style="padding-bottom: 1px">
             <div role="group">  
-                {{range .Context.PageActions.Actions}}
+                {{range .Actions}}
                     {{if .IsButton}}
                        <button type="button" onclick="{{.OnClick}}" {{if .Style}}style="{{.Style}}"{{end}} {{if .Class}}class="{{.Class}}"{{end}} data-tooltip="{{.Hover}}">{{if .Icon}}{{.Icon}}&nbsp;{{end}}{{.Name}}</button>
                     {{else}}
