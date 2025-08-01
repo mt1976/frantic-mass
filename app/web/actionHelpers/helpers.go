@@ -1,4 +1,4 @@
-package helpers
+package actionHelpers
 
 import (
 	"html/template"

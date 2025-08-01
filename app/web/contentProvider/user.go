@@ -8,8 +8,8 @@ import (
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/types/measures"
+	"github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
-	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
 var UserWildcard = "{uid}"            // Wildcard for the user ID in the URI
@@ -95,7 +95,7 @@ func GetUser(view UserView, userID string) (UserView, error) {
 	//uri = ReplacePathParam(uri, UserWildcard, fmt.Sprintf("%d", view.User.ID))
 	view.Context.PageActions.Clear()         // Clear any existing page actions
 	view.Context.PageActions.AddBackAction() // Add a back action to the page actions
-	view.Context.PageActions.Add(helpers.NewAction("Save", "Save Changes", glyphs.Save, ReplacePathParam(UserURI, UserWildcard, IntToString(view.User.ID)), helpers.UPDATE, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.Add(actionHelpers.NewAction("Save", "Save Changes", glyphs.Save, ReplacePathParam(UserURI, UserWildcard, IntToString(view.User.ID)), actionHelpers.UPDATE, "", style.NONE(), css.NONE()))
 	logHandler.InfoLogger.Println("UserEdit view created successfully with user", view.User.Username)
 	// Return the populated view
 

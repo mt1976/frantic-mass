@@ -9,8 +9,8 @@ import (
 	"github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/dao/weightProjection"
 	"github.com/mt1976/frantic-mass/app/functions"
+	"github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
-	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
 var ProjectionWildcard = ""                                            // Wildcard for the goal ID in the URI
@@ -34,12 +34,12 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "projection"
 	view.User = User{}
-	view.Context.PageActions = helpers.Actions{} // Initialize the PageActions
+	view.Context.PageActions = actionHelpers.Actions{} // Initialize the PageActions
 	view.Context.PageTitle = "Projection Details"
 	view.Context.PageDescription = "View and manage your projection details"
 	view.Context.PageActions.AddBackAction()
 	view.Context.PageActions.AddPrintAction()
-	view.Context.PageActions.Add(helpers.NewAction(DashboardName, DashboardHover, glyphs.Dashboard, ReplacePathParam(DashboardURI, UserWildcard, IntToString(userId)), helpers.READ, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.Add(actionHelpers.NewAction(DashboardName, DashboardHover, glyphs.Dashboard, ReplacePathParam(DashboardURI, UserWildcard, IntToString(userId)), actionHelpers.READ, "", style.NONE(), css.NONE()))
 
 	// Here you would typically fetch the user data based on userId
 	UserRecord, err := user.GetBy(user.FIELD_ID, userId)
@@ -136,7 +136,7 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 
 	logHandler.InfoLogger.Println("Projection view created for user ID:", userId, "and goal ID:", goalId)
 
-	view.Context.PageActions.Add(helpers.NewAction(GoalName, fmt.Sprintf(GoalHover, view.Goal.Name, view.User.Name), glyphs.Goal, ReplacePathParam(GoalURI, GoalWildcard, IntToString(view.Goal.ID)), helpers.READ, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.Add(actionHelpers.NewAction(GoalName, fmt.Sprintf(GoalHover, view.Goal.Name, view.User.Name), glyphs.Goal, ReplacePathParam(GoalURI, GoalWildcard, IntToString(view.Goal.ID)), actionHelpers.READ, "", style.NONE(), css.NONE()))
 
 	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)
 	view.Context.AddBreadcrumb(UserChooserName, UserChooserHover, UserChooserURI, UserChooserIcon)

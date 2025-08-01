@@ -5,8 +5,8 @@ import (
 
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/user"
+	methods "github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
-	methods "github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
 var UserChooserWildcard = ""           // Wildcard for the user ID in the URI

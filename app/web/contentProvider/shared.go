@@ -14,8 +14,8 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/paths"
 	"github.com/mt1976/frantic-core/stringHelpers"
+	"github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
-	"github.com/mt1976/frantic-mass/app/web/helpers"
 	"github.com/mt1976/frantic-mass/app/web/styleHelper"
 )
 
@@ -70,12 +70,12 @@ type AppContext struct {
 	TemplatePath     string // URL path of the current page
 	TemplateName     string // Name of the template used for rendering the page
 	TemplateFilePath string
-	PageActions      helpers.Actions // Actions available on the current page, such as buttons or links
-	PageHasChart     bool            // Flag to indicate if the page has a chart to display
-	ChartID          string          // ID of the chart to be displayed on the page
-	ChartData        template.JS     // Data for the chart to be displayed on the page
-	ChartTitle       string          // Title of the chart to be displayed on the page
-	Breadcrumbs      []Breadcrumb    // Breadcrumbs for navigation, each containing a title and URL
+	PageActions      actionHelpers.Actions // Actions available on the current page, such as buttons or links
+	PageHasChart     bool                  // Flag to indicate if the page has a chart to display
+	ChartID          string                // ID of the chart to be displayed on the page
+	ChartData        template.JS           // Data for the chart to be displayed on the page
+	ChartTitle       string                // Title of the chart to be displayed on the page
+	Breadcrumbs      []Breadcrumb          // Breadcrumbs for navigation, each containing a title and URL
 }
 
 type Breadcrumb struct {
@@ -249,7 +249,7 @@ func (c *AppContext) SetDefaults() {
 	c.TemplatePath = paths.HTML().String()
 	logHandler.InfoLogger.Printf("Template Path: %s", c.TemplatePath)
 	c.TemplateName = "error" // Default template name, can be overridden by specific views
-	c.PageActions = helpers.Actions{}
+	c.PageActions = actionHelpers.Actions{}
 }
 
 func (c *AppContext) AddError(err string) {

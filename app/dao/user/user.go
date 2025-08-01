@@ -36,3 +36,10 @@ func (record *User) StartingWeight() (measures.Weight, error) {
 
 	return earliestRecord.Weight, nil
 }
+
+func (record *User) GetUserName() string {
+	if record.Name != "" {
+		return record.Name
+	}
+	return record.Username
+}

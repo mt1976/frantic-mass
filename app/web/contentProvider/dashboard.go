@@ -13,9 +13,9 @@ import (
 	"github.com/mt1976/frantic-mass/app/dao/weight"
 	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/types/measures"
+	"github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/graphs"
-	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
 var DashboardWildcard = ""                 // Wildcard for the user ID in the URI
@@ -54,21 +54,21 @@ type Measurement struct {
 	BMI                      measures.BMI    // Body Mass Index
 	Note                     string
 	LossSinceLastMeasurement measures.Weight
-	Actions                  helpers.Actions // Actions available for the measurement, such as edit or delete
+	Actions                  actionHelpers.Actions // Actions available for the measurement, such as edit or delete
 }
 
 type Goal struct {
 	ID              int
 	Description     string
-	Name            string          // Name of the goal
-	TargetWeight    string          // Target weight in kilograms
-	TargetBMI       string          // Target BMI
-	TargetBMINote   string          // Note for the target BMI
-	TargetBMIStatus string          // Status for the target BMI
-	TargetDate      time.Time       // Target date for achieving the goal
-	LossPerWeek     string          // Desired weight loss per week in kilograms
-	IsDefault       bool            // Type of goal, e.g., user-defined or average weight loss goal
-	Actions         helpers.Actions // Actions available for the user, such as edit or delete
+	Name            string                // Name of the goal
+	TargetWeight    string                // Target weight in kilograms
+	TargetBMI       string                // Target BMI
+	TargetBMINote   string                // Note for the target BMI
+	TargetBMIStatus string                // Status for the target BMI
+	TargetDate      time.Time             // Target date for achieving the goal
+	LossPerWeek     string                // Desired weight loss per week in kilograms
+	IsDefault       bool                  // Type of goal, e.g., user-defined or average weight loss goal
+	Actions         actionHelpers.Actions // Actions available for the user, such as edit or delete
 }
 
 func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
@@ -193,12 +193,12 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			uri := ProjectionURI // Use the defined URI for the projection
 			uri = ReplacePathParam(uri, UserWildcard, fmt.Sprintf("%d", userId))
 			uri = ReplacePathParam(uri, GoalWildcard, fmt.Sprintf("%d", g.ID))
-			view.Goals[i].Actions = helpers.Actions{}
-			view.Goals[i].Actions.Add(helpers.NewAction(ProjectionName, fmt.Sprintf(ProjectionHover, g.Name, view.User.Name), glyphs.Projection, uri, helpers.READ, "", style.DEFAULT(), css.NONE()))
+			view.Goals[i].Actions = actionHelpers.Actions{}
+			view.Goals[i].Actions.Add(actionHelpers.NewAction(ProjectionName, fmt.Sprintf(ProjectionHover, g.Name, view.User.Name), glyphs.Projection, uri, actionHelpers.READ, "", style.DEFAULT(), css.NONE()))
 
 			goalURI := ReplacePathParam(GoalURI, GoalWildcard, IntToString(g.ID))
-			view.Goals[i].Actions.Add(helpers.NewAction("View", "View Goal Information", glyphs.Goal, goalURI, helpers.READ, "", style.DEFAULT(), css.NONE()))
-			view.Goals[i].Actions.Add(helpers.NewAction("Delete", "Delete Goal", glyphs.Delete, goalURI, helpers.DELETE, "", style.DEFAULT(), css.NONE()))
+			view.Goals[i].Actions.Add(actionHelpers.NewAction("View", "View Goal Information", glyphs.Goal, goalURI, actionHelpers.READ, "", style.DEFAULT(), css.NONE()))
+			view.Goals[i].Actions.Add(actionHelpers.NewAction("Delete", "Delete Goal", glyphs.Delete, goalURI, actionHelpers.DELETE, "", style.DEFAULT(), css.NONE()))
 			logHandler.InfoLogger.Printf("Goal %d: %s, Target Weight: %s, Target Date: %s", g.ID, g.Name, g.TargetWeight.KgAsString(), g.TargetDate.Format("02 Jan 2006"))
 		}
 	}
@@ -234,15 +234,15 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			} else {
 				view.Measurements[i].LossSinceLastMeasurement = *measures.NewWeight(0) // No previous measurement, so set to zero
 			}
-			view.Measurements[i].Actions.Add(helpers.NewAction("View", "View Measurement", glyphs.View, "/weight/view/"+IntToString(w.ID), helpers.READ, "", style.DEFAULT(), css.NONE()))
+			view.Measurements[i].Actions.Add(actionHelpers.NewAction("View", WeightHover, glyphs.Weight, ReplacePathParam(WeightURI, WeightWildcard, IntToString(w.ID)), actionHelpers.READ, "", style.DEFAULT(), css.NONE()))
 			logHandler.InfoLogger.Printf("Measurement %d: Recorded At: %s, Weight: %s, BMI: %s", w.ID, w.RecordedAt.Format("02 Jan 2006"), w.Weight.KgAsString(), w.BMI.String())
 		}
 	}
 	uURI := ReplacePathParam(UserURI, UserWildcard, IntToString(userId))
 
-	view.Context.PageActions.Add(helpers.NewAction(UserName, fmt.Sprintf(UserHover, view.User.Name), glyphs.User, uURI, helpers.READ, "", style.NONE(), css.NONE()))
-	view.Context.PageActions.Add(helpers.NewAction(WeightName, fmt.Sprintf(WeightHover, "NEW"), glyphs.Weight, "/weight/add/"+IntToString(userId), helpers.CREATE, "", style.NONE(), css.NONE()))
-	view.Context.PageActions.Add(helpers.NewAction(GoalName, fmt.Sprintf(GoalHover, "NEW", view.User.Name), glyphs.Goal, "/goal/add/"+IntToString(userId), helpers.CREATE, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.Add(actionHelpers.NewAction(UserName, fmt.Sprintf(UserHover, view.User.Name), glyphs.User, uURI, actionHelpers.READ, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.Add(actionHelpers.NewAction(WeightName, fmt.Sprintf(WeightHover, "NEW"), glyphs.Weight, "/weight/add/"+IntToString(userId), actionHelpers.CREATE, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.Add(actionHelpers.NewAction(GoalName, fmt.Sprintf(GoalHover, "NEW", view.User.Name), glyphs.Goal, "/goal/add/"+IntToString(userId), actionHelpers.CREATE, "", style.NONE(), css.NONE()))
 
 	//godump.Dump(view, "Profile View")
 	view = buildDashboardChart(view, userWeights, goals, "Weight Loss Progress")

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   {{template "head" .}}
+
+
+    <body style="{{template "bodyStyle" .}}">
+            <form action="/weight/{{.ID}}" method="POST" id="userForm" class="form">
+
+            <hgroup>
+                <h1>{{.Context.AppName}}</h1>
+                <p>{{.Context.PageTitle}} {{.Context.Delimiter}} {{.UserName}} {{.Context.Delimiter}} ???</p>
+            </hgroup>
+            {{template "breadcrumbs" .}}
+            <article>
+                <hgroup>
+                    <h2>Weight Information:</h2>
+                </hgroup>
+                    
+
+
+    
+                <div class="form-group">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" name="weight" value="{{.Weight.KGs}}" step="0.1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateControl">Recorded On:</label>
+                    <input type="date" id="dateControl" name="dateControl" value="{{.DateControl}}" required>
+                     <small>{{.Date}}</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="bmi">BMI:</label>
+                    <input type="number" id="bmi" name="bmi" value="{{.BMI.BMI}}" step="0.1" required>
+                    <small>{{.BMI.Description}} {{.BMI.Glyph}}</small>
+                </div>
+                <div class="form-group">
+                    <label for="note">Note:</label>
+                    <textarea id="note" name="note">{{.Note}}</textarea>
+                </div>
+   
+                {{/* Uncomment the following section if you want to include goal-related fields */}}
+
+                {{/* <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" value="{{.Goal.Name}}" required>
+                </div>  
+                <div class="form-group">
+                    <label for="targetWeight">Target Weight (kg):</label>
+                    <input type="number" id="targetWeight" name="targetWeight" value="{{.Goal.TargetWeight.KGs}}" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="targetBMI">Target BMI: {{.Goal.TargetBMI.Glyph}}</label>
+                    <input type="number" id="targetBMI" name="targetBMI" value="{{.Goal.TargetBMI.BMI}}" step="0.1" required>
+                </div>
+                 <div class="form-group">
+                    <label for="targetDate">Target Date:</label>
+                    <input type="date" id="targetDate" name="targetDate" value='{{.Goal.TargetDate.Format "2006-01-02"}}' required>
+                </div>
+                <div class="form-group">
+                    <label for="lossPerWeek">Desired Weight Loss per Week (kg):</label>
+                    <input type="number" id="lossPerWeek" name="lossPerWeek" value="{{.Goal.LossPerWeek.KGs}}" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Note:</label>
+                    <textarea id="note" name="note">{{.Goal.Note}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="noProjections">Projection Period (weeks):</label>
+                    <input type="number" id="noProjections" name="noProjections" value="{{.Goal.NoProjections}}" required>
+                </div>
+                <div class="form-group">
+                    <label for="averageWeightLoss">Average Weight Loss Goal: {{.Goal.AverageWeightLoss.State}}</label>
+                    <input type="checkbox" id="averageWeightLoss" name="averageWeightLoss" {{if eq .Goal.AverageWeightLoss.State "true"}}checked{{end}}>
+                </div> */}}
+          
+            </article>
+        {{template "chart" .}}
+        {{template "alerts" .}}
+        {{template "actions" .Context.PageActions}}
+             </form>
+    </body>
+   {{template "footer" .}}
+    {{template "scripts" .}}
+</html>
