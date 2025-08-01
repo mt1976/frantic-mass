@@ -44,7 +44,6 @@
 {{define "actions"}}
     <!-- Range through the page actions from the context -->
         {{if .Actions}}
-        <article style="padding-bottom: 1px">
             <div role="group">  
                 {{range .Actions}}
                     {{if .IsButton}}
@@ -55,10 +54,8 @@
                 {{end}}
             </div>
         {{else}}
-        <article style="padding-bottom: 10px; padding-top: 10px;">
             <p class="pico-color-grey-300" style="padding-top: 0px;padding-bottom: 0px; margin-bottom: 0px; display: flex;align-items: center;  height: 2rem;"><i>No actions available</i></p>
         {{end}}
-        </article>
 {{end}}
 
 {{define "bodyStyle"}}
