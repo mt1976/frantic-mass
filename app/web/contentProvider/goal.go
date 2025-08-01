@@ -10,7 +10,11 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
-var GoalURI = "/goal/{id}" // Define the URI for the user chooser
+var GoalWildcard = "{goalId}"         // Wildcard for the goal ID in the URI
+var GoalURI = "/goal/" + GoalWildcard // Define the URI for the user chooser
+var GoalName = "Goal"                 // Name for the goal chooser
+var GoalIcon = glyphs.Goal            // Icon for the goal chooser
+var GoalHover = "Goal %s for %s"      // Description for the goal chooser
 
 type GoalView struct {
 	ID       int
@@ -24,7 +28,7 @@ type GoalView struct {
 
 func GetGoal(view GoalView, goalID string) (GoalView, error) {
 
-	thisURI := ReplacePathParam(GoalURI, "id", goalID)
+	thisURI := ReplacePathParam(GoalURI, GoalWildcard, goalID)
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "goal"
 	view.Context.PageTitle = "Goal Details"
@@ -79,9 +83,26 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 	//view.Context.AddMessage("Users loaded successfully")
 	view.Context.AddMessage(fmt.Sprintf("Found goal %s", view.Goal.Name))
 	uri := DashboardURI // Use the defined URI for the dashboard
-	uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", view.Goal.UserID))
-	view.Context.PageActions.Add(helpers.NewAction("Back", "Back to Dashboard", glyphs.Back, uri, helpers.READ, "", style.SECONDARY(), css.NONE()))
-	view.Context.PageActions.Add(helpers.NewAction("Submit", "Submit Goal Changes", glyphs.Save, "/goal/edit/"+fmt.Sprintf("%d", view.Goal.ID), helpers.CREATE, "", style.DEFAULT(), css.NONE()))
+	uri = ReplacePathParam(uri, GoalWildcard, fmt.Sprintf("%d", view.Goal.UserID))
+	view.Context.PageActions.Clear()          // Clear any existing page actions
+	view.Context.PageActions.AddBackAction()  // Add a back action to the page actions
+	view.Context.PageActions.AddPrintAction() // Add a print action to the page actions
+	view.Context.PageActions.Add(helpers.NewAction("Submit", "Submit Goal Changes", glyphs.Save, thisURI, helpers.UPDATE, "", style.DEFAULT(), css.NONE()))
+	ProjectionPath := ReplacePathParam(ProjectionURI, UserWildcard, IntToString(view.User.ID))
+	ProjectionPath = ReplacePathParam(ProjectionPath, GoalWildcard, IntToString(view.Goal.ID))
+	logHandler.InfoLogger.Println("Projection Path:", ProjectionPath)
+	logHandler.InfoLogger.Println("Projection Path:", ProjectionPath)
+	logHandler.InfoLogger.Println("Projection Path:", ProjectionPath)
+	logHandler.InfoLogger.Println("Projection Path:", ProjectionPath)
+	logHandler.InfoLogger.Println("Projection Path:", ProjectionPath)
+	logHandler.InfoLogger.Println("Projection Path:", ProjectionPath)
+	logHandler.InfoLogger.Println("Projection Path:", ProjectionPath)
+
+	logHandler.InfoLogger.Println("GoalEdit view created successfully with goal", view.Goal.Name)
+
+	if view.User.ID > 0 && view.Goal.ID > 0 {
+		view.Context.PageActions.Add(helpers.NewAction("Projection", fmt.Sprintf(ProjectionHover, view.Goal.Name, view.UserName), glyphs.Projection, ProjectionPath, helpers.READ, "", style.SECONDARY(), css.NONE()))
+	}
 	logHandler.InfoLogger.Println("GoalEdit view created successfully with goal", view.Goal.Name)
 	// Return the populated view
 
@@ -90,10 +111,11 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 	// 	{Title: "Goal", URL: GoalURI},
 	// 	{Title: view.Goal.Name, URL: fmt.Sprintf("/goal/%d", view.Goal.ID)},
 	// }
-	view.Context.AddBreadcrumb("Users", "Choose a new user", UserChooserURI)
-	view.Context.AddBreadcrumb("Dashboard", "Return to Dashboard", ReplacePathParam(DashboardURI, "id", IntToString(view.UserID)))
-	view.Context.AddBreadcrumb("Goal", "View Goal Details", thisURI)
-	view.Context.AddBreadcrumb(view.Goal.Name, "", "")
+	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)
+	view.Context.AddBreadcrumb(UserChooserName, UserChooserHover, UserChooserURI, UserChooserIcon)
+	view.Context.AddBreadcrumb(view.UserName, fmt.Sprintf(UserHover, view.UserName), ReplacePathParam(DashboardURI, UserWildcard, IntToString(view.User.ID)), UserIcon)
+	view.Context.AddBreadcrumb(DashboardName, fmt.Sprintf(DashboardHover, view.UserName), ReplacePathParam(DashboardURI, UserWildcard, IntToString(view.User.ID)), DashboardIcon)
+	view.Context.AddBreadcrumb(view.Goal.Name, fmt.Sprintf(GoalHover, view.Goal.Name, view.UserName), "", GoalIcon)
 
 	return view, nil
 }

@@ -14,6 +14,7 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/paths"
 	"github.com/mt1976/frantic-core/stringHelpers"
+	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 	"github.com/mt1976/frantic-mass/app/web/styleHelper"
 )
@@ -81,17 +82,19 @@ type Breadcrumb struct {
 	Title string // Title of the breadcrumb item
 	Hover string // Hover text for the breadcrumb item
 	URL   string // URL of the breadcrumb item
+	Glyph string // Glyph icon for the breadcrumb item, if any
 }
 
-func (c *AppContext) AddBreadcrumb(title, hover, url string) {
+func (c *AppContext) AddBreadcrumb(title, hover, url string, glyph glyphs.Glyph) {
 	// Add a breadcrumb to the context
 	breadcrumb := Breadcrumb{
 		Title: title,
 		Hover: hover,
 		URL:   url,
+		Glyph: glyph.Name(),
 	}
 	c.Breadcrumbs = append(c.Breadcrumbs, breadcrumb)
-	logHandler.InfoLogger.Printf("Added breadcrumb: %s (%s) - %s", title, hover, url)
+	logHandler.InfoLogger.Printf("Added breadcrumb: %s (%s) - %s [%s]", title, hover, url, glyph)
 
 }
 
@@ -335,7 +338,30 @@ func GenerateScatterData(points []DataPoint) (ScatterData, error) {
 }
 
 // ReplacePathParam replaces a placeholder like {key} in the path template with the provided value.
-func ReplacePathParam(template, key, value string) string {
-	placeholder := "{" + key + "}"
-	return strings.ReplaceAll(template, placeholder, value)
+func ReplacePathParam(template, wildcard, value string) string {
+	logHandler.EventLogger.Printf("Replacing path parameter: %s with value: %s in template: %s", wildcard, value, template)
+	logHandler.EventLogger.Printf("Replacing path parameter: %s with value: %s in template: %s", wildcard, value, template)
+	logHandler.EventLogger.Printf("Replacing path parameter: %s with value: %s in template: %s", wildcard, value, template)
+	wildcard = strings.TrimSpace(wildcard)  // Trim whitespace from the wildcard
+	wildcard = strings.Trim(wildcard, "{}") // Remove any existing curly braces
+	logHandler.EventLogger.Printf("Wildcard after trimming: %s", wildcard)
+	logHandler.EventLogger.Printf("Wildcard after trimming: %s", wildcard)
+	logHandler.EventLogger.Printf("Wildcard after trimming: %s", wildcard)
+
+	wildcard = "{" + wildcard + "}" // Ensure the wildcard is in the correct format
+
+	logHandler.EventLogger.Printf("Wildcard after formatting: %s", wildcard)
+	logHandler.EventLogger.Printf("Wildcard after formatting: %s", wildcard)
+	logHandler.EventLogger.Printf("Wildcard after formatting: %s", wildcard)
+	if !strings.Contains(template, wildcard) {
+		logHandler.ErrorLogger.Printf("Wildcard '%s' not found in template '%s'", wildcard, template)
+		return template // Return the original template if the wildcard is not found
+	}
+
+	rtn := strings.ReplaceAll(template, wildcard, value)
+	logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
+	logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
+	logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
+
+	return rtn
 }

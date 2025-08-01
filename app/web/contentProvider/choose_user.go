@@ -9,7 +9,11 @@ import (
 	methods "github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
-var UserChooserURI = "/users" // Define the URI for the user chooser
+var UserChooserWildcard = ""           // Wildcard for the user ID in the URI
+var UserChooserURI = "/users"          // Define the URI for the user chooser
+var UserChooserName = "Users"          // Name for the user chooser
+var UserChooserIcon = glyphs.Users     // Icon for the user chooser
+var UserChooserHover = "Select a user" // Description for the user chooser
 
 type UserChooser struct {
 	Users   []User
@@ -67,11 +71,14 @@ func CreateUserChooser(view UserChooser) (UserChooser, error) {
 		}
 		uri := DashboardURI // Use the defined URI for the user dashboard
 		if uri == "" {
-			uri = "/dash/{id}" // Default URI for no user ID
+			uri = "/dash/" + UserWildcard // Default URI for no user ID
 		}
 		// Replace the placeholder with the actual user ID
-		uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", u.ID))
-		addview.Actions.Add(methods.NewAction(u.Username, "View User "+u.Username, glyphs.LAUNCH, uri, methods.READ, "", style.DEFAULT(), css.NONE()))
+		uri = ReplacePathParam(uri, UserWildcard, fmt.Sprintf("%d", u.ID))
+		logHandler.InfoLogger.Println("Adding user:", u.Username, "with URI:", uri)
+
+		// Add the user action to the view
+		addview.Actions.Add(methods.NewAction(u.Username, fmt.Sprintf(UserHover, u.Username), UserIcon, uri, methods.READ, "", style.DEFAULT(), css.NONE()))
 		view.Users = append(view.Users, addview)
 	}
 
@@ -95,6 +102,9 @@ func CreateUserChooser(view UserChooser) (UserChooser, error) {
 	view.Context.AddMessage(fmt.Sprintf("Found %d users", len(view.Users)))
 	logHandler.InfoLogger.Println("ChooseUser view created successfully with", len(view.Users), "users")
 	// Return the populated view
+
+	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)
+	view.Context.AddBreadcrumb(UserChooserName, UserChooserHover, "", UserChooserIcon)
 
 	return view, nil
 }

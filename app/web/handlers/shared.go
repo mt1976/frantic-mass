@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/go-chi/chi"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
@@ -73,4 +74,23 @@ func isRequestFromLocalhost(r *http.Request) bool {
 // covers cases where RemoteAddr might be just "127.0.0.1"
 func isLocalhostString(host string) bool {
 	return host == "127.0.0.1" || host == "::1" || strings.HasPrefix(host, "localhost")
+}
+
+func getURLParamValue(r *http.Request, wildcard string) string {
+	// This function retrieves the value of a URL parameter based on the wildcard provided
+	if wildcard == "" {
+		logHandler.ErrorLogger.Println("Wildcard is empty, cannot retrieve URL parameter value")
+		return ""
+	}
+	// Ensure the wildcard is in the correct format
+	wildcard = strings.Trim(wildcard, "{}") // Remove any curly braces if present
+
+	value := chi.URLParam(r, wildcard)
+
+	logHandler.EventLogger.Printf("Retrieved URL parameter '%s': '%s'", wildcard, value)
+	logHandler.EventLogger.Printf("Retrieved URL parameter '%s': '%s'", wildcard, value)
+	logHandler.EventLogger.Printf("Retrieved URL parameter '%s': '%s'", wildcard, value)
+	logHandler.EventLogger.Printf("Retrieved URL parameter '%s': '%s'", wildcard, value)
+
+	return value
 }

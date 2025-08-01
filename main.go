@@ -308,9 +308,11 @@ func main() {
 	r.Use(middleware.Timeout(60 * time.Second))
 	r.Get(contentProvider.LauncherURI, handlers.Launcher)
 	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
-	r.Get(contentProvider.DashboardURI, handlers.Dashboard) // Placeholder for user dashboard handler
-	r.Get(contentProvider.UserURI, handlers.User)           // Placeholder for user edit handler
-	r.Get(contentProvider.GoalURI, handlers.Goal)           // Placeholder for goal edit handler
+	r.Get(contentProvider.DashboardURI, handlers.Dashboard)   // Placeholder for user dashboard handler
+	r.Get(contentProvider.UserURI, handlers.User)             // Placeholder for user edit handler
+	r.Get(contentProvider.GoalURI, handlers.Goal)             // Placeholder for goal edit handler
+	r.Get(contentProvider.ProjectionURI, handlers.Projection) // Placeholder for projection handler
+	//r.Get(contentProvider.WeightURI, handlers.Weight)         // Placeholder for weight edit handler
 	r.Get("/test", handlers.Dummy)
 	// Inject shutdown function into handler
 	r.Handle("/shutdown", handlers.ShutdownHandler(func() {
@@ -336,7 +338,6 @@ func main() {
 	r.Handle("/my.js/*", http.StripPrefix("/my.js/", http.FileServer(http.Dir("./res/js"))))
 	r.Handle("/glyphs/*", http.StripPrefix("/glyphs/", http.FileServer(http.Dir("./node_modules/bootstrap-icons/font"))))
 	r.Handle("/images/*", http.StripPrefix("/images/", http.FileServer(http.Dir("./res/images"))))
-	r.Get("/goal/projection/{id}/{goal}", handlers.Projection) // Projection handler for goals
 	logHandler.InfoLogger.Println("Starting server on port", common.GetServer_Port())
 	// Start the server
 	http.Handle("/", r)

@@ -5,15 +5,18 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/go-chi/chi"
 	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
 
 func Projection(w http.ResponseWriter, r *http.Request) {
 	// This is a dummy router function
-	userID := chi.URLParam(r, "id")   // Get the user ID from the URL parameter
-	goalID := chi.URLParam(r, "goal") // Get the goal ID from the URL parameter
+	// userID := chi.URLParam(r, contentProvider.UserWildcard) // Get the user ID from the URL parameter
+	// goalID := chi.URLParam(r, contentProvider.GoalWildcard) // Get the goal ID from the URL parameter
+
+	userID := getURLParamValue(r, contentProvider.UserWildcard) // Get the user ID from the URL parameter
+	goalID := getURLParamValue(r, contentProvider.GoalWildcard) // Get the goal ID from the URL parameter
 
 	if userID == "" {
 		http.Error(w, "User ID is required", http.StatusBadRequest)

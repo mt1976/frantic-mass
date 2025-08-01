@@ -12,7 +12,11 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
-var UserURI = "/user/{id}" // Define the URI for the user chooser
+var UserWildcard = "{uid}"            // Wildcard for the user ID in the URI
+var UserURI = "/user/" + UserWildcard // Define the URI for the user chooser
+var UserName = "User"                 // Name for the user chooser
+var UserIcon = glyphs.User            // Icon for the user chooser
+var UserHover = "User %s"             // Description for the user chooser string
 
 type UserView struct {
 	ID       int
@@ -87,12 +91,19 @@ func GetUser(view UserView, userID string) (UserView, error) {
 	// Log the successful creation of the view
 	//view.Context.AddMessage("Users loaded successfully")
 	view.Context.AddMessage(fmt.Sprintf("Found user %s", view.User.Username))
-	uri := DashboardURI // Use the defined URI for the dashboard
-	uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", view.User.ID))
-	view.Context.PageActions.Add(helpers.NewAction("Back", "Back to User Chooser", glyphs.Back, uri, helpers.READ, "", style.DEFAULT(), css.NONE()))
-	view.Context.PageActions.Add(helpers.NewAction("Submit", "Submit User Changes", glyphs.Save, "/user/edit/"+fmt.Sprintf("%d", view.User.ID), helpers.CREATE, "", style.PRIMARY(), css.NONE()))
+	//uri := DashboardURI // Use the defined URI for the dashboard
+	//uri = ReplacePathParam(uri, UserWildcard, fmt.Sprintf("%d", view.User.ID))
+	view.Context.PageActions.Clear()         // Clear any existing page actions
+	view.Context.PageActions.AddBackAction() // Add a back action to the page actions
+	view.Context.PageActions.Add(helpers.NewAction("Save", "Save Changes", glyphs.Save, ReplacePathParam(UserURI, UserWildcard, IntToString(view.User.ID)), helpers.UPDATE, "", style.NONE(), css.NONE()))
 	logHandler.InfoLogger.Println("UserEdit view created successfully with user", view.User.Username)
 	// Return the populated view
+
+	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)
+	view.Context.AddBreadcrumb(UserChooserName, UserChooserHover, UserChooserURI, UserChooserIcon)
+	view.Context.AddBreadcrumb(view.User.Name, fmt.Sprintf(UserHover, view.User.Name), ReplacePathParam(DashboardURI, UserWildcard, IntToString(view.User.ID)), UserIcon)
+	view.Context.AddBreadcrumb(DashboardName, fmt.Sprintf(DashboardHover, view.User.Name), ReplacePathParam(DashboardURI, UserWildcard, IntToString(view.User.ID)), DashboardIcon)
+	view.Context.AddBreadcrumb(view.User.Username, "", "", glyphs.User)
 
 	return view, nil
 }

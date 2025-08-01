@@ -1,6 +1,9 @@
 package contentProvider
 
 import (
+	"fmt"
+
+	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/goal"
 	"github.com/mt1976/frantic-mass/app/dao/user"
@@ -10,7 +13,11 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
-var ProjectionURI = "/goal/projection/{id}/{goalId}" // Define the URI for the projection
+var ProjectionWildcard = ""                                            // Wildcard for the goal ID in the URI
+var ProjectionURI = "/projection/" + UserWildcard + "/" + GoalWildcard // Define the URI for the projection
+var ProjectionName = "Projection"                                      // Name for the projection
+var ProjectionIcon = glyphs.Projection                                 // Icon for the projection
+var ProjectionHover = "Projection of goal %s for %s"                   // Description for the projection
 
 type Projection struct {
 	User        User
@@ -21,10 +28,18 @@ type Projection struct {
 }
 
 func BuildProjection(view Projection, userId int, goalId int) (Projection, error) {
+
+	logHandler.EventLogger.Println("Building Projection view for user ID:", userId, "and goal ID:", goalId)
+
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "projection"
 	view.User = User{}
-	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, UserChooserURI, helpers.READ, "", style.PRIMARY(), css.NONE()))
+	view.Context.PageActions = helpers.Actions{} // Initialize the PageActions
+	view.Context.PageTitle = "Projection Details"
+	view.Context.PageDescription = "View and manage your projection details"
+	view.Context.PageActions.AddBackAction()
+	view.Context.PageActions.AddPrintAction()
+	view.Context.PageActions.Add(helpers.NewAction(DashboardName, DashboardHover, glyphs.Dashboard, ReplacePathParam(DashboardURI, UserWildcard, IntToString(userId)), helpers.READ, "", style.NONE(), css.NONE()))
 
 	// Here you would typically fetch the user data based on userId
 	UserRecord, err := user.GetBy(user.FIELD_ID, userId)
@@ -121,7 +136,16 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 
 	logHandler.InfoLogger.Println("Projection view created for user ID:", userId, "and goal ID:", goalId)
 
-	view.Context.PageActions.Add(helpers.NewAction("Goal", "View more detail on the current goal", glyphs.Goal, ReplacePathParam(GoalURI, "id", IntToString(view.Goal.ID)), helpers.READ, "", style.PRIMARY(), css.NONE()))
+	view.Context.PageActions.Add(helpers.NewAction(GoalName, fmt.Sprintf(GoalHover, view.Goal.Name, view.User.Name), glyphs.Goal, ReplacePathParam(GoalURI, GoalWildcard, IntToString(view.Goal.ID)), helpers.READ, "", style.NONE(), css.NONE()))
+
+	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)
+	view.Context.AddBreadcrumb(UserChooserName, UserChooserHover, UserChooserURI, UserChooserIcon)
+	view.Context.AddBreadcrumb(view.User.Name, fmt.Sprintf(UserHover, view.User.Name), ReplacePathParam(DashboardURI, UserWildcard, IntToString(view.User.ID)), UserIcon)
+	view.Context.AddBreadcrumb(DashboardName, fmt.Sprintf(DashboardHover, view.User.Name), ReplacePathParam(DashboardURI, UserWildcard, IntToString(view.User.ID)), DashboardIcon)
+	view.Context.AddBreadcrumb(view.Goal.Name, fmt.Sprintf(ProjectionHover, view.Goal.Name, view.User.Name), "", glyphs.Projection)
+
+	godump.Dump(view, "Projection View")
+	//os.Exit(0) // Remove this line in production code
 
 	return view, nil
 }

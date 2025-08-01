@@ -3,8 +3,8 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/go-chi/chi"
 	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
 
@@ -25,7 +25,8 @@ func UserChooser(w http.ResponseWriter, r *http.Request) {
 
 func User(w http.ResponseWriter, r *http.Request) {
 
-	userID := chi.URLParam(r, "id") // Get the user ID from the URL parameter
+	userID := getURLParamValue(r, contentProvider.UserWildcard) // Get the user ID from the URL parameter
+
 	if userID == "" {
 		http.Error(w, "User ID is required", http.StatusBadRequest)
 		return

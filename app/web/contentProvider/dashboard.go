@@ -18,7 +18,11 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/helpers"
 )
 
-var DashboardURI = "/dash/{id}" // Define the URI for the user profile
+var DashboardWildcard = ""                 // Wildcard for the user ID in the URI
+var DashboardURI = "/dash/" + UserWildcard // Define the URI for the user profile
+var DashboardName = "Dashboard"            // Name for the dashboard
+var DashboardIcon = glyphs.Dashboard       // Icon for the dashboard
+var DashboardHover = "User %s Dashboard"   // Description for the dashboard
 
 type Dashboard struct {
 	User                 User
@@ -71,7 +75,10 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "dashboard"
 	view.User = User{}
-	view.Context.PageActions.Add(helpers.NewAction("Back", "Back", glyphs.Back, UserChooserURI, helpers.READ, "", style.DEFAULT(), css.NONE()))
+
+	view.Context.PageActions.Clear()          // Clear any existing page actions
+	view.Context.PageActions.AddBackAction()  // Add a back action to the page actions
+	view.Context.PageActions.AddPrintAction() // Add a print action to the page actions
 
 	// Here you would typically fetch the user data based on userId
 	userDetails, err := user.GetBy(user.FIELD_ID, userId)
@@ -184,12 +191,12 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 				view.Goals[i].LossPerWeek = view.AverageWeightLoss
 			}
 			uri := ProjectionURI // Use the defined URI for the projection
-			uri = ReplacePathParam(uri, "id", fmt.Sprintf("%d", userId))
-			uri = ReplacePathParam(uri, "goalId", fmt.Sprintf("%d", g.ID))
+			uri = ReplacePathParam(uri, UserWildcard, fmt.Sprintf("%d", userId))
+			uri = ReplacePathParam(uri, GoalWildcard, fmt.Sprintf("%d", g.ID))
 			view.Goals[i].Actions = helpers.Actions{}
-			view.Goals[i].Actions.Add(helpers.NewAction("Projection", "View Projection", glyphs.Projection, uri, helpers.READ, "", style.DEFAULT(), css.NONE()))
+			view.Goals[i].Actions.Add(helpers.NewAction(ProjectionName, fmt.Sprintf(ProjectionHover, g.Name, view.User.Name), glyphs.Projection, uri, helpers.READ, "", style.DEFAULT(), css.NONE()))
 
-			goalURI := ReplacePathParam(GoalURI, "id", IntToString(g.ID))
+			goalURI := ReplacePathParam(GoalURI, GoalWildcard, IntToString(g.ID))
 			view.Goals[i].Actions.Add(helpers.NewAction("View", "View Goal Information", glyphs.Goal, goalURI, helpers.READ, "", style.DEFAULT(), css.NONE()))
 			view.Goals[i].Actions.Add(helpers.NewAction("Delete", "Delete Goal", glyphs.Delete, goalURI, helpers.DELETE, "", style.DEFAULT(), css.NONE()))
 			logHandler.InfoLogger.Printf("Goal %d: %s, Target Weight: %s, Target Date: %s", g.ID, g.Name, g.TargetWeight.KgAsString(), g.TargetDate.Format("02 Jan 2006"))
@@ -231,16 +238,19 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			logHandler.InfoLogger.Printf("Measurement %d: Recorded At: %s, Weight: %s, BMI: %s", w.ID, w.RecordedAt.Format("02 Jan 2006"), w.Weight.KgAsString(), w.BMI.String())
 		}
 	}
-	view.Context.PageActions.Add(helpers.NewAction("Weight", "Add Weight Measurement", glyphs.Add, "/weight/add/"+IntToString(userId), helpers.READ, "", style.DEFAULT(), css.NONE()))
-	view.Context.PageActions.Add(helpers.NewAction("Goal", "Add Weight Goal", glyphs.Add, "/goal/add/"+IntToString(userId), helpers.READ, "", style.DEFAULT(), css.NONE()))
-	uURI := ReplacePathParam(UserURI, "id", IntToString(userId))
+	uURI := ReplacePathParam(UserURI, UserWildcard, IntToString(userId))
 
-	view.Context.PageActions.Add(helpers.NewAction("User", "Edit User Details", glyphs.Edit, uURI, helpers.READ, "", style.DEFAULT(), css.NONE()))
+	view.Context.PageActions.Add(helpers.NewAction(UserName, fmt.Sprintf(UserHover, view.User.Name), glyphs.User, uURI, helpers.READ, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.Add(helpers.NewAction(WeightName, fmt.Sprintf(WeightHover, "NEW"), glyphs.Weight, "/weight/add/"+IntToString(userId), helpers.CREATE, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.Add(helpers.NewAction(GoalName, fmt.Sprintf(GoalHover, "NEW", view.User.Name), glyphs.Goal, "/goal/add/"+IntToString(userId), helpers.CREATE, "", style.NONE(), css.NONE()))
+
 	//godump.Dump(view, "Profile View")
 	view = buildDashboardChart(view, userWeights, goals, "Weight Loss Progress")
 
-	view.Context.AddBreadcrumb("Users", "Choose a new user", UserChooserURI)
-	view.Context.AddBreadcrumb("Dashboard", "Return to Dashboard", "")
+	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)
+	view.Context.AddBreadcrumb(UserChooserName, UserChooserHover, UserChooserURI, UserChooserIcon)
+	view.Context.AddBreadcrumb(view.User.Name, fmt.Sprintf(UserHover, view.User.Name), ReplacePathParam(DashboardURI, UserWildcard, IntToString(view.User.ID)), UserIcon)
+	view.Context.AddBreadcrumb(DashboardName, fmt.Sprintf(DashboardHover, view.User.Name), "", DashboardIcon)
 
 	return view, nil
 
