@@ -42,7 +42,7 @@ func tempalteImportProcessor(inOriginal **User) (string, error) {
 
 	stringField1 := strconv.Itoa(importedData.ID) // Assuming Field1 is an integer ID, convert it to string
 
-	_, err := Create(context.TODO(), importedData.Username, importedData.PasswordHash, importedData.Email)
+	_, err := Create(context.TODO(), importedData.Name, importedData.Username, importedData.PasswordHash, importedData.Email)
 	if err != nil {
 		logHandler.ImportLogger.Panicf("Error importing %v: %v", domain, err.Error())
 		return stringField1, err

@@ -4,10 +4,9 @@
    {{template "head" .}}
 
 
-    <body style="{{template "bodyStyle" .}}">
+    <body>
             <form action="/weight/{{.ID}}" method="POST" id="userForm" class="form">
-
-      
+                {{template "handleform" .}}
             {{template "breadcrumbs" .}}
             <article>
                 <hgroup>

@@ -94,7 +94,7 @@ func GetWeight(view WeightView, weightIdentifier int) (WeightView, error) {
 	//uri = ReplacePathParam(uri, WeightWildcard, fmt.Sprintf("%d", view.Weight.UserID))
 	view.Context.PageActions.Clear()         // Clear any existing page actions
 	view.Context.PageActions.AddBackAction() // Add a back action to the page actions
-	view.Context.PageActions.Add(actionHelpers.NewAction("Submit", "Submit Weight Changes", glyphs.Save, thisURI, actionHelpers.UPDATE, "", style.DEFAULT(), css.NONE()))
+	view.Context.PageActions.AddSubmitButton("Submit", "Submit Weight Changes", glyphs.Save, thisURI, actionHelpers.UPDATE, "", style.DEFAULT(), css.NONE())
 
 	// Return the populated view
 

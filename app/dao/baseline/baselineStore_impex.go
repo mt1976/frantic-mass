@@ -49,7 +49,7 @@ func tempalteImportProcessor(inOriginal **Baseline) (string, error) {
 		logHandler.ImportLogger.Panicf("Invalid HeightCm for %v: %v", domain, importedData.Height)
 		return stringField1, commonErrors.HandleGoValidatorError(fmt.Errorf("HeightCm must be greater than zero (%v)", importedData.Height))
 	}
-	_, err := Create(context.TODO(), importedData.UserID, importedData.Height, importedData.ProjectionPeriod, importedData.Note, importedData.DateOfBirth)
+	_, err := Create(context.TODO(), importedData.UserID, importedData.Height, importedData.ProjectionPeriod, importedData.Note, importedData.DateOfBirth, importedData.PivotDate)
 	if err != nil {
 		logHandler.ImportLogger.Panicf("Error importing %v: %v", domain, err.Error())
 		return stringField1, err

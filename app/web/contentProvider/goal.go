@@ -87,7 +87,7 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 	view.Context.PageActions.Clear()          // Clear any existing page actions
 	view.Context.PageActions.AddBackAction()  // Add a back action to the page actions
 	view.Context.PageActions.AddPrintAction() // Add a print action to the page actions
-	view.Context.PageActions.Add(actionHelpers.NewAction("Submit", "Submit Goal Changes", glyphs.Save, thisURI, actionHelpers.UPDATE, "", style.DEFAULT(), css.NONE()))
+	view.Context.PageActions.AddSubmitButton("Submit", "Submit Goal Changes", glyphs.Save, thisURI, actionHelpers.UPDATE, "", style.DEFAULT(), css.NONE())
 	ProjectionPath := ReplacePathParam(ProjectionURI, UserWildcard, IntToString(view.User.ID))
 	ProjectionPath = ReplacePathParam(ProjectionPath, GoalWildcard, IntToString(view.Goal.ID))
 	logHandler.InfoLogger.Println("Projection Path:", ProjectionPath)
@@ -101,7 +101,7 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 	logHandler.InfoLogger.Println("GoalEdit view created successfully with goal", view.Goal.Name)
 
 	if view.User.ID > 0 && view.Goal.ID > 0 {
-		view.Context.PageActions.Add(actionHelpers.NewAction("Projection", fmt.Sprintf(ProjectionHover, view.Goal.Name, view.UserName), glyphs.Projection, ProjectionPath, actionHelpers.READ, "", style.BTN_SECONDARY(), css.NONE()))
+		view.Context.PageActions.AddSubmitButton("Projection", fmt.Sprintf(ProjectionHover, view.Goal.Name, view.UserName), glyphs.Projection, ProjectionPath, actionHelpers.READ, "", style.BTN_SECONDARY(), css.NONE())
 	}
 	logHandler.InfoLogger.Println("GoalEdit view created successfully with goal", view.Goal.Name)
 	// Return the populated view

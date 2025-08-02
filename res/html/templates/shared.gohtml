@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="/pico.css/pico.fluid.classless.fuchsia.min.css"> <!-- Fluid classless Pico CSS -->
     <link rel="stylesheet" href="/pico.css/pico.colors.min.css">
     <link rel="stylesheet" href="/glyphs/bootstrap-icons.min.css">
@@ -48,10 +49,10 @@
         {{if .Actions}}
             <div role="group">  
                 {{range .Actions}}
-                    {{if .IsButton}}
+                    {{if .IsJSButton}}
                        <button type="button" onclick="{{.OnClick}}" {{if .Style}}style="{{.Style}}"{{end}} {{if .Class}}class="{{.Class}}"{{end}} data-tooltip="{{.Hover}}">{{if .Icon}}{{.Icon}}&nbsp;{{end}}{{.Name}}</button>
-                    {{else}}
-                        <a href="{{.FormAction}}" role="button" {{if .Style}}style="{{.Style}}"{{end}} {{if .Class}}class="{{.Class}}"{{end}} {{if .OnClick}}onclick='{{.OnClick}}'{{end}} FormAction="{{.FormAction}}" method="{{.Method}}" data-tooltip="{{.Hover}}">{{if .Icon}}{{.Icon}}&nbsp;{{end}}{{.Name}}</a>
+                    {{else}} 
+                        <input type="{{.ButtonType}}" {{if .OnClick}}onclick="{{.OnClick}}"{{else}}formaction="{{.FormAction}}" formmethod="{{.Method}}"{{end}} {{if .Style}}style="{{.Style}}"{{end}} {{if .Class}}class="{{.Class}}"{{end}} data-tooltip="{{.Hover}}" value="{{.Name}}">
                     {{end}}
                 {{end}}
             </div>
@@ -124,7 +125,7 @@
 {{end}}
 
 {{define "breadcrumbs"}}
-{{/* Breadcrumbs for navigation */}}
+    {{/* Breadcrumbs for navigation */}}
     {{if .Context.Breadcrumbs}}
         <article style="padding-bottom: 0px;padding-top: 0px">
                 <nav aria-label="breadcrumb">
@@ -153,4 +154,16 @@
                 </nav>
         </article>
     {{end}}
+{{end}}
+
+{{define "handleform"}}
+    {{/* Handle form submission messages */}}
+    {{if .Context.IsCreate}}
+        <input type="hidden" name="_method" value="POST">
+    {{else if .Context.IsUpdate}}
+        <input type="hidden" name="_method" value="PUT">
+    {{else if .Context.IsDelete}}
+        <input type="hidden" name="_method" value="DELETE">
+    {{end}}
+    {{/* Handle form submission messages */}}
 {{end}}

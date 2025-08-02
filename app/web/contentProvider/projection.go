@@ -3,7 +3,6 @@ package contentProvider
 import (
 	"fmt"
 
-	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/goal"
 	"github.com/mt1976/frantic-mass/app/dao/user"
@@ -39,7 +38,7 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 	view.Context.PageDescription = "View and manage your projection details"
 	view.Context.PageActions.AddBackAction()
 	view.Context.PageActions.AddPrintAction()
-	view.Context.PageActions.Add(actionHelpers.NewAction(DashboardName, DashboardHover, glyphs.Dashboard, ReplacePathParam(DashboardURI, UserWildcard, IntToString(userId)), actionHelpers.READ, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.AddSubmitButton(DashboardName, DashboardHover, glyphs.Dashboard, ReplacePathParam(DashboardURI, UserWildcard, IntToString(userId)), actionHelpers.READ, "", style.NONE(), css.NONE())
 
 	// Here you would typically fetch the user data based on userId
 	UserRecord, err := user.GetBy(user.FIELD_ID, userId)
@@ -136,7 +135,7 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 
 	logHandler.InfoLogger.Println("Projection view created for user ID:", userId, "and goal ID:", goalId)
 
-	view.Context.PageActions.Add(actionHelpers.NewAction(GoalName, fmt.Sprintf(GoalHover, view.Goal.Name, view.User.Name), glyphs.Goal, ReplacePathParam(GoalURI, GoalWildcard, IntToString(view.Goal.ID)), actionHelpers.READ, "", style.NONE(), css.NONE()))
+	view.Context.PageActions.AddSubmitButton(GoalName, fmt.Sprintf(GoalHover, view.Goal.Name, view.User.Name), glyphs.Goal, ReplacePathParam(GoalURI, GoalWildcard, IntToString(view.Goal.ID)), actionHelpers.READ, "", style.NONE(), css.NONE())
 
 	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)
 	view.Context.AddBreadcrumb(UserChooserName, UserChooserHover, UserChooserURI, UserChooserIcon)
@@ -144,7 +143,7 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 	view.Context.AddBreadcrumb(DashboardName, fmt.Sprintf(DashboardHover, view.User.Name), ReplacePathParam(DashboardURI, UserWildcard, IntToString(view.User.ID)), DashboardIcon)
 	view.Context.AddBreadcrumb(view.Goal.Name, fmt.Sprintf(ProjectionHover, view.Goal.Name, view.User.Name), "", glyphs.Projection)
 
-	godump.Dump(view, "Projection View")
+	//godump.Dump(view, "Projection View")
 	//os.Exit(0) // Remove this line in production code
 
 	return view, nil

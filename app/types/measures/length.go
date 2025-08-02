@@ -1,6 +1,10 @@
 package measures
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/mt1976/frantic-core/logHandler"
+)
 
 type Height struct {
 	CMs float64 `json:"value"` // Height in cm
@@ -144,4 +148,18 @@ func (h *Height) FeetAsString() string {
 		return fmt.Sprintf("%d ft", feet)
 	}
 	return fmt.Sprintf("%d ft %d in", feet, inches)
+}
+
+func NewHeightCMSFromString(value string) (*Height, error) {
+	var h Height
+	_, err := fmt.Sscanf(value, "%f", &h.CMs)
+	if err != nil {
+		logHandler.ErrorLogger.Printf("Error parsing height from string: %v", err)
+		return nil, fmt.Errorf("invalid height format: %s", value)
+	}
+	if h.CMs < 0 {
+		logHandler.ErrorLogger.Println("Negative height value provided, setting to zero.")
+		h.CMs = 0
+	}
+	return &h, nil
 }

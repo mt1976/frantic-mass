@@ -4,9 +4,10 @@
    {{template "head" .}}
 
 
-    <body style="{{template "bodyStyle" .}}">
+    <body>
         {{template "breadcrumbs" .}}
         <article>
+        <form>
             <hgroup>
                 <h2>Projection:</h2>
             </hgroup>
@@ -89,10 +90,10 @@
                              
             </article>
    
+        {{template "chart" .}}
         {{template "alerts" .}}
-
-        {{template "actions" .Context.PageActions}}
-    
+        {{template "actions" .Context.PageActions}} 
+        </form>
     </body>
 
    {{template "footer" .}}

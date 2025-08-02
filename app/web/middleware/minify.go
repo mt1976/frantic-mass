@@ -26,8 +26,8 @@ func (rw *responseWriterWrapper) Write(b []byte) (int, error) {
 	return rw.buf.Write(b)
 }
 
-// MinifyHTMLMiddleware returns a chi middleware that minifies HTML responses
-func MinifyHTMLMiddleware() func(http.Handler) http.Handler {
+// HandleHTMLMinification returns a chi middleware that minifies HTML responses
+func HandleHTMLMinification() func(http.Handler) http.Handler {
 	m := minify.New()
 	m.Add("text/html", &html.Minifier{
 		KeepConditionalComments: true,

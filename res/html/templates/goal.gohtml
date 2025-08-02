@@ -4,8 +4,9 @@
    {{template "head" .}}
 
 
-    <body style="{{template "bodyStyle" .}}">
+    <body>
             <form action="/goal/{{.Goal.ID}}" method="POST" id="userForm" class="form">
+                {{template "handleform" .}}
 
             {{template "breadcrumbs" .}}
             <article>
@@ -63,7 +64,7 @@ Name              string          `storm:"unique"` // Name of the goal
         {{template "chart" .}}
         {{template "alerts" .}}
         {{template "actions" .Context.PageActions}}
-             </form>
+        </form>
     </body>
    {{template "footer" .}}
     {{template "scripts" .}}

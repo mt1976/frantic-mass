@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
    {{template "head" .}}
-    <body style="{{template "bodyStyle" .}}">
-
+    <body>
+        <form>
+            {{template "handleform" .}}
             {{template "breadcrumbs" .}}
 
             <article>
@@ -23,10 +24,10 @@
             </article>
 
 
+        {{template "chart" .}}
         {{template "alerts" .}}
-
         {{template "actions" .Context.PageActions}}
-   
+        </form>
     </body>
    {{template "footer" .}}
     {{template "scripts" .}}

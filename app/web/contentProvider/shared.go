@@ -76,6 +76,10 @@ type AppContext struct {
 	ChartData        template.JS           // Data for the chart to be displayed on the page
 	ChartTitle       string                // Title of the chart to be displayed on the page
 	Breadcrumbs      []Breadcrumb          // Breadcrumbs for navigation, each containing a title and URL
+	IsCreate         bool                  // Flag to indicate if the current request is a POST request
+	IsUpdate         bool                  // Flag to indicate if the current request is a PUT request
+	IsRead           bool                  // Flag to indicate if the current request is a GET request
+	IsDelete         bool                  // Flag to indicate if the current request is a DELETE request
 }
 
 type Breadcrumb struct {
@@ -114,6 +118,8 @@ var cache *commonConfig.Settings
 var cacheChecksum string
 var css styleHelper.CSS
 var style styleHelper.CLASS
+
+var NEW string = "new"
 
 func init() {
 	// Initialize the Common struct with default values
@@ -250,6 +256,10 @@ func (c *AppContext) SetDefaults() {
 	logHandler.InfoLogger.Printf("Template Path: %s", c.TemplatePath)
 	c.TemplateName = "error" // Default template name, can be overridden by specific views
 	c.PageActions = actionHelpers.Actions{}
+	c.IsDelete = false
+	c.IsRead = true
+	c.IsCreate = false
+	c.IsUpdate = false
 }
 
 func (c *AppContext) AddError(err string) {
@@ -339,29 +349,29 @@ func GenerateScatterData(points []DataPoint) (ScatterData, error) {
 
 // ReplacePathParam replaces a placeholder like {key} in the path template with the provided value.
 func ReplacePathParam(template, wildcard, value string) string {
-	logHandler.EventLogger.Printf("Replacing path parameter: %s with value: %s in template: %s", wildcard, value, template)
-	logHandler.EventLogger.Printf("Replacing path parameter: %s with value: %s in template: %s", wildcard, value, template)
-	logHandler.EventLogger.Printf("Replacing path parameter: %s with value: %s in template: %s", wildcard, value, template)
+	// logHandler.EventLogger.Printf("Replacing path parameter: %s with value: %s in template: %s", wildcard, value, template)
+	// logHandler.EventLogger.Printf("Replacing path parameter: %s with value: %s in template: %s", wildcard, value, template)
+	// logHandler.EventLogger.Printf("Replacing path parameter: %s with value: %s in template: %s", wildcard, value, template)
 	wildcard = strings.TrimSpace(wildcard)  // Trim whitespace from the wildcard
 	wildcard = strings.Trim(wildcard, "{}") // Remove any existing curly braces
-	logHandler.EventLogger.Printf("Wildcard after trimming: %s", wildcard)
-	logHandler.EventLogger.Printf("Wildcard after trimming: %s", wildcard)
-	logHandler.EventLogger.Printf("Wildcard after trimming: %s", wildcard)
+	// logHandler.EventLogger.Printf("Wildcard after trimming: %s", wildcard)
+	// logHandler.EventLogger.Printf("Wildcard after trimming: %s", wildcard)
+	// logHandler.EventLogger.Printf("Wildcard after trimming: %s", wildcard)
 
 	wildcard = "{" + wildcard + "}" // Ensure the wildcard is in the correct format
 
-	logHandler.EventLogger.Printf("Wildcard after formatting: %s", wildcard)
-	logHandler.EventLogger.Printf("Wildcard after formatting: %s", wildcard)
-	logHandler.EventLogger.Printf("Wildcard after formatting: %s", wildcard)
+	// logHandler.EventLogger.Printf("Wildcard after formatting: %s", wildcard)
+	// logHandler.EventLogger.Printf("Wildcard after formatting: %s", wildcard)
+	// logHandler.EventLogger.Printf("Wildcard after formatting: %s", wildcard)
 	if !strings.Contains(template, wildcard) {
 		logHandler.ErrorLogger.Printf("Wildcard '%s' not found in template '%s'", wildcard, template)
 		return template // Return the original template if the wildcard is not found
 	}
 
 	rtn := strings.ReplaceAll(template, wildcard, value)
-	logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
-	logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
-	logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
+	// logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
+	// logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
+	// logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
 
 	return rtn
 }

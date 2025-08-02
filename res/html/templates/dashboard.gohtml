@@ -1,133 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 
-   {{template "head" .}}
+{{template "head" .}}
 
 
-    <body style="{{template "bodyStyle" .}}">
-                {{template "breadcrumbs" .}}
-            <article>
-                <hgroup>
-                    <h2>Profile:</h2>
-                </hgroup>
-                 <form>
-                    <div class="form-group">
+<body>
+    {{template "breadcrumbs" .}}
+    <article>
+        <hgroup>
+            <h2>Profile:</h2>
+        </hgroup>
+        <form>
+            <div class="form-group">
                 <label>ID</label>
-                <input name="id" type="text" value="{{.User.ID}}" readonly/>
-                </div>
-                <div class="form-group">
+                <input name="id" type="text" value="{{.User.ID}}" readonly />
+            </div>
+            <div class="form-group">
                 <label>Name</label>
-                <input name="name" type="text" value="{{.User.Name}}" readonly/>
-                </div>
+                <input name="name" type="text" value="{{.User.Name}}" readonly />
+            </div>
 
-                <div class="form-group">
+            <div class="form-group">
                 <label>Date of Birth</label>
-                <input name="dob" type="text" value="{{.DateOfBirth}}" readonly/>
-                </div>
-                <div class="form-group">
+                <input name="dob" type="text" value="{{.DateOfBirth}}" readonly />
+            </div>
+            <div class="form-group">
                 <label>Age</label>
-                <input name="age" type="text" value="{{.Age}}" readonly/>
-                </div>
-                <div class="form-group">
+                <input name="age" type="text" value="{{.Age}}" readonly />
+            </div>
+            <div class="form-group">
                 <label>Height</label>
-                <input name="height" type="text" value="{{.Height}}" readonly/>
-                </div>
-                <div class="form-group">
+                <input name="height" type="text" value="{{.Height}}" readonly />
+            </div>
+            <div class="form-group">
                 <label>Weight</label>
-                <input name="weight" type="text" value="{{.CurrentWeight}}" readonly/>
-                </div>
+                <input name="weight" type="text" value="{{.CurrentWeight}}" readonly />
+            </div>
 
-                <div class="form-group">
+            <div class="form-group">
                 <label>BMI</label>
-                    <fieldset class="flex">
-                        <input name="bmi" type="text" value="{{.BMI}}" readonly/>
-                        <input name="bmiNote" type="text" value="{{.BMINote}}" readonly/>
-                        <input name="bmiStatus" type="text" value="{{.BMIStatus}}" readonly/>
-                    </fieldset>
-                </div>
-                <div class="form-group">
+                <fieldset class="flex">
+                    <input name="bmi" type="text" value="{{.BMI}}" readonly />
+                    <input name="bmiNote" type="text" value="{{.BMINote}}" readonly />
+                    <input name="bmiStatus" type="text" value="{{.BMIStatus}}" readonly />
+                </fieldset>
+            </div>
+            <div class="form-group">
                 <label>Average Weight Loss</label>
-                <input name="averageWeightLoss" type="text" value="{{.AverageWeightLoss}}" readonly/>
-                </div>
-                <div class="form-group">    
+                <input name="averageWeightLoss" type="text" value="{{.AverageWeightLoss}}" readonly />
+            </div>
+            <div class="form-group">
                 <label>Total Weight Loss</label>
-                <input name="totalWeightLoss" type="text" value="{{.TotalWeightLoss}}" readonly/>
-                </div>
-         
-         
-
-                </form>
-
-                <details name="Weight">
-                <summary><h2>Weights&nbsp;<small class="pico-color-grey-500">[{{len .Measurements}}]</small></h2></summary>
-
-                   <div class="overflow-auto"><table>
-                        <thead>
-                            <tr>
-                                <th class="text-align: center;">Date</th>
-                                <th class="text-align: center;">Weight</th>
-                                <th class="text-align: center;">BMI</th>
-                                <th class="text-align: center;">Loss</th>
-                                <th class="text-align: center;">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{range .Measurements}}
-                            <tr>
-                                <td>{{.RecordedAt.Format "02 Jan 2006"}}</td>
-                                <td>{{.Weight.String}}</td>
-                                <td>{{.BMI.Glyph}} {{.BMI.String}}</td>
-                                <td>{{if .LossSinceLastMeasurement}}{{.LossSinceLastMeasurement.String}}{{else}}N/A{{end}}</td>
-                                <td>
-                                  {{template "actions" .Actions}}
-                                </td>
-                            </tr>
-                            {{end}}
-                        </tbody>
-                    </table></div>
-                </details>
+                <input name="totalWeightLoss" type="text" value="{{.TotalWeightLoss}}" readonly />
+            </div>
 
 
-                <details name="Goals">
-                <summary><h2>Goals&nbsp;<small class="pico-color-grey-500">[{{.NoGoals}}]</small></h2></summary>
-                {{if eq .NoGoals 0}}
-                    <p class="nes-text is-error">No goals set for this user.</p>
-                {{else}}
-                    <div class="overflow-auto"><table>
-                        <thead>
-                            <tr>
-                                <th class="text-align: center;">Name</th>
-                                <th class="text-align: center;">Target</th>
-       
-                                <th class="text-align: center;">BMI</th>
-                                <th class="text-align: center;">Loss Per Week</th>
-                                <th class="text-align: center;">Date</th>
-                                <th class="text-align: center;">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{range .Goals}}
-                            <tr>
-                                <td>{{.Name}}</td>
-                                <td>{{.TargetWeight}}</td>
-                                       <td>{{.TargetBMIStatus}} {{.TargetBMI}}</td>
-                                <td>{{.LossPerWeek}}</td>
-                         
-                                <td>{{.TargetDate.Format "02 Jan 2006"}}</td>
-                                <td>
-                                 {{template "actions" .Actions}}
-                                </td>
-                            </tr>
-                            {{end}}
-                        </tbody>
-                    </table></div>
-                {{end}}
-                </details>                
-            </article>
+
+
+
+        <details name="Weight">
+            <summary>
+                <h2>Weights&nbsp;<small class="pico-color-grey-500">[{{len .Measurements}}]</small></h2>
+            </summary>
+
+            <div class="overflow-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="text-align: center;">Date</th>
+                            <th class="text-align: center;">Weight</th>
+                            <th class="text-align: center;">BMI</th>
+                            <th class="text-align: center;">Loss</th>
+                            <th class="text-align: center;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .Measurements}}
+                        <tr>
+                            <td>{{.RecordedAt.Format "02 Jan 2006"}}</td>
+                            <td>{{.Weight.String}}</td>
+                            <td>{{.BMI.Glyph}} {{.BMI.String}}</td>
+                            <td>{{if .LossSinceLastMeasurement}}{{.LossSinceLastMeasurement.String}}{{else}}N/A{{end}}
+                            </td>
+                            <td>
+                                {{template "actions" .Actions}}
+                            </td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+
+        <details name="Goals">
+            <summary>
+                <h2>Goals&nbsp;<small class="pico-color-grey-500">[{{.NoGoals}}]</small></h2>
+            </summary>
+            {{if eq .NoGoals 0}}
+            <p class="nes-text is-error">No goals set for this user.</p>
+            {{else}}
+            <div class="overflow-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="text-align: center;">Name</th>
+                            <th class="text-align: center;">Target</th>
+
+                            <th class="text-align: center;">BMI</th>
+                            <th class="text-align: center;">Loss Per Week</th>
+                            <th class="text-align: center;">Date</th>
+                            <th class="text-align: center;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range .Goals}}
+                        <tr>
+                            <td>{{.Name}}</td>
+                            <td>{{.TargetWeight}}</td>
+                            <td>{{.TargetBMIStatus}} {{.TargetBMI}}</td>
+                            <td>{{.LossPerWeek}}</td>
+
+                            <td>{{.TargetDate.Format "02 Jan 2006"}}</td>
+                            <td>
+                                {{template "actions" .Actions}}
+                            </td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+            {{end}}
+        </details>
         {{template "chart" .}}
         {{template "alerts" .}}
         {{template "actions" .Context.PageActions}}
-    </body>
-   {{template "footer" .}}
-    {{template "scripts" .}}
+        </form>
+    </article>
+
+</body>
+{{template "footer" .}}
+{{template "scripts" .}}
+
 </html>

@@ -15,12 +15,14 @@ var css = styleHelper.CSS{}     // Alias for CSS to avoid import conflicts
 var style = styleHelper.CLASS{} // Alias for CLASS to avoid import conflicts
 
 const (
-	READ   Method = "GET"
-	CREATE Method = "POST"
-	UPDATE Method = "PUT"
-	DELETE Method = "DELETE"
-	PATCH  Method = "PATCH"
+	READ   Method = "get"
+	CREATE Method = "post"
+	UPDATE Method = "put"
+	DELETE Method = "delete"
+	PATCH  Method = "patch"
 )
+
+var NEW string = "!!new" // Constant for creating a new resource
 
 func (m Method) String() string {
 	return string(m)
@@ -36,7 +38,8 @@ type Action struct {
 	OnClick    template.JS   // JavaScript function to call when the action is clicked, if applicable
 	Class      template.HTML // CSS class to apply to the action button
 	Style      template.CSS  // Inline style for the action button, if needed
-	IsButton   bool          // Type of the action, e.g., "button", "a href"
+	IsJSButton bool          // Type of the action, e.g., "button", "a href"
+	ButtonType string        // Type of the action, e.g., "button", "submit"
 }
 
 type Actions struct {
@@ -88,20 +91,30 @@ func NewAction(name, hover string, icon glyphs.Glyph, url string, method Method,
 	}
 	returnAction.OnClick = template.JS(onClick) // Set the JavaScript function to call when the action is clicked
 
-	returnAction.Class = class // Set the CSS class for the action button
-	returnAction.Style = style // Set the inline style for the action button
+	returnAction.Class = class         // Set the CSS class for the action button
+	returnAction.Style = style         // Set the inline style for the action button
+	returnAction.ButtonType = "button" // Default type for actions
+	returnAction.IsJSButton = false    // Default type for GET actions
 
-	returnAction.IsButton = false // Default type for GET actions
+	if method == CREATE || method == UPDATE || method == DELETE {
+		returnAction.IsJSButton = true     // Set IsButton to true for POST, PUT, DELETE
+		returnAction.ButtonType = "submit" // Set the type to submit for POST, PUT, DELETE actions
+	}
+
+	if onClick != "" {
+		returnAction.IsJSButton = true     // Set IsButton to true if an onClick function is provided
+		returnAction.ButtonType = "button" // Set the type to button if onClick is provided
+	}
 
 	// Log the creation of the action
-	logHandler.InfoLogger.Printf("Action created: %s (%s)(%s)(%s) Button: %t", returnAction.Name, returnAction.FormAction, returnAction.OnClick, returnAction.Method, returnAction.IsButton)
+	logHandler.InfoLogger.Printf("Action created: %s (%s)(%s)(%s) Button: %t", returnAction.Name, returnAction.FormAction, returnAction.OnClick, returnAction.Method, returnAction.IsJSButton)
 
 	return returnAction
 }
 
-func NewActionButton(name, hover string, icon glyphs.Glyph, url string, method Method, onClick string, class template.HTML, style template.CSS) Action {
+func NewOnClickButton(name, hover string, icon glyphs.Glyph, url string, method Method, onClick string, class template.HTML, style template.CSS) Action {
 	returnAction := NewAction(name, hover, icon, url, method, onClick, class, style) // Create a new Action using the NewAction function
-	returnAction.IsButton = true                                                     // Set IsButton to true for button actions
+	returnAction.IsJSButton = true                                                   // Set IsButton to true for button actions
 	logHandler.InfoLogger.Printf("Button action created: %s (%s)(%s)(%s)", returnAction.Name, returnAction.FormAction, returnAction.OnClick, returnAction.Method)
 	return returnAction // Return the created Action
 }
@@ -126,6 +139,14 @@ func (a *Actions) Add(action Action) {
 	a.Actions = append(a.Actions, action)
 }
 
+func (a *Actions) AddSubmitButton(name, hover string, icon glyphs.Glyph, url string, method Method, onClick string, class template.HTML, style template.CSS) {
+	submitAction := NewAction(name, hover, icon, url, method, onClick, class, style)
+	submitAction.IsJSButton = false    // Ensure this is a button action
+	submitAction.ButtonType = "submit" // Set the type to submit for form submission
+	logHandler.InfoLogger.Printf("Adding submit action: %s (%s)(%s)(%s)", submitAction.Name, submitAction.FormAction, submitAction.OnClick, submitAction.Method)
+	a.Add(submitAction)
+}
+
 func (a *Actions) Get() []Action {
 	return a.Actions
 }
@@ -147,7 +168,7 @@ func (a *Actions) FindByName(name string) *Action {
 
 func (a *Actions) AddBackAction() *[]Action {
 	// Add a "Back" action to the actions list
-	backAction := NewActionButton("Back", "Go back to the previous page", glyphs.Back, "", READ, "history.back()", style.BTN_SECONDARY(), css.NONE())
+	backAction := NewOnClickButton("Back", "Go back to the previous page", glyphs.Back, "", READ, "history.back()", style.BTN_SECONDARY(), css.NONE())
 
 	//godump.DumpJSON(a.Actions)
 	a.Actions = append(a.Actions, backAction)
@@ -160,7 +181,7 @@ func (a *Actions) AddBackAction() *[]Action {
 
 func (a *Actions) AddPrintAction() *[]Action {
 	// Add a "Print" action to the actions list
-	printAction := NewActionButton("Print", "Print the current page", glyphs.Print, "", READ, "window.print()", style.BTN_SECONDARY(), css.NONE())
+	printAction := NewOnClickButton("Print", "Print the current page", glyphs.Print, "", READ, "window.print()", style.BTN_SECONDARY(), css.NONE())
 
 	//godump.DumpJSON(a.Actions)
 	a.Actions = append(a.Actions, printAction)
@@ -173,7 +194,7 @@ func (a *Actions) AddPrintAction() *[]Action {
 
 func (a *Actions) AddResetAction() *[]Action {
 	// Add a "Reset" action to the actions list
-	resetAction := NewActionButton("Reset", "Reset the form to its initial state", glyphs.Reset, "", READ, "location.reload()", style.BTN_SECONDARY(), css.NONE())
+	resetAction := NewOnClickButton("Reset", "Reset the form to its initial state", glyphs.Reset, "", READ, "location.reload()", style.BTN_SECONDARY(), css.NONE())
 
 	//	godump.DumpJSON(a.Actions)
 	a.Actions = append(a.Actions, resetAction)

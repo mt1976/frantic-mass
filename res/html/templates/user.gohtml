@@ -1,96 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 
-   {{template "head" .}}
+{{template "head" .}}
 
 
-    <body style="{{template "bodyStyle" .}}">
-            <form action="/user/edit/{{.User.ID}}" method="POST" id="userForm" class="form">
+<body>
+    <form action="/user/edit/{{.User.ID}}" method="POST" id="userForm" class="form">
+        {{template "handleform" .}}
+        {{template "breadcrumbs" .}}
+        <article>
+            <hgroup>
+                <h2>User Information:</h2>
+            </hgroup>
+            <div class="form-group">
+                <label>ID</label>
+                <input name="id" type="text" value="{{.User.ID}}" readonly />
+            </div>
 
-                {{template "breadcrumbs" .}}
+            <div class="form-group">
+                <label>Username</label>
+                <input name="username" type="text" value="{{.User.Username}}" required />
+            </div>
 
-            <article>
-                <hgroup>
-                    <h2>User Information:</h2>
-                </hgroup>
-
-                    <div class="form-group">
-                        <label>ID</label>
-                        <input name="id" type="text" value="{{.User.ID}}" readonly/>    
-                    </div>
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input name="name" type="text" value="{{.User.Name}}" />
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input name="email" type="text" value="{{.User.Email}}" />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Weight System</label>
-                        <select name="fweight_system_select" aria-label="Weight System" required>
-                            {{range .WeightSystemLookup.Data}}
-                                <option value='{{.Key}}' {{if .Selected}}selected{{end}}>{{.Value}}</option>
-                            {{end}} 
-                        </select>
-                        <small>{{.WeightSystemSelected.Value}}</small>
-                    </div>
-                    <div class="form-group">    
-
-                    <label>Height System</label>
-                    <select name="fheight_system_select" aria-label="Height System" required>
-                        {{range .HeightSystemLookup.Data}}
-                            <option value='{{.Key}}' {{if .Selected}}selected{{end}}>{{.Value}}</option>
-                        {{end}}
-                    </select>
-                    <small>{{.HeightSystemSelected.Value}}</small>
-                    </div>
-                    <div class="form-group">
-                    <label>Locale</label>
-                  
-                    <select name="flocale_select" aria-label="Locale" required>
-                        {{range .Locales.Data}}
-                            <option value='{{.Key}}' {{if .Selected}}selected{{end}}>{{.Value}}</option>
-                        {{end}}
-                    </select>
-                    <small>{{.Context.UserLocale}}</small>
-                    </div>
-
-                    {{/* Height           measures.Height // Height in centimeters
-	ProjectionPeriod int             // Projection period in months
-	DateOfBirth      time.Time       // Date of birth
-	PivotDate        time.Time       // Pivot date for projections
-	Note             string */}}
-                    <div class="form-group">
-                        <label>Height (cms)</label>
-                        <input name="height" type="number" value="{{.Baseline.Height.CMs}}" />
-                    </div>
-                    <div class="form-group">
-                         <label>Projection Period (months)</label>
-                         <input name="projection_period" type="text" value="{{.Baseline.ProjectionPeriod}}" readonly/>
-                    </div>
-                    <div class="form-group">
-                         <label>Date of Birth</label>
-                            <input name="date_of_birth" type="text" value='{{.Baseline.DateOfBirth.Format "02 Jan 2006"}}' readonly/>
-                    </div>
-                    <div class="form-group">
-                    <label>Pivot Date</label>
-                    <input name="pivot_date" type="text" value='{{.Baseline.PivotDate.Format "02 Jan 2006"}}' readonly/>
-                    </div>
-                    <div class="form-group">
-                    <label>Note</label>
-                    <textarea name="note">{{.Baseline.Note}}</textarea>
-
-
-           </div>
-              
-            </article>
+            <div class="form-group">
+                <label>Name</label>
+                <input name="name" type="text" value="{{.User.Name}}" required/>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input name="email" type="text" value="{{.User.Email}}" required/>
+            </div>
+            <div class="form-group">
+                <label>Weight System</label>
+                <select name="fweight_system_select" aria-label="Weight System" required>
+                    {{range .WeightSystemLookup.Data}}
+                    <option value='{{.Key}}' {{if .Selected}}selected{{end}}>{{.Value}}</option>
+                    {{end}}
+                </select>
+                <small>{{.WeightSystemSelected.Value}}</small>
+            </div>
+            <div class="form-group">
+                <label>Height System</label>
+                <select name="fheight_system_select" aria-label="Height System" required>
+                    {{range .HeightSystemLookup.Data}}
+                    <option value='{{.Key}}' {{if .Selected}}selected{{end}}>{{.Value}}</option>
+                    {{end}}
+                </select>
+                <small>{{.HeightSystemSelected.Value}}</small>
+            </div>
+            <div class="form-group">
+                <label>Locale</label>
+                <select name="flocale_select" aria-label="Locale" required>
+                    {{range .Locales.Data}}
+                    <option value='{{.Key}}' {{if .Selected}}selected{{end}}>{{.Value}}</option>
+                    {{end}}
+                </select>
+                <small>{{.Context.UserLocale}}</small>
+            </div>
+            <div class="form-group">
+                <label>Height (cms)</label>
+                <input name="height" type="number" value="{{.Baseline.Height.CMs}}" required/>
+            </div>
+            <div class="form-group">
+                <label>Projection Period (months)</label>
+                <input name="projection_period" type="text" value="{{.Baseline.ProjectionPeriod}}" required />
+            </div>
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input name="date_of_birth" type="text" value='{{.Baseline.DateOfBirth.Format "02 Jan 2006"}}' required />
+            </div>
+            <div class="form-group">
+                <label>Pivot Date</label>
+                <input name="pivot_date" type="text" value='{{.Baseline.PivotDate.Format "02 Jan 2006"}}'  />
+            </div>
+            <div class="form-group">
+                <label>Note</label>
+                <textarea name="note">{{.Baseline.Note}}</textarea>
+            </div>
+        </article>
         {{template "chart" .}}
         {{template "alerts" .}}
         {{template "actions" .Context.PageActions}}
-             </form>
-    </body>
-    {{template "footer" .}}
-    {{template "scripts" .}}
+    </form>
+</body>
+{{template "footer" .}}
+{{template "scripts" .}}
+
 </html>

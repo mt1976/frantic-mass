@@ -5,7 +5,6 @@ import (
 	"html/template"
 	"strings"
 
-	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 )
 
@@ -112,7 +111,7 @@ func GeneratePlotlyScript(traces []Trace, legend LegendConfig, divID string) (te
 	// Plot call with dynamic divID
 	sb.WriteString(fmt.Sprintf("Plotly.newPlot('%s', data, layout, config);", divID))
 
-	godump.Dump(sb.String())
+	//godump.Dump(sb.String())
 
 	// Minify the script
 	minifiedScript, err := mini.String("text/javascript", sb.String())
@@ -121,7 +120,7 @@ func GeneratePlotlyScript(traces []Trace, legend LegendConfig, divID string) (te
 		return "", err
 	}
 
-	godump.Dump(minifiedScript)
+	//godump.Dump(minifiedScript)
 
 	return template.JS(minifiedScript), nil
 }

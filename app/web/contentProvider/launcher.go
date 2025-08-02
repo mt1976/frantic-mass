@@ -21,7 +21,7 @@ func CreateDisplayLauncher(view DisplayLauncher) (DisplayLauncher, error) {
 	view.Context.SetDefaults()        // Initialize the Common view with defaults
 	view.Context.HttpStatusCode = 200 // OK
 	view.Context.TemplateName = "launcher"
-	view.Context.PageActions.Add(actionHelpers.NewAction("Launch", "Start the application", glyphs.NIL, UserChooserURI, actionHelpers.READ, "", style.DEFAULT(), css.NONE()))
+	view.Context.PageActions.AddSubmitButton("Launch", "Start the application", glyphs.LAUNCH, UserChooserURI, actionHelpers.READ, "", style.DEFAULT(), css.NONE())
 	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)
 
 	return view, nil

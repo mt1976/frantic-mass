@@ -31,7 +31,7 @@ func New() User {
 // and returns the created User instance or an error if any occurs
 // It also checks if the DAO is ready for operations
 
-func Create(ctx context.Context, userName, passwordHash, email string) (User, error) {
+func Create(ctx context.Context, userName, name, passwordHash, email string) (User, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -45,6 +45,7 @@ func Create(ctx context.Context, userName, passwordHash, email string) (User, er
 	record.Key = idHelpers.Encode(sessionID)
 	record.Raw = sessionID
 	record.Username = userName
+	record.Name = name
 	record.PasswordHash = passwordHash
 	record.Email = email
 

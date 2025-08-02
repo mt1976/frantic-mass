@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
    {{template "head" .}}
-    <body style="{{template "bodyStyle" .}}">
+    <body>
+        <form action="#" method="POST" id="launcherForm">
+            {{template "handleform" .}}
             <hgroup>
                 <p>Welcome to the <i>{{.Context.AppName}}</i> Launcher Page</p>
             </hgroup>
@@ -10,8 +12,10 @@
                 <p>{{.Context.AppDescription}}</p>
                 <p>Click below to start {{.Context.AppName}}.</p>
             </article>
+        {{template "chart" .}}
         {{template "alerts" .}}
         {{template "actions" .Context.PageActions}}
+        </form>
     </body>
     {{template "footer" .}}
     {{template "scripts" .}}

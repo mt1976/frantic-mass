@@ -5,6 +5,7 @@ import (
 
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/user"
+	"github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	methods "github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 )
@@ -78,7 +79,7 @@ func CreateUserChooser(view UserChooser) (UserChooser, error) {
 		logHandler.InfoLogger.Println("Adding user:", u.Username, "with URI:", uri)
 
 		// Add the user action to the view
-		addview.Actions.Add(methods.NewAction(u.Username, fmt.Sprintf(UserHover, u.Username), UserIcon, uri, methods.READ, "", style.DEFAULT(), css.NONE()))
+		addview.Actions.AddSubmitButton(u.Username, fmt.Sprintf(UserHover, u.Username), UserIcon, uri, methods.READ, "", style.DEFAULT(), css.NONE())
 		view.Users = append(view.Users, addview)
 	}
 
@@ -101,6 +102,9 @@ func CreateUserChooser(view UserChooser) (UserChooser, error) {
 	//view.Context.AddMessage("Users loaded successfully")
 	view.Context.AddMessage(fmt.Sprintf("Found %d users", len(view.Users)))
 	logHandler.InfoLogger.Println("ChooseUser view created successfully with", len(view.Users), "users")
+
+	view.Context.PageActions.Clear() // Clear any existing page actions
+	view.Context.PageActions.AddSubmitButton("Add User", "Create a new user", glyphs.Add, ReplacePathParam(UserURI, UserWildcard, actionHelpers.NEW), methods.READ, "", style.NONE(), css.NONE())
 	// Return the populated view
 
 	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)

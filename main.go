@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"io"
 	"net/http"
 	"os"
 	"os/signal"
@@ -27,7 +26,6 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 	"github.com/mt1976/frantic-mass/app/web/handlers"
 	my_middleware "github.com/mt1976/frantic-mass/app/web/middleware"
-	brotli_enc "gopkg.in/kothar/brotli-go.v0/enc"
 )
 
 func main() {
@@ -65,13 +63,13 @@ func main() {
 
 	//currentWeight := types.NewWeight(114.0)
 
-	userIdentifier := 1001 // This is the user ID we will use for the rest of the operations
+	userIdentifier := 100 // This is the user ID we will use for the rest of the operations
 	logHandler.InfoLogger.Println("Creating User with ID:", userIdentifier)
 	//	for i := 0; i < 1; i++ {
 	//		randNum := rand.Intn(10000-1000) + 1000
 	//logHandler.InfoLogger.Println("randNum:", randNum)
 
-	thisUser, newRedErr := user.Create(context.TODO(), fmt.Sprintf("user_%v", userIdentifier), fmt.Sprintf("password_%v", userIdentifier), fmt.Sprintf("user_%v@example.com", userIdentifier))
+	thisUser, newRedErr := user.Create(context.TODO(), fmt.Sprintf("user %v", userIdentifier), fmt.Sprintf("user_%v", userIdentifier), fmt.Sprintf("password_%v", userIdentifier), fmt.Sprintf("user_%v@example.com", userIdentifier))
 	if newRedErr != nil {
 		logHandler.ErrorLogger.Println(newRedErr)
 	}
@@ -79,7 +77,7 @@ func main() {
 	userIdentifier = thisUser.ID
 	logHandler.InfoLogger.Printf("User Created:[%+v]", thisUser)
 
-	thisUser2, newRedErr := user.Create(context.TODO(), fmt.Sprintf("user_%v", 102), fmt.Sprintf("password_%v", 102), fmt.Sprintf("user_%v@example.com", 102))
+	thisUser2, newRedErr := user.Create(context.TODO(), fmt.Sprintf("user %v", userIdentifier+1), fmt.Sprintf("user_%v", userIdentifier+1), fmt.Sprintf("password_%v", userIdentifier+1), fmt.Sprintf("user_%v@example.com", userIdentifier+1))
 	if newRedErr != nil {
 		logHandler.ErrorLogger.Println(newRedErr)
 	}
@@ -111,7 +109,7 @@ func main() {
 	logHandler.InfoLogger.Println("Setting Date of Birth for UserID:", userIdentifier, "to", dob)
 
 	logHandler.InfoLogger.Println("Creating Baseline for UserID:", userIdentifier)
-	thisBaseline, baselineErr := baseline.Create(context.TODO(), userIdentifier, measures.Height{CMs: 187.96}, 6, fmt.Sprintf("BaselineFor%v", userIdentifier), dob)
+	thisBaseline, baselineErr := baseline.Create(context.TODO(), userIdentifier, measures.Height{CMs: 187.96}, 6, fmt.Sprintf("BaselineFor%v", userIdentifier), dob, time.Now())
 	if baselineErr != nil {
 		logHandler.ErrorLogger.Println(baselineErr)
 	} else {
@@ -119,7 +117,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("Creating Baseline for UserID:", thisUser2.ID)
-	thisBaseline2, baselineErr2 := baseline.Create(context.TODO(), thisUser2.ID, measures.Height{CMs: 170.96}, 6, fmt.Sprintf("BaselineFor%v", thisUser2.ID), dob)
+	thisBaseline2, baselineErr2 := baseline.Create(context.TODO(), thisUser2.ID, measures.Height{CMs: 170.96}, 6, fmt.Sprintf("BaselineFor%v", thisUser2.ID), dob, time.Now())
 	if baselineErr2 != nil {
 		logHandler.ErrorLogger.Println(baselineErr2)
 	} else {
@@ -283,21 +281,30 @@ func main() {
 	}
 
 	r.Use(middleware.Logger)
+	logHandler.InfoLogger.Println("Using Logger Middleware")
 	r.Use(middleware.RequestID)
+	logHandler.InfoLogger.Println("Using RequestID Middleware")
 	r.Use(middleware.RealIP)
+	logHandler.InfoLogger.Println("Using RealIP Middleware")
 	r.Use(middleware.Recoverer)
+	logHandler.InfoLogger.Println("Using Recoverer Middleware")
+	r.Use(my_middleware.HandleHTTPMethodConversion)
+	logHandler.InfoLogger.Println("Using HandleHTTPMethodConversion Middleware")
 	if common.GetServer_Compression() {
 		//r.Use(middleware.Compress(5, "gzip"))
-		r.Use(my_middleware.MinifyHTMLMiddleware())
+		r.Use(my_middleware.HandleHTMLMinification())
+		logHandler.InfoLogger.Println("Using HTML Minification Middleware")
 		// // /* means to compress all content types that can be compressed.
-		compressor := middleware.NewCompressor(5, "/*")
-		compressor.SetEncoder("br", func(w io.Writer, level int) io.Writer {
-			params := brotli_enc.NewBrotliParams()
-			params.SetQuality(level)
-			return brotli_enc.NewBrotliWriter(params, w)
-		})
-		r.Use(compressor.Handler)
-		logHandler.InfoLogger.Println("Compression is enabled, using Brotli and MinifyHTMLMiddleware, all responses will be compressed")
+		// compressor := middleware.NewCompressor(5, "/*")
+		// compressor.SetEncoder("br", func(w io.Writer, level int) io.Writer {
+		// 	params := brotli_enc.NewBrotliParams()
+		// 	params.SetQuality(level)
+		// 	return brotli_enc.NewBrotliWriter(params, w)
+		// })
+		// r.Use(compressor.Handler)
+		r.Use(my_middleware.HandleBrotli)
+		logHandler.InfoLogger.Println("Using Brotli Compression Middleware")
+		logHandler.InfoLogger.Println("Compression is enabled, using Brotli and HTML Minification, all responses will be compressed")
 	} else {
 		logHandler.InfoLogger.Println("Compression is disabled")
 	}
@@ -306,11 +313,17 @@ func main() {
 	// through ctx.Done() that the request has timed out and further
 	// processing should be stopped.
 	r.Use(middleware.Timeout(60 * time.Second))
+	logHandler.InfoLogger.Println("Using Timeout Middleware with 60 seconds")
+	// r.Use(middleware.StripSlashes)
+	// logHandler.InfoLogger.Println("Using StripSlashes Middleware")
+	r.Use(middleware.URLFormat)
+	logHandler.InfoLogger.Println("Using URLFormat Middleware")
 	r.Get(contentProvider.LauncherURI, handlers.Launcher)
 	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
 	r.Get(contentProvider.DashboardURI, handlers.Dashboard)   // Placeholder for user dashboard handler
-	r.Get(contentProvider.UserURI, handlers.User)             // Placeholder for user edit handler
-	r.Get(contentProvider.GoalURI, handlers.Goal)             // Placeholder for goal edit handler
+	r.Get(contentProvider.UserURI, handlers.UserRead)         // Placeholder for user edit handler
+	r.Post(contentProvider.UserURI, handlers.UserCreate)      // Placeholder for user edit handler
+	r.Get(contentProvider.GoalURI, handlers.Goal)             // Placeholder for goal edit handlerx
 	r.Get(contentProvider.ProjectionURI, handlers.Projection) // Placeholder for projection handler
 	r.Get(contentProvider.WeightURI, handlers.Weight)         // Placeholder for weight edit handler
 	r.Get(contentProvider.TestURI, handlers.Test)             // Placeholder for test handler
@@ -332,10 +345,16 @@ func main() {
 	r.Handle("/my.img/*", http.StripPrefix("/my.img/", http.FileServer(http.Dir("./res/images"))))
 	r.Handle("/pico.css/*", http.StripPrefix("/pico.css/", http.FileServer(http.Dir("./node_modules/@picocss/pico/css"))))
 	r.Handle("/pico.js/*", http.StripPrefix("/pico.js/", http.FileServer(http.Dir("./node_modules/@picocss/pico/js"))))
-	r.Handle("/favicon.ico", http.FileServer(http.Dir("./res/images")))
+	//r.Handle("/favicon.ico", http.FileServer(http.Dir("./res/images")))
 	r.Handle("/manifest.json", http.FileServer(http.Dir("./res/app")))
 	r.Handle("/glyphs/*", http.StripPrefix("/glyphs/", http.FileServer(http.Dir("./node_modules/bootstrap-icons/font"))))
 	r.Handle("/images/*", http.StripPrefix("/images/", http.FileServer(http.Dir("./res/images"))))
+	r.Get("/favicon.ico", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "./res/images/favicon.ico")
+	})
+	r.Get("/robots.txt", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "./res/robots.txt")
+	})
 	r.NotFound(handlers.NotFound)
 	r.MethodNotAllowed(handlers.MethodNotAllowed)
 	//r.Handle("/favicon.ico", http.FileServer(http.Dir("./res/images")))
