@@ -2,11 +2,7 @@
 @import url("/pico.css/pico.fluid.classless.red.min.css"); /* Fluid classless Pico CSS */
 @import url("/pico.css/pico.colors.min.css");// Override Primary Colour
 
-.h1 {
-  text-align: center;
-  color: var(--primary);
-}
-
+/* Custom CSS */
 .danger-msg {
   background-color: #f8d7da;
   border-left: 10px solid #721c24;
@@ -64,9 +60,13 @@
 }
 
 body {
-    width: 100%;
-    margin: 0;
-    padding: 20px; margin: 10px;
+    width: 100% !important;
+    padding: 50px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    margin: 10rem auto !important;
+    margin-top: 1rem !important;
+    margin-bottom: 0rem !important;
 }
 
 .secondary-btn {
@@ -74,6 +74,14 @@ body {
     background-color: var(--pico-pico-mark-background-color) !important;
     color: var(--pico-primary) !important;
 }
+
+
+.hidden-btn {
+    border: 0px solid var(--pico-grey-300) !important;
+    background-color: var(--pico-pico-mark-background-color) !important;
+    color: var(--pico-color-grey-200) !important;
+}
+
 
 h1 {
     color: var(--pico-primary) !important;

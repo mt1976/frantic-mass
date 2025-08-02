@@ -3,11 +3,9 @@
    {{template "head" .}}
     <body style="{{template "bodyStyle" .}}">
             <hgroup>
-                <h1>Welcome to the {{.Context.AppName}} Launcher</h1>
-                <p>{{.Context.AppName}}</p>
+                <p>Welcome to the <i>{{.Context.AppName}}</i> Launcher Page</p>
             </hgroup>
-                        {{template "breadcrumbs" .}}
-
+            {{template "breadcrumbs" .}}
             <article>
                 <p>{{.Context.AppDescription}}</p>
                 <p>Click below to start {{.Context.AppName}}.</p>

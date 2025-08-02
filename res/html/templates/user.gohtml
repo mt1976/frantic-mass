@@ -7,10 +7,6 @@
     <body style="{{template "bodyStyle" .}}">
             <form action="/user/edit/{{.User.ID}}" method="POST" id="userForm" class="form">
 
-            <hgroup>
-                <h1>{{.Context.AppName}}</h1>
-                <p>{{.Context.PageTitle}} - {{.User.Name}}</p>
-            </hgroup>
                 {{template "breadcrumbs" .}}
 
             <article>
@@ -95,6 +91,6 @@
         {{template "actions" .Context.PageActions}}
              </form>
     </body>
-   {{template "footer" .}}
+    {{template "footer" .}}
     {{template "scripts" .}}
 </html>

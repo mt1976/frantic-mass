@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
@@ -310,7 +309,7 @@ func buildDashboardChart(view Dashboard, weights []weight.Weight, goals []goal.G
 		view.Context.AddMessage("Please try again later.")
 		return view
 	}
-	godump.Dump(view.Context.ChartData)
+	//godump.Dump(view.Context.ChartData)
 
 	return view
 }

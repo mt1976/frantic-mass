@@ -2,28 +2,24 @@
 
 {{define "head"}}
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="/pico.css/pico.fluid.classless.red.min.css"> <!-- Fluid classless Pico CSS -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/pico.css/pico.fluid.classless.fuchsia.min.css"> <!-- Fluid classless Pico CSS -->
     <link rel="stylesheet" href="/pico.css/pico.colors.min.css">
     <link rel="stylesheet" href="/glyphs/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/my.css/custom.css">
     {{if .Context.PageHasChart}}<script src='https://cdn.plot.ly/plotly-3.0.1.min.js'></script>{{end}}
-    <title>{{.Context.AppName}} - {{.Context.PageTitle}}</title>
-</head>
-{{end}}
-
-{{define "footer"}}
-{{/* <footer> */}}
-    <!-- Display the version and powered by information -->
-    <footer style="text-align: center;">
-    
-        <nav>
+   <article>
+    <nav aria-label="main navigation">
             <ul>
-                <li style="display: inline-block; padding-bottom: 6px; padding-top: 6px; padding-left: 10px; padding-right: 10px;">
-                    <details class="dropdown" data-tooltip="Select Theme" style="display: inline-block;">
-                    <summary role="button" class="secondary outline" style="cursor: pointer; padding: 2px;padding-left: 5px;padding-right: 4px;border: 0px;"><i class="bi bi-gear"></i></summary>
+                <h1 style="padding: 0; margin: 0;"><img src="/my.img/icon-512-maskable.png" alt="App Icon" style="width: 60px; height: 50px; vertical-align: middle; padding-right: 10px;">{{.Context.AppName}}</h1>
+            </ul>
+            <ul>
+                <li style="display: inline-block; padding-bottom: 0px; padding-top: 0px; padding-left: 10px; padding-right: 10px; vertical-align: middle; margin: 0px; justify-content: center !important; align-items: center;">
+                    <details class="dropdown" data-tooltip="Select Theme" style="display: inline-block; padding: 0px; margin: 0px; vertical-align: middle;">
+                    <summary role="button" class="hidden-btn" style="cursor: pointer; padding: 2px;padding-left: 5px;padding-right: 4px;border: 0px;"><i class="bi bi-gear"></i></summary>
                     <ul>
                         <li><a href="#" data-theme-switcher="auto"><i class="bi bi-circle-half"></i> Auto</a></li>
                         <li><a href="#" data-theme-switcher="light"><i class="bi bi-sun"></i> Light</a></li>
@@ -32,10 +28,18 @@
                     </details>
                 </li>
             </ul>
-      </nav>
-      <small class="pico-color-grey-200">{{.Context.AppName}} {{.Context.Delimiter}} Version: {{.Context.AppVersion}} {{.Context.Delimiter}} {{.Context.AppReleaseDate}} {{.Context.Delimiter}} {{.Context.AppEnvironment}} {{.Context.Delimiter}} {{.Context.FormattedDate}}</small>
-    </footer>
-{{/* </footer> */}}
+    </nav>
+    </article>
+</head>
+{{end}}
+
+{{define "footer"}}
+    {{/* <footer> */}}
+        <!-- Display the version and powered by information -->
+        <footer style="text-align: center;">
+            <small class="pico-color-grey-200">{{.Context.AppName}} {{.Context.Delimiter}} Version: {{.Context.AppVersion}} {{.Context.Delimiter}} {{.Context.AppReleaseDate}} {{.Context.Delimiter}} {{.Context.AppEnvironment}} {{.Context.Delimiter}} {{.Context.FormattedDate}}</small>
+        </footer>
+    {{/* </footer> */}}
 {{end}}
 
 

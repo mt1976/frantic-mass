@@ -5,16 +5,11 @@
 
 
     <body style="{{template "bodyStyle" .}}">
+        {{template "breadcrumbs" .}}
+        <article>
             <hgroup>
-                <h1>{{.Context.AppName}}</h1>
-                <p>{{.Context.PageTitle}} - {{.User.Name}} - {{.Goal.Name}}</p>
+                <h2>Projection:</h2>
             </hgroup>
-                {{template "breadcrumbs" .}}
-
-            <article>
-                        <hgroup>
-            <h2>Projection:</h2>
-                </hgroup>
                 <form>
                 <div class="form-group">
                     <label>Name</label>
@@ -29,7 +24,7 @@
                     <h3>Target:</h3>
                     <p>{{.Goal.Description}}</p>
                     </hgroup>
-  <table>
+                    <div class="overflow-auto"><table>
                         <thead>
                             <tr>
                                 <th class="text-align: center;">Name</th>
@@ -41,20 +36,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                       
                             <tr>
                                 <td>{{.Goal.Name}}</td>
                                 <td>{{.Goal.TargetWeight}}</td>
-                                       <td>{{.Goal.TargetBMIStatus}} {{.Goal.TargetBMI}}</td>
+                                <td>{{.Goal.TargetBMIStatus}} {{.Goal.TargetBMI}}</td>
                                 <td>{{.Goal.LossPerWeek}}</td>
-                         
-                                <td>{{.Goal.TargetDate.Format "02 Jan 2006"}}</td>
-                               
+                                <td>{{.Goal.TargetDate.Format "02 Jan 2006"}}</td> 
                             </tr>
-                       
                         </tbody>
                     </table>
-
+                    </div>
 
 
                     </article>

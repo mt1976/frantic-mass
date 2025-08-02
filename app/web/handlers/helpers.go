@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/functions"
@@ -42,7 +41,7 @@ func fetchTemplate(appContext contentProvider.AppContext) *template.Template {
 	requestTemplate := root + templateRequest + templateSuffix
 	logHandler.InfoLogger.Printf("Loading request template from: %s", requestTemplate)
 
-	godump.Dump(appContext)
+	//godump.Dump(appContext)
 
 	tmpl := template.Must(template.ParseFiles(requestTemplate, sharedTemplate))
 	if tmpl == nil {

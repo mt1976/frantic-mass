@@ -5,12 +5,7 @@
 
 
     <body style="{{template "bodyStyle" .}}">
-            <hgroup>
-                <h1>{{.Context.AppName}}</h1>
-                <p>{{.Context.PageTitle}} - {{.User.Name}}</p>
-            </hgroup>
                 {{template "breadcrumbs" .}}
-
             <article>
                 <hgroup>
                     <h2>Profile:</h2>
@@ -66,7 +61,7 @@
                 <details name="Weight">
                 <summary><h2>Weights&nbsp;<small class="pico-color-grey-500">[{{len .Measurements}}]</small></h2></summary>
 
-                   <figure><table>
+                   <div class="overflow-auto"><table>
                         <thead>
                             <tr>
                                 <th class="text-align: center;">Date</th>
@@ -89,7 +84,7 @@
                             </tr>
                             {{end}}
                         </tbody>
-                    </table></figure>
+                    </table></div>
                 </details>
 
 
@@ -98,7 +93,7 @@
                 {{if eq .NoGoals 0}}
                     <p class="nes-text is-error">No goals set for this user.</p>
                 {{else}}
-                    <figure><table>
+                    <div class="overflow-auto"><table>
                         <thead>
                             <tr>
                                 <th class="text-align: center;">Name</th>
@@ -125,7 +120,7 @@
                             </tr>
                             {{end}}
                         </tbody>
-                    </table></figure>
+                    </table></div>
                 {{end}}
                 </details>                
             </article>

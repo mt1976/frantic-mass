@@ -7,10 +7,7 @@
     <body style="{{template "bodyStyle" .}}">
             <form action="/weight/{{.ID}}" method="POST" id="userForm" class="form">
 
-            <hgroup>
-                <h1>{{.Context.AppName}}</h1>
-                <p>{{.Context.PageTitle}} {{.Context.Delimiter}} {{.UserName}} {{.Context.Delimiter}} ???</p>
-            </hgroup>
+      
             {{template "breadcrumbs" .}}
             <article>
                 <hgroup>
