@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom CSS Example</title>
+    <link rel="stylesheet" href="/pico.css/pico.min.css">
+    <link rel="stylesheet" href="/pico.css/pico.colors.min.css">
+    <link rel="stylesheet" href="/pico.css/pico.conditional.min.css">
+    <link rel="stylesheet" href="/Volumes/External HD/Dev/GitHub/frantic-mass/res/css/custom.css">
+    <style>
+        body {
+            max-width: 700px;
+            margin: 2rem auto;
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+
+        section {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Custom CSS Message Styles Demo</h1>
+    <hr>
+    <h2>Message Types</h2>
+    <section class="danger-msg">Danger message: Something went wrong!</section>
+    <section class="information-msg">Information message: Here is some info.</section>
+    <section class="success-msg">Success message: Operation completed successfully.</section>
+    <section class="warning-msg">Warning message: Please check your input.</section>
+    <section class="light-msg">Light panel: For neutral content.</section>
+    <section class="dark-msg">Dark panel: For emphasis or dark mode.</section>
+    <section class="primary-msg">Primary message: This is a highlighted message.</section>
+</body>
+
+</html>

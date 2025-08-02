@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="/pico.css/pico.min.css">
+    <link rel="stylesheet" href="/pico.css/pico.fluid.classless.red.min.css"> <!-- Fluid classless Pico CSS -->
     <link rel="stylesheet" href="/pico.css/pico.colors.min.css">
-    <link rel="stylesheet" href="/pico.css/pico.conditional.min.css">
     <link rel="stylesheet" href="/glyphs/bootstrap-icons.min.css">
     <link rel="stylesheet" href="/my.css/custom.css">
     {{if .Context.PageHasChart}}<script src='https://cdn.plot.ly/plotly-3.0.1.min.js'></script>{{end}}
@@ -19,7 +17,8 @@
 {{define "footer"}}
 {{/* <footer> */}}
     <!-- Display the version and powered by information -->
-    <article style="text-align: center;  padding-top: 6px; padding-bottom: 6px;">
+    <footer style="text-align: center;">
+    
         <nav>
             <ul>
                 <li style="display: inline-block; padding-bottom: 6px; padding-top: 6px; padding-left: 10px; padding-right: 10px;">
@@ -31,12 +30,11 @@
                         <li><a href="#" data-theme-switcher="dark"><i class="bi bi-moon"></i> Dark</a></li>
                     </ul>
                     </details>
-                    &nbsp;&nbsp;<small class="pico-color-grey-200">{{.Context.AppName}} {{.Context.Delimiter}} Version: {{.Context.AppVersion}} {{.Context.Delimiter}} {{.Context.AppReleaseDate}} {{.Context.Delimiter}} {{.Context.AppEnvironment}} {{.Context.Delimiter}} {{.Context.FormattedDate}}</small>
                 </li>
             </ul>
-
       </nav>
-    </article>
+      <small class="pico-color-grey-200">{{.Context.AppName}} {{.Context.Delimiter}} Version: {{.Context.AppVersion}} {{.Context.Delimiter}} {{.Context.AppReleaseDate}} {{.Context.Delimiter}} {{.Context.AppEnvironment}} {{.Context.Delimiter}} {{.Context.FormattedDate}}</small>
+    </footer>
 {{/* </footer> */}}
 {{end}}
 
@@ -59,7 +57,6 @@
 {{end}}
 
 {{define "bodyStyle"}}
-    padding: 20px; margin: 10px;
 {{end}}
 
 {{define "scripts"}}
@@ -81,25 +78,25 @@
     <!-- Display any errors -->
     {{if .Context.UserErrorMessages}}
                 {{range .Context.UserErrorMessages}}
-                    <p class="danger" style="margin-top: 18px;display: flex;align-items: center;  height: 3rem;"><i class="bi bi-sign-stop" style="padding-right: 8px;font-size: 1.5em;"></i> {{.}}</p>
+                    <p class="danger-msg" style="margin-top: 18px;display: flex;align-items: center;  height: 3rem;"><i class="bi bi-sign-stop" style="padding-right: 8px;font-size: 1.5em;"></i> {{.}}</p>
                 {{end}}
     {{end}}
     <!-- Display any errors -->
     {{if .Context.UserMessages}}
                 {{range .Context.UserMessages}}
-                    <p class="information" style="margin-top: 18px;display: flex;align-items: center;  height: 3rem;"><i class="bi bi-info-square" style="padding-right: 8px;font-size: 1.5em;"></i> {{.}}</p>
+                    <p class="information-msg" style="margin-top: 18px;display: flex;align-items: center;  height: 3rem;"><i class="bi bi-info-square" style="padding-right: 8px;font-size: 1.5em;"></i> {{.}}</p>
                 {{end}}
     {{end}}
     <!-- Display any alerts -->
     {{if .Context.UserAlerts}}
                 {{range .Context.UserAlerts}}
-                    <p class="warning" style="margin-top: 18px;display: flex;align-items: center;  height: 3rem;"><i class="bi bi-exclamation-triangle" style="padding-right: 8px;font-size: 1.5em;"></i> {{.}}</p>
+                    <p class="warning-msg" style="margin-top: 18px;display: flex;align-items: center;  height: 3rem;"><i class="bi bi-exclamation-triangle" style="padding-right: 8px;font-size: 1.5em;"></i> {{.}}</p>
                 {{end}}
     {{end}}
     <!-- Display any success messages -->
     {{if .Context.UserSuccessMessages}}
                 {{range .Context.UserSuccessMessages}}
-                    <p class="success" style="margin-top: 18px;"><i class="bi bi-check-circle-fill"></i> {{.}}</p>
+                    <p class="success-msg" style="margin-top: 18px;"><i class="bi bi-check-circle-fill"></i> {{.}}</p>
                 {{end}}
     {{end}}
 

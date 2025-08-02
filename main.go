@@ -313,6 +313,7 @@ func main() {
 	r.Get(contentProvider.GoalURI, handlers.Goal)             // Placeholder for goal edit handler
 	r.Get(contentProvider.ProjectionURI, handlers.Projection) // Placeholder for projection handler
 	r.Get(contentProvider.WeightURI, handlers.Weight)         // Placeholder for weight edit handler
+	r.Get(contentProvider.TestURI, handlers.Test)             // Placeholder for test handler
 	//r.Get(contentProvider.WeightURI, handlers.Weight)         // Placeholder for weight edit handler
 	r.Get("/test", handlers.Dummy)
 	// Inject shutdown function into handler

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{template "head" .}}
+
+    <body>
+        <form action="/user/edit/{{.ID}}" method="POST" id="userForm" class="form">
+
+            <hgroup>
+                <h1>{{.Context.AppName}}</h1>
+                <p>{{.Context.PageTitle}} - Test Playground</p>
+            </hgroup>
+            {{template "breadcrumbs" .}}
+
+            <article>
+                <hgroup>
+                    <h2>Tests:</h2>
+                </hgroup>
+
+                <h1>H1 Heading</h1>
+
+                <p class="primary">Primary paragraph: This is a primary message styled paragraph.</p>
+                <p class="secondary">Secondary paragraph: This is a secondary message styled paragraph.</p>
+                <p class="tertiary">Tertiary paragraph: This is a tertiary message styled paragraph.</p>
+
+                <p>This is a paragraph with <strong>strong text</strong> and <em>emphasized text</em>.</p>
+                <p>Here is a link to <a href="https://example.com">Example</a>.</p>
+                <p>Here is a list:</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+                <p>Here is a table:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Header 1</th>
+                            <th>Header 2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Row 1, Cell 1</td>
+                            <td>Row 1, Cell 2</td>
+                        </tr>
+                        <tr>
+                            <td>Row 2, Cell 1</td>
+                            <td>Row 2, Cell 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Here is a blockquote:</p>
+                <blockquote>
+                    <p>This is a blockquote. It can be used to highlight important information or quotes.</p>
+                </blockquote>
+                <p>Here is a code block:</p>
+                <pre><code>function test() {
+    console.log("This is a test function.");
+}</code></pre>
+                <p>Here is an inline code snippet: <code>console.log("Hello, World!");</code></p>
+                <p>Here is an image:</p>
+                <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+                <p>Here is a horizontal rule:</p>
+                <hr>
+
+
+                <h1>Custom CSS Message Styles Demo</h1>
+                <hr>
+                <h2>Message Types</h2>
+                <section class="danger-msg">Danger message: Something went wrong!</section>
+                <section class="information-msg">Information message: Here is some info.</section>
+                <section class="success-msg">Success message: Operation completed successfully.</section>
+                <section class="warning-msg">Warning message: Please check your input.</section>
+                <section class="light-msg">Light panel: For neutral content.</section>
+                <section class="dark-msg">Dark panel: For emphasis or dark mode.</section>
+                <section class="primary-msg">Primary message: This is a highlighted message.</section>
+
+
+
+
+
+            </article>
+            {{template "chart" .}}
+            {{template "alerts" .}}
+            {{template "actions" .Context.PageActions}}
+        </form>
+    </body>
+    {{template "footer" .}}
+    {{template "scripts" .}}
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pico Colors Full Demo</title>
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.colors.min.css">
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; }
+    h1 { margin-bottom: 2rem; }
+    .color-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .color-block { border-radius: 6px; padding: 1rem; color: #fff; font-weight: bold; margin-bottom: 0.5rem; display: flex; flex-direction: column; align-items: flex-start; }
+    .color-label { font-size: 0.95em; margin-top: 0.5em; opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <h1>Pico Colors CSS Full Demo</h1>
+  <div class="color-grid">
+    <!-- Example blocks, expand as needed -->
+    <div class="color-block" style="background: var(--pico-color-red-950);">Red 950 <span class="color-label">--pico-color-red-950</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-900);">Red 900 <span class="color-label">--pico-color-red-900</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-850);">Red 850 <span class="color-label">--pico-color-red-850</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-800);">Red 800 <span class="color-label">--pico-color-red-800</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-750);">Red 750 <span class="color-label">--pico-color-red-750</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-700);">Red 700 <span class="color-label">--pico-color-red-700</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-650);">Red 650 <span class="color-label">--pico-color-red-650</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-600);">Red 600 <span class="color-label">--pico-color-red-600</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-550);">Red 550 <span class="color-label">--pico-color-red-550</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-500);">Red 500 <span class="color-label">--pico-color-red-500</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-450);">Red 450 <span class="color-label">--pico-color-red-450</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-400);">Red 400 <span class="color-label">--pico-color-red-400</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-350);">Red 350 <span class="color-label">--pico-color-red-350</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-300);">Red 300 <span class="color-label">--pico-color-red-300</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-250);">Red 250 <span class="color-label">--pico-color-red-250</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-200);">Red 200 <span class="color-label">--pico-color-red-200</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-150);">Red 150 <span class="color-label">--pico-color-red-150</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-100);">Red 100 <span class="color-label">--pico-color-red-100</span></div>
+    <div class="color-block" style="background: var(--pico-color-red-50);">Red 50 <span class="color-label">--pico-color-red-50</span></div>
+    <div class="color-block" style="background: var(--pico-color-red);">Red <span class="color-label">--pico-color-red</span></div>
+    <!-- Repeat for pink, fuchsia, purple, violet, indigo, blue, azure, cyan, jade, green, lime, yellow, amber, pumpkin, orange, sand, grey, zinc, slate, light, dark -->
+  </div>
+</body>
+</html>

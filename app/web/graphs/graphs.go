@@ -90,6 +90,8 @@ func GeneratePlotlyScript(traces []Trace, legend LegendConfig, divID string) (te
 
 	// Legend configuration
 	sb.WriteString("var layout = {\n")
+	sb.WriteString("  paper_bgcolor: 'rgba(0,0,0,0)',\n")
+	sb.WriteString("  plot_bgcolor: 'rgba(0,0,0,0)',\n")
 	sb.WriteString("  legend: {\n")
 	sb.WriteString(fmt.Sprintf("    y: %v,\n", legend.YStepSize))
 	sb.WriteString(fmt.Sprintf("    traceorder: '%s',\n", legend.TraceOrder))

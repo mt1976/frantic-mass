@@ -11,20 +11,20 @@ func (s CLASS) Style() template.HTML {
 	return s.style
 }
 
-func (s CLASS) PRIMARY() template.HTML {
-	return template.HTML("primary")
+func (s CLASS) BTN_PRIMARY() template.HTML {
+	return template.HTML("primary-btn")
 }
 
-func (s CLASS) SECONDARY() template.HTML {
-	return template.HTML("secondary")
+func (s CLASS) BTN_SECONDARY() template.HTML {
+	return template.HTML("secondary-btn")
 }
 
-func (s CLASS) PRIMARY_OUTLINE() template.HTML {
-	return template.HTML("primary outline")
+func (s CLASS) BTN_PRIMARY_OUTLINE() template.HTML {
+	return template.HTML("primary-outline-btn")
 }
 
-func (s CLASS) SECONDARY_OUTLINE() template.HTML {
-	return template.HTML("secondary outline")
+func (s CLASS) BTN_SECONDARY_OUTLINE() template.HTML {
+	return template.HTML("secondary-outline-btn")
 }
 
 func (s CLASS) NONE() template.HTML {

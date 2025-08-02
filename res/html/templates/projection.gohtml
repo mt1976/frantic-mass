@@ -16,8 +16,14 @@
             <h2>Projection:</h2>
                 </hgroup>
                 <form>
-                <label>Name<input name="name" type="text" value="{{.User.Name}}" readonly/></label>
-                <label>Goal<input name="goal" type="text" value="{{.Goal.Name}}" readonly/></label>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input name="name" type="text" value="{{.User.Name}}" readonly/>
+                </div>
+                <div class="form-group">
+                    <label>Goal</label>
+                    <input name="goal" type="text" value="{{.Goal.Name}}" readonly/>
+                </div>
                 <article>
                     <hgroup>
                     <h3>Target:</h3>

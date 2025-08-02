@@ -147,7 +147,7 @@ func (a *Actions) FindByName(name string) *Action {
 
 func (a *Actions) AddBackAction() *[]Action {
 	// Add a "Back" action to the actions list
-	backAction := NewActionButton("Back", "Go back to the previous page", glyphs.Back, "", READ, "history.back()", style.SECONDARY(), css.NONE())
+	backAction := NewActionButton("Back", "Go back to the previous page", glyphs.Back, "", READ, "history.back()", style.BTN_SECONDARY(), css.NONE())
 
 	//godump.DumpJSON(a.Actions)
 	a.Actions = append(a.Actions, backAction)
@@ -160,7 +160,7 @@ func (a *Actions) AddBackAction() *[]Action {
 
 func (a *Actions) AddPrintAction() *[]Action {
 	// Add a "Print" action to the actions list
-	printAction := NewActionButton("Print", "Print the current page", glyphs.Print, "", READ, "window.print()", style.SECONDARY(), css.NONE())
+	printAction := NewActionButton("Print", "Print the current page", glyphs.Print, "", READ, "window.print()", style.BTN_SECONDARY(), css.NONE())
 
 	//godump.DumpJSON(a.Actions)
 	a.Actions = append(a.Actions, printAction)
@@ -173,7 +173,7 @@ func (a *Actions) AddPrintAction() *[]Action {
 
 func (a *Actions) AddResetAction() *[]Action {
 	// Add a "Reset" action to the actions list
-	resetAction := NewActionButton("Reset", "Reset the form to its initial state", glyphs.Reset, "", READ, "location.reload()", style.SECONDARY(), css.NONE())
+	resetAction := NewActionButton("Reset", "Reset the form to its initial state", glyphs.Reset, "", READ, "location.reload()", style.BTN_SECONDARY(), css.NONE())
 
 	//	godump.DumpJSON(a.Actions)
 	a.Actions = append(a.Actions, resetAction)

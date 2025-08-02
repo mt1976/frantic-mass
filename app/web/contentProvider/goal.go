@@ -82,8 +82,8 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 	// Log the successful creation of the view
 	//view.Context.AddMessage("Users loaded successfully")
 	view.Context.AddMessage(fmt.Sprintf("Found goal %s", view.Goal.Name))
-	uri := DashboardURI // Use the defined URI for the dashboard
-	uri = ReplacePathParam(uri, GoalWildcard, fmt.Sprintf("%d", view.Goal.UserID))
+	//uri := DashboardURI // Use the defined URI for the dashboard
+	//uri = ReplacePathParam(uri, GoalWildcard, fmt.Sprintf("%d", view.Goal.UserID))
 	view.Context.PageActions.Clear()          // Clear any existing page actions
 	view.Context.PageActions.AddBackAction()  // Add a back action to the page actions
 	view.Context.PageActions.AddPrintAction() // Add a print action to the page actions
@@ -101,7 +101,7 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 	logHandler.InfoLogger.Println("GoalEdit view created successfully with goal", view.Goal.Name)
 
 	if view.User.ID > 0 && view.Goal.ID > 0 {
-		view.Context.PageActions.Add(actionHelpers.NewAction("Projection", fmt.Sprintf(ProjectionHover, view.Goal.Name, view.UserName), glyphs.Projection, ProjectionPath, actionHelpers.READ, "", style.SECONDARY(), css.NONE()))
+		view.Context.PageActions.Add(actionHelpers.NewAction("Projection", fmt.Sprintf(ProjectionHover, view.Goal.Name, view.UserName), glyphs.Projection, ProjectionPath, actionHelpers.READ, "", style.BTN_SECONDARY(), css.NONE()))
 	}
 	logHandler.InfoLogger.Println("GoalEdit view created successfully with goal", view.Goal.Name)
 	// Return the populated view
