@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"net/http"
+	"strings"
 
 	"github.com/mt1976/frantic-core/logHandler"
 )
@@ -19,7 +20,8 @@ func HandleHTTPMethodConversion(next http.Handler) http.Handler {
 		func(w http.ResponseWriter, r *http.Request) {
 			logHandler.InfoLogger.Println("Checking for HTTP method conversion")
 			in := r.Method
-			if r.Method == "POST" {
+			testMethod := strings.ToUpper(r.Method)
+			if testMethod == "POST" || testMethod == "GET" {
 				r.ParseForm()
 				if r.Form["_method"] != nil && r.FormValue("_method") == "PUT" {
 					r.Method = "PUT"
