@@ -1,6 +1,7 @@
-package contentAction
+package contentActioner
 
 import (
+	"fmt"
 	"net/http"
 	"time"
 
@@ -146,11 +147,8 @@ func NewUser(w http.ResponseWriter, r *http.Request) (contentProvider.UserView, 
 
 func UpdateUser(w http.ResponseWriter, r *http.Request, userId int) (contentProvider.UserView, error) {
 
-	godump.Dump(r)
+	//	godump.Dump(r)
 
-	logHandler.InfoLogger.Printf("Updating user with ID: %d", userId)
-	logHandler.InfoLogger.Printf("Updating user with ID: %d", userId)
-	logHandler.InfoLogger.Printf("Updating user with ID: %d", userId)
 	logHandler.InfoLogger.Printf("Updating user with ID: %d", userId)
 
 	view := contentProvider.UserView{}
@@ -159,11 +157,13 @@ func UpdateUser(w http.ResponseWriter, r *http.Request, userId int) (contentProv
 
 	// Get the current userRecord record
 	userRecord, err := user.GetBy(user.FIELD_ID, userId)
+	err = fmt.Errorf("poor user ID: %d", userId)
 	if err != nil {
 		logHandler.ErrorLogger.Println("Error fetching user:", err)
 		view.Context.AddError("Error fetching user")
 		view.Context.HttpStatusCode = 500 // Internal Server Error
 		view.Context.WasSuccessful = false
+
 		return view, nil
 	}
 

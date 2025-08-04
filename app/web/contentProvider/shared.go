@@ -85,17 +85,20 @@ type AppContext struct {
 
 type Workflow struct {
 	IsNew       bool   // Flag to indicate if the workflow is new
-	IsViewEdit  bool   // Flag to indicate if the workflow is in view/edit mode
+	IsView      bool   // Flag to indicate if the workflow is in view mode
+	IsEdit      bool   // Flag to indicate if the workflow is in view/edit mode
 	IsDelete    bool   // Flag to indicate if the workflow is in delete mode
 	IsArchive   bool   // Flag to indicate if the workflow is in archive mode
 	IsAction    bool   // Flag to indicate if the workflow is in action mode
 	IsReadOnly  bool   // Flag to indicate if the workflow is read-only
+	IsAdhoc     bool   // Flag to indicate if the workflow is ad-hoc
 	AdhocAction string // Action to be performed in the workflow, e.g., "create", "update", "delete"
 }
 
 func (c *Workflow) SetDefaults() {
 	c.IsNew = false
-	c.IsViewEdit = true
+	c.IsView = false
+	c.IsEdit = false
 	c.IsDelete = false
 	c.IsArchive = false
 	c.IsAction = false
@@ -103,70 +106,47 @@ func (c *Workflow) SetDefaults() {
 	c.AdhocAction = "" // Reset the action to an empty string
 }
 
-func (c *AppContext) SetIsNewWorkflow() {
-	// Set the context to a new state
-	c.Workflow.IsNew = true
-	c.Workflow.IsViewEdit = false
-	c.Workflow.IsDelete = false
-	c.Workflow.IsArchive = false
-	c.Workflow.IsAction = false
-	c.Workflow.IsReadOnly = false
-	c.Workflow.AdhocAction = "" // Reset the action to an empty string
+func (c *AppContext) SetIsViewWorkflow() {
+	// Set the context to view state
+	c.Workflow.SetDefaults() // Reset to defaults
+	c.Workflow.IsView = true
 }
 
-func (c *AppContext) SetIsViewOrEditWorkflow() {
+func (c *AppContext) SetIsNewWorkflow() {
+	// Set the context to a new state
+	c.Workflow.SetDefaults() // Reset to defaults
+	c.Workflow.IsNew = true
+}
+
+func (c *AppContext) SetIsEditWorkflow() {
 	// Set the context to view/edit state
-	c.Workflow.IsNew = false
-	c.Workflow.IsViewEdit = true
-	c.Workflow.IsDelete = false
-	c.Workflow.IsArchive = false
-	c.Workflow.IsAction = false
-	c.Workflow.IsReadOnly = false
-	c.Workflow.AdhocAction = "" // Reset the action to an empty string
+	c.Workflow.SetDefaults() // Reset to defaults
+	c.Workflow.IsEdit = true
 }
 
 func (c *AppContext) SetIsDeleteWorkflow() {
 	// Set the context to delete state
-	c.Workflow.IsNew = false
-	c.Workflow.IsViewEdit = false
+	c.Workflow.SetDefaults()
 	c.Workflow.IsDelete = true
-	c.Workflow.IsArchive = false
-	c.Workflow.IsAction = false
-	c.Workflow.IsReadOnly = false
-	c.Workflow.AdhocAction = "" // Reset the action to an empty string
 }
 
 func (c *AppContext) SetIsArchiveWorkflow() {
 	// Set the context to archive state
-	c.Workflow.IsNew = false
-	c.Workflow.IsViewEdit = false
-	c.Workflow.IsDelete = false
+	c.Workflow.SetDefaults() // Reset to defaults
 	c.Workflow.IsArchive = true
-	c.Workflow.IsAction = false
-	c.Workflow.IsReadOnly = false
-	c.Workflow.AdhocAction = "" // Reset the action to an empty string
 }
 
 func (c *AppContext) SetIsActionWorkflow(action string) {
 	// Set the context to action state
-	c.Workflow.IsNew = false
-	c.Workflow.IsViewEdit = false
-	c.Workflow.IsDelete = false
-	c.Workflow.IsArchive = false
-	c.Workflow.IsAction = true
-	c.Workflow.IsReadOnly = false
+	c.Workflow.SetDefaults()        // Reset to defaults
+	c.Workflow.IsAction = true      // Set the action state
 	c.Workflow.AdhocAction = action // Set the specific action to be performed
 }
 
 func (c *AppContext) SetIsReadOnlyWorkflow() {
 	// Set the context to read-only state
-	c.Workflow.IsNew = false
-	c.Workflow.IsViewEdit = false
-	c.Workflow.IsDelete = false
-	c.Workflow.IsArchive = false
-	c.Workflow.IsAction = false
+	c.Workflow.SetDefaults() // Reset to defaults
 	c.Workflow.IsReadOnly = true
-	c.Workflow.AdhocAction = "" // Reset the action to an empty string
 }
 
 type Breadcrumb struct {

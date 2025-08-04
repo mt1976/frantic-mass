@@ -30,6 +30,7 @@ type User struct {
 func CreateUserChooser(view UserChooser) (UserChooser, error) {
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "users"
+	view.Context.SetIsViewWorkflow() // Set the request type to GET for viewing users
 
 	view.Users = []User{}
 
@@ -41,7 +42,6 @@ func CreateUserChooser(view UserChooser) (UserChooser, error) {
 		view.Context.AddMessage("An error occurred while fetching users. Please try again later.")
 		view.Context.HttpStatusCode = 500 // Internal Server Error
 		view.Context.WasSuccessful = false
-
 		return view, nil
 	}
 

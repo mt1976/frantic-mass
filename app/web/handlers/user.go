@@ -7,7 +7,7 @@ import (
 	"github.com/mt1976/frantic-core/htmlHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/web/actionHelpers"
-	"github.com/mt1976/frantic-mass/app/web/contentAction"
+	"github.com/mt1976/frantic-mass/app/web/contentActioner"
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
@@ -86,7 +86,7 @@ func UserCreate(w http.ResponseWriter, r *http.Request) {
 	logHandler.InfoLogger.Printf("Creating new user! pseudo: %s", userID)
 
 	// Handle the PUT request to update user details
-	uc, err := contentAction.NewUser(w, r) // Assuming userID is passed in the context or URL
+	uc, err := contentActioner.NewUser(w, r) // Assuming userID is passed in the context or URL
 	if err != nil {
 		http.Error(w, "Error updating user", http.StatusInternalServerError)
 		return
@@ -133,14 +133,13 @@ func UserUpdate(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Handle the PUT request to update user details
-	uc, err := contentAction.UpdateUser(w, r, int_userID) // Assuming userID is passed in the context or URL
+	uc, err := contentActioner.UpdateUser(w, r, int_userID) // Assuming userID is passed in the context or URL
 	if err != nil {
 		http.Error(w, "Error updating user", http.StatusInternalServerError)
 		return
 	}
 
-	uc.Context.AddMessage("User update processed successfully")
-	uc.Context.HttpStatusCode = http.StatusOK // Set the HTTP status code to 200 OK
-	uc.Context.WasSuccessful = true
+	//uc.Context.HttpStatusCode = http.StatusOK // Set the HTTP status code to 200 OK
+	//uc.Context.WasSuccessful = true
 	render(uc, uc.Context, w)
 }

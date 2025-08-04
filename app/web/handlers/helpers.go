@@ -10,6 +10,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/functions"
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
+	"github.com/mt1976/frantic-mass/app/web/glyphs"
 )
 
 var templateSuffix = ".gohtml"
@@ -54,6 +55,24 @@ func fetchTemplate(appContext contentProvider.AppContext) *template.Template {
 }
 
 func render(data any, dataContext contentProvider.AppContext, w http.ResponseWriter) {
+
+	if dataContext.HttpStatusCode == 0 {
+		dataContext.HttpStatusCode = http.StatusOK // Default to 200 OK if not set
+	}
+
+	if dataContext.HttpStatusCode < 200 || dataContext.HttpStatusCode >= 300 {
+		logHandler.ErrorLogger.Printf("HTTP Status Code %d is not in the 2xx range", dataContext.HttpStatusCode)
+		dataContext.TemplateName = "error" // Set a default error template
+		dataContext.PageTitle = "Error"
+		dataContext.PageSummary = "An error occurred while processing your request."
+		dataContext.PageKeywords = "error, issue, problem"
+		dataContext.PageActions.AddBackAction()
+		dataContext.PageActions.AddPrintAction()
+		dataContext.AddBreadcrumb(contentProvider.LauncherName, contentProvider.LauncherURI, contentProvider.LauncherHover, contentProvider.LauncherIcon)
+		dataContext.AddBreadcrumb("Error", "", "", glyphs.Error)
+		//dataContext.HttpStatusCode = http.StatusInternalServerError // Set to 500 if not in the 2xx range
+	}
+
 	template := fetchTemplate(dataContext)
 	if template == nil {
 		logHandler.ErrorLogger.Println("Failed to get template, using default response")

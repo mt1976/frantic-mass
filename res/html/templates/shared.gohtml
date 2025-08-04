@@ -160,7 +160,7 @@
     {{/* Handle form submission messages */}}
     {{if .Context.Workflow.IsNew}}
         <input type="hidden" name="_method" value="POST">
-    {{else if .Context.Workflow.IsViewEdit}}
+    {{else if .Context.Workflow.IsEdit}}
         <input type="hidden" name="_method" value="PUT">
     {{else if .Context.Workflow.IsDelete}}
         <input type="hidden" name="_method" value="DELETE">

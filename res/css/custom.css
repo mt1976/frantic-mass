@@ -4,35 +4,51 @@
 
 /* Custom CSS */
 .danger-msg {
-  background-color: #f8d7da;
-  border-left: 10px solid #721c24;
+  background-color: var(--pico-color-red-150)
+;
+  border-left: 10px solid var(--pico-color-red-800);
   padding: 10px;
   border-radius: 5px;
-  color: #721c24;
+  color: var(--pico-color-red-800)!important;
 }
 
-.information-msg {
-  background-color: #d1ecf1;
-  border-left: 10px solid #0c5460;
+p.danger-msg {
+  background-color: var(--pico-color-red-150)
+;
+  border-left: 10px solid var(--pico-color-red-800);
   padding: 10px;
   border-radius: 5px;
-  color: #0c5460;
+  color: var(--pico-color-red-800)!important;
+}
+section.danger-msg {
+  background-color: var(--pico-color-red-150);
+  border-left: 10px solid var(--pico-color-red-800);
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--pico-color-red-800)!important;
+}
+.information-msg {
+  background-color: var(--pico-color-cyan-50);
+  border-left: 10px solid var(--pico-color-cyan-800);
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--pico-color-cyan-800)!important;
 }
 
 .success-msg {
-  background-color: #d4edda;
-  border-left: 10px solid #155724;
+  background-color: var(--pico-color-green-50);
+  border-left: 10px solid var(--pico-color-green-800);
   padding: 10px;
   border-radius: 5px;
-  color: #155724;
+  color: var(--pico-color-green-800)!important;
 }
 
 .warning-msg {
-  background-color: #fff3cd;
-  border-left: 10px solid #856404;
+  background-color: var(--pico-color-amber-150);
+  border-left: 10px solid var(--pico-color-amber-800);
   padding: 10px;
   border-radius: 5px;
-  color: #856404;
+  color: var(--pico-color-amber-800)!important;
 }
 
 .light-msg {
@@ -57,6 +73,14 @@
   padding: 10px;
   border-radius: 5px;
   color: var(--pico-primary) !important;
+}
+
+.secondary-msg {
+    background-color: var(--pico-secondary-focus) !important;
+    border-left: 10px solid var(--pico-secondary) !important;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--pico-secondary) !important;
 }
 
 body {
@@ -132,13 +156,12 @@ element.style {
 
 
 
-
-
-
-
 input:not([type=checkbox],[type=radio],[type=range]), select, textarea {
     padding: 0.5rem !important;
+    padding-top: 0 !important;
+    padding-bottom: 0rem !important;
     width: 20rem !important;
+    height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 1 + var(--pico-border-width) * 2)!important;
 }
 
 label {
