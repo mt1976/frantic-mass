@@ -158,11 +158,11 @@
 
 {{define "handleform"}}
     {{/* Handle form submission messages */}}
-    {{if .Context.IsCreate}}
+    {{if .Context.Workflow.IsNew}}
         <input type="hidden" name="_method" value="POST">
-    {{else if .Context.IsUpdate}}
+    {{else if .Context.Workflow.IsViewEdit}}
         <input type="hidden" name="_method" value="PUT">
-    {{else if .Context.IsDelete}}
+    {{else if .Context.Workflow.IsDelete}}
         <input type="hidden" name="_method" value="DELETE">
     {{end}}
     {{/* Handle form submission messages */}}

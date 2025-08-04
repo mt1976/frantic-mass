@@ -69,7 +69,7 @@
                 <label>Date of Birth</label>
                 <input name="date_of_birth" type="text" value='{{.Baseline.DateOfBirth.Format "02 Jan 2006"}}' required />
             </div>
-            <div class="form-group">
+            <div class="form-group" {{if .Context.Workflow.IsNew}}style="display: none;"{{end}}>
                 <label>Pivot Date</label>
                 <input name="pivot_date" type="text" value='{{.Baseline.PivotDate.Format "02 Jan 2006"}}'  />
             </div>
