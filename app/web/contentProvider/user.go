@@ -37,6 +37,7 @@ type UserView struct {
 func GetUser(view UserView, userID string) (UserView, error) {
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "user"
+	view.Context.SetIsViewOrEditWorkflow() // Set the request type to GET for viewing user details
 
 	userIdInt, err := StringToInt(userID)
 	if err != nil {
@@ -111,7 +112,7 @@ func GetUser(view UserView, userID string) (UserView, error) {
 func NewUser(view UserView) (UserView, error) {
 	view.Context.SetDefaults() // Initialize the Common view with defaults
 	view.Context.TemplateName = "user"
-	view.Context.IsCreate = true // Set the request type to PUT for creating a new user
+	view.Context.SetIsNewWorkflow() // Set the request type to GET for creating a new user
 
 	view.User = user.User{}
 

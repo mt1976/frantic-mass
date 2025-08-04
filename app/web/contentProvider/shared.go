@@ -76,10 +76,97 @@ type AppContext struct {
 	ChartData        template.JS           // Data for the chart to be displayed on the page
 	ChartTitle       string                // Title of the chart to be displayed on the page
 	Breadcrumbs      []Breadcrumb          // Breadcrumbs for navigation, each containing a title and URL
-	IsCreate         bool                  // Flag to indicate if the current request is a POST request
-	IsUpdate         bool                  // Flag to indicate if the current request is a PUT request
-	IsRead           bool                  // Flag to indicate if the current request is a GET request
-	IsDelete         bool                  // Flag to indicate if the current request is a DELETE request
+	Workflow         Workflow              // Workflow state for the current page, indicating if it's in create, update, delete, or view mode
+	// IsCreate         bool                  // Flag to indicate if the current request is a POST request
+	// IsUpdate         bool                  // Flag to indicate if the current request is a PUT request
+	// IsRead           bool                  // Flag to indicate if the current request is a GET request
+	// IsDelete         bool                  // Flag to indicate if the current request is a DELETE request
+}
+
+type Workflow struct {
+	IsNew       bool   // Flag to indicate if the workflow is new
+	IsViewEdit  bool   // Flag to indicate if the workflow is in view/edit mode
+	IsDelete    bool   // Flag to indicate if the workflow is in delete mode
+	IsArchive   bool   // Flag to indicate if the workflow is in archive mode
+	IsAction    bool   // Flag to indicate if the workflow is in action mode
+	IsReadOnly  bool   // Flag to indicate if the workflow is read-only
+	AdhocAction string // Action to be performed in the workflow, e.g., "create", "update", "delete"
+}
+
+func (c *Workflow) SetDefaults() {
+	c.IsNew = false
+	c.IsViewEdit = true
+	c.IsDelete = false
+	c.IsArchive = false
+	c.IsAction = false
+	c.IsReadOnly = false
+	c.AdhocAction = "" // Reset the action to an empty string
+}
+
+func (c *AppContext) SetIsNewWorkflow() {
+	// Set the context to a new state
+	c.Workflow.IsNew = true
+	c.Workflow.IsViewEdit = false
+	c.Workflow.IsDelete = false
+	c.Workflow.IsArchive = false
+	c.Workflow.IsAction = false
+	c.Workflow.IsReadOnly = false
+	c.Workflow.AdhocAction = "" // Reset the action to an empty string
+}
+
+func (c *AppContext) SetIsViewOrEditWorkflow() {
+	// Set the context to view/edit state
+	c.Workflow.IsNew = false
+	c.Workflow.IsViewEdit = true
+	c.Workflow.IsDelete = false
+	c.Workflow.IsArchive = false
+	c.Workflow.IsAction = false
+	c.Workflow.IsReadOnly = false
+	c.Workflow.AdhocAction = "" // Reset the action to an empty string
+}
+
+func (c *AppContext) SetIsDeleteWorkflow() {
+	// Set the context to delete state
+	c.Workflow.IsNew = false
+	c.Workflow.IsViewEdit = false
+	c.Workflow.IsDelete = true
+	c.Workflow.IsArchive = false
+	c.Workflow.IsAction = false
+	c.Workflow.IsReadOnly = false
+	c.Workflow.AdhocAction = "" // Reset the action to an empty string
+}
+
+func (c *AppContext) SetIsArchiveWorkflow() {
+	// Set the context to archive state
+	c.Workflow.IsNew = false
+	c.Workflow.IsViewEdit = false
+	c.Workflow.IsDelete = false
+	c.Workflow.IsArchive = true
+	c.Workflow.IsAction = false
+	c.Workflow.IsReadOnly = false
+	c.Workflow.AdhocAction = "" // Reset the action to an empty string
+}
+
+func (c *AppContext) SetIsActionWorkflow(action string) {
+	// Set the context to action state
+	c.Workflow.IsNew = false
+	c.Workflow.IsViewEdit = false
+	c.Workflow.IsDelete = false
+	c.Workflow.IsArchive = false
+	c.Workflow.IsAction = true
+	c.Workflow.IsReadOnly = false
+	c.Workflow.AdhocAction = action // Set the specific action to be performed
+}
+
+func (c *AppContext) SetIsReadOnlyWorkflow() {
+	// Set the context to read-only state
+	c.Workflow.IsNew = false
+	c.Workflow.IsViewEdit = false
+	c.Workflow.IsDelete = false
+	c.Workflow.IsArchive = false
+	c.Workflow.IsAction = false
+	c.Workflow.IsReadOnly = true
+	c.Workflow.AdhocAction = "" // Reset the action to an empty string
 }
 
 type Breadcrumb struct {
@@ -256,10 +343,13 @@ func (c *AppContext) SetDefaults() {
 	logHandler.InfoLogger.Printf("Template Path: %s", c.TemplatePath)
 	c.TemplateName = "error" // Default template name, can be overridden by specific views
 	c.PageActions = actionHelpers.Actions{}
-	c.IsDelete = false
-	c.IsRead = true
-	c.IsCreate = false
-	c.IsUpdate = false
+	c.Workflow.SetDefaults()
+	c.PageHasChart = false          // Default to no chart on the page
+	c.ChartID = ""                  // Default chart ID, can be set later
+	c.ChartData = template.JS("{}") // Default empty chart data
+	c.ChartTitle = ""               // Default chart title, can be set later
+	c.Breadcrumbs = []Breadcrumb{}  // Initialize breadcrumbs as an empty slice
+
 }
 
 func (c *AppContext) AddError(err string) {
