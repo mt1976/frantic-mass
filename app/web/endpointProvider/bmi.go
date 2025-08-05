@@ -61,11 +61,11 @@ func BMI(w http.ResponseWriter, r *http.Request) {
 	bmi := measures.BMI{}
 	bmi.SetBMIByWeightAndHeight(userWeightFloat, height.CMs)
 
-	w.Header().Set("Content-Type", "text/plain")
+	w.Header().Set("Content-Type", "application/vnd.api+json")
 	w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
 	w.Header().Set("Pragma", "no-cache")
 	w.Header().Set("Expires", "0")
-
+	// Build the JSON API response
 	attributes := map[string]interface{}{
 		"bmi":         bmi.BMI,
 		"description": bmi.Description,
