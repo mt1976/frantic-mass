@@ -67,6 +67,7 @@ type Goal struct {
 	TargetDate      time.Time             // Target date for achieving the goal
 	LossPerWeek     string                // Desired weight loss per week in kilograms
 	IsDefault       bool                  // Type of goal, e.g., user-defined or average weight loss goal
+	Note            string                // Note for the goal
 	Actions         actionHelpers.Actions // Actions available for the user, such as edit or delete
 }
 

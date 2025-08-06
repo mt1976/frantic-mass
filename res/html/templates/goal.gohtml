@@ -36,8 +36,9 @@ Name              string          `storm:"unique"` // Name of the goal
                     <input type="number" id="targetWeight" name="targetWeight" value="{{.Goal.TargetWeight.KGs}}" step="0.1" required>
                 </div>
                 <div class="form-group">
-                    <label for="targetBMI">Target BMI: {{.Goal.TargetBMI.Glyph}}</label>
+                    <label for="targetBMI">Target BMI: <span id="targetBMIGlyph" style="padding-left: 10px;">{{.Goal.TargetBMI.Glyph}}</span></label>
                     <input type="number" id="targetBMI" name="targetBMI" value="{{.Goal.TargetBMI.BMI}}" step="0.1" required>
+                    <input type="text" id="targetBMIDescription" name="targetBMIDescription" value="{{.Goal.TargetBMI.Description}}"  readonly>
                 </div>
                  <div class="form-group">
                     <label for="targetDate">Target Date:</label>
@@ -57,7 +58,7 @@ Name              string          `storm:"unique"` // Name of the goal
                 </div>
                 <div class="form-group">
                     <label for="averageWeightLoss">Average Weight Loss Goal: {{.Goal.AverageWeightLoss.State}}</label>
-                    <input type="checkbox" id="averageWeightLoss" name="averageWeightLoss" {{if eq .Goal.AverageWeightLoss.State "true"}}checked{{end}}>
+                    <input type="checkbox" role="switch" id="averageWeightLoss" name="averageWeightLoss" {{if eq .Goal.AverageWeightLoss.State "true"}}checked{{end}}>               
                 </div>
           
             </article>

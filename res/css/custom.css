@@ -180,3 +180,7 @@ select {
     height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
 }
 
+span.primary{
+color: var(--pico-primary) !important;
+}
+

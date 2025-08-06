@@ -9,21 +9,21 @@
         <article>
         <form>
             <hgroup>
-                <h2>Projection:</h2>
+                <h2>Projection for : <span class="primary">{{.Goal.Name}}</span></h2>
             </hgroup>
                 <form>
-                <div class="form-group">
+                {{/* <div class="form-group">
                     <label>Name</label>
                     <input name="name" type="text" value="{{.User.Name}}" readonly/>
                 </div>
                 <div class="form-group">
                     <label>Goal</label>
                     <input name="goal" type="text" value="{{.Goal.Name}}" readonly/>
-                </div>
+                </div> */}}
                 <article>
                     <hgroup>
                     <h3>Target:</h3>
-                    <p>{{.Goal.Description}}</p>
+                    <small>{{.Goal.Description}}</small>
                     </hgroup>
                     <div class="overflow-auto"><table>
                         <thead>
@@ -52,7 +52,7 @@
                     </article>
                     <article>
                         <hgroup>
-                            <h3>Projections:</h3>
+                            <h3>Projection</h3>
                         </hgroup>
                        <table>
                            <thead>

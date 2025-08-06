@@ -69,11 +69,16 @@ func (b *BMI) SetBMIByWeightAndHeight(weightKg float64, heightCm float64) *BMI {
 		return b
 	}
 
-	heightM := heightCm / 100.0
-	thisBMI := weightKg / (heightM * heightM)
+	thisBMI := CalculateBMI(heightCm, weightKg)
 	b.set(thisBMI)
 
 	return b
+}
+
+func CalculateBMI(heightCm float64, weightKg float64) float64 {
+	heightM := heightCm / 100.0
+	thisBMI := weightKg / (heightM * heightM)
+	return thisBMI
 }
 
 func (b *BMI) SetBMIFromWeightAndHeight(w Weight, h Height) (*BMI, error) {

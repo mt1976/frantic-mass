@@ -38,12 +38,9 @@
             </div>
 
             <div class="form-group">
-                <label>BMI</label>
-                <fieldset class="flex">
-                    <input name="bmi" type="text" value="{{.BMI}}" readonly />
-                    <input name="bmiNote" type="text" value="{{.BMINote}}" readonly />
-                    <input name="bmiStatus" type="text" value="{{.BMIStatus}}" readonly />
-                </fieldset>
+                    <label for="BMI">BMI: <span id="BMIGlyph" style="padding-left: 10px;">{{.BMIStatus}}</span></label>
+                    <input type="number" id="BMI" name="BMI" value="{{.BMI}}" step="0.1" readonly>
+                    <input type="text" id="BMINote" name="BMINote" value="{{.BMINote}}"  readonly>
             </div>
             <div class="form-group">
                 <label>Average Weight Loss</label>

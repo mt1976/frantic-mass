@@ -79,13 +79,23 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 	}
 
 	view.Goal.ID = goalrec.ID
-	view.Goal.Description = goalrec.Note
+	view.Goal.Note = goalrec.Note
 	view.Goal.Name = goalrec.Name
 	view.Goal.TargetWeight = goalrec.TargetWeight.KgAsString()
 	view.Goal.TargetBMI = goalrec.TargetBMI.String()
 	view.Goal.TargetBMINote = goalrec.TargetBMI.Description
 	view.Goal.TargetBMIStatus = goalrec.TargetBMI.Glyph
 	view.Goal.TargetDate = goalrec.TargetDate
+	view.Goal.Description = goalrec.Description
+	if view.Goal.Description == "" {
+		view.Goal.Description = view.Goal.Note // Fallback to Note if Description is empty
+	}
+	if view.Goal.Description == "" {
+		view.Goal.Description = view.Goal.Name // Fallback to Name if both Note and Description are empty
+	}
+	if view.Goal.Description == "" {
+		view.Goal.Description = "No description provided" // Default message if all are empty
+	}
 
 	// Get Avg Weight Loss
 	if goalrec.AverageWeightLoss.IsTrue() {

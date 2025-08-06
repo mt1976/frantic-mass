@@ -32,6 +32,7 @@ type Goal struct {
 	TargetDate        time.Time       // Target date for achieving the goal
 	LossPerWeek       measures.Weight // Desired weight loss per week in kilograms
 	Note              string
+	Description       string
 	CompositeID       string        // Composite ID for unique identification of the goal
 	NoProjections     int           // Projection Period in weeks, used for calculating the target date based on the current weight and loss per week
 	AverageWeightLoss dao.StormBool // Type of goal, e.g., user-defined or average weight loss goal

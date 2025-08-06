@@ -28,9 +28,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="bmi">BMI:</label>
-                    <input type="number" id="bmi" name="bmi" value="{{.BMI.BMI}}" step="0.1" required>
-                    <small>{{.BMI.Description}} {{.BMI.Glyph}}</small>
+                   
+
+                    <label for="BMI">BMI: <span id="BMIGlyph" style="padding-left: 10px;"> {{.BMI.Glyph}}</span></label>
+                    <input type="number" id="BMI" name="BMI" value="{{.BMI.BMI}}" step="0.1" required>
+                    <input type="text" id="BMIDescription" name="BMIDescription" value="{{.BMI.Description}}"  readonly>
+
+
                 </div>
                 <div class="form-group">
                     <label for="note">Note:</label>

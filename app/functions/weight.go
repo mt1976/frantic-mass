@@ -90,7 +90,7 @@ func FetchLatestWeightRecord(userID int) (weight.Weight, error) {
 		}
 
 		if record.UserID != userID {
-			logHandler.WarningLogger.Printf("Weight record for user %d does not match requested user %d %d", record.UserID, userID)
+			logHandler.WarningLogger.Printf("Weight record for user does not match requested user %d %d", record.UserID, userID)
 			continue // Skip records for other users
 		}
 
