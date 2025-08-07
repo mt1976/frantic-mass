@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+>
+<html lang="en">
+    <link
+  rel="stylesheet"
+  href="/Volumes/External HD/Dev/GitHub/frantic-mass/res/css/custom.css"
+>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Group Example</title>
+  <style>
+
+.input-group-wrapper {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  transition: 0.2s;
+  width: 100%;
+}
+
+.input-group-wrapper>.first,
+.input-group-wrapper>.second {
+  border: none;
+  line-height: 60%;
+  display: inline;
+  margin: 6px 0px 6px 0px;
+  padding: 0px 8px 0px 8px;
+}
+
+.input-group-wrapper>.first {
+  width: 30%;
+  /* border-right: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+.input-group-wrapper>.second {
+  width: 30%;
+  border: var(--pico-border-width) solid #69b765 !important;
+}
+
+.input-group-wrapper>.first:focus,
+.input-group-wrapper>.first:active,
+.input-group-wrapper>.second:focus,
+.input-group-wrapper>.second:active {
+  outline: none;
+}
+
+.focus {
+  border: 2px solid rgba(0, 100, 200, 0.6);
+}
+  </style>
+</head>
+
+<body>  
+<article>
+  <form>
+    <div class='form-group'>
+      <!-- <input class='first' placeholder='e.g. Read every day p3 @goals #learning' />
+      <input class='second' value='Aug 4 2018' /> -->
+        <label for="targetBMI">Target BMI: <span id="targetBMIGlyph" style="padding-left: 10px;">🟠</span></label>
+        <input class='first' type="number" id="targetBMI" name="targetBMI" value="999.99" step="0.1" required>
+        <input class='second' type="text" id="targetBMIDescription" name="targetBMIDescription" value="{{.Goal.TargetBMI.Description}}"  readonly>
+    </div>
+  </form>
+</article>
+
+
+</body>
+</html>

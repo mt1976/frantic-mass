@@ -184,3 +184,9 @@ span.primary{
 color: var(--pico-primary) !important;
 }
 
+.form-group input.second{
+    color: grey !important;
+    background: transparent !important;
+    border:0;
+    font-weight: calc(var(--pico-font-weight) - 150) !important;
+}
