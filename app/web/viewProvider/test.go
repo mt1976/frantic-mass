@@ -18,7 +18,10 @@ func Test(ctx context.Context) (contentProvider.Test, error) {
 	view.Context.WasSuccessful = true
 	view.Context.TemplateName = "test"
 
-	view, err = contentProvider.LoadTestView(view, "73737373") // Load the test view with a dummy test ID
+	// Get the user ID from the context or request
+	userID := "100" // This is a dummy user ID for testing purposes
+
+	view, err = contentProvider.LoadTestView(view, userID) // Load the test view with a dummy test ID
 
 	return view, err
 }

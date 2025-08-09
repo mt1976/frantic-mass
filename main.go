@@ -321,15 +321,16 @@ func main() {
 	logHandler.InfoLogger.Println("Using URLFormat Middleware")
 	r.Get(contentProvider.LauncherURI, handlers.Launcher)
 	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
-	r.Get(contentProvider.DashboardURI, handlers.Dashboard)      // Placeholder for user dashboard handler
-	r.Get(contentProvider.UserURI, handlers.UserRead)            // View/Edit handler
-	r.Post(contentProvider.UserURI, handlers.UserCreate)         // New User handler
-	r.Put(contentProvider.UserURI, handlers.UserUpdate)          // Update User handler
-	r.Get(contentProvider.GoalURI, handlers.Goal)                // Placeholder for goal edit handlerx
-	r.Get(contentProvider.ProjectionURI, handlers.Projection)    // Placeholder for projection handler
-	r.Get(contentProvider.WeightURI, handlers.Weight)            // Placeholder for weight edit handler
-	r.Get(contentProvider.TestURI, handlers.Test)                // Placeholder for test handler
-	r.Get(endpointprovider.BMIWildcardURI, endpointprovider.BMI) // BMI calculation endpoint
+	r.Get(contentProvider.DashboardURI, handlers.Dashboard)                          // Placeholder for user dashboard handler
+	r.Get(contentProvider.UserURI, handlers.UserRead)                                // View/Edit handler
+	r.Post(contentProvider.UserURI, handlers.UserCreate)                             // New User handler
+	r.Put(contentProvider.UserURI, handlers.UserUpdate)                              // Update User handler
+	r.Get(contentProvider.GoalURI, handlers.Goal)                                    // Placeholder for goal edit handlerx
+	r.Get(contentProvider.ProjectionURI, handlers.Projection)                        // Placeholder for projection handler
+	r.Get(contentProvider.WeightURI, handlers.Weight)                                // Placeholder for weight edit handler
+	r.Get(contentProvider.TestURI, handlers.Test)                                    // Placeholder for test handler
+	r.Get(endpointprovider.BMIWildcardURI, endpointprovider.BMI)                     // BMI calculation endpoint\
+	r.Get(endpointprovider.BMIEnrichmentWildcardURI, endpointprovider.BMIEnrichment) // BMI enrichment endpoint
 	//r.Get(contentProvider.WeightURI, handlers.Weight)         // Placeholder for weight edit handler
 	r.Get("/test", handlers.Dummy)
 	// Inject shutdown function into handler

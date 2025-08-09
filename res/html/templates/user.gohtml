@@ -20,6 +20,7 @@
             <div class="form-group">
                 <label>Username</label>
                 <input name="username" type="text" value="{{.User.Username}}" required />
+                <input name="id" type="text" class="enrichment" value="{{.User.ID}}" readonly disabled/>
             </div>
 
             <div class="form-group">
@@ -37,7 +38,7 @@
                     <option value='{{.Key}}' {{if .Selected}}selected{{end}}>{{.Value}}</option>
                     {{end}}
                 </select>
-                <input name="weight_system_raw" type="text" value="{{.WeightSystemSelected.Value}}" readonly disabled />
+                <input name="weight_system_raw" type="text" value="{{.WeightSystemSelected.Value}}" class="enrichment" readonly disabled />
             </div>
             <div class="form-group">
                 <label>Height System</label>
@@ -46,7 +47,7 @@
                     <option value='{{.Key}}' {{if .Selected}}selected{{end}}>{{.Value}}</option>
                     {{end}}
                 </select>
-                <input name="height_system_raw" type="text" value="{{.HeightSystemSelected.Value}}" readonly disabled />
+                <input name="height_system_raw" type="text" value="{{.HeightSystemSelected.Value}}" class="enrichment" readonly disabled />
             </div>
             <div class="form-group">
                 <label>Locale</label>
@@ -55,17 +56,17 @@
                     <option value='{{.Key}}' {{if .Selected}}selected{{end}}>{{.Value}}</option>
                     {{end}}
                 </select>
-                <input name="locale_raw" type="text" value="{{.Context.UserLocale}}" readonly disabled />
+                <input name="locale_raw" type="text" value="{{.Context.UserLocale}}" class="enrichment" readonly disabled />
             </div>
             <div class="form-group">
                 <label>Height</label>
                 <input name="height" type="number" value="{{.Baseline.Height.CMs}}" required/>
-                <input name="height_raw" type="text" value="{{.HeightSystemSelected.Value}}" readonly disabled />
+                <input name="height_raw" type="text" value="{{.HeightSystemSelected.Value}}" class="enrichment" readonly disabled />
             </div>
             <div class="form-group">
                 <label>Projection Period</label>
                 <input name="projection_period" type="text" value="{{.Baseline.ProjectionPeriod}}" required />
-                <input name="projection_period_raw" type="text" value="months" readonly disabled />
+                <input name="projection_period_raw" type="text" value="months" class="enrichment" readonly disabled />
             </div>
             <div class="form-group">
                 <label>Date of Birth</label>
@@ -74,7 +75,7 @@
             <div class="form-group" {{if .Context.Workflow.IsNew}}style="display: none;"{{end}}>
                 <label>Pivot Date</label>
                 <input name="pivot_date" type="text" value='{{.Baseline.PivotDate.Format "02 Jan 2006"}}' readonly disabled/>
-                <input name="pivot_date_raw" type="text" value='{{.Baseline.PivotDate.Format "Monday"}}' readonly disabled />
+                <input name="pivot_date_raw" type="text" value='{{.Baseline.PivotDate.Format "Monday"}}' class="enrichment" readonly disabled />
                 <small>{{.Baseline.PivotDate.Format "02 Jan 2006"}} is a {{.Baseline.PivotDate.Format "Monday"}}, logging will take place on a {{.Baseline.PivotDate.Format "monday"}} and reminders will be sent 1 day before.</small>
             </div>
             <div class="form-group">

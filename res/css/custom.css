@@ -97,6 +97,12 @@ body {
     border: 1px solid var(--pico-primary) !important;
     background-color: var(--pico-pico-mark-background-color) !important;
     color: var(--pico-primary) !important;
+    height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 1 + var(--pico-border-width) * 2)!important;
+    vertical-align: middle !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 10rem !important;
 }
 
 
@@ -128,8 +134,8 @@ h2 {
 }
 
 element.style {
-       fill: var(--pico-primary) !important;
-        background-color: var(--pico-primary) !important;
+  fill: var(--pico-primary) !important;
+  background-color: var(--pico-primary) !important;
 }
 
 
@@ -156,7 +162,7 @@ element.style {
 
 
 
-input:not([type=checkbox],[type=radio],[type=range]), select, textarea {
+input:not([type=checkbox],[type=radio],[type=range]), select {
     padding: 0.5rem !important;
     padding-top: 0 !important;
     padding-bottom: 0rem !important;
@@ -184,9 +190,25 @@ span.primary{
 color: var(--pico-primary) !important;
 }
 
-.form-group input.second{
+.form-group input.enrichment{
     color: grey !important;
     background: transparent !important;
     border:0;
     font-weight: calc(var(--pico-font-weight) - 150) !important;
+}
+
+.form-group textarea{
+    max-height: auto !important;
+    overflow: auto !important;
+    resize: vertical !important;
+}
+
+textarea {
+    width: 30rem !important;
+    height: auto !important;
+    width: calc(100% - 2rem) !important;
+    rows: 10 !important;
+    max-height: none !important;
+    overflow: auto !important;
+    resize: vertical !important;
 }

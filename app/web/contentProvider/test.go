@@ -43,6 +43,8 @@ func LoadTestView(view Test, testID string) (Test, error) {
 		return view, nil
 	}
 
+	logHandler.EventLogger.Println("Loading Test View for ID:", testIdInt)
+
 	view.ID = testIdInt
 
 	view.Context.HttpStatusCode = 200 // OK
