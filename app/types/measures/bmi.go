@@ -14,11 +14,9 @@ import (
 // - Obesity: BMI >= 30
 // If the BMI value is less than or equal to zero, it is considered invalid and the note is set to "Invalid BMI".
 type BMI struct {
-	BMI         float64 `json:"value"`  // BMI value
-	Description string  `json:"text"`   // Textual representation of BMI
-	Glyph       string  `json:"glyph"`  // Glyph representation of BMI, if applicable
-	Weight      float64 `json:"weight"` // Weight in kg, if applicable
-	Height      float64 `json:"height"` // Height in cm, if applicable
+	BMI         float64 `json:"value"` // BMI value
+	Description string  `json:"text"`  // Textual representation of BMI
+	Glyph       string  `json:"glyph"` // Glyph representation of BMI, if applicable
 }
 
 func (b *BMI) String() string {
@@ -61,21 +59,6 @@ func (b *BMI) Set(Value float64) *BMI {
 		b.Description = "Obese"
 		b.Glyph = "🔴" // Example glyph for obesity
 	}
-	return b
-}
-
-// CalculateWeightFromBMIAndUserID calculates the weight (kg) given a BMI and userID (fetches height from baseline)
-func (b *BMI) CalculateWeightFromBMIAndUserID(bmi, height float64) *BMI {
-	if height <= 0 {
-		b.Description = "Invalid height"
-		return b
-	}
-	heightM := height / 100.0
-	weight := bmi * heightM * heightM
-
-	b.Set(bmi)
-	b.Weight = weight
-	b.Height = height
 	return b
 }
 
