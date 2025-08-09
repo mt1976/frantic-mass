@@ -263,3 +263,20 @@ func NewWeightFromString(value string) (*Weight, error) {
 	}
 	return &w, nil
 }
+
+func (w *Weight) CalcWeightFromBMIFloat(bmi, height float64) *Weight {
+	if height <= 0 {
+		logHandler.ErrorLogger.Println("Invalid height")
+		return nil
+	}
+	heightM := height / 100.0
+	weight := bmi * heightM * heightM
+
+	w.Set(weight)
+
+	return w
+}
+
+func (w *Weight) CalcWeightFromBMI(bmi BMI, height Height) *Weight {
+	return w.CalcWeightFromBMIFloat(bmi.BMI, height.CMs)
+}
