@@ -143,6 +143,17 @@ func main() {
 		logHandler.InfoLogger.Printf("Goal Created:[%+v]", thisGoal2)
 	}
 
+	logHandler.InfoLogger.Println("Creating Goal for UserID:", userIdentifier)
+	thisGoal3, goalErr3 := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v3", userIdentifier), measures.Weight{KGs: 84.78950784000001}, time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
+
+	if goalErr3 != nil {
+		logHandler.ErrorLogger.Println(goalErr3)
+	} else {
+		logHandler.InfoLogger.Printf("Goal Created:[%+v]", thisGoal3)
+	}
+
+	//84.78950784000001
+
 	avgGoal, avgGoalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("AvgGoalFor%v", userIdentifier), measures.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 0}, "This is an average weight loss goal", true)
 	if avgGoalErr != nil {
 		logHandler.ErrorLogger.Println(avgGoalErr)

@@ -22,7 +22,7 @@ async function submitBMI() {
     return;
   }
 
-  const url = `/bmi/calculate/${encodeURIComponent(userId)}/${encodeURIComponent(weight)}`;
+  const url = `/bmi/calcBMI/${encodeURIComponent(userId)}/${encodeURIComponent(weight)}`;
 
   console.log('Submitting BMI:', url);
 
@@ -44,7 +44,7 @@ async function submitBMI() {
       ? data
       : description || 'No description available';
     bmiGlyphElement.textContent = data.data.attributes.glyph || '🟠';
-    bmiValueElement.value = data.data.attributes.bmi || '999.99';
+    bmiValueElement.value = data.data.attributes.bmi || '000.0000';
     console.log('BMI enrichment updated:', bmiEnrichmentElement.value);
   } catch (err) {
     bmiEnrichmentElement.value = 'Error: ' + err.message;

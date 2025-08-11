@@ -2,6 +2,9 @@ package measures
 
 import (
 	"fmt"
+	"math"
+
+	"github.com/goforj/godump"
 )
 
 // BMI represents the Body Mass Index (BMI) value and its textual representation.
@@ -14,14 +17,18 @@ import (
 // - Obesity: BMI >= 30
 // If the BMI value is less than or equal to zero, it is considered invalid and the note is set to "Invalid BMI".
 type BMI struct {
-	BMI         float64 `json:"value"` // BMI value
-	Description string  `json:"text"`  // Textual representation of BMI
-	Glyph       string  `json:"glyph"` // Glyph representation of BMI, if applicable
+	BMI         float64 `json:"value"`    // BMI value
+	Description string  `json:"text"`     // Textual representation of BMI
+	Glyph       string  `json:"glyph"`    // Glyph representation of BMI, if applicable
+	External    float64 `json:"external"` // Placeholder for external use, not serialized
 }
 
 func (b *BMI) String() string {
 	if b.BMI <= 0 {
 		return "0"
+	}
+	if b.External <= 0 {
+		return fmt.Sprintf("%.1f", math.Round(b.BMI*10)/10)
 	}
 	return fmt.Sprintf("%.2f", b.BMI)
 }
@@ -31,6 +38,16 @@ func (b *BMI) Float() float64 {
 		return 0
 	}
 	return b.BMI
+}
+
+func (b *BMI) AsExternal() float64 {
+	if b.External <= 0 {
+		if b.BMI <= 0 {
+			return 0
+		}
+		return math.Round(b.BMI*10) / 10
+	}
+	return b.External
 }
 
 func (b *BMI) Text() string {
@@ -59,6 +76,9 @@ func (b *BMI) Set(Value float64) *BMI {
 		b.Description = "Obese"
 		b.Glyph = "🔴" // Example glyph for obesity
 	}
+	// External = BMI to 1 dps
+	b.External = math.Round(Value*10) / 10 // returns 12.3 as float64
+	godump.Dump(b)
 	return b
 }
 

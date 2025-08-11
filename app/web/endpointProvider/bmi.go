@@ -12,7 +12,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/types/measures"
 )
 
-var BMIURI = "/bmi/calculate"                                                        // Define the URI for the BMI endpoint
+var BMIURI = "/bmi/calcBMI"                                                          // Define the URI for the BMI endpoint
 var BMIUserWildcard = "{userID}"                                                     // Define the user ID wildcard
 var BMIWeightWildcard = "{weight}"                                                   // Define the weight wildcard
 var BMIUserWeightEndpoint = BMIURI + "/" + BMIUserWildcard + "/" + BMIWeightWildcard // Define the wildcard URI for the BMI endpoint
@@ -22,7 +22,7 @@ var BMIEnrichmentUserWildcard = "{userID}"                                      
 var BMIEnrichmentBMIWildcard = "{bmi}"                                                                          // Define the BMI wildcard for enrichment
 var BMIEnrichmentEndpoint = BMIEnrichmentURI + "/" + BMIEnrichmentUserWildcard + "/" + BMIEnrichmentBMIWildcard // Define the wildcard URI for the BMI enrichment endpoint
 
-var BMIWeightURI = "/bmi/weight"
+var BMIWeightURI = "/bmi/calcWeight"
 var BMIWeightEndpoint = BMIWeightURI + "/" + BMIUserWildcard + "/" + BMIEnrichmentBMIWildcard // Define the weight wildcard for enrichment
 
 func BMI(w http.ResponseWriter, r *http.Request) {
@@ -81,6 +81,7 @@ func generateBMIResponse(w http.ResponseWriter, bmi measures.BMI, userIDInt int)
 		"bmi":         bmi.BMI,
 		"description": bmi.Description,
 		"glyph":       bmi.Glyph,
+		"external":    bmi.External,
 	}
 
 	jsonBytes, err := BuildJSONAPIResponse("user", fmt.Sprintf("%d", userIDInt), attributes)
@@ -208,7 +209,7 @@ func WeightFromBMI(w http.ResponseWriter, r *http.Request) {
 		logHandler.ErrorLogger.Printf("Response Rendering Error %s", err.Error())
 	}
 
-	logHandler.EventLogger.Printf("Weight calculated for User ID %d: w=%v h=%v b=%s", userIDInt, weight.KgAsString(), height.CmAsString(), bmi.Text())
+	logHandler.EventLogger.Printf("Weight calculated for User ID %d: w=%v h=%v b=%f", userIDInt, weight.KgAsString(), height.CmAsString(), bmi.AsExternal())
 
 }
 

@@ -9,6 +9,7 @@ import (
 func (record *WeightProjection) GetBMI() measures.BMI {
 	logHandler.EventLogger.Printf("GetBMI called for weightProjection_Store ID %d", record.ID)
 	if record == nil {
+		logHandler.ErrorLogger.Printf("GetBMI called with nil record")
 		return measures.BMI{}
 	}
 	// Recalculate BMI if it is not set
@@ -26,6 +27,7 @@ func (record *WeightProjection) GetBMI() measures.BMI {
 			logHandler.ErrorLogger.Printf("Error calculating BMI for user %d with weight %v and height %v: %v", record.UserID, record.Weight, bl.Height, errBMI)
 			return measures.BMI{}
 		}
+		logHandler.EventLogger.Printf("Calculated BMI for user %d: %v", record.UserID, *bmiPtr)
 		record.BMI = *bmiPtr
 		logHandler.EventLogger.Printf("Calculated BMI for user %d: %v", record.UserID, record.BMI)
 	}

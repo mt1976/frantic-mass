@@ -56,6 +56,7 @@ func Create(ctx context.Context, userID, goalID, projectionNo int, weight, amoun
 	record.CompositeID = types.NewCompositeIDFromParts(userID, goalID, projectionNo)
 
 	record.BMI = record.GetBMI() // Calculate BMI based on the projected weight
+	//godump.Dump(record.BMI)
 
 	// Record the create action in the audit data
 	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %v", domain, record.CompositeID.String())))

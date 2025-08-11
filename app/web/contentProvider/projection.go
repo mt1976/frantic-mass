@@ -3,6 +3,7 @@ package contentProvider
 import (
 	"fmt"
 
+	"github.com/goforj/godump"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/goal"
 	"github.com/mt1976/frantic-mass/app/dao/user"
@@ -122,6 +123,7 @@ func BuildProjection(view Projection, userId int, goalId int) (Projection, error
 	}
 
 	view.Projections = projections
+	godump.Dump(view.Projections)
 
 	if len(view.Projections) == 0 {
 		logHandler.InfoLogger.Println("No weight projections found for user ID:", userId)

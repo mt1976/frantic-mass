@@ -33,13 +33,13 @@ Name              string          `storm:"unique"` // Name of the goal
                 </div>  
                 <div class="form-group">
                     <label for="targetWeight">Target Weight (kg):</label>
-                    <input type="number" id="targetWeight" name="targetWeight" value="{{.Goal.TargetWeight.KGs}}" step="0.1" required>
+                    <input type="number" id="targetWeight" name="targetWeight" value="{{.Goal.TargetWeight.KGs}}" step="0.01" required>
                 </div>
 
                 <div class='form-group'>
                     <input type="text" id="bmiUserId" value="{{.UserID}}" hidden/>
                     <label for="bmiValue">BMI: <span id="bmiGlyph" style="padding-left: 10px;">{{.Goal.TargetBMI.Glyph}}</span></label>
-                    <input type="number" id="bmiValue" name="bmiValue" value="{{.Goal.TargetBMI.BMI}}" step="0.5">
+                    <input type="number" id="bmiValue" name="bmiValue" value="{{.Goal.TargetBMI.BMI}}" step="0.1" min="0" max="60">
                     <input class='enrichment' type="text" id="bmiEnrichment" name="bmiEnrichment" value="{{.Goal.TargetBMI.Description}}"  readonly>
                 </div>
                  <div class="form-group">
@@ -71,5 +71,5 @@ Name              string          `storm:"unique"` // Name of the goal
     </body>
    {{template "footer" .}}
     {{template "scripts" .}}
-    <script src="/my.js/bmi_enrichment.js" defer></script>
+    <script src="/my.js/bmi_sync.js" defer></script>
 </html>
