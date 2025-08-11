@@ -314,7 +314,7 @@ func main() {
 		// 	return brotli_enc.NewBrotliWriter(params, w)
 		// })
 		// r.Use(compressor.Handler)
-		r.Use(my_middleware.HandleBrotli)
+		//r.Use(my_middleware.HandleBrotli)
 		logHandler.InfoLogger.Println("Using Brotli Compression Middleware")
 		logHandler.InfoLogger.Println("Compression is enabled, using Brotli and HTML Minification, all responses will be compressed")
 	} else {
@@ -368,10 +368,10 @@ func main() {
 
 	r.Handle("/glyphs/*", http.StripPrefix("/glyphs/", http.FileServer(http.Dir("./node_modules/bootstrap-icons/font"))))
 	r.Handle("/images/*", http.StripPrefix("/images/", http.FileServer(http.Dir("./res/images"))))
-	r.Get("/favicon.ico", func(w http.ResponseWriter, r *http.Request) {
+	r.Get("/favicon", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./res/images/favicon.ico")
 	})
-	r.Get("/robots.txt", func(w http.ResponseWriter, r *http.Request) {
+	r.Get("/robots", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./res/robots.txt")
 	})
 	r.NotFound(handlers.NotFound)

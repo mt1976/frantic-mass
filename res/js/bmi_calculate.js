@@ -39,13 +39,27 @@ async function submitBMI() {
     console.log('Response:', data);
     const description = data.data.attributes.description;
     console.log('description:', description);
+    console.log('glyph:', data.data.attributes.glyph);
+    console.log('bmi:', data.data.attributes.bmi);
+
+    console.log('b4 bmiEnrichment:', bmiEnrichmentElement);
+    console.log('b4 bmiGlyph:', bmiGlyphElement);
+    console.log('b4 bmiValue:', bmiValueElement);
 
     bmiEnrichmentElement.value = typeof data === 'string'
-      ? data
+      ? data.data.attributes.description
       : description || 'No description available';
     bmiGlyphElement.textContent = data.data.attributes.glyph || '🟠';
     bmiValueElement.value = data.data.attributes.bmi || '000.0000';
-    console.log('BMI enrichment updated:', bmiEnrichmentElement.value);
+    bmiEnrichmentElement.textContent = data.data.attributes.description || 'No enrichment available';
+    bmiEnrichmentElement.value = data.data.attributes.description || 'No enrichment available';
+      console.log('BMI enrichment updated:', bmiEnrichmentElement.value);
+     console.log('BMI textContent updated:', bmiEnrichmentElement.textContent);
+
+    console.log('af bmiEnrichment:', bmiEnrichmentElement);
+    console.log('af bmiGlyph:', bmiGlyphElement);
+    console.log('af bmiValue:', bmiValueElement);
+
   } catch (err) {
     bmiEnrichmentElement.value = 'Error: ' + err.message;
     console.error('Error submitting BMI:', err);
