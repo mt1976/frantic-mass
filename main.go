@@ -362,7 +362,10 @@ func main() {
 	r.Handle("/pico.css/*", http.StripPrefix("/pico.css/", http.FileServer(http.Dir("./node_modules/@picocss/pico/css"))))
 	r.Handle("/pico.js/*", http.StripPrefix("/pico.js/", http.FileServer(http.Dir("./node_modules/@picocss/pico/js"))))
 	//r.Handle("/favicon.ico", http.FileServer(http.Dir("./res/images")))
-	r.Handle("/manifest.json", http.FileServer(http.Dir("./res/app")))
+	r.Get("/manifest", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "./res/app/manifest.json")
+	})
+
 	r.Handle("/glyphs/*", http.StripPrefix("/glyphs/", http.FileServer(http.Dir("./node_modules/bootstrap-icons/font"))))
 	r.Handle("/images/*", http.StripPrefix("/images/", http.FileServer(http.Dir("./res/images"))))
 	r.Get("/favicon.ico", func(w http.ResponseWriter, r *http.Request) {

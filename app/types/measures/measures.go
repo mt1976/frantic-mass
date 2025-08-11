@@ -4,6 +4,7 @@ import (
 	"strconv"
 
 	"github.com/mt1976/frantic-core/dao/lookup"
+	"github.com/mt1976/frantic-core/logHandler"
 )
 
 // Data Access Object User
@@ -92,4 +93,38 @@ func IntToString(i int) string {
 		return ""
 	}
 	return strconv.Itoa(i)
+}
+
+func GetWeightSystem(key int) lookup.LookupData {
+	for _, ms := range WeightMeasurementSystems {
+		if ms.Key == key {
+			return lookup.LookupData{
+				Key:          IntToString(ms.Key),
+				Value:        ms.Value,
+				AltID:        ms.Code,
+				Description:  ms.Value + " (" + ms.Code + ")",
+				ObjectDomain: "MeasurementSystem",
+				Selected:     false,
+			}
+		}
+	}
+	logHandler.ErrorLogger.Printf("Invalid weight measurement system key: %d", key)
+	return lookup.LookupData{} // Return an empty struct if not found
+}
+
+func GetHeightSystem(key int) lookup.LookupData {
+	for _, ms := range HeightMeasurementSystems {
+		if ms.Key == key {
+			return lookup.LookupData{
+				Key:          IntToString(ms.Key),
+				Value:        ms.Value,
+				AltID:        ms.Code,
+				Description:  ms.Value + " (" + ms.Code + ")",
+				ObjectDomain: "MeasurementSystem",
+				Selected:     false,
+			}
+		}
+	}
+	logHandler.ErrorLogger.Printf("Invalid height measurement system key: %d", key)
+	return lookup.LookupData{} // Return an empty struct if not found
 }

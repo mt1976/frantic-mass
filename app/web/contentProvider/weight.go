@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/dateHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/user"
@@ -31,8 +32,9 @@ type WeightView struct {
 	Date        string // Formatted date for display
 	DateControl string // Date control for user input
 	// Context holds the common view context
-	Context     AppContext
-	CompositeID string
+	Context      AppContext
+	CompositeID  string
+	WeightSystem lookup.LookupData
 }
 
 func GetWeight(view WeightView, weightIdentifier int) (WeightView, error) {
@@ -84,6 +86,8 @@ func GetWeight(view WeightView, weightIdentifier int) (WeightView, error) {
 	view.UserID = UserRecord.ID
 	view.UserName = UserRecord.GetUserName()
 	// Fetch the user's baseline data
+
+	view.WeightSystem = measures.GetWeightSystem(UserRecord.WeightSystem)
 
 	view.CompositeID = fmt.Sprintf("%d%v%d", view.UserID, cache.Delimiter(), view.ID)
 

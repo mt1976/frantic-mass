@@ -14,6 +14,8 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-core/paths"
 	"github.com/mt1976/frantic-core/stringHelpers"
+	"github.com/mt1976/frantic-mass/app/dao/user"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 	"github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 	"github.com/mt1976/frantic-mass/app/web/styleHelper"
@@ -444,4 +446,32 @@ func ReplacePathParam(template, wildcard, value string) string {
 	// logHandler.EventLogger.Printf("Resulting path after replacement: %s %s %s %s", rtn, wildcard, value, template)
 
 	return rtn
+}
+
+func GetWeightSystemLookup(userID int) lookup.LookupData {
+	// Load the User, get their preffered weight type, then lookup in measures to get their weight system
+	userRecord, err := user.GetBy(user.FIELD_ID, userID)
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error fetching user:", err)
+		return lookup.LookupData{}
+	}
+
+	preferredWeightType := userRecord.WeightSystem
+	weightSystem := measures.GetWeightSystem(preferredWeightType)
+
+	return weightSystem
+}
+
+func GetHeightSystemLookup(userID int) lookup.LookupData {
+	// Load the User, get their preffered height type, then lookup in measures to get their height system
+	userRecord, err := user.GetBy(user.FIELD_ID, userID)
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error fetching user:", err)
+		return lookup.LookupData{}
+	}
+
+	preferredHeightType := userRecord.HeightSystem
+	heightSystem := measures.GetHeightSystem(preferredHeightType)
+
+	return heightSystem
 }
