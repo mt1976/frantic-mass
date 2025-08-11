@@ -7,7 +7,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 )
 
-func Weight(ctx context.Context, weightId string) (contentProvider.WeightView, error) {
+func ViewWeight(ctx context.Context, weightId string) (contentProvider.WeightView, error) {
 
 	logHandler.EventLogger.Println("Creating Weight view for weight ID:", weightId)
 	//godump.Dump(view)
@@ -32,6 +32,26 @@ func Weight(ctx context.Context, weightId string) (contentProvider.WeightView, e
 	}
 
 	view, err = contentProvider.GetWeight(view, intWeightID)
+
+	return view, err
+}
+
+func NewWeight(ctx context.Context, userID int) (contentProvider.WeightView, error) {
+
+	logHandler.EventLogger.Println("Creating Weight view for user ID:", userID)
+	//godump.Dump(view)
+	view := contentProvider.WeightView{}
+	var err error
+
+	// Set the common fields for the view
+	view.Context.PageTitle = "Progress Log Entry"
+	view.Context.PageKeywords = "user, goal, weight, log"
+	view.Context.PageSummary = "Enter the weight log for the selected user."
+	view.Context.TemplateName = "weight"
+	view.Context.HttpStatusCode = 200 // OK
+	view.Context.WasSuccessful = true
+
+	view, err = contentProvider.NewWeight(view, userID)
 
 	return view, err
 }

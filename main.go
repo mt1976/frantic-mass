@@ -338,7 +338,7 @@ func main() {
 	r.Put(contentProvider.UserURI, handlers.UserUpdate)                           // Update User handler
 	r.Get(contentProvider.GoalURI, handlers.Goal)                                 // Placeholder for goal edit handlerx
 	r.Get(contentProvider.ProjectionURI, handlers.Projection)                     // Placeholder for projection handler
-	r.Get(contentProvider.WeightURI, handlers.Weight)                             // Placeholder for weight edit handler
+	r.Get(contentProvider.WeightURI, handlers.ViewWeight)                         // Placeholder for weight edit handler
 	r.Get(contentProvider.TestURI, handlers.Test)                                 // Placeholder for test handler
 	r.Get(endpointprovider.BMIUserWeightEndpoint, endpointprovider.BMI)           // BMI calculation endpoint\
 	r.Get(endpointprovider.BMIEnrichmentEndpoint, endpointprovider.BMIEnrichment) // BMI enrichment endpoint

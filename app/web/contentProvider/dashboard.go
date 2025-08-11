@@ -234,15 +234,21 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			} else {
 				view.Measurements[i].LossSinceLastMeasurement = *measures.NewWeight(0) // No previous measurement, so set to zero
 			}
-			view.Measurements[i].Actions.AddSubmitButton("View", WeightHover, glyphs.Weight, ReplacePathParam(WeightURI, WeightWildcard, IntToString(w.ID)), actionHelpers.READ, "", style.DEFAULT(), css.NONE())
+			nextURI := ReplacePathParam(WeightURI, WeightWildcard, IntToString(w.ID))
+			nextURI = ReplacePathParam(nextURI, UserWildcard, IntToString(userId))
+			view.Measurements[i].Actions.AddSubmitButton("View", WeightHover, glyphs.Weight, nextURI, actionHelpers.READ, "", style.DEFAULT(), css.NONE())
 			logHandler.InfoLogger.Printf("Measurement %d: Recorded At: %s, Weight: %s, BMI: %s", w.ID, w.RecordedAt.Format("02 Jan 2006"), w.Weight.KgAsString(), w.BMI.String())
 		}
 	}
 	uURI := ReplacePathParam(UserURI, UserWildcard, IntToString(userId))
+	newWeightLogURI := ReplacePathParam(WeightURI, UserWildcard, IntToString(userId))
+	newWeightLogURI = ReplacePathParam(newWeightLogURI, WeightWildcard, actionHelpers.NEW)
+	newGoalURI := ReplacePathParam(GoalURI, UserWildcard, IntToString(userId))
+	newGoalURI = ReplacePathParam(newGoalURI, GoalWildcard, actionHelpers.NEW)
 
 	view.Context.PageActions.AddSubmitButton(UserName, fmt.Sprintf(UserHover, view.User.Name), glyphs.User, uURI, actionHelpers.READ, "", style.NONE(), css.NONE())
-	view.Context.PageActions.AddSubmitButton(WeightName, fmt.Sprintf(WeightHover, "NEW"), glyphs.Weight, "/weight/add/"+IntToString(userId), actionHelpers.CREATE, "", style.NONE(), css.NONE())
-	view.Context.PageActions.AddSubmitButton(GoalName, fmt.Sprintf(GoalHover, "NEW", view.User.Name), glyphs.Goal, "/goal/add/"+IntToString(userId), actionHelpers.CREATE, "", style.NONE(), css.NONE())
+	view.Context.PageActions.AddSubmitButton(WeightName, fmt.Sprintf(WeightHover, "NEW"), glyphs.Weight, newWeightLogURI, actionHelpers.READ, "", style.NONE(), css.NONE())
+	view.Context.PageActions.AddSubmitButton(GoalName, fmt.Sprintf(GoalHover, "NEW", view.User.Name), glyphs.Goal, newGoalURI, actionHelpers.READ, "", style.NONE(), css.NONE())
 
 	//godump.Dump(view, "Profile View")
 	view = buildDashboardChart(view, userWeights, goals, "Weight Loss Progress")

@@ -122,3 +122,40 @@ func FilterDeletedRecords(records []Weight) []Weight {
 	logHandler.InfoLogger.Printf("Filtered %d deleted records, %d records remaining", len(records)-len(filtered), len(filtered))
 	return filtered
 }
+
+func GetLatestByUserID(userID int) (Weight, error) {
+	logHandler.EventLogger.Printf("GetLatestByUserID called for user ID %d", userID)
+	if userID <= 0 {
+		return Weight{}, commonErrors.ErrorUserNotFound
+	}
+
+	//var weight Weight
+
+	// Get the latest weight entry for the user
+
+	// err := activeDB.Select().Where("user_id = ?", userID).OrderBy("recorded_at DESC").First(&weight)
+	// define options
+
+	// Ugrh its a hack but lets get all weights for ID and manually filter them
+
+	weightList, err := GetAllWhere(FIELD_UserID, userID)
+	if err != nil {
+		logHandler.ErrorLogger.Printf("Error retrieving weight list for user %d: %v", userID, err)
+		return Weight{}, commonErrors.WrapNotFoundError("Weight", err)
+	}
+
+	filteredList := FilterDeletedRecords(weightList)
+	if len(filteredList) == 0 {
+		logHandler.ErrorLogger.Printf("No weight records found for user %d after filtering deleted records", userID)
+		return Weight{}, nil
+	}
+	latest := filteredList[0]
+	for _, w := range filteredList {
+		if w.RecordedAt.After(latest.RecordedAt) {
+			latest = w
+		}
+	}
+
+	logHandler.InfoLogger.Printf("Retrieved latest weight for user %d: %v", userID, latest)
+	return latest, nil
+}
