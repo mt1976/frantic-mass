@@ -11,7 +11,7 @@
             {{template "breadcrumbs" .}}
             <article>
                 <hgroup>
-                    <h2>Goal Information:</h2>
+                    <h2>Goal</h2>
                 </hgroup>
                     
 {{/* 
@@ -34,6 +34,7 @@ Name              string          `storm:"unique"` // Name of the goal
                 <div class="form-group">
                     <label for="targetWeight">Target Weight (kg):</label>
                     <input type="number" id="targetWeight" name="targetWeight" value="{{.Goal.TargetWeight.KGs}}" step="0.01" required>
+                    <input type="text" class="enrichment" id="targetWeightEnrichment" name="targetWeightEnrichment" value="{{.WeightSystemSelected.AltID}}" readonly>
                 </div>
 
                 <div class='form-group'>
@@ -46,23 +47,32 @@ Name              string          `storm:"unique"` // Name of the goal
                     <label for="targetDate">Target Date:</label>
                     <input type="date" id="targetDate" name="targetDate" value='{{.Goal.TargetDate.Format "2006-01-02"}}' required>
                 </div>
+
                 <div class="form-group">
-                    <label for="lossPerWeek">Desired Weight Loss per Week (kg):</label>
-                    <input type="number" id="lossPerWeek" name="lossPerWeek" value="{{.Goal.LossPerWeek.KGs}}" step="0.1" required>
+                    <label for="averageWeightLoss">Average Weight Loss Goal:</label>
+                    <input type="checkbox" role="switch" id="averageWeightLoss" name="averageWeightLoss" {{if eq .Goal.AverageWeightLoss.State "true"}}checked{{end}}>               
                 </div>
+
+
                 <div class="form-group">
+                    <label for="lossPerWeek">Desired Weight Loss per Week:</label>
+                    <input type="number" id="lossPerWeek" name="lossPerWeek" value="{{.Goal.LossPerWeek.KGs}}" step="0.1" required>
+                                    <input type="text" class="enrichment" id="targetWeightEnrichment" name="targetWeightEnrichment" value="{{.WeightSystemSelected.AltID}}" readonly>
+
+                </div>
+    
+                <div class="form-group">
+                    <label for="noProjections">Projection Period:</label>
+                    <input type="number" id="noProjections" name="noProjections" value="{{.Goal.NoProjections}}" required>
+                    <input type="text" class="enrichment" id="noProjectionsEnrichment" name="noProjectionsEnrichment" value="Weeks" readonly>
+               </div>
+
+
+            <div class="form-group">
                     <label for="note">Note:</label>
                     <textarea id="note" name="note">{{.Goal.Note}}</textarea>
                 </div>
-                <div class="form-group">
-                    <label for="noProjections">Projection Period (weeks):</label>
-                    <input type="number" id="noProjections" name="noProjections" value="{{.Goal.NoProjections}}" required>
-                </div>
-                <div class="form-group">
-                    <label for="averageWeightLoss">Average Weight Loss Goal: {{.Goal.AverageWeightLoss.State}}</label>
-                    <input type="checkbox" role="switch" id="averageWeightLoss" name="averageWeightLoss" {{if eq .Goal.AverageWeightLoss.State "true"}}checked{{end}}>               
-                </div>
-          
+
             </article>
         {{template "chart" .}}
         {{template "alerts" .}}

@@ -8,7 +8,7 @@
     {{template "breadcrumbs" .}}
     <article>
         <hgroup>
-            <h2>Profile:</h2>
+            <h2>Dashboard</h2>
         </hgroup>
         <form>
             <div class="form-group" hidden>
@@ -29,26 +29,30 @@
             <div class="form-group">
                 <label>Height</label>
                 <input name="height" type="text" value="{{.Height}}" readonly />
+                <input name="heightUnit" type="text" class="enrichment" value="{{.HeightSystemSelected.AltID}}" readonly />
             </div>
             <div class="form-group">
                 <label>Weight</label>
                 <input name="weight" type="text" value="{{.CurrentWeight}}" readonly />
+                <input name="weightUnit" type="text" class="enrichment" value="{{.WeightSystemSelected.AltID}}" readonly />
             </div>
 
             <div class='form-group'>
-                    <input type="text" id="bmiUserId" value="{{.User.ID}}" hidden/>
-                    <label for="bmiValue">BMI: <span id="bmiGlyph" style="padding-left: 10px;">{{.BMIStatus}}</span></label>
-                    <input type="number" id="bmiValue" name="bmiValue" value="{{.BMI}}" step="0.1" readonly>
-                    <input class='enrichment' type="text" id="bmiEnrichment" name="bmiEnrichment" value="{{.BMINote}}"  readonly>
+                <input type="text" id="bmiUserId" value="{{.User.ID}}" hidden/>
+                <label for="bmiValue">BMI: <span id="bmiGlyph" style="padding-left: 10px;">{{.BMIStatus}}</span></label>
+                <input type="number" id="bmiValue" name="bmiValue" value="{{.BMI}}" step="0.1" readonly>
+                <input class='enrichment' type="text" id="bmiEnrichment" name="bmiEnrichment" value="{{.BMINote}}"  readonly>
             </div>
 
             <div class="form-group">
                 <label>Average Weight Loss</label>
                 <input name="averageWeightLoss" type="text" value="{{.AverageWeightLoss}}" readonly />
+                <input name="weightUnit" type="text" class="enrichment" value="{{.WeightSystemSelected.AltID}}" readonly />
             </div>
             <div class="form-group">
                 <label>Total Weight Loss</label>
                 <input name="totalWeightLoss" type="text" value="{{.TotalWeightLoss}}" readonly />
+                <input name="weightUnit" type="text" class="enrichment" value="{{.WeightSystemSelected.AltID}}" readonly />
             </div>
 
 

@@ -31,7 +31,8 @@ type WeightView struct {
 	Date        string // Formatted date for display
 	DateControl string // Date control for user input
 	// Context holds the common view context
-	Context AppContext
+	Context     AppContext
+	CompositeID string
 }
 
 func GetWeight(view WeightView, weightIdentifier int) (WeightView, error) {
@@ -83,6 +84,8 @@ func GetWeight(view WeightView, weightIdentifier int) (WeightView, error) {
 	view.UserID = UserRecord.ID
 	view.UserName = UserRecord.GetUserName()
 	// Fetch the user's baseline data
+
+	view.CompositeID = fmt.Sprintf("%d%v%d", view.UserID, cache.Delimiter(), view.ID)
 
 	view.Context.HttpStatusCode = 200 // OK
 	view.Context.WasSuccessful = true

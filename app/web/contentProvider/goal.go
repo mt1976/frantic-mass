@@ -3,9 +3,11 @@ package contentProvider
 import (
 	"fmt"
 
+	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/goal"
 	"github.com/mt1976/frantic-mass/app/dao/user"
+	"github.com/mt1976/frantic-mass/app/types/measures"
 	"github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 )
@@ -17,11 +19,13 @@ var GoalIcon = glyphs.Goal            // Icon for the goal chooser
 var GoalHover = "Goal %s for %s"      // Description for the goal chooser
 
 type GoalView struct {
-	ID       int
-	User     user.User
-	UserID   int    // User ID for the goal
-	UserName string // Name of the user for display purposes
-	Goal     goal.Goal
+	ID                   int
+	User                 user.User
+	UserID               int    // User ID for the goal
+	UserName             string // Name of the user for display purposes
+	Goal                 goal.Goal
+	WeightSystemSelected lookup.LookupData // Selected weight system for the goal
+	HeightSystemSelected lookup.LookupData // Selected height system for the goal
 
 	Context AppContext
 }
@@ -76,6 +80,14 @@ func GetGoal(view GoalView, goalID string) (GoalView, error) {
 	}
 
 	// Fetch the user's baseline data
+	// Get
+
+	// Weight System
+	userWeightSystemID := UserRecord.WeightSystem
+	userHeightSystemID := UserRecord.HeightSystem
+
+	view.WeightSystemSelected = measures.WeightSystemsLookup.Data[userWeightSystemID]
+	view.HeightSystemSelected = measures.HeightSystemsLookup.Data[userHeightSystemID]
 
 	view.Context.HttpStatusCode = 200 // OK
 	view.Context.WasSuccessful = true

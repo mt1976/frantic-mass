@@ -10,10 +10,15 @@
             {{template "breadcrumbs" .}}
             <article>
                 <hgroup>
-                    <h2>Weight Information:</h2>
+                    <h2>Weight Log Entry</h2>
                 </hgroup>
                     
 
+               <div class="form-group">
+                    <label for="dateControl">Recorded On:</label>
+                    <input type="date" id="dateControl" name="dateControl" value="{{.DateControl}}" required>
+                    <input class="enrichment" type="text" id="bmiEnrichment" name="bmiEnrichment" value="{{.Date}}"  readonly>
+                </div>
 
     
                 <div class="form-group">
@@ -21,23 +26,15 @@
                     <input type="number" id="bmiWeightInput" name="bmiWeightInput" value="{{.Weight.KGs}}" step="0.1" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="dateControl">Recorded On:</label>
-                    <input type="date" id="dateControl" name="dateControl" value="{{.DateControl}}" required>
-                     <small>{{.Date}}</small>
+ 
+
+                <div class='form-group'>
+                    <input type="text" id="bmiUserId" value="{{.UserID}}" hidden/>
+                    <label for="bmiValue">BMI: <span id="bmiGlyph" style="padding-left: 10px;">{{.BMI.Glyph}}</span></label>
+                    <input type="number" id="bmiValue" name="bmiValue" value="{{.BMI.External}}" step="0.1" min="0" max="60" readonly>
+                    <input class='enrichment' type="text" id="bmiEnrichment" name="bmiEnrichment" value="{{.BMI.Description}}"  readonly>
                 </div>
 
-                <input type="text" id="bmiUserId" name="bmiUserId" value="{{.User.ID}}" hidden/>
-
-                <div class="form-group">
-                   
-                    
-                    <label for="BMI">BMI: <span id="bmiGlyph" style="padding-left: 10px;"> {{.BMI.Glyph}}</span></label>
-                    <input type="number" id="bmiValue" name="bmiValue" value="{{.BMI.External}}" step="0.1" readonly>
-                    <input type="text" id="bmiEnrichment" name="bmiEnrichment" value="{{.BMI.Description}}"  readonly>
-
-
-                </div>
                 <div class="form-group">
                     <label for="note">Note:</label>
                     <textarea id="note" name="note">{{.Note}}</textarea>

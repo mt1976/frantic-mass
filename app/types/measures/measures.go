@@ -58,7 +58,7 @@ func setupWeights() {
 		WeightSystemsLookup.Data[i] = lookup.LookupData{}
 		WeightSystemsLookup.Data[i].Key = IntToString(ms.Key)
 		WeightSystemsLookup.Data[i].Value = ms.Value
-		WeightSystemsLookup.Data[i].AltID = IntToString(ms.Key)                   // Optional: if you need an alternative ID
+		WeightSystemsLookup.Data[i].AltID = ms.Code                               // Optional: if you need an alternative ID
 		WeightSystemsLookup.Data[i].Description = ms.Value + " (" + ms.Code + ")" // Optional: if you need a code representation
 		WeightSystemsLookup.Data[i].ObjectDomain = "MeasurementSystem"            // Optional: if you need to specify the domain
 		WeightSystemsLookup.Data[i].Selected = false                              // Default to not selected
@@ -80,7 +80,7 @@ func setupHeights() {
 		HeightSystemsLookup.Data[i] = lookup.LookupData{}
 		HeightSystemsLookup.Data[i].Key = IntToString(ms.Key)
 		HeightSystemsLookup.Data[i].Value = ms.Value
-		HeightSystemsLookup.Data[i].AltID = IntToString(ms.Key)                   // Optional: if you need an alternative ID
+		HeightSystemsLookup.Data[i].AltID = ms.Code                               // Optional: if you need an alternative ID
 		HeightSystemsLookup.Data[i].Description = ms.Value + " (" + ms.Code + ")" // Optional: if you need a code representation
 		HeightSystemsLookup.Data[i].ObjectDomain = "MeasurementSystem"            // Optional: if you need to specify the domain
 		HeightSystemsLookup.Data[i].Selected = false                              // Default to not selected
