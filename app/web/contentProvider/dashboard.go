@@ -197,6 +197,7 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 			view.Goals[i].Actions.AddSubmitButton(ProjectionName, fmt.Sprintf(ProjectionHover, g.Name, view.User.Name), glyphs.Projection, uri, actionHelpers.READ, "", style.DEFAULT(), css.NONE())
 
 			goalURI := ReplacePathParam(GoalURI, GoalWildcard, IntToString(g.ID))
+			goalURI = ReplacePathParam(goalURI, UserWildcard, IntToString(userId))
 			view.Goals[i].Actions.AddSubmitButton("View", "View Goal Information", glyphs.Goal, goalURI, actionHelpers.READ, "", style.DEFAULT(), css.NONE())
 			view.Goals[i].Actions.AddSubmitButton("Delete", "Delete Goal", glyphs.Delete, goalURI, actionHelpers.DELETE, "", style.DEFAULT(), css.NONE())
 			logHandler.InfoLogger.Printf("Goal %d: %s, Target Weight: %s, Target Date: %s", g.ID, g.Name, g.TargetWeight.KgAsString(), g.TargetDate.Format("02 Jan 2006"))
@@ -246,8 +247,10 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 	newGoalURI := ReplacePathParam(GoalURI, UserWildcard, IntToString(userId))
 	newGoalURI = ReplacePathParam(newGoalURI, GoalWildcard, actionHelpers.NEW)
 
+	logHandler.InfoLogger.Println("User Glyph [%v]", glyphs.User)
+
 	view.Context.PageActions.AddSubmitButton(UserName, fmt.Sprintf(UserHover, view.User.Name), glyphs.User, uURI, actionHelpers.READ, "", style.NONE(), css.NONE())
-	view.Context.PageActions.AddSubmitButton(WeightName, fmt.Sprintf(WeightHover, "NEW"), glyphs.Weight, newWeightLogURI, actionHelpers.READ, "", style.NONE(), css.NONE())
+	view.Context.PageActions.AddSubmitButton(WeightName, fmt.Sprintf(WeightHover, "NEW", "Today"), glyphs.Weight, newWeightLogURI, actionHelpers.READ, "", style.NONE(), css.NONE())
 	view.Context.PageActions.AddSubmitButton(GoalName, fmt.Sprintf(GoalHover, "NEW", view.User.Name), glyphs.Goal, newGoalURI, actionHelpers.READ, "", style.NONE(), css.NONE())
 
 	//godump.Dump(view, "Profile View")

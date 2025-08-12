@@ -6,7 +6,6 @@ import (
 	"github.com/mt1976/frantic-core/logHandler"
 	"github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/web/actionHelpers"
-	methods "github.com/mt1976/frantic-mass/app/web/actionHelpers"
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 )
 
@@ -24,7 +23,7 @@ type UserChooser struct {
 type User struct {
 	ID      int
 	Name    string
-	Actions methods.Actions // Actions available for the user, such as edit or delete
+	Actions actionHelpers.Actions // Actions available for the user, such as edit or delete
 }
 
 func CreateUserChooser(view UserChooser) (UserChooser, error) {
@@ -77,9 +76,10 @@ func CreateUserChooser(view UserChooser) (UserChooser, error) {
 		// Replace the placeholder with the actual user ID
 		uri = ReplacePathParam(uri, UserWildcard, fmt.Sprintf("%d", u.ID))
 		logHandler.InfoLogger.Println("Adding user:", u.Username, "with URI:", uri)
-
+		viewURI := ReplacePathParam(UserURI, UserWildcard, fmt.Sprintf("%d", u.ID))
 		// Add the user action to the view
-		addview.Actions.AddSubmitButton(u.Username, fmt.Sprintf(UserHover, u.Username), UserIcon, uri, methods.READ, "", style.DEFAULT(), css.NONE())
+		addview.Actions.AddSubmitButton(u.Username, fmt.Sprintf(UserHover, u.Username), UserIcon, uri, actionHelpers.READ, "", style.DEFAULT(), css.NONE())
+		addview.Actions.AddSubmitButton("View", fmt.Sprintf("View user %s", u.Username), glyphs.View, viewURI, actionHelpers.READ, "", style.BTN_SECONDARY(), css.BUTTON())
 		view.Users = append(view.Users, addview)
 	}
 
@@ -104,7 +104,7 @@ func CreateUserChooser(view UserChooser) (UserChooser, error) {
 	logHandler.InfoLogger.Println("ChooseUser view created successfully with", len(view.Users), "users")
 
 	view.Context.PageActions.Clear() // Clear any existing page actions
-	view.Context.PageActions.AddSubmitButton("Add User", "Create a new user", glyphs.Add, ReplacePathParam(UserURI, UserWildcard, actionHelpers.NEW), methods.READ, "", style.NONE(), css.NONE())
+	view.Context.PageActions.AddSubmitButton("Add User", "Create a new user", glyphs.Add, ReplacePathParam(UserURI, UserWildcard, actionHelpers.NEW), actionHelpers.READ, "", style.NONE(), css.NONE())
 	// Return the populated view
 
 	view.Context.AddBreadcrumb(LauncherName, fmt.Sprintf(LauncherHover, view.Context.AppName), LauncherURI, LauncherIcon)

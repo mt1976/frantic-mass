@@ -35,6 +35,28 @@ func NewUser(w http.ResponseWriter, r *http.Request) (contentProvider.UserView, 
 		view.Context.WasSuccessful = false
 		return view, nil
 	}
+
+	//Check userName for duplicates
+	existingUser, err := user.GetBy(user.FIELD_Username, userUserName)
+
+	if err == nil && existingUser.Name == userName && existingUser.Audit.DeletedBy != "" {
+		logHandler.ErrorLogger.Println("Username already exists:", userUserName)
+		view.Context.AddError("Username already exists")
+		view.Context.HttpStatusCode = 400 // Bad Request
+		view.Context.WasSuccessful = false
+		return view, nil
+	}
+
+	// Do the same for userUserName
+	existingUser, err = user.GetBy(user.FIELD_Username, userUserName)
+	if err == nil && existingUser.Name == userUserName && existingUser.Audit.DeletedBy != "" {
+		logHandler.ErrorLogger.Println("Username already exists:", userUserName)
+		view.Context.AddError("Username already exists")
+		view.Context.HttpStatusCode = 400 // Bad Request
+		view.Context.WasSuccessful = false
+		return view, nil
+	}
+
 	if pwd == "" {
 		pwd = "default" // Set a default password if none is provided
 	}
@@ -82,7 +104,6 @@ func NewUser(w http.ResponseWriter, r *http.Request) (contentProvider.UserView, 
 	}
 	note := r.PostFormValue("note")
 	dob := r.PostFormValue("date_of_birth")
-	pivotDate := r.PostFormValue("pivot_date")
 	dob_int, err := time.Parse("02 Jan 2006", dob)
 	if err != nil {
 		logHandler.ErrorLogger.Println("Error parsing date of birth:", err)
@@ -91,14 +112,7 @@ func NewUser(w http.ResponseWriter, r *http.Request) (contentProvider.UserView, 
 		view.Context.WasSuccessful = false
 		return view, nil
 	}
-	pivotDate_int, err := time.Parse("02 Jan 2006", pivotDate)
-	if err != nil {
-		logHandler.ErrorLogger.Println("Error parsing pivot date:", err)
-		view.Context.AddError("Invalid pivot date format")
-		view.Context.HttpStatusCode = 400 // Bad Request
-		view.Context.WasSuccessful = false
-		return view, nil
-	}
+	pivotDate_int := time.Now()
 
 	newBaseline, err := baseline.Create(r.Context(), newUser.ID, *height, projectionPeriod_int, note, dob_int, pivotDate_int)
 

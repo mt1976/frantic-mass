@@ -75,8 +75,7 @@
             <div class="form-group" {{if .Context.Workflow.IsNew}}style="display: none;"{{end}}>
                 <label>Pivot Date</label>
                 <input name="pivot_date" type="text" value='{{.Baseline.PivotDate.Format "02 Jan 2006"}}' readonly disabled/>
-                <input name="pivot_date_raw" type="text" value='{{.Baseline.PivotDate.Format "Monday"}}' class="enrichment" readonly disabled />
-                <small>{{.Baseline.PivotDate.Format "02 Jan 2006"}} is a {{.Baseline.PivotDate.Format "Monday"}}, logging will take place on a {{.Baseline.PivotDate.Format "monday"}} and reminders will be sent 1 day before.</small>
+                <input name="pivot_date_raw" type="text" value='{{.Baseline.PivotDate.Format "Monday"}}. Reminders sent on a {{.ReminderDate.Format "Monday"}}.' class="enrichment" readonly disabled />
             </div>
             <div class="form-group">
                 <label>Note</label>

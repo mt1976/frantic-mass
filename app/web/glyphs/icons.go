@@ -16,3 +16,7 @@ func NewIcon(name string) Glyph {
 	}
 	return Glyph{iconName: name}
 }
+
+func (i *Glyph) Set(name string) {
+	i.iconName = name
+}

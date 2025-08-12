@@ -107,7 +107,6 @@
                         <tr>
                             <th class="text-align: center;">Name</th>
                             <th class="text-align: center;">Target</th>
-
                             <th class="text-align: center;">BMI</th>
                             <th class="text-align: center;">Loss Per Week</th>
                             <th class="text-align: center;">Date</th>
@@ -121,11 +120,8 @@
                             <td>{{.TargetWeight}}</td>
                             <td>{{.TargetBMIStatus}} {{.TargetBMI}}</td>
                             <td>{{.LossPerWeek}}</td>
-
                             <td>{{.TargetDate.Format "02 Jan 2006"}}</td>
-                            <td>
-                                {{template "actions" .Actions}}
-                            </td>
+                            <td>{{template "actions" .Actions}}</td>
                         </tr>
                         {{end}}
                     </tbody>

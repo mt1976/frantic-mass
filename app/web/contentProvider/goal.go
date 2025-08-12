@@ -12,11 +12,11 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/glyphs"
 )
 
-var GoalWildcard = "{goalId}"         // Wildcard for the goal ID in the URI
-var GoalURI = "/goal/" + GoalWildcard // Define the URI for the user chooser
-var GoalName = "Goal"                 // Name for the goal chooser
-var GoalIcon = glyphs.Goal            // Icon for the goal chooser
-var GoalHover = "Goal %s for %s"      // Description for the goal chooser
+var GoalWildcard = "{goalId}"                              // Wildcard for the goal ID in the URI
+var GoalURI = "/goal/" + UserWildcard + "/" + GoalWildcard // Define the URI for the user chooser
+var GoalName = "Goal"                                      // Name for the goal chooser
+var GoalIcon = glyphs.Goal                                 // Icon for the goal chooser
+var GoalHover = "Goal %s for %s"                           // Description for the goal chooser
 
 type GoalView struct {
 	ID                   int

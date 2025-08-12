@@ -6,17 +6,16 @@
             {{template "handleform" .}}
             {{template "breadcrumbs" .}}
 
-            <article>
-          
+            <article>  
                 <aside>
                     <nav>
-                    <ul>
+                    <ul style="list-style: none; padding: 0; margin: 0; margin-bottom: 0px;">
                     {{range .Users}}
+                    <li>
                         {{if .Actions}}
-                           {{range .Actions.Actions}}
-                                <li><a href="{{.FormAction}}" role="button" style="width: 100%;" class="outline">{{.Icon}} {{.Name}}</a></li>
-                            {{end}}
+                            {{template "actions" .Actions}}
                         {{end}}
+                    </li>
                     {{end}}
                     </ul>
                     </nav>

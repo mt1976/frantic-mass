@@ -2,6 +2,7 @@ package contentProvider
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/logHandler"
@@ -30,6 +31,7 @@ type UserView struct {
 	HeightSystem         int // Height measurement system selected by the user
 	HeightSystemSelected lookup.LookupData
 	Locales              lookup.Lookup
+	ReminderDate         time.Time
 
 	Context AppContext
 }
@@ -86,6 +88,7 @@ func GetUser(view UserView, userID string) (UserView, error) {
 	}
 
 	view.Baseline = baselineRecord
+	view.ReminderDate = baselineRecord.PivotDate.AddDate(0, 0, -1) // Set reminder date to one day before the pivot date
 
 	view.Context.HttpStatusCode = 200 // OK
 	view.Context.WasSuccessful = true

@@ -47,12 +47,13 @@
 {{define "actions"}}
     <!-- Range through the page actions from the context -->
         {{if .Actions}}
-            <div role="group">  
+            <div role="" style="display: flex; gap: .5rem; flex-wrap: wrap; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; align-content: center; justify-content: center; align-items: center;">
+                {{/* Loop through each action and render it */}}
                 {{range .Actions}}
                     {{if .IsJSButton}}
                        <button type="button" onclick="{{.OnClick}}" {{if .Style}}style="{{.Style}}"{{end}} {{if .Class}}class="{{.Class}}"{{end}} data-tooltip="{{.Hover}}">{{if .Icon}}{{.Icon}}&nbsp;{{end}}{{.Name}}</button>
                     {{else}} 
-                        <input type="{{.ButtonType}}" {{if .OnClick}}onclick="{{.OnClick}}"{{else}}formaction="{{.FormAction}}" formmethod="{{.Method}}"{{end}} {{if .Style}}style="{{.Style}}"{{end}} {{if .Class}}class="{{.Class}}"{{end}} data-tooltip="{{.Hover}}" value="{{.Name}}">
+                        <input type="{{.ButtonType}}" {{if .OnClick}}onclick="{{.OnClick}}"{{else}}formaction="{{.FormAction}}" formmethod="{{.Method}}"{{end}} {{if .Style}}style="{{.Style}}"{{end}} {{if .Class}}class="{{.Class}}"{{end}} data-tooltip="{{.Hover}}" value="{{if .Icon}}{{.Icon}}&nbsp;{{end}}{{.Name}}">
                     {{end}}
                 {{end}}
             </div>
@@ -134,9 +135,9 @@
                             <li class="breadcrumb-item" style="padding-top: 6px; padding-bottom: 6px;">
                             
                                 {{if .URL}}
-                                    <a href="{{.URL}}" data-tooltip="{{.Hover}}">{{if .Glyph}}<i class="{{.Glyph}}"></i>&nbsp;{{.Title}}{{else}}{{.Title}}{{end}}</a>
+                                    <a href="{{.URL}}" data-tooltip="{{.Hover}}">{{if .Glyph}}{{.Glyph}}&nbsp;{{end}}{{.Title}}</a>
                                 {{else}}
-                                    <span data-tooltip="{{.Hover}}">{{if .Glyph}}<i class="{{.Glyph}}"></i>&nbsp;{{.Title}}{{else}}{{.Title}}{{end}}</span>
+                                    <span data-tooltip="{{.Hover}}">{{if .Glyph}}{{.Glyph}}&nbsp;{{end}}{{.Title}}</span>
                                 {{end}}
                             </li>
                         {{end}}

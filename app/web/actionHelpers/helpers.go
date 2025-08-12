@@ -66,7 +66,7 @@ func NewAction(name, hover string, icon glyphs.Glyph, url string, method Method,
 	// Default to a Nil icon if none is provided
 	if icon != glyphs.NIL {
 		logHandler.InfoLogger.Printf("Using icon: %s for action: %s", icon.Name(), name)
-		returnAction.Icon = template.HTML("<i class=\"" + icon.Name() + "\"></i>") // Set the icon for the action
+		returnAction.Icon = template.HTML(icon.Name()) // Set the icon for the action
 	} else {
 		logHandler.InfoLogger.Printf("No icon provided for action: %s, using default icon", name)
 		returnAction.Icon = template.HTML(glyphs.NIL.Name()) // Use default icon if none is provided
@@ -106,8 +106,13 @@ func NewAction(name, hover string, icon glyphs.Glyph, url string, method Method,
 		returnAction.ButtonType = "button" // Set the type to button if onClick is provided
 	}
 
+	// if returnAction.ButtonType == "button" && icon != glyphs.NIL {
+	// 	returnAction.ButtonType = "reset"
+	// 	returnAction.Icon = template.HTML("<i class=\"" + icon.Name() + "\"></i>")
+	// }
+
 	// Log the creation of the action
-	logHandler.InfoLogger.Printf("Action created: %s (%s)(%s)(%s) Button: %t", returnAction.Name, returnAction.FormAction, returnAction.OnClick, returnAction.Method, returnAction.IsJSButton)
+	logHandler.InfoLogger.Printf("Action created: %s (%s)(%s)(%s) Button: %t Icon: %s", returnAction.Name, returnAction.FormAction, returnAction.OnClick, returnAction.Method, returnAction.IsJSButton, returnAction.Icon)
 
 	return returnAction
 }
@@ -135,12 +140,14 @@ func (a *Actions) Add(action Action) {
 		action.OnClick = "" // Default JavaScript function if none is provided
 	}
 	logHandler.InfoLogger.Printf("Adding action: %s (%s)(%s)(%s)", action.Name, action.FormAction, action.OnClick, action.Method)
-
+	//godump.Dump(action, "Adding Action")
 	a.Actions = append(a.Actions, action)
+	//godump.Dump(a.Actions, "Actions after adding new action") // Dump the actions for debugging
 }
 
 func (a *Actions) AddSubmitButton(name, hover string, icon glyphs.Glyph, url string, method Method, onClick string, class template.HTML, style template.CSS) {
 	submitAction := NewAction(name, hover, icon, url, method, onClick, class, style)
+	//godump.Dump(submitAction, "Submit Action")
 	submitAction.IsJSButton = false    // Ensure this is a button action
 	submitAction.ButtonType = "submit" // Set the type to submit for form submission
 	logHandler.InfoLogger.Printf("Adding submit action: %s (%s)(%s)(%s)", submitAction.Name, submitAction.FormAction, submitAction.OnClick, submitAction.Method)
