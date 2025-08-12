@@ -35,3 +35,15 @@ func Initialise(ctx context.Context) {
 	timing.Stop(1)
 	logHandler.EventLogger.Printf("Initialised %v", domain)
 }
+
+func IsInitialised() bool {
+	return initialised
+}
+
+func Close() {
+	logHandler.EventLogger.Printf("Closing connection to %v", domain)
+	if activeDB != nil {
+		activeDB.Disconnect()
+	}
+	logHandler.EventLogger.Printf("Closed connection to %v", domain)
+}

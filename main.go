@@ -330,17 +330,25 @@ func main() {
 	// logHandler.InfoLogger.Println("Using StripSlashes Middleware")
 	r.Use(middleware.URLFormat)
 	logHandler.InfoLogger.Println("Using URLFormat Middleware")
+	r.Use(middleware.DefaultLogger)
+	logHandler.InfoLogger.Println("Using DefaultLogger Middleware")
+	// Application Routes
 	r.Get(contentProvider.LauncherURI, handlers.Launcher)
 	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
-	r.Get(contentProvider.DashboardURI, handlers.Dashboard)                       // Placeholder for user dashboard handler
-	r.Get(contentProvider.UserURI, handlers.UserRead)                             // View/Edit handler
-	r.Post(contentProvider.UserURI, handlers.UserCreate)                          // New User handler
-	r.Put(contentProvider.UserURI, handlers.UserUpdate)                           // Update User handler
-	r.Get(contentProvider.GoalURI, handlers.Goal)                                 // Placeholder for goal edit handlerx
-	r.Get(contentProvider.ProjectionURI, handlers.Projection)                     // Placeholder for projection handler
-	r.Get(contentProvider.WeightURI, handlers.ViewWeight)                         // Placeholder for weight edit handler
-	r.Get(contentProvider.TestURI, handlers.Test)                                 // Placeholder for test handler
-	r.Get(endpointprovider.BMIUserWeightEndpoint, endpointprovider.BMI)           // BMI calculation endpoint\
+	r.Get(contentProvider.DashboardURI, handlers.Dashboard) // Placeholder for user dashboard handler
+	r.Get(contentProvider.UserURI, handlers.ViewOrEditUser) // View/Edit handler
+	r.Post(contentProvider.UserURI, handlers.CreateNewUser) // New User handler
+	r.Put(contentProvider.UserURI, handlers.UpdateUser)     // Update User handler
+	r.Get(contentProvider.GoalURI, handlers.ViewOrEditGoal) // Placeholder for goal edit handlerx
+	// r.Post(contentProvider.GoalURI, handlers.CreateNewGoal)             // Placeholder for goal create handler
+	// r.Put(contentProvider.GoalURI, handlers.UpdateGoal)                 // Placeholder for goal update handler
+	r.Get(contentProvider.ProjectionURI, handlers.ViewProjection)       // Placeholder for projection handler
+	r.Get(contentProvider.WeightURI, handlers.ViewOrEditWeightLogEntry) // Placeholder for weight view/edit handler
+	r.Post(contentProvider.WeightURI, handlers.CreateNewWeightLogEntry) // Placeholder for weight create handler
+	r.Put(contentProvider.WeightURI, handlers.UpdateWeightLogEntry)     // Placeholder for weight update handler
+	r.Get(contentProvider.TestURI, handlers.Test)                       // Placeholder for test handler
+	// Utility Endpoints
+	r.Get(endpointprovider.BMIUserWeightEndpoint, endpointprovider.BMI)           // BMI calculation endpoint
 	r.Get(endpointprovider.BMIEnrichmentEndpoint, endpointprovider.BMIEnrichment) // BMI enrichment endpoint
 	r.Get(endpointprovider.BMIWeightEndpoint, endpointprovider.WeightFromBMI)     // Weight from BMI endpoint
 	//r.Get(contentProvider.WeightURI, handlers.Weight)         // Placeholder for weight edit handler
@@ -389,6 +397,9 @@ func main() {
 		signal.Notify(stop, os.Interrupt)
 		<-stop
 		logHandler.WarningLogger.Println("Interrupt received. Shutting down...")
+		logHandler.WarningLogger.Println("Interrupt received. Shutting down...")
+		logHandler.WarningLogger.Println("Interrupt received. Shutting down...")
+
 		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancel()
 		server.Shutdown(ctx)

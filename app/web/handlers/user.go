@@ -27,7 +27,7 @@ func UserChooser(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func UserRead(w http.ResponseWriter, r *http.Request) {
+func ViewOrEditUser(w http.ResponseWriter, r *http.Request) {
 
 	userID := getURLParamValue(r, contentProvider.UserWildcard) // Get the user ID from the URL parameter
 
@@ -61,7 +61,7 @@ func UserRead(w http.ResponseWriter, r *http.Request) {
 	render(uc, uc.Context, w)
 }
 
-func UserCreate(w http.ResponseWriter, r *http.Request) {
+func CreateNewUser(w http.ResponseWriter, r *http.Request) {
 
 	userID := getURLParamValue(r, contentProvider.UserWildcard) // Get the user ID from the URL parameter
 
@@ -97,7 +97,7 @@ func UserCreate(w http.ResponseWriter, r *http.Request) {
 	render(uc, uc.Context, w)
 }
 
-func UserUpdate(w http.ResponseWriter, r *http.Request) {
+func UpdateUser(w http.ResponseWriter, r *http.Request) {
 
 	logHandler.InfoLogger.Println("UserUpdate called with method:", r.Method)
 	userID := getURLParamValue(r, contentProvider.UserWildcard) // Get the user ID from the URL parameter

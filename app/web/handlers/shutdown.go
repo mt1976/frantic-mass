@@ -2,6 +2,8 @@ package handlers
 
 import (
 	"net/http"
+
+	"github.com/mt1976/frantic-mass/app/dao/tag"
 )
 
 // ShutdownHandler returns a handler function with injected shutdown logic
@@ -13,6 +15,8 @@ func ShutdownHandler(shutdownFunc func()) http.HandlerFunc {
 		}
 
 		w.Write([]byte("Shutting down server...\n"))
+
+		tag.Close()
 
 		// Execute shutdown logic in background
 		go shutdownFunc()

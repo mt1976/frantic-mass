@@ -10,7 +10,6 @@ require (
 )
 
 require (
-	github.com/go-chi/chi/v5 v5.2.2 // indirect
 	github.com/gopherjs/gopherjs v1.17.2 // indirect
 	github.com/jtolds/gls v4.20.0+incompatible // indirect
 	github.com/tdewolff/parse v2.3.4+incompatible // indirect

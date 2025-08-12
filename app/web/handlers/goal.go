@@ -8,7 +8,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
 
-func Goal(w http.ResponseWriter, r *http.Request) {
+func ViewOrEditGoal(w http.ResponseWriter, r *http.Request) {
 
 	goalID := getURLParamValue(r, contentProvider.GoalWildcard) // Get the goal ID from the URL parameter
 	if goalID == "" {

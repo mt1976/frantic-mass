@@ -10,7 +10,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/web/viewProvider"
 )
 
-func Projection(w http.ResponseWriter, r *http.Request) {
+func ViewProjection(w http.ResponseWriter, r *http.Request) {
 	// This is a dummy router function
 	// userID := chi.URLParam(r, contentProvider.UserWildcard) // Get the user ID from the URL parameter
 	// goalID := chi.URLParam(r, contentProvider.GoalWildcard) // Get the goal ID from the URL parameter
