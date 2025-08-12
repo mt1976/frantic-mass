@@ -399,7 +399,7 @@ func main() {
 		logHandler.WarningLogger.Println("Interrupt received. Shutting down...")
 		logHandler.WarningLogger.Println("Interrupt received. Shutting down...")
 		logHandler.WarningLogger.Println("Interrupt received. Shutting down...")
-
+		handlers.Shutdown()
 		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 		defer cancel()
 		server.Shutdown(ctx)

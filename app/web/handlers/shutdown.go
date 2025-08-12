@@ -24,47 +24,34 @@ func ShutdownHandler(shutdownFunc func()) http.HandlerFunc {
 		}
 
 		w.Write([]byte("Shutting down server...\n"))
-
-		err := baseline.ExportRecordsAsCSV()
-		if err != nil {
-			logHandler.ErrorLogger.Printf("Error exporting baseline records: %v", err)
-		}
-		if err := dateIndex.ExportRecordsAsCSV(); err != nil {
-			logHandler.ErrorLogger.Printf("Error exporting date index records: %v", err)
-		}
-		if err := goal.ExportRecordsAsCSV(); err != nil {
-			logHandler.ErrorLogger.Printf("Error exporting goal records: %v", err)
-		}
-		if err := tag.ExportRecordsAsCSV(); err != nil {
-			logHandler.ErrorLogger.Printf("Error exporting tag records: %v", err)
-		}
-		if err := user.ExportRecordsAsCSV(); err != nil {
-			logHandler.ErrorLogger.Printf("Error exporting user records: %v", err)
-		}
-		if err := weight.ExportRecordsAsCSV(); err != nil {
-			logHandler.ErrorLogger.Printf("Error exporting weight records: %v", err)
-		}
-		if err := weightProjection.ExportRecordsAsCSV(); err != nil {
-			logHandler.ErrorLogger.Printf("Error exporting weight projection records: %v", err)
-		}
-		if err := weightProjectionHistory.ExportRecordsAsCSV(); err != nil {
-			logHandler.ErrorLogger.Printf("Error exporting weight projection history records: %v", err)
-		}
-		if err := weightTag.ExportRecordsAsCSV(); err != nil {
-			logHandler.ErrorLogger.Printf("Error exporting weight tag records: %v", err)
-		}
-
-		baseline.Close()
-		dateIndex.Close()
-		goal.Close()
-		tag.Close()
-		user.Close()
-		weight.Close()
-		weightProjection.Close()
-		weightProjectionHistory.Close()
-		weightTag.Close()
+		Shutdown()
 
 		// Execute shutdown logic in background
 		go shutdownFunc()
 	}
+}
+
+func Shutdown() {
+	logHandler.WarningLogger.Println("Shutting down application...")
+	message := "shutdown"
+	baseline.ExportRecordsAsJSON(message)
+	dateIndex.ExportRecordsAsJSON(message)
+	goal.ExportRecordsAsJSON(message)
+	tag.ExportRecordsAsJSON(message)
+	user.ExportRecordsAsJSON(message)
+	weight.ExportRecordsAsJSON(message)
+	weightProjection.ExportRecordsAsJSON(message)
+	weightProjectionHistory.ExportRecordsAsJSON(message)
+	weightTag.ExportRecordsAsJSON(message)
+
+	baseline.Close()
+	dateIndex.Close()
+	goal.Close()
+	tag.Close()
+	user.Close()
+	weight.Close()
+	weightProjection.Close()
+	weightProjectionHistory.Close()
+	weightTag.Close()
+	logHandler.EventLogger.Println("Application shutdown complete.")
 }
