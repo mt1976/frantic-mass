@@ -114,7 +114,7 @@ func (c *AppContext) SetIsViewWorkflow() {
 	c.Workflow.IsView = true
 }
 
-func (c *AppContext) SetIsNewWorkflow() {
+func (c *AppContext) SetIsCreateWorkflow() {
 	// Set the context to a new state
 	c.Workflow.SetDefaults() // Reset to defaults
 	c.Workflow.IsNew = true

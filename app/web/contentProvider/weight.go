@@ -46,6 +46,7 @@ func GetWeight(view WeightView, weightIdentifier int) (WeightView, error) {
 	view.Context.PageTitle = "Weight Details"
 	view.Context.PageDescription = "View and manage your weight details"
 	view.Context.PageActions = actionHelpers.Actions{} // Initialize the PageActions
+	view.Context.SetIsEditWorkflow()
 	view.User = user.User{}
 
 	UserWeightRecord, err := weight.GetBy(weight.FIELD_ID, weightIdentifier)
@@ -130,6 +131,7 @@ func NewWeight(view WeightView, userID int) (WeightView, error) {
 	view.Context.PageDescription = "Add Weight Entry"
 	view.Context.PageActions = actionHelpers.Actions{} // Initialize the PageActions
 	view.User = user.User{}
+	view.Context.SetIsCreateWorkflow()
 
 	// Get the latest weight entry for the user
 	UserWeightRecord, err := weight.GetLatestByUserID(userID)
@@ -177,8 +179,8 @@ func NewWeight(view WeightView, userID int) (WeightView, error) {
 	view.Context.WasSuccessful = true
 	// Log the successful creation of the view
 	//view.Context.AddMessage("Users loaded successfully")
-	view.Context.AddMessage(fmt.Sprintf("Found weight %d", view.ID))
-	view.Context.AddMessage(fmt.Sprintf("Found user %s", view.UserName))
+	view.Context.AddMessage(fmt.Sprintf("Found weight %d", UserWeightRecord.Raw))
+	view.Context.AddMessage(fmt.Sprintf("Found user %v", view.UserName))
 	//uri := DashboardURI // Use the defined URI for the dashboard
 	//uri = ReplacePathParam(uri, WeightWildcard, fmt.Sprintf("%d", view.Weight.UserID))
 	view.Context.PageActions.Clear()          // Clear any existing page actions

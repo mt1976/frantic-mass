@@ -13,7 +13,7 @@ import (
 )
 
 func ViewOrEditWeightLogEntry(w http.ResponseWriter, r *http.Request) {
-
+	logHandler.InfoLogger.Println("ViewOrEditWeightLogEntry called with method:", r.Method)
 	weightID := getURLParamValue(r, contentProvider.WeightWildcard) // Get the weight ID from the URL parameter
 	if weightID == "" {
 		http.Error(w, "Weight ID is required", http.StatusBadRequest)
@@ -58,7 +58,7 @@ func ViewOrEditWeightLogEntry(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateNewWeightLogEntry(w http.ResponseWriter, r *http.Request) {
-
+	logHandler.InfoLogger.Println("CreateNewWeightLogEntry called with method:", r.Method)
 	weightLogID := getURLParamValue(r, contentProvider.WeightWildcard) // Get the weight log ID from the URL parameter
 	userID := getURLParamValue(r, contentProvider.UserWildcard)        // Get the user ID from the URL parameter
 	int_userID := htmlHelpers.ValueToInt(userID)
@@ -84,18 +84,18 @@ func CreateNewWeightLogEntry(w http.ResponseWriter, r *http.Request) {
 	logHandler.EventLogger.Printf("User request received for userID: %s with method: %s", weightLogID, r.Method)
 
 	if weightLogID != actionHelpers.NEW {
-		http.Error(w, "Method not allowed for existing user", http.StatusMethodNotAllowed)
+		http.Error(w, "Method not allowed for existing weight log", http.StatusMethodNotAllowed)
 		return
 	}
-	logHandler.InfoLogger.Printf("Creating new user! pseudo: %s", weightLogID)
+	logHandler.InfoLogger.Printf("Creating new weight log! ID: %s", weightLogID)
 
 	// Handle the PUT request to update user details
 	uc, err := contentActioner.NewWeightLogEntry(w, r, int_userID) // Assuming userID is passed in the context or URL
 	if err != nil {
-		http.Error(w, "Error updating user", http.StatusInternalServerError)
+		http.Error(w, "Error updating weight log", http.StatusInternalServerError)
 		return
 	}
-	uc.Context.AddMessage("User create screen generated successfully")
+	uc.Context.AddMessage("Weight log create screen generated successfully")
 	uc.Context.HttpStatusCode = http.StatusOK // Set the HTTP status code to 200 OK
 	uc.Context.WasSuccessful = true
 	render(uc, uc.Context, w)
