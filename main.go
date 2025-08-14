@@ -335,13 +335,13 @@ func main() {
 	// Application Routes
 	r.Get(contentProvider.LauncherURI, handlers.Launcher)
 	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
-	r.Get(contentProvider.DashboardURI, handlers.Dashboard) // Placeholder for user dashboard handler
-	r.Get(contentProvider.UserURI, handlers.ViewOrEditUser) // View/Edit handler
-	r.Post(contentProvider.UserURI, handlers.CreateNewUser) // New User handler
-	r.Put(contentProvider.UserURI, handlers.UpdateUser)     // Update User handler
-	r.Get(contentProvider.GoalURI, handlers.ViewOrEditGoal) // Placeholder for goal edit handlerx
-	// r.Post(contentProvider.GoalURI, handlers.CreateNewGoal)             // Placeholder for goal create handler
-	// r.Put(contentProvider.GoalURI, handlers.UpdateGoal)                 // Placeholder for goal update handler
+	r.Get(contentProvider.DashboardURI, handlers.Dashboard)             // Placeholder for user dashboard handler
+	r.Get(contentProvider.UserURI, handlers.ViewOrEditUser)             // View/Edit handler
+	r.Post(contentProvider.UserURI, handlers.CreateNewUser)             // New User handler
+	r.Put(contentProvider.UserURI, handlers.UpdateUser)                 // Update User handler
+	r.Get(contentProvider.GoalURI, handlers.ViewOrEditGoal)             // Placeholder for goal edit handlerx
+	r.Post(contentProvider.GoalURI, handlers.CreateNewGoal)             // Placeholder for goal create handler
+	r.Put(contentProvider.GoalURI, handlers.UpdateGoal)                 // Placeholder for goal update handler
 	r.Get(contentProvider.ProjectionURI, handlers.ViewProjection)       // Placeholder for projection handler
 	r.Get(contentProvider.WeightURI, handlers.ViewOrEditWeightLogEntry) // Placeholder for weight view/edit handler
 	r.Post(contentProvider.WeightURI, handlers.CreateNewWeightLogEntry) // Placeholder for weight create handler
