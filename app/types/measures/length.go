@@ -2,6 +2,7 @@ package measures
 
 import (
 	"fmt"
+	"math"
 
 	"github.com/mt1976/frantic-core/logHandler"
 )
@@ -162,4 +163,9 @@ func NewHeightCMSFromString(value string) (*Height, error) {
 		h.CMs = 0
 	}
 	return &h, nil
+}
+
+func (h *Height) Set(value float64) {
+	rounded := math.Round(value*10) / 10
+	h.CMs = rounded
 }

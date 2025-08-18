@@ -36,7 +36,7 @@ func New() Goal {
 // It sets the CompositeID and AverageWeightLoss fields based on the provided parameters
 // It calculates the BMI based on the target weight and returns the Goal instance
 
-func Create(ctx context.Context, userID int, name string, targetWeight measures.Weight, targetDate time.Time, lossPerWeekKg measures.Weight, note string, isAverageType bool) (Goal, error) {
+func Create(ctx context.Context, userID int, goalName string, goalWeight measures.Weight, targetBodyMassIndex measures.BMI, targetGoalDate time.Time, kgLossPerWeek measures.Weight, goalNote string, isAverageGoalType bool, totalProjections int) (Goal, error) {
 
 	dao.CheckDAOReadyState(domain, audit.CREATE, initialised) // Check the DAO has been initialised, Mandatory.
 
@@ -48,15 +48,21 @@ func Create(ctx context.Context, userID int, name string, targetWeight measures.
 	// Create a new struct
 	record := Goal{}
 	// Create a composite ID for unique identification of the goal
-	record.CompositeID = fmt.Sprintf("%d/%s", userID, sessionID)
+	record.CompositeID = fmt.Sprintf("%d%v%s", userID, "⋮", sessionID)
 	record.Key = idHelpers.Encode(record.CompositeID)
 	record.Raw = record.CompositeID
 	record.UserID = userID
-	record.Name = name
-	record.TargetWeight = targetWeight
-	record.TargetDate = targetDate
-	record.LossPerWeek = lossPerWeekKg
-	record.Note = note
+	record.Name = goalName
+	record.TargetWeight = goalWeight
+	record.TargetDate = targetGoalDate
+	record.LossPerWeek = kgLossPerWeek
+	record.Note = goalNote
+	record.NoProjections = totalProjections
+	record.AverageWeightLoss.Set(isAverageGoalType)
+	record.TargetBMI = targetBodyMassIndex
+	if isAverageGoalType {
+		record.AverageWeightLoss.Set(true)
+	}
 
 	// Get the current basline for the user
 	baseline, err := baseline.GetByUserID(userID)
@@ -67,7 +73,7 @@ func Create(ctx context.Context, userID int, name string, targetWeight measures.
 	if baseline.Height.LE(0) {
 		logHandler.ErrorLogger.Panicf("No height found for user ID %d, cannot calculate BMI", userID)
 	}
-
+	// Calculate the BMI based on the target weight and height from the baseline
 	bmiPtr, err := record.TargetBMI.SetBMIFromWeightAndHeight(record.TargetWeight, baseline.Height)
 	if err != nil {
 		logHandler.ErrorLogger.Panicf("Error calculating BMI for user ID %d: %v", userID, err)
@@ -76,7 +82,11 @@ func Create(ctx context.Context, userID int, name string, targetWeight measures.
 		record.TargetBMI = *bmiPtr
 	}
 
-	record.AverageWeightLoss.Set(isAverageType)
+	if bmiPtr != &targetBodyMassIndex {
+		logHandler.WarningLogger.Printf("BMI calculated from weight and height does not match provided BMI. Calculated: %f, Provided: %f", record.TargetBMI.BMI, targetBodyMassIndex.BMI)
+	}
+
+	record.AverageWeightLoss.Set(isAverageGoalType)
 
 	// Record the create action in the audit data
 	auditErr := record.Audit.Action(ctx, audit.CREATE.WithMessage(fmt.Sprintf("New %v created %v", domain, userID)))

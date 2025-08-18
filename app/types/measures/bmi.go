@@ -57,9 +57,29 @@ func (b *BMI) Text() string {
 	return b.Description + " " + b.Glyph
 }
 
-func (b *BMI) Set(Value float64) *BMI {
+func NewBMI(value float64) *BMI {
+	bmi := &BMI{}
+	bmi.Set(value)
+	return bmi
+}
 
-	b.BMI = Value
+func NewBMIfromString(value string) (*BMI, error) {
+	bmi := &BMI{}
+	if value == "" {
+		return bmi, fmt.Errorf("empty value for BMI")
+	}
+	var floatValue float64
+	_, err := fmt.Sscanf(value, "%f", &floatValue)
+	if err != nil {
+		return bmi, fmt.Errorf("invalid value for BMI: %s", value)
+	}
+	bmi.Set(floatValue)
+	return bmi, nil
+}
+
+func (b *BMI) Set(Value float64) *BMI {
+	rounded := math.Round(Value*10) / 10
+	b.BMI = rounded
 	if b.BMI <= 0 {
 		b.Description = "Invalid BMI"
 		b.Glyph = "❌" // Example glyph for invalid BMI

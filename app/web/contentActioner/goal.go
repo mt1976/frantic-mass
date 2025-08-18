@@ -5,86 +5,128 @@ import (
 	"time"
 
 	"github.com/mt1976/frantic-core/dateHelpers"
+	"github.com/mt1976/frantic-core/htmlHelpers"
 	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-mass/app/dao/goal"
 	"github.com/mt1976/frantic-mass/app/dao/user"
-	"github.com/mt1976/frantic-mass/app/dao/weight"
 	"github.com/mt1976/frantic-mass/app/types/measures"
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
 )
 
-func NewGoal(w http.ResponseWriter, r *http.Request, userID int) (contentProvider.WeightView, error) {
+func NewGoal(w http.ResponseWriter, r *http.Request, userID int) (contentProvider.GoalView, error) {
 	logHandler.EventLogger.Println("NewGoal called with method:", r.Method)
 	logHandler.EventLogger.Printf("Creating new goal for user ID: %d", userID)
-	view := contentProvider.WeightView{}
+	view := contentProvider.GoalView{}
 	view.Context.SetDefaults() // Initialize the Common view with defaults
-	view.Context.TemplateName = "weight"
+	view.Context.TemplateName = "goal"
 	view.User = user.User{}
 	//weightId := chi.URLParam(r, contentProvider.WeightWildcard)
 	//userId := chi.URLParam(r, contentProvider.UserWildcard)
 	// if weightId != actionHelpers.NEW {
 
 	// 	http.Redirect(w, r, "/error?message=Invalid Weight ID", http.StatusSeeOther)
-	// 	return contentProvider.WeightView{}, fmt.Errorf("invalid weight ID %v", weightId)
+	// 	return view, fmt.Errorf("invalid weight ID %v", weightId)
 	// }
 
 	logHandler.InfoLogger.Printf("Creating new weight log entry for user ID: %d", userID)
-	inputDate := r.FormValue("dateControl")
-	inputWeight := r.FormValue("bmiWeightInput")
+	// inputDate := r.FormValue("dateControl")
+	// inputWeight := r.FormValue("bmiWeightInput")
+	// inputNote := r.FormValue("note")
+
+	inputName := r.FormValue("name")
+	inputTargetWeight := r.FormValue("targetWeight")
+	inputTargetBMI := r.FormValue("bmiValue")
+	inputTargetDate := r.FormValue("targetDate")
+	inputIsAverageWeightLossTarget := r.FormValue("averageWeightLoss")
+	inputLossPerWeek := r.FormValue("lossPerWeek")
+	inputNoProjections := r.FormValue("noProjections")
 	inputNote := r.FormValue("note")
 
-	logHandler.InfoLogger.Printf("Creating new weight log entry for user ID: %d, Date: %s, Weight: %s, Note: %s", userID, inputDate, inputWeight, inputNote)
-	logHandler.InfoLogger.Printf("Creating new weight log entry for user ID: %d, Date: %s, Weight: %s, Note: %s", userID, inputDate, inputWeight, inputNote)
+	logHandler.InfoLogger.Printf("Creating new weight log entry for user ID: %d, Name: %s, Target Weight: %s", userID, inputName, inputTargetWeight)
 
-	if inputDate == "" || inputWeight == "" {
+	if inputTargetDate == "" || inputTargetWeight == "" {
 		http.Redirect(w, r, "/error?message=Invalid Input", http.StatusSeeOther)
-		return contentProvider.WeightView{}, nil
+		return view, nil
 	}
 	// Check this is a valid user
 	_, err := user.GetBy(user.FIELD_ID, userID)
 	if err != nil {
 		logHandler.ErrorLogger.Printf("Error fetching user %d: %v", userID, err)
 		http.Redirect(w, r, "/error?message=Invalid User", http.StatusSeeOther)
-		return contentProvider.WeightView{}, err
+		return view, err
 	}
+	goalNoProjections := htmlHelpers.ValueToInt(inputNoProjections)
 
 	// convert date to internal
-	dateInternal, err := time.Parse(dateHelpers.Format.YMD, inputDate)
+	targetDate_internal, err := time.Parse(dateHelpers.Format.YMD, inputTargetDate)
+	logHandler.InfoLogger.Printf("Parsed target date: %v, Input: %v", targetDate_internal, inputTargetDate)
 	if err != nil {
-		http.Redirect(w, r, "/error?message=Invalid Date", http.StatusSeeOther)
-		return contentProvider.WeightView{}, err
+		http.Redirect(w, r, "/error?message=Invalid Date, Failed to parse date", http.StatusSeeOther)
+		return view, err
 	}
 
-	if dateInternal.IsZero() {
-		http.Redirect(w, r, "/error?message=Invalid Date", http.StatusSeeOther)
-		return contentProvider.WeightView{}, err
+	if targetDate_internal.IsZero() {
+		http.Redirect(w, r, "/error?message=Invalid Date, Target date is zero", http.StatusSeeOther)
+		return view, err
 	}
-	if dateInternal.After(time.Now().AddDate(0, 0, 1)) {
-		http.Redirect(w, r, "/error?message=Invalid Date", http.StatusSeeOther)
-		return contentProvider.WeightView{}, err
-	}
-	weightFloat, err := StringToFloat(inputWeight)
+
+	targetWeight_internal, err := StringToFloat(inputTargetWeight)
 	if err != nil {
 		http.Redirect(w, r, "/error?message=Invalid Weight", http.StatusSeeOther)
-		return contentProvider.WeightView{}, err
+		return view, err
 	}
-	weightInternal := measures.NewWeight(weightFloat)
+	targetWeight_measure := measures.NewWeight(targetWeight_internal)
 
-	_, err = weight.Create(r.Context(), userID, *weightInternal, inputNote, dateInternal)
+	targetBMI_internal, err := StringToFloat(inputTargetBMI)
+	if err != nil {
+		http.Redirect(w, r, "/error?message=Invalid BMI", http.StatusSeeOther)
+		return view, err
+	}
+	targetBMI_measure := measures.NewBMI(targetBMI_internal)
+	logHandler.InfoLogger.Printf("Target Weight: %f, Target BMI: %f, AverageWeightLoss: %b, Loss Per Week: %f", targetWeight_internal, targetBMI_measure.BMI, inputIsAverageWeightLossTarget, inputLossPerWeek)
+
+	targetLossPerWeek_measure, err := measures.NewWeightFromString(inputLossPerWeek)
+	if err != nil {
+		logHandler.ErrorLogger.Printf("Error creating loss per week measure: %v", err)
+		http.Redirect(w, r, "/error?message=Invalid Loss Per Week", http.StatusSeeOther)
+		return view, err
+	}
+
+	isAverageType := htmlHelpers.ValueToBool(inputIsAverageWeightLossTarget)
+
+	if goalNoProjections < 1 {
+		http.Redirect(w, r, "/error?message=Invalid No Projections", http.StatusSeeOther)
+		return view, err
+	}
+
+	// Create the goal
+	_, err = goal.Create(r.Context(), userID, inputName, *targetWeight_measure, *targetBMI_measure, targetDate_internal, *targetLossPerWeek_measure, inputNote, isAverageType, goalNoProjections)
+
 	if err != nil {
 		logHandler.ErrorLogger.Printf("Error creating weight entry for user %d: %v", userID, err)
 		http.Redirect(w, r, "/error?message=Failed to Create Weight Entry", http.StatusSeeOther)
-		return contentProvider.WeightView{}, err
+		return view, err
 	}
+	logHandler.InfoLogger.Printf("No Projections: %v", inputNoProjections)
 	userIDStr := contentProvider.IntToString(userID)
 	nextURI := contentProvider.ReplacePathParam(contentProvider.DashboardURI, contentProvider.UserWildcard, userIDStr)
-	logHandler.InfoLogger.Printf("Redirecting to [%s] after creating new weight log entry for user ID: %d", nextURI, userID)
-	logHandler.EventLogger.Println("New Weight Log created successfully")
+	logHandler.InfoLogger.Printf("Redirecting to [%s] after creating new goal for user ID: %d", nextURI, userID)
+	logHandler.EventLogger.Println("New Goal created successfully")
+	logHandler.EventLogger.Println("New Goal created successfully")
+	logHandler.EventLogger.Println("New Goal created successfully")
+	logHandler.EventLogger.Println("New Goal created successfully")
+
 	http.Redirect(w, r, nextURI, http.StatusSeeOther)
 
 	return view, nil
 }
 
-func UpdateGoal(w http.ResponseWriter, r *http.Request, userID int, goalID int) (contentProvider.WeightView, error) {
+func UpdateGoal(w http.ResponseWriter, r *http.Request, userID int, goalID int) (contentProvider.GoalView, error) {
 	logHandler.EventLogger.Printf("Updating goal entry %d for user ID: %d", goalID, userID)
-	return contentProvider.WeightView{}, nil
+	view := contentProvider.GoalView{}
+	view.Context.SetDefaults() // Initialize the Common view with defaults
+	view.Context.TemplateName = "goal"
+	view.User = user.User{}
+
+	return view, nil
 }

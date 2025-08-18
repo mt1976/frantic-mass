@@ -126,7 +126,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("Creating Goal for UserID:", userIdentifier)
-	thisGoal, goalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v", userIdentifier), measures.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
+	thisGoal, goalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v", userIdentifier), measures.Weight{KGs: 90.00}, *measures.NewBMI(30.0), time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false, 12)
 
 	if goalErr != nil {
 		logHandler.ErrorLogger.Println(goalErr)
@@ -135,7 +135,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("Creating Goal for UserID:", userIdentifier)
-	thisGoal2, goalErr2 := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v2", userIdentifier), measures.Weight{KGs: 86.00}, time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
+	thisGoal2, goalErr2 := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v2", userIdentifier), measures.Weight{KGs: 86.00}, *measures.NewBMI(29.0), time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false, 12)
 
 	if goalErr2 != nil {
 		logHandler.ErrorLogger.Println(goalErr2)
@@ -144,8 +144,7 @@ func main() {
 	}
 
 	logHandler.InfoLogger.Println("Creating Goal for UserID:", userIdentifier)
-	thisGoal3, goalErr3 := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v3", userIdentifier), measures.Weight{KGs: 84.78950784000001}, time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false)
-
+	thisGoal3, goalErr3 := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("GoalFor%v3", userIdentifier), measures.Weight{KGs: 84.78950784000001}, *measures.NewBMI(28.0), time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 2.0}, "This is a test goal to check the goal creation process", false, 12)
 	if goalErr3 != nil {
 		logHandler.ErrorLogger.Println(goalErr3)
 	} else {
@@ -154,7 +153,7 @@ func main() {
 
 	//84.78950784000001
 
-	avgGoal, avgGoalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("AvgGoalFor%v", userIdentifier), measures.Weight{KGs: 90.00}, time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 0}, "This is an average weight loss goal", true)
+	avgGoal, avgGoalErr := goal.Create(context.TODO(), userIdentifier, fmt.Sprintf("AvgGoalFor%v", userIdentifier), measures.Weight{KGs: 90.00}, *measures.NewBMI(30.0), time.Now().AddDate(0, 0, 30), measures.Weight{KGs: 0}, "This is an average weight loss goal", true, 12)
 	if avgGoalErr != nil {
 		logHandler.ErrorLogger.Println(avgGoalErr)
 	} else {

@@ -6,6 +6,7 @@ import (
 
 	"github.com/mt1976/frantic-core/dao/lookup"
 	"github.com/mt1976/frantic-core/logHandler"
+	"github.com/mt1976/frantic-mass/app/dao/baseline"
 	"github.com/mt1976/frantic-mass/app/dao/goal"
 	"github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/dao/weight"
@@ -182,6 +183,17 @@ func NewGoal(view GoalView, userID int) (GoalView, error) {
 	view.UserID = UserRecord.ID
 	view.UserName = UserRecord.GetUserName()
 	// Fetch the user's baseline data
+	userBaseline, err := baseline.GetBy(baseline.FIELD_UserID, userIdInt)
+	if err != nil {
+		logHandler.ErrorLogger.Println("Error fetching user baseline:", err)
+		view.Context.AddError("Error fetching user baseline")
+		view.Context.AddMessage("An error occurred while fetching user baseline details. Please try again later.")
+		view.Context.HttpStatusCode = 500 // Internal Server Error
+		view.Context.WasSuccessful = false
+		return view, nil
+	}
+
+	view.Goal.NoProjections = userBaseline.ProjectionPeriod
 
 	userWeightSystemID := UserRecord.WeightSystem
 	userHeightSystemID := UserRecord.HeightSystem
@@ -200,7 +212,7 @@ func NewGoal(view GoalView, userID int) (GoalView, error) {
 	view.Context.PageActions.Clear()          // Clear any existing page actions
 	view.Context.PageActions.AddResetAction() // Add a reset action to the page actions
 	view.Context.PageActions.AddBackAction()  // Add a back action to the page actions
-	view.Context.PageActions.AddSubmitButton("Submit", "Submit Weight Log", glyphs.Save, thisURI, actionHelpers.CREATE, "", style.DEFAULT(), css.NONE())
+	view.Context.PageActions.AddSubmitButton("Submit", "Submit Goal", glyphs.Save, thisURI, actionHelpers.CREATE, "", style.DEFAULT(), css.NONE())
 
 	// Return the populated view
 

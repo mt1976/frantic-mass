@@ -2,6 +2,7 @@ package measures
 
 import (
 	"fmt"
+	"math"
 
 	"github.com/mt1976/frantic-core/logHandler"
 )
@@ -11,12 +12,13 @@ type Weight struct {
 }
 
 func (w *Weight) Set(value float64) {
-	if value < 0 {
-		logHandler.ErrorLogger.Printf("Invalid weight value: %v. Setting to zero.", value)
-		value = 0
+	rounded := math.Round(value*4) / 4
+	if rounded < 0 {
+		logHandler.ErrorLogger.Printf("Invalid weight value: %v. Setting to zero.", rounded)
+		rounded = 0
 	}
-	logHandler.InfoLogger.Printf("Setting weight: %v kg", value)
-	w.KGs = value
+	logHandler.InfoLogger.Printf("Setting weight: %v kg", rounded)
+	w.KGs = rounded
 }
 func (w *Weight) Kg() float64 {
 	if w.KGs <= 0 {

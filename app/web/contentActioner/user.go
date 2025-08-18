@@ -15,6 +15,9 @@ import (
 )
 
 func NewUser(w http.ResponseWriter, r *http.Request) (contentProvider.UserView, error) {
+	logHandler.InfoLogger.Println("NewUser: Creating new user")
+	logHandler.InfoLogger.Println("NewUser: Creating new user")
+	logHandler.InfoLogger.Println("NewUser: Creating new user")
 
 	godump.Dump(r)
 	view := contentProvider.UserView{}
