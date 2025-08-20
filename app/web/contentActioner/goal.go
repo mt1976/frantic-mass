@@ -11,6 +11,7 @@ import (
 	"github.com/mt1976/frantic-mass/app/dao/user"
 	"github.com/mt1976/frantic-mass/app/types/measures"
 	"github.com/mt1976/frantic-mass/app/web/contentProvider"
+	"github.com/mt1976/frantic-mass/app/web/errorHandler"
 )
 
 func NewGoal(w http.ResponseWriter, r *http.Request, userID int) (contentProvider.GoalView, error) {
@@ -52,7 +53,7 @@ func NewGoal(w http.ResponseWriter, r *http.Request, userID int) (contentProvide
 	_, err := user.GetBy(user.FIELD_ID, userID)
 	if err != nil {
 		logHandler.ErrorLogger.Printf("Error fetching user %d: %v", userID, err)
-		http.Redirect(w, r, "/error?message=Invalid User", http.StatusSeeOther)
+		errorHandler.Error(w, r, contentProvider.IntToString(userID), "Invalid User", "User not found or invalid", "404")
 		return view, err
 	}
 	goalNoProjections := htmlHelpers.ValueToInt(inputNoProjections)
@@ -61,25 +62,25 @@ func NewGoal(w http.ResponseWriter, r *http.Request, userID int) (contentProvide
 	targetDate_internal, err := time.Parse(dateHelpers.Format.YMD, inputTargetDate)
 	logHandler.InfoLogger.Printf("Parsed target date: %v, Input: %v", targetDate_internal, inputTargetDate)
 	if err != nil {
-		http.Redirect(w, r, "/error?message=Invalid Date, Failed to parse date", http.StatusSeeOther)
+		errorHandler.Error(w, r, contentProvider.IntToString(userID), "Invalid Date", "Failed to parse date", "400")
 		return view, err
 	}
 
 	if targetDate_internal.IsZero() {
-		http.Redirect(w, r, "/error?message=Invalid Date, Target date is zero", http.StatusSeeOther)
+		errorHandler.Error(w, r, contentProvider.IntToString(userID), "Invalid Date", "Target date is zero", "400")
 		return view, err
 	}
 
 	targetWeight_internal, err := StringToFloat(inputTargetWeight)
 	if err != nil {
-		http.Redirect(w, r, "/error?message=Invalid Weight", http.StatusSeeOther)
+		errorHandler.Error(w, r, contentProvider.IntToString(userID), "Invalid Weight", "Failed to parse target weight", "400")
 		return view, err
 	}
 	targetWeight_measure := measures.NewWeight(targetWeight_internal)
 
 	targetBMI_internal, err := StringToFloat(inputTargetBMI)
 	if err != nil {
-		http.Redirect(w, r, "/error?message=Invalid BMI", http.StatusSeeOther)
+		errorHandler.Error(w, r, contentProvider.IntToString(userID), "Invalid BMI", "Failed to parse target BMI", "400")
 		return view, err
 	}
 	targetBMI_measure := measures.NewBMI(targetBMI_internal)
@@ -87,15 +88,15 @@ func NewGoal(w http.ResponseWriter, r *http.Request, userID int) (contentProvide
 
 	targetLossPerWeek_measure, err := measures.NewWeightFromString(inputLossPerWeek)
 	if err != nil {
+		errorHandler.Error(w, r, contentProvider.IntToString(userID), "Invalid Loss Per Week", "Failed to parse loss per week", "400")
 		logHandler.ErrorLogger.Printf("Error creating loss per week measure: %v", err)
-		http.Redirect(w, r, "/error?message=Invalid Loss Per Week", http.StatusSeeOther)
 		return view, err
 	}
 
 	isAverageType := htmlHelpers.ValueToBool(inputIsAverageWeightLossTarget)
 
 	if goalNoProjections < 1 {
-		http.Redirect(w, r, "/error?message=Invalid No Projections", http.StatusSeeOther)
+		errorHandler.Error(w, r, contentProvider.IntToString(userID), "Invalid No Projections", "No projections must be at least 1", "400")
 		return view, err
 	}
 
@@ -104,7 +105,7 @@ func NewGoal(w http.ResponseWriter, r *http.Request, userID int) (contentProvide
 
 	if err != nil {
 		logHandler.ErrorLogger.Printf("Error creating weight entry for user %d: %v", userID, err)
-		http.Redirect(w, r, "/error?message=Failed to Create Weight Entry", http.StatusSeeOther)
+		errorHandler.Error(w, r, contentProvider.IntToString(userID), "Failed to Create Goal", "Error creating goal entry", "500")
 		return view, err
 	}
 	logHandler.InfoLogger.Printf("No Projections: %v", inputNoProjections)

@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/goforj/godump"
 	"github.com/tdewolff/minify"
 	"github.com/tdewolff/minify/html"
 )
@@ -57,12 +56,12 @@ func HandleHTMLMinification() func(http.Handler) http.Handler {
 				w.Header().Set("Content-Length", "")
 				w.WriteHeader(rw.status)
 				io.WriteString(w, minified)
-				godump.Dump(minified)
+				//godump.Dump(minified)
 			} else {
 				// non-HTML response
 				w.WriteHeader(rw.status)
 				io.Copy(w, buf)
-				godump.Dump(buf.String())
+				//godump.Dump(buf.String())
 			}
 		})
 	}

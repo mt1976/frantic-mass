@@ -10,11 +10,18 @@
                     <h1>‼️ ERROR</h1>
                 </hgroup>
                 <h2>Something went wrong</h2>
-                <p>There was an error processing your request. Please try again later.</p>
-                <p>If you continue to experience issues, please contact support.</p>
-                <small>Error Code: {{.Context.HttpStatusCode}}</small>
-                <br><br>
-                <p>For more information, please refer to the messages section below:</p>
+                <p>Please try again later.If you continue to experience issues, please contact support.</p>
+                <blockquote><small>Error Code: <strong>{{.Context.HttpStatusCode}}</strong></small><br>
+                {{if .HasErrorContent}}
+                <hr>
+                <h3>Context</h3>
+                <pre>
+USER        : <strong>{{.UserID}}</strong>
+MESSAGE     : <strong>{{.ErrorMessage}}</strong>
+DESCRIPTION : <strong>{{.ErrorDescription}}</strong>
+CODE        : <strong>{{.ErrorCode}}</strong></pre>{{end}}
+                </blockquote>
+                <p>For more information, please refer to the messages section below.</p>
             </article>
             {{template "chart" .}}
             {{template "alerts" .}}

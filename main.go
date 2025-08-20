@@ -332,6 +332,7 @@ func main() {
 	r.Use(middleware.DefaultLogger)
 	logHandler.InfoLogger.Println("Using DefaultLogger Middleware")
 	// Application Routes
+	r.Get(contentProvider.ErrorURI, handlers.Error) // Placeholder for error handler
 	r.Get(contentProvider.LauncherURI, handlers.Launcher)
 	r.Get(contentProvider.UserChooserURI, handlers.UserChooser)
 	r.Get(contentProvider.DashboardURI, handlers.Dashboard)             // Placeholder for user dashboard handler
