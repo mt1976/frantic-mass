@@ -84,7 +84,7 @@ func NewGoal(w http.ResponseWriter, r *http.Request, userID int) (contentProvide
 		return view, err
 	}
 	targetBMI_measure := measures.NewBMI(targetBMI_internal)
-	logHandler.InfoLogger.Printf("Target Weight: %f, Target BMI: %f, AverageWeightLoss: %b, Loss Per Week: %f", targetWeight_internal, targetBMI_measure.BMI, inputIsAverageWeightLossTarget, inputLossPerWeek)
+	logHandler.InfoLogger.Printf("Target Weight: %f, Target BMI: %f, AverageWeightLoss: %s, Loss Per Week: %s", targetWeight_internal, targetBMI_measure.BMI, inputIsAverageWeightLossTarget, inputLossPerWeek)
 
 	targetLossPerWeek_measure, err := measures.NewWeightFromString(inputLossPerWeek)
 	if err != nil {

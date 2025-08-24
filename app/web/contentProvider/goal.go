@@ -205,7 +205,7 @@ func NewGoal(view GoalView, userID int) (GoalView, error) {
 	view.Context.WasSuccessful = true
 	// Log the successful creation of the view
 	//view.Context.AddMessage("Users loaded successfully")
-	view.Context.AddMessage(fmt.Sprintf("Found weight %d", UserWeightRecord.Raw))
+	view.Context.AddMessage(fmt.Sprintf("Found weight %v", UserWeightRecord.Raw))
 	view.Context.AddMessage(fmt.Sprintf("Found user %v", view.UserName))
 	//uri := DashboardURI // Use the defined URI for the dashboard
 	//uri = ReplacePathParam(uri, WeightWildcard, fmt.Sprintf("%d", view.Weight.UserID))

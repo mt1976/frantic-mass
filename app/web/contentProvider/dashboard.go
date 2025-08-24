@@ -247,7 +247,7 @@ func BuildUserDashboard(view Dashboard, userId int) (Dashboard, error) {
 	newGoalURI := ReplacePathParam(GoalURI, UserWildcard, IntToString(userId))
 	newGoalURI = ReplacePathParam(newGoalURI, GoalWildcard, actionHelpers.NEW)
 
-	logHandler.InfoLogger.Println("User Glyph [%v]", glyphs.User)
+	logHandler.InfoLogger.Printf("User Glyph [%v]", glyphs.User)
 
 	view.Context.PageActions.AddSubmitButton(UserName, fmt.Sprintf(UserHover, view.User.Name), glyphs.User, uURI, actionHelpers.READ, "", style.NONE(), css.NONE())
 	view.Context.PageActions.AddSubmitButton(WeightName, fmt.Sprintf(WeightHover, "NEW", "Today"), glyphs.Weight, newWeightLogURI, actionHelpers.READ, "", style.NONE(), css.NONE())
