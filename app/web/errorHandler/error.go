@@ -18,6 +18,10 @@ func Error(w http.ResponseWriter, r *http.Request, userID, message, description,
 	uri = contentProvider.ReplacePathParam(uri, contentProvider.ErrorDescriptionWildcard, description)
 	uri = contentProvider.ReplacePathParam(uri, contentProvider.ErrorCodeWildcard, code)
 
+	logHandler.ErrorLogger.Println("Redirecting to error page:", uri)
+	logHandler.ErrorLogger.Println("Redirecting to error page:", uri)
+	logHandler.ErrorLogger.Println("Redirecting to error page:", uri)
+
 	// Render the error page
 	http.Redirect(w, r, uri, http.StatusSeeOther)
 }

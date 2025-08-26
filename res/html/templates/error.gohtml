@@ -12,14 +12,18 @@
                 <h2>Something went wrong</h2>
                 <p>Please try again later.If you continue to experience issues, please contact support.</p>
                 <blockquote><small>Error Code: <strong>{{.Context.HttpStatusCode}}</strong></small><br>
-                {{if .HasErrorContent}}
+                
+                
+                
+                {{/* {{if .HasErrorContent}} */}}
                 <hr>
                 <h3>Context</h3>
                 <pre>
 USER        : <strong>{{.UserID}}</strong>
 MESSAGE     : <strong>{{.ErrorMessage}}</strong>
 DESCRIPTION : <strong>{{.ErrorDescription}}</strong>
-CODE        : <strong>{{.ErrorCode}}</strong></pre>{{end}}
+CODE        : <strong>{{.ErrorCode}}</strong></pre>
+{{/* {{end}} */}}
                 </blockquote>
                 <p>For more information, please refer to the messages section below.</p>
             </article>
