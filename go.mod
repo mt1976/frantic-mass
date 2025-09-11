@@ -5,7 +5,7 @@ go 1.24.5
 require github.com/asdine/storm/v3 v3.2.1 // indirect
 
 require (
-	github.com/tdewolff/minify/v2 v2.24.0
+	github.com/tdewolff/minify/v2 v2.24.3
 	gopkg.in/kothar/brotli-go.v0 v0.0.0-20170728081549-771231d473d6
 )
 
@@ -19,7 +19,7 @@ require (
 require (
 	github.com/BurntSushi/toml v1.5.0 // indirect
 	github.com/asdine/storm v2.1.2+incompatible
-	github.com/gabriel-vasile/mimetype v1.4.9 // indirect
+	github.com/gabriel-vasile/mimetype v1.4.10 // indirect
 	github.com/galsondor/go-ascii v0.0.0-20151210013816-e2eb5175fb10 // indirect
 	github.com/go-chi/chi v1.5.5
 	github.com/go-playground/locales v0.14.1 // indirect
@@ -39,10 +39,10 @@ require (
 	go.etcd.io/bbolt v1.4.3 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
-	golang.org/x/crypto v0.41.0 // indirect
-	golang.org/x/exp v0.0.0-20250819193227-8b4c13bb791b // indirect
-	golang.org/x/net v0.43.0 // indirect
-	golang.org/x/sys v0.35.0 // indirect
-	golang.org/x/text v0.28.0 // indirect
+	golang.org/x/crypto v0.42.0 // indirect
+	golang.org/x/exp v0.0.0-20250911091902-df9299821621 // indirect
+	golang.org/x/net v0.44.0 // indirect
+	golang.org/x/sys v0.36.0 // indirect
+	golang.org/x/text v0.29.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 )
