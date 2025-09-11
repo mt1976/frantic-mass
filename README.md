@@ -3,6 +3,7 @@
 Frantic Mass is a health and fitness tracking application written in Go. It provides tools for tracking weight, BMI, goals, and other health-related metrics, with a modular architecture and support for web-based interfaces.
 
 [![Go](https://github.com/mt1976/frantic-mass/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/mt1976/frantic-mass/actions/workflows/go.yml)
+[![Dependabot Updates](https://github.com/mt1976/frantic-mass/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/mt1976/frantic-mass/actions/workflows/dependabot/dependabot-updates)
 
 ## Tech Stack
 - **Language:** Go (Golang)
