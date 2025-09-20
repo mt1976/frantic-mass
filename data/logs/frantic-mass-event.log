@@ -1,0 +1,1907 @@
+2025/09/20 19:38:48.763464 userStore_init.go:36: [35m[EVENT][0m Initialised User
+2025/09/20 19:38:48.763989 baselineStore_init.go:36: [35m[EVENT][0m Initialised baseline
+2025/09/20 19:38:48.764332 tagStore_init.go:36: [35m[EVENT][0m Initialised tag
+2025/09/20 19:38:48.765043 goalStore_init.go:36: [35m[EVENT][0m Initialised goal
+2025/09/20 19:38:48.765347 weightStore_init.go:36: [35m[EVENT][0m Initialised weight
+2025/09/20 19:38:48.765662 weightTagStore_init.go:36: [35m[EVENT][0m Initialised weightTag
+2025/09/20 19:38:48.765957 weightProjectionStore_init.go:36: [35m[EVENT][0m Initialised weightProjection
+2025/09/20 19:38:48.766214 weightProjectionHistoryStore_init.go:36: [35m[EVENT][0m Initialised weightProjectionHistory
+2025/09/20 19:38:48.766471 dateIndexStore_init.go:36: [35m[EVENT][0m Initialised dateIndex
+2025/09/20 19:38:48.766531 userStore.go:336: [35m[EVENT][0m Cleared down User
+2025/09/20 19:38:48.766609 baselineStore.go:336: [35m[EVENT][0m Cleared down baseline
+2025/09/20 19:38:48.766646 tagStore.go:336: [35m[EVENT][0m Cleared down tag
+2025/09/20 19:38:48.766674 goalStore.go:336: [35m[EVENT][0m Cleared down goal
+2025/09/20 19:38:48.766698 weightStore.go:336: [35m[EVENT][0m Cleared down weight
+2025/09/20 19:38:48.766735 weightProjectionStore.go:336: [35m[EVENT][0m Cleared down weightProjection
+2025/09/20 19:38:48.766766 weightTagStore.go:336: [35m[EVENT][0m Cleared down weightTag
+2025/09/20 19:38:48.766793 weightProjectionHistoryStore.go:336: [35m[EVENT][0m Cleared down weightProjectionHistory
+2025/09/20 19:38:48.766817 dateIndexStore.go:336: [35m[EVENT][0m Cleared down dateIndex
+2025/09/20 19:38:55.139009 importHelper.go:61: [35m[EVENT][0m Imported (72/72) weight(s) from [/Volumes/External HD/Dev/GitHub/frantic-mass/data/defaults/weights.csv]
+2025/09/20 19:38:55.139385 dateIndex_job.go:159: [35m[EVENT][0m [dateIndexJob] Running 'dateIndex Job' tasks with database=[frantic-mass-main.db]
+2025/09/20 19:38:55.198653 dateIndex_job.go:168: [35m[EVENT][0m [dateIndexJob] Completed 'dateIndex Job' tasks with database=[frantic-mass-main.db]
+2025/09/20 19:38:55.199435 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:38:55.199445 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:38:55.199457 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:38:55.199472 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:38:55.199478 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:38:55.199483 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:38:55.199487 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:38:55.199491 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:38:55.199495 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:38:55.199499 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:38:55.199503 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:38:55.199506 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:38:55.199511 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:38:55.199515 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:38:55.199519 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:38:55.199522 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:38:55.199526 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:38:55.199530 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:38:55.199534 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:38:55.199537 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:38:55.199541 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:38:55.199571 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:38:55.199575 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:38:55.199579 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:38:55.199582 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:38:55.199586 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:38:55.199595 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:38:55.199611 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:38:55.199617 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:38:55.199621 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:38:55.199626 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:38:55.199630 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:38:55.199634 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:38:55.199637 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:38:55.199641 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:38:55.199645 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:38:55.199650 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:38:55.199655 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:38:55.199659 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:38:55.199662 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:38:55.199666 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:38:55.199669 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:38:55.199673 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:38:55.199677 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:38:55.199680 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:38:55.199683 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:38:55.199687 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:38:55.199691 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:38:55.199694 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:38:55.199697 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:38:55.199700 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:38:55.199703 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:38:55.199706 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:38:55.199708 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:38:55.199711 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:38:55.199714 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:38:55.199717 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:38:55.199720 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:38:55.199724 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:38:55.199741 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:38:55.199753 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:38:55.199759 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:38:55.199764 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:38:55.199768 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:38:55.199775 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:38:55.199779 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:38:55.199782 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:38:55.199788 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:38:55.199792 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:38:55.199796 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:38:55.199800 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:38:55.199803 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:38:55.199827 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:38:55.199832 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:38:55.199836 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:38:55.199839 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:38:55.199842 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:38:55.199845 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:38:55.199848 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:38:55.199851 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:38:55.199854 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:38:55.199858 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:38:55.199860 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:38:55.199863 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:38:55.199866 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:38:55.199870 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:38:55.199873 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:38:55.199876 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:38:55.199878 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:38:55.199882 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:38:55.199886 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:38:55.199889 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:38:55.199891 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:38:55.199894 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:38:55.199897 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:38:55.199901 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:38:55.199904 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:38:55.199907 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:38:55.199909 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:38:55.199912 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:38:55.199915 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:38:55.199919 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:38:55.199921 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:38:55.199924 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:38:55.199927 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:38:55.199930 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:38:55.199937 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:38:55.199942 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:38:55.199945 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:38:55.199949 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:38:55.199952 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:38:55.199955 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:38:55.199958 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:38:55.199962 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:38:55.199965 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:38:55.199968 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:38:55.199970 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:38:55.199973 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:38:55.199976 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:38:55.199979 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:38:55.199983 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:38:55.199985 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:38:55.199988 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:38:55.199991 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:38:55.199993 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:38:55.199997 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:38:55.200000 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:38:55.200003 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:38:55.200005 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:38:55.200008 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:38:55.200012 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:38:55.200015 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:38:55.200018 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:38:55.200021 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:38:55.200023 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:38:55.200027 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:38:55.200030 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:38:55.200032 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:38:55.200035 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:38:55.200040 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:38:55.200043 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:38:55.200046 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:38:55.200049 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:38:55.200053 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:38:55.200343 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:55.200400 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {30.7 Obese 🔴 30.7}
+2025/09/20 19:38:55.200406 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {30.7 Obese 🔴 30.7}
+2025/09/20 19:38:55.339534 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:55.339666 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {30.1 Obese 🔴 30.1}
+2025/09/20 19:38:55.339673 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {30.1 Obese 🔴 30.1}
+2025/09/20 19:38:55.429450 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:55.429562 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29.6 Overweight 🟠 29.6}
+2025/09/20 19:38:55.429568 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29.6 Overweight 🟠 29.6}
+2025/09/20 19:38:55.541967 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:55.542091 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29 Overweight 🟠 29}
+2025/09/20 19:38:55.542100 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29 Overweight 🟠 29}
+2025/09/20 19:38:55.649746 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:55.649852 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {28.4 Overweight 🟠 28.4}
+2025/09/20 19:38:55.649860 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {28.4 Overweight 🟠 28.4}
+2025/09/20 19:38:55.744729 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:55.744853 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27.9 Overweight 🟠 27.9}
+2025/09/20 19:38:55.744861 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27.9 Overweight 🟠 27.9}
+2025/09/20 19:38:55.843877 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:55.844016 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27.3 Overweight 🟠 27.3}
+2025/09/20 19:38:55.844026 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27.3 Overweight 🟠 27.3}
+2025/09/20 19:38:55.952881 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:55.952999 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {26.7 Overweight 🟠 26.7}
+2025/09/20 19:38:55.953007 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {26.7 Overweight 🟠 26.7}
+2025/09/20 19:38:56.064173 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:56.064317 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {26.2 Overweight 🟠 26.2}
+2025/09/20 19:38:56.064326 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {26.2 Overweight 🟠 26.2}
+2025/09/20 19:38:56.170891 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:56.171014 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.6 Overweight 🟠 25.6}
+2025/09/20 19:38:56.171025 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.6 Overweight 🟠 25.6}
+2025/09/20 19:38:56.278453 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:56.278563 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.1 Overweight 🟠 25.1}
+2025/09/20 19:38:56.278571 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.1 Overweight 🟠 25.1}
+2025/09/20 19:38:56.396914 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:56.397032 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {24.5 Normal 🟢 24.5}
+2025/09/20 19:38:56.397041 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {24.5 Normal 🟢 24.5}
+2025/09/20 19:38:56.499268 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:56.499380 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {23.9 Normal 🟢 23.9}
+2025/09/20 19:38:56.499395 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {23.9 Normal 🟢 23.9}
+2025/09/20 19:38:56.600169 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:56.600282 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {23.4 Normal 🟢 23.4}
+2025/09/20 19:38:56.600290 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {23.4 Normal 🟢 23.4}
+2025/09/20 19:38:56.723723 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:56.723842 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {22.8 Normal 🟢 22.8}
+2025/09/20 19:38:56.723851 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {22.8 Normal 🟢 22.8}
+2025/09/20 19:38:56.837529 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:56.837641 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {22.2 Normal 🟢 22.2}
+2025/09/20 19:38:56.837649 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {22.2 Normal 🟢 22.2}
+2025/09/20 19:38:56.953580 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:56.953714 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {21.7 Normal 🟢 21.7}
+2025/09/20 19:38:56.953723 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {21.7 Normal 🟢 21.7}
+2025/09/20 19:38:57.061507 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:57.061626 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {21.1 Normal 🟢 21.1}
+2025/09/20 19:38:57.061634 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {21.1 Normal 🟢 21.1}
+2025/09/20 19:38:57.173552 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:57.173664 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {20.5 Normal 🟢 20.5}
+2025/09/20 19:38:57.173671 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {20.5 Normal 🟢 20.5}
+2025/09/20 19:38:57.276685 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:57.276838 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {20 Normal 🟢 20}
+2025/09/20 19:38:57.276847 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {20 Normal 🟢 20}
+2025/09/20 19:38:57.387963 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:57.388086 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {19.4 Normal 🟢 19.4}
+2025/09/20 19:38:57.388093 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {19.4 Normal 🟢 19.4}
+2025/09/20 19:38:57.497537 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:57.497925 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {18.8 Normal 🟢 18.8}
+2025/09/20 19:38:57.497936 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {18.8 Normal 🟢 18.8}
+2025/09/20 19:38:57.593997 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:57.594115 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {18.3 Underweight ⚪️ 18.3}
+2025/09/20 19:38:57.594123 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {18.3 Underweight ⚪️ 18.3}
+2025/09/20 19:38:57.698313 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:57.698402 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {30.7 Obese 🔴 30.7}
+2025/09/20 19:38:57.698409 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {30.7 Obese 🔴 30.7}
+2025/09/20 19:38:57.805741 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:57.805866 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {30.1 Obese 🔴 30.1}
+2025/09/20 19:38:57.805874 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {30.1 Obese 🔴 30.1}
+2025/09/20 19:38:57.922046 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:57.922165 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29.6 Overweight 🟠 29.6}
+2025/09/20 19:38:57.922173 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29.6 Overweight 🟠 29.6}
+2025/09/20 19:38:58.052433 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:58.052554 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29 Overweight 🟠 29}
+2025/09/20 19:38:58.052562 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29 Overweight 🟠 29}
+2025/09/20 19:38:58.168295 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:58.168399 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {28.4 Overweight 🟠 28.4}
+2025/09/20 19:38:58.168406 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {28.4 Overweight 🟠 28.4}
+2025/09/20 19:38:58.279127 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:58.279265 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27.9 Overweight 🟠 27.9}
+2025/09/20 19:38:58.279272 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27.9 Overweight 🟠 27.9}
+2025/09/20 19:38:58.382167 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:58.382288 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27.3 Overweight 🟠 27.3}
+2025/09/20 19:38:58.382295 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27.3 Overweight 🟠 27.3}
+2025/09/20 19:38:58.493001 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:58.493125 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {26.7 Overweight 🟠 26.7}
+2025/09/20 19:38:58.493133 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {26.7 Overweight 🟠 26.7}
+2025/09/20 19:38:58.605324 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:58.605452 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {26.2 Overweight 🟠 26.2}
+2025/09/20 19:38:58.605460 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {26.2 Overweight 🟠 26.2}
+2025/09/20 19:38:58.711685 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:58.711816 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.6 Overweight 🟠 25.6}
+2025/09/20 19:38:58.711824 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.6 Overweight 🟠 25.6}
+2025/09/20 19:38:58.838899 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:58.839019 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.1 Overweight 🟠 25.1}
+2025/09/20 19:38:58.839026 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.1 Overweight 🟠 25.1}
+2025/09/20 19:38:58.953180 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:58.953302 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {24.5 Normal 🟢 24.5}
+2025/09/20 19:38:58.953309 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {24.5 Normal 🟢 24.5}
+2025/09/20 19:38:59.166698 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:59.166813 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {23.9 Normal 🟢 23.9}
+2025/09/20 19:38:59.166828 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {23.9 Normal 🟢 23.9}
+2025/09/20 19:38:59.282919 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:59.283013 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {23.4 Normal 🟢 23.4}
+2025/09/20 19:38:59.283019 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {23.4 Normal 🟢 23.4}
+2025/09/20 19:38:59.406384 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:59.406495 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {22.8 Normal 🟢 22.8}
+2025/09/20 19:38:59.406504 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {22.8 Normal 🟢 22.8}
+2025/09/20 19:38:59.533088 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:59.533216 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {22.2 Normal 🟢 22.2}
+2025/09/20 19:38:59.533224 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {22.2 Normal 🟢 22.2}
+2025/09/20 19:38:59.651298 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:59.651408 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {21.7 Normal 🟢 21.7}
+2025/09/20 19:38:59.651415 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {21.7 Normal 🟢 21.7}
+2025/09/20 19:38:59.753238 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:59.753357 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {21.1 Normal 🟢 21.1}
+2025/09/20 19:38:59.753364 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {21.1 Normal 🟢 21.1}
+2025/09/20 19:38:59.889397 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:38:59.889497 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {20.5 Normal 🟢 20.5}
+2025/09/20 19:38:59.889503 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {20.5 Normal 🟢 20.5}
+2025/09/20 19:39:00.016152 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:00.016279 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {20 Normal 🟢 20}
+2025/09/20 19:39:00.016286 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {20 Normal 🟢 20}
+2025/09/20 19:39:00.133912 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:00.134033 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {19.4 Normal 🟢 19.4}
+2025/09/20 19:39:00.134041 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {19.4 Normal 🟢 19.4}
+2025/09/20 19:39:00.288456 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:00.288588 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {18.8 Normal 🟢 18.8}
+2025/09/20 19:39:00.288595 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {18.8 Normal 🟢 18.8}
+2025/09/20 19:39:00.408193 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:00.408406 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {18.3 Underweight ⚪️ 18.3}
+2025/09/20 19:39:00.408473 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {18.3 Underweight ⚪️ 18.3}
+2025/09/20 19:39:00.519840 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:00.519933 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {30.7 Obese 🔴 30.7}
+2025/09/20 19:39:00.519940 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {30.7 Obese 🔴 30.7}
+2025/09/20 19:39:00.632942 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:00.633100 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {30.1 Obese 🔴 30.1}
+2025/09/20 19:39:00.633109 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {30.1 Obese 🔴 30.1}
+2025/09/20 19:39:00.763992 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:00.764125 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29.6 Overweight 🟠 29.6}
+2025/09/20 19:39:00.764133 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29.6 Overweight 🟠 29.6}
+2025/09/20 19:39:00.874693 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:00.874882 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29 Overweight 🟠 29}
+2025/09/20 19:39:00.874893 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29 Overweight 🟠 29}
+2025/09/20 19:39:00.991409 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:00.991527 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {28.4 Overweight 🟠 28.4}
+2025/09/20 19:39:00.991535 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {28.4 Overweight 🟠 28.4}
+2025/09/20 19:39:01.128098 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:01.128219 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27.9 Overweight 🟠 27.9}
+2025/09/20 19:39:01.128227 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27.9 Overweight 🟠 27.9}
+2025/09/20 19:39:01.247737 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:01.247860 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27.3 Overweight 🟠 27.3}
+2025/09/20 19:39:01.247868 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27.3 Overweight 🟠 27.3}
+2025/09/20 19:39:01.454861 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:01.471855 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {26.7 Overweight 🟠 26.7}
+2025/09/20 19:39:01.471877 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {26.7 Overweight 🟠 26.7}
+2025/09/20 19:39:01.619030 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:01.619137 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {26.2 Overweight 🟠 26.2}
+2025/09/20 19:39:01.619144 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {26.2 Overweight 🟠 26.2}
+2025/09/20 19:39:01.736859 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:01.736983 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.6 Overweight 🟠 25.6}
+2025/09/20 19:39:01.736991 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.6 Overweight 🟠 25.6}
+2025/09/20 19:39:01.851120 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:01.851243 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.1 Overweight 🟠 25.1}
+2025/09/20 19:39:01.851259 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.1 Overweight 🟠 25.1}
+2025/09/20 19:39:01.970055 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:01.970187 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {24.5 Normal 🟢 24.5}
+2025/09/20 19:39:01.970196 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {24.5 Normal 🟢 24.5}
+2025/09/20 19:39:02.087078 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:02.087233 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {23.9 Normal 🟢 23.9}
+2025/09/20 19:39:02.087242 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {23.9 Normal 🟢 23.9}
+2025/09/20 19:39:02.227569 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:02.227690 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {23.4 Normal 🟢 23.4}
+2025/09/20 19:39:02.227698 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {23.4 Normal 🟢 23.4}
+2025/09/20 19:39:02.361970 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:02.362111 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {22.8 Normal 🟢 22.8}
+2025/09/20 19:39:02.362119 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {22.8 Normal 🟢 22.8}
+2025/09/20 19:39:02.477625 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:02.477746 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {22.2 Normal 🟢 22.2}
+2025/09/20 19:39:02.477754 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {22.2 Normal 🟢 22.2}
+2025/09/20 19:39:02.602010 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:02.602160 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {21.7 Normal 🟢 21.7}
+2025/09/20 19:39:02.602171 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {21.7 Normal 🟢 21.7}
+2025/09/20 19:39:02.723280 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:02.723402 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {21.1 Normal 🟢 21.1}
+2025/09/20 19:39:02.723410 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {21.1 Normal 🟢 21.1}
+2025/09/20 19:39:02.846402 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:02.846519 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {20.5 Normal 🟢 20.5}
+2025/09/20 19:39:02.846528 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {20.5 Normal 🟢 20.5}
+2025/09/20 19:39:02.969261 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:02.969385 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {20 Normal 🟢 20}
+2025/09/20 19:39:02.969393 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {20 Normal 🟢 20}
+2025/09/20 19:39:03.088443 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:03.088566 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {19.4 Normal 🟢 19.4}
+2025/09/20 19:39:03.088574 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {19.4 Normal 🟢 19.4}
+2025/09/20 19:39:03.223006 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:03.223122 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {18.8 Normal 🟢 18.8}
+2025/09/20 19:39:03.223129 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {18.8 Normal 🟢 18.8}
+2025/09/20 19:39:03.346550 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:03.346664 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {18.3 Underweight ⚪️ 18.3}
+2025/09/20 19:39:03.346672 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {18.3 Underweight ⚪️ 18.3}
+2025/09/20 19:39:03.473051 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:03.473060 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:03.473064 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:03.473074 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:03.473078 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:03.473082 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:03.473085 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:03.473089 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:03.473092 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:03.473095 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:03.473098 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:03.473101 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:03.473105 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:03.473108 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:03.473111 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:03.473120 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:03.473124 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:03.473128 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:03.473131 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:03.473134 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:03.473137 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:03.473140 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:03.473146 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:03.473150 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:03.473153 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:03.473156 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:03.473159 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:03.473161 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:03.473164 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:03.473167 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:03.473170 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:03.473173 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:03.473176 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:03.473180 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:03.473184 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:03.473187 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:03.473191 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:03.473195 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:03.473198 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:03.473201 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:03.473204 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:03.473207 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:03.473210 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:03.473213 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:03.473216 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:03.473220 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:03.473226 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:03.473230 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:03.473233 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:03.473237 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:03.473240 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:03.473243 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:03.473246 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:03.473250 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:03.473253 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:03.473257 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:03.473259 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:03.473263 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:03.473266 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:03.473270 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:03.473273 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:03.473276 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:03.473279 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:03.473281 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:03.473284 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:03.473287 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:03.473290 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:03.473297 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:03.473301 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:03.473304 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:03.473309 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:03.473312 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:03.473338 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:03.473343 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:03.473346 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:03.473349 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:03.473352 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:03.473356 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:03.473360 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:03.473363 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:03.473367 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:03.473370 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:03.473372 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:03.473375 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:03.473378 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:03.473381 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:03.473385 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:03.473388 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:03.473392 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:03.473401 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:03.473405 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:03.473408 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:03.473411 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:03.473414 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:03.473417 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:03.473421 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:03.473424 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:03.473428 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:03.473431 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:03.473435 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:03.473438 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:03.473442 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:03.473445 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:03.473448 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:03.473451 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:03.473455 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:03.473460 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:03.473463 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:03.473466 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:03.473470 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:03.473473 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:03.473476 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:03.473480 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:03.473483 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:03.473486 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:03.473489 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:03.473493 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:03.473496 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:03.473499 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:03.473503 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:03.473506 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:03.473509 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:03.473512 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:03.473516 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:03.473518 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:03.473521 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:03.473524 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:03.473527 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:03.473530 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:03.473534 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:03.473537 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:03.473541 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:03.473544 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:03.473547 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:03.473551 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:03.473557 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:03.473561 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:03.473564 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:03.473567 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:03.473571 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:03.473574 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:03.473577 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:03.473579 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:03.473582 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:03.474754 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:03.474853 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {31 Obese 🔴 31}
+2025/09/20 19:39:03.474860 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {31 Obese 🔴 31}
+2025/09/20 19:39:03.610991 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:03.611123 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {30.7 Obese 🔴 30.7}
+2025/09/20 19:39:03.611131 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {30.7 Obese 🔴 30.7}
+2025/09/20 19:39:03.735887 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:03.736009 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {30.4 Obese 🔴 30.4}
+2025/09/20 19:39:03.736015 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {30.4 Obese 🔴 30.4}
+2025/09/20 19:39:03.852527 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:03.852658 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {30.1 Obese 🔴 30.1}
+2025/09/20 19:39:03.852667 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {30.1 Obese 🔴 30.1}
+2025/09/20 19:39:03.966087 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:03.966204 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29.9 Obese 🔴 29.9}
+2025/09/20 19:39:03.966212 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29.9 Obese 🔴 29.9}
+2025/09/20 19:39:04.101815 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:04.101939 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29.6 Overweight 🟠 29.6}
+2025/09/20 19:39:04.101946 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29.6 Overweight 🟠 29.6}
+2025/09/20 19:39:04.229751 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:04.229861 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29.3 Overweight 🟠 29.3}
+2025/09/20 19:39:04.229869 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29.3 Overweight 🟠 29.3}
+2025/09/20 19:39:04.362686 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:04.362826 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {29 Overweight 🟠 29}
+2025/09/20 19:39:04.362835 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {29 Overweight 🟠 29}
+2025/09/20 19:39:04.490964 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:04.491073 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {28.7 Overweight 🟠 28.7}
+2025/09/20 19:39:04.491083 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {28.7 Overweight 🟠 28.7}
+2025/09/20 19:39:04.622627 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:04.622768 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {28.4 Overweight 🟠 28.4}
+2025/09/20 19:39:04.622775 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {28.4 Overweight 🟠 28.4}
+2025/09/20 19:39:04.754626 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:04.754759 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {28.2 Overweight 🟠 28.2}
+2025/09/20 19:39:04.754766 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {28.2 Overweight 🟠 28.2}
+2025/09/20 19:39:04.880363 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:04.880480 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27.9 Overweight 🟠 27.9}
+2025/09/20 19:39:04.880487 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27.9 Overweight 🟠 27.9}
+2025/09/20 19:39:05.001801 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:05.001918 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27.6 Overweight 🟠 27.6}
+2025/09/20 19:39:05.001927 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27.6 Overweight 🟠 27.6}
+2025/09/20 19:39:05.115359 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:05.115484 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27.3 Overweight 🟠 27.3}
+2025/09/20 19:39:05.115492 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27.3 Overweight 🟠 27.3}
+2025/09/20 19:39:05.255241 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:05.255378 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {27 Overweight 🟠 27}
+2025/09/20 19:39:05.255386 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {27 Overweight 🟠 27}
+2025/09/20 19:39:05.382822 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:05.382933 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {26.7 Overweight 🟠 26.7}
+2025/09/20 19:39:05.382941 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {26.7 Overweight 🟠 26.7}
+2025/09/20 19:39:05.508768 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:05.508887 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {26.5 Overweight 🟠 26.5}
+2025/09/20 19:39:05.508894 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {26.5 Overweight 🟠 26.5}
+2025/09/20 19:39:05.628104 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:05.628227 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {26.2 Overweight 🟠 26.2}
+2025/09/20 19:39:05.628234 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {26.2 Overweight 🟠 26.2}
+2025/09/20 19:39:05.744577 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:05.744719 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.9 Overweight 🟠 25.9}
+2025/09/20 19:39:05.744728 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.9 Overweight 🟠 25.9}
+2025/09/20 19:39:05.887857 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:05.887993 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.6 Overweight 🟠 25.6}
+2025/09/20 19:39:05.888002 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.6 Overweight 🟠 25.6}
+2025/09/20 19:39:06.006377 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:06.006484 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.3 Overweight 🟠 25.3}
+2025/09/20 19:39:06.006491 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.3 Overweight 🟠 25.3}
+2025/09/20 19:39:06.118853 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:06.118967 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {25.1 Overweight 🟠 25.1}
+2025/09/20 19:39:06.118976 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {25.1 Overweight 🟠 25.1}
+2025/09/20 19:39:06.242102 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 0
+2025/09/20 19:39:06.242242 weightProjection.go:30: [35m[EVENT][0m Calculated BMI for user 100: {24.8 Normal 🟢 24.8}
+2025/09/20 19:39:06.242250 weightProjection.go:32: [35m[EVENT][0m Calculated BMI for user 100: {24.8 Normal 🟢 24.8}
+2025/09/20 19:39:06.424335 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:06.424347 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:06.424352 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:06.424356 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:06.424360 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:06.424363 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:06.424366 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:06.424368 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:06.424371 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:06.424374 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:06.424377 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:06.424381 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:06.424384 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:06.424389 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:06.424392 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:06.424395 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:06.424397 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:06.424401 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:06.424403 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:06.424406 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:06.424409 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:06.424411 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:06.424414 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:06.424417 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:06.424420 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:06.424422 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:06.424425 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:06.424429 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:06.424431 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:06.424443 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:06.424446 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:06.424449 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:06.424452 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:06.424456 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:06.424460 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:06.424462 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:06.424465 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:06.424468 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:06.424471 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:06.424473 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:06.424476 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:06.424479 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:06.424481 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:06.424484 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:06.424488 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:06.424492 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:06.424495 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:06.424497 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:06.424500 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:06.424503 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:06.424506 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:06.424508 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:06.424512 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:06.424515 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:06.424517 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:06.424520 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:06.424523 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:06.424526 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:06.424529 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:06.424531 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:06.424535 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:06.424538 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:06.424541 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:06.424543 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:06.424546 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:06.424549 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:06.424552 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:06.424557 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:06.424560 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:06.424563 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:06.424565 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:06.424572 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:06.424595 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:06.424600 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:06.424603 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:06.424608 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:06.424611 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:06.424616 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:06.424619 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:06.424624 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:06.424627 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:06.424630 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:06.424632 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:06.424635 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:06.424638 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:06.424641 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:06.424643 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:06.424647 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:06.424650 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:06.424653 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:06.424656 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:06.424659 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:06.424662 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:06.424665 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:06.424668 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:06.424671 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:06.424674 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:06.424676 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:06.424679 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:06.424681 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:06.424684 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:06.424687 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:06.424689 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:06.424692 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:06.424695 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:06.424697 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:06.424701 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:06.424704 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:06.424709 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:06.424711 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:06.424714 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:06.424717 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:06.424719 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:06.424723 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:06.424725 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:06.424728 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:06.424731 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:06.424734 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:06.424737 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:06.424740 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:06.424742 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:06.424745 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:06.424747 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:06.424750 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:06.424753 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:06.424755 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:06.424758 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:06.424761 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:06.424763 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:06.424767 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:06.424770 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:06.424772 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:06.424775 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:06.424778 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:06.424780 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:06.424783 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:06.424787 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:06.424790 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:06.424793 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:06.424797 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:06.424799 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:06.424803 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:06.424805 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:06.424809 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:08.624010 putConverter.go:34: [35m[EVENT][0m HTTP method converted from GET to GET
+2025/09/20 19:39:08.624827 shared.go:90: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:08.624891 shared.go:91: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:08.624998 shared.go:92: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:08.625022 shared.go:93: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:08.630137 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:08.630236 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:08.630260 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:08.630274 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:08.630286 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:08.630298 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:08.630309 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:08.630319 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:08.630330 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:08.630340 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:08.630350 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:08.630360 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:08.630596 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:08.630664 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:08.630675 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:08.630683 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:08.630690 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:08.630698 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:08.630704 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:08.630710 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:08.630717 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:08.630724 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:08.630729 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:08.630734 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:08.630740 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:08.630832 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:08.630852 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:08.630860 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:08.630867 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:08.630876 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:08.630882 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:08.630888 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:08.630896 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:08.630902 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:08.630911 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:08.630916 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:08.630920 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:08.630925 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:08.630930 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:08.630934 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:08.630955 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:08.630988 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:08.630994 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:08.631000 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:08.631006 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:08.631013 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:08.631020 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:08.631025 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:08.631031 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:08.631036 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:08.631044 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:08.631051 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:08.631056 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:08.631062 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:08.631071 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:08.631077 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:08.631082 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:08.631089 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:08.631096 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:08.631101 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:08.631106 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:08.631112 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:08.631118 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:08.631123 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:08.631128 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:08.631132 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:08.631137 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:08.631146 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:08.631151 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:08.631155 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:08.631160 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:08.631164 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:08.631202 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:08.631209 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:08.631214 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:08.631219 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:08.631223 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:08.631230 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:08.631237 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:08.631242 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:08.631246 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:08.631251 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:08.631255 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:08.631259 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:08.631264 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:08.631268 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:08.631272 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:08.631276 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:08.631280 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:08.631323 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:08.631335 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:08.631344 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:08.631351 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:08.631357 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:08.631362 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:08.631368 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:08.631373 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:08.631378 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:08.631384 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:08.631389 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:08.631394 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:08.631398 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:08.631404 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:08.631408 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:08.631413 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:08.631417 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:08.631424 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:08.631429 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:08.631433 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:08.631438 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:08.631442 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:08.631447 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:08.631452 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:08.631457 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:08.631462 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:08.631466 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:08.631470 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:08.631475 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:08.631479 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:08.631483 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:08.631487 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:08.631492 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:08.631496 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:08.631500 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:08.631504 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:08.631508 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:08.631513 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:08.631518 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:08.631522 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:08.631526 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:08.631530 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:08.631535 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:08.631540 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:08.631548 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:08.631553 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:08.631557 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:08.631562 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:08.631566 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:08.631570 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:08.631578 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:08.631584 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:08.631589 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:08.631595 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:08.631600 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:08.632342 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:08.632353 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:08.632358 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:08.632364 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:08.632369 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:08.632375 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:08.632379 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:08.632384 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:08.632388 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:08.632394 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:08.632398 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:08.632405 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:08.632409 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:08.632414 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:08.632419 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:08.632423 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:08.632428 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:08.632434 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:08.632438 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:08.632442 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:08.632446 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:08.632451 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:08.632456 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:08.632461 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:08.632465 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:08.632469 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:08.632474 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:08.632478 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:08.632482 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:08.632486 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:08.632490 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:08.632494 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:08.632498 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:08.632683 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:08.632703 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:08.632710 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:08.632718 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:08.632724 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:08.632729 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:08.632733 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:08.632770 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:08.632811 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:08.632823 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:08.632829 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:08.632835 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:08.632840 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:08.632846 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:08.632855 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:08.632861 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:08.632867 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:08.632873 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:08.632879 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:08.632885 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:08.632890 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:08.632894 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:08.632898 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:08.632902 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:08.632907 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:08.632911 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:08.632915 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:08.632919 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:08.632924 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:08.632929 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:08.632934 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:08.632938 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:08.632943 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:08.632948 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:08.632955 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:08.632960 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:08.632964 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:08.632969 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:08.632974 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:08.633006 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:08.633013 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:08.633017 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:08.633023 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:08.633027 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:08.633035 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:08.633042 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:08.633047 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:08.633054 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:08.633060 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:08.633065 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:08.633070 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:08.633075 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:08.633080 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:08.633087 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:08.633092 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:08.633097 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:08.633103 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:08.633108 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:08.633113 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:08.633118 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:08.633122 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:08.633126 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:08.633130 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:08.633135 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:08.633140 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:08.633144 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:08.633148 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:08.633154 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:08.633159 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:08.633163 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:08.633167 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:08.633172 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:08.633177 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:08.633183 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:08.633187 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:08.633192 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:08.633197 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:08.633201 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:08.633205 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:08.633209 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:08.633213 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:08.633218 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:08.633223 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:08.633227 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:08.633231 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:08.633237 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:08.633242 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:08.633246 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:08.633250 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:08.633255 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:08.633260 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:08.633264 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:08.633268 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:08.633274 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:08.633279 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:08.633283 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:08.633288 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:08.633293 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:08.633299 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:08.633303 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:08.633307 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:08.633311 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:08.633317 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:08.633321 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:08.633325 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:08.633329 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:08.633336 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:08.633342 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:08.633346 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:08.633350 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:08.633355 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:08.637411 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:08.637424 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:08.637429 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:08.637434 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:08.637440 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:08.637445 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:08.637449 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:08.637454 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:08.637460 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:08.637464 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:08.637469 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:08.637473 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:08.637478 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:08.637482 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:08.637487 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:08.637492 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:08.637497 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:08.637501 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:08.637506 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:08.637511 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:08.637515 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:08.637519 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:08.637525 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:08.637529 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:08.637533 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:08.637537 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:08.637542 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:08.637546 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:08.637551 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:08.637555 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:08.637561 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:08.637565 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:08.637569 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:08.637573 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:08.637579 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:08.637584 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:08.637588 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:08.637593 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:08.637598 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:08.637602 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:08.637607 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:08.637611 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:08.637616 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:08.637620 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:08.637625 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:08.637629 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:08.637633 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:08.637638 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:08.637642 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:08.637646 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:08.637650 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:08.637656 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:08.637660 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:08.637663 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:08.637666 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:08.637669 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:08.637673 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:08.637676 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:08.637680 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:08.637729 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:08.637782 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:08.637790 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:08.637797 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:08.637873 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:08.637902 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:08.637909 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:08.637913 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:08.637924 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:08.637929 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:08.637934 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:08.637939 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:08.637943 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:08.638141 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:39:08.638164 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:39:08.638171 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:39:08.638177 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:39:08.638181 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:39:08.638185 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:39:08.638189 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:39:08.638195 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:39:08.638199 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:39:08.638203 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:39:08.638217 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:39:08.638231 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:39:08.638238 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:39:08.638262 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:39:08.638268 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:39:08.638272 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:39:08.638277 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:39:08.638282 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:39:08.638285 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:39:08.638289 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:39:08.638293 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:39:08.638297 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:39:08.638300 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:39:08.638305 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:39:08.638309 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:39:08.638313 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:39:08.638317 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:39:08.638321 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:39:08.638324 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:39:08.638329 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:39:08.638333 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:39:08.638337 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:39:08.638343 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:39:08.638347 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:39:08.638352 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:39:08.638356 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:39:08.638360 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:39:08.638364 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:39:08.638368 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:39:08.638372 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:39:08.638376 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:39:08.638379 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:39:08.638383 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:39:08.638386 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:39:08.638389 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:39:08.638392 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:39:08.638395 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:39:08.638398 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:39:08.638402 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:39:08.638406 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:39:08.638409 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:39:08.638412 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:39:08.638417 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:39:08.638420 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:39:08.638424 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:39:08.638428 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:39:08.638431 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:39:08.638435 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:39:08.638439 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:39:08.638443 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:39:08.638446 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:39:08.638450 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:39:08.638454 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:39:08.638469 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:39:08.638473 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:39:08.638476 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:39:08.638479 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:39:08.638484 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:39:08.638490 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:39:08.638493 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:39:08.638496 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:39:08.638499 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:39:08.643400 dashboard.go:43: [35m[EVENT][0m Profile view created successfully
+2025/09/20 19:39:29.011106 putConverter.go:34: [35m[EVENT][0m HTTP method converted from GET to GET
+2025/09/20 19:39:29.011188 shared.go:90: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:29.011282 shared.go:91: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:29.011309 shared.go:92: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:29.011320 shared.go:93: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:29.011331 shared.go:90: [35m[EVENT][0m Retrieved URL parameter 'goalId': '103'
+2025/09/20 19:39:29.011373 shared.go:91: [35m[EVENT][0m Retrieved URL parameter 'goalId': '103'
+2025/09/20 19:39:29.011395 shared.go:92: [35m[EVENT][0m Retrieved URL parameter 'goalId': '103'
+2025/09/20 19:39:29.011407 shared.go:93: [35m[EVENT][0m Retrieved URL parameter 'goalId': '103'
+2025/09/20 19:39:29.011473 goal.go:11: [35m[EVENT][0m ViewGoal called with goalID: 103
+2025/09/20 19:39:29.036747 putConverter.go:34: [35m[EVENT][0m HTTP method converted from GET to GET
+2025/09/20 19:39:35.039609 putConverter.go:34: [35m[EVENT][0m HTTP method converted from GET to GET
+2025/09/20 19:39:35.039662 shared.go:90: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:35.039669 shared.go:91: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:35.039674 shared.go:92: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:35.039680 shared.go:93: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:39:35.039684 shared.go:90: [35m[EVENT][0m Retrieved URL parameter 'goalId': '102'
+2025/09/20 19:39:35.039689 shared.go:91: [35m[EVENT][0m Retrieved URL parameter 'goalId': '102'
+2025/09/20 19:39:35.039693 shared.go:92: [35m[EVENT][0m Retrieved URL parameter 'goalId': '102'
+2025/09/20 19:39:35.039698 shared.go:93: [35m[EVENT][0m Retrieved URL parameter 'goalId': '102'
+2025/09/20 19:39:35.039704 goal.go:11: [35m[EVENT][0m ViewGoal called with goalID: 102
+2025/09/20 19:41:10.438169 putConverter.go:34: [35m[EVENT][0m HTTP method converted from GET to GET
+2025/09/20 19:41:10.438354 shared.go:90: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:41:10.438406 shared.go:91: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:41:10.438443 shared.go:92: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:41:10.438464 shared.go:93: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:41:10.438502 user.go:46: [35m[EVENT][0m User request received for userID: 100 with method: GET
+2025/09/20 19:42:33.977922 putConverter.go:34: [35m[EVENT][0m HTTP method converted from GET to GET
+2025/09/20 19:42:33.978701 shared.go:90: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:42:33.978725 shared.go:91: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:42:33.978747 shared.go:92: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:42:33.978782 shared.go:93: [35m[EVENT][0m Retrieved URL parameter 'uid': '100'
+2025/09/20 19:42:33.981925 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:42:33.981944 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:42:33.981954 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:42:33.981964 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:42:33.981972 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:42:33.981982 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:42:33.981992 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:42:33.982000 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:42:33.982008 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:42:33.982017 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:42:33.982025 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:42:33.982034 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:42:33.982042 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:42:33.982050 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:42:33.982058 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:42:33.982066 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:42:33.982076 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:42:33.982654 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:42:33.982670 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:42:33.982679 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:42:33.982688 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:42:33.982697 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:42:33.982705 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:42:33.982713 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:42:33.982722 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:42:33.982730 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:42:33.982738 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:42:33.982746 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:42:33.982756 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:42:33.982765 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:42:33.982773 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:42:33.982781 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:42:33.982789 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:42:33.982797 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:42:33.982806 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:42:33.982814 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:42:33.982822 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:42:33.982830 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:42:33.982856 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:42:33.982893 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:42:33.982975 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:42:33.983014 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:42:33.983025 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:42:33.983034 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:42:33.983043 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:42:33.983052 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:42:33.983060 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:42:33.983068 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:42:33.983449 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:42:33.983467 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:42:33.983478 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:42:33.983487 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:42:33.983495 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:42:33.983504 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:42:33.983512 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:42:33.983521 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:42:33.983529 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:42:33.983537 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:42:33.983545 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:42:33.983553 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:42:33.983561 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:42:33.983570 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:42:33.983578 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:42:33.983588 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:42:33.983599 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:42:33.983624 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:42:33.983641 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:42:33.983662 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:42:33.983672 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:42:33.983681 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:42:33.983690 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:42:33.983698 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:42:33.983867 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:42:33.983882 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:42:33.983893 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:42:33.983977 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:42:33.983992 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:42:33.984003 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:42:33.984022 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:42:33.984034 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:42:33.984044 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:42:33.984053 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:42:33.984063 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:42:33.984072 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:42:33.984406 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:42:33.984446 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:42:33.984458 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:42:33.984472 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:42:33.984481 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:42:33.984497 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:42:33.984505 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:42:33.984514 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:42:33.986041 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:42:33.986053 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:42:33.986058 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:42:33.986112 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:42:33.986122 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:42:33.986129 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:42:33.986133 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:42:33.986137 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:42:33.986142 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:42:33.986146 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:42:33.986150 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:42:33.986153 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:42:33.986157 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:42:33.986236 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:42:33.986253 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:42:33.986271 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:42:33.986287 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:42:33.986291 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:42:33.986295 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:42:33.986299 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:42:33.986302 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:42:33.986306 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:42:33.986310 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:42:33.986314 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:42:33.986317 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:42:33.986321 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:42:33.986325 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:42:33.986328 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:42:33.986331 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:42:33.986334 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:42:33.986338 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:42:33.986341 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:42:33.986364 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:42:33.986374 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:42:33.986380 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:42:33.986384 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:42:33.986388 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:42:33.986392 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:42:33.986397 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:42:33.986402 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:42:33.986406 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:42:33.986411 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:42:33.986415 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:42:33.986419 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:42:33.986422 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:42:33.986426 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:42:33.986429 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:42:33.986438 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:42:33.986457 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:42:33.986461 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:42:33.986464 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:42:33.986467 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:42:33.987044 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:42:33.987053 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:42:33.987056 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:42:33.987060 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:42:33.987063 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:42:33.987065 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:42:33.987069 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:42:33.987072 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:42:33.987075 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:42:33.987078 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:42:33.987081 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:42:33.987084 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:42:33.987086 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:42:33.987089 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:42:33.987092 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:42:33.987094 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:42:33.987097 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:42:33.987367 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:42:33.987375 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:42:33.987380 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:42:33.987385 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:42:33.987389 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:42:33.987402 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:42:33.987407 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:42:33.987411 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:42:33.987415 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:42:33.987418 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:42:33.987421 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:42:33.987425 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:42:33.987429 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:42:33.987432 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:42:33.987435 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:42:33.987438 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:42:33.987441 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:42:33.987445 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:42:33.987448 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:42:33.987451 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:42:33.987453 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:42:33.987463 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:42:33.987466 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:42:33.987469 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:42:33.987472 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:42:33.987475 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:42:33.987479 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:42:33.987482 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:42:33.987485 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:42:33.987488 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:42:33.987491 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:42:33.987494 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:42:33.987497 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:42:33.987500 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:42:33.987503 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:42:33.987507 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:42:33.987510 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:42:33.987512 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:42:33.987515 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:42:33.987519 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:42:33.987522 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:42:33.987525 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:42:33.987527 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:42:33.987531 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:42:33.987534 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:42:33.987537 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:42:33.987540 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:42:33.987543 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:42:33.987547 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:42:33.987550 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:42:33.987555 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:42:33.987559 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:42:33.987562 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:42:33.987565 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:42:33.987568 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:42:33.987595 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:42:33.987599 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:42:33.987602 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:42:33.987606 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:42:33.987610 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:42:33.987613 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:42:33.987616 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:42:33.987619 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:42:33.987663 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:42:33.987724 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:42:33.987730 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:42:33.987766 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:42:33.987775 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:42:33.987779 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:42:33.987783 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:42:33.987790 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:42:33.987793 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:42:33.987803 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:42:33.987807 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:42:33.987810 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:42:33.987814 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:42:33.987817 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:42:33.987823 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:42:33.987826 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:42:33.987829 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:42:33.988108 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:42:33.988159 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:42:33.988172 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:42:33.988205 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:42:33.988258 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:42:33.988383 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:42:33.988390 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:42:33.988394 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:42:33.988397 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:42:33.988403 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:42:33.988407 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:42:33.988410 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:42:33.988413 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:42:33.988416 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:42:33.988419 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:42:33.988422 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:42:33.988425 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:42:33.988428 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:42:33.988433 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:42:33.988436 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:42:33.988440 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:42:33.988444 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:42:33.988447 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:42:33.988450 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:42:33.988453 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:42:33.988457 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:42:33.988460 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:42:33.988466 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:42:33.988470 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:42:33.988473 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:42:33.988475 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:42:33.988478 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:42:33.988481 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:42:33.988484 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:42:33.988486 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:42:33.988489 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:42:33.988492 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:42:33.988495 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:42:33.988497 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:42:33.988500 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:42:33.988503 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:42:33.988506 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:42:33.988510 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:42:33.988513 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:42:33.988516 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:42:33.988519 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:42:33.988521 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:42:33.990604 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:42:33.990612 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:42:33.990616 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:42:33.990620 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:42:33.990623 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:42:33.990627 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:42:33.990629 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:42:33.990633 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:42:33.990637 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:42:33.990641 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:42:33.990644 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:42:33.990648 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:42:33.990651 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:42:33.990655 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:42:33.990658 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:42:33.990661 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:42:33.990665 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:42:33.990669 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:42:33.990672 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:42:33.990675 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:42:33.990679 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:42:33.990682 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:42:33.990685 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:42:33.990688 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:42:33.990691 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:42:33.990694 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:42:33.990698 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:42:33.990701 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:42:33.990704 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:42:33.990707 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:42:33.990720 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:42:33.990724 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:42:33.990726 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:42:33.990729 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:42:33.990733 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:42:33.990737 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:42:33.990740 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:42:33.990743 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:42:33.990747 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:42:33.990750 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:42:33.990753 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:42:33.990757 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:42:33.990760 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:42:33.990763 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:42:33.990766 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:42:33.990769 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:42:33.990772 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:42:33.990776 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:42:33.990779 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:42:33.990782 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:42:33.990785 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:42:33.990788 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:42:33.990792 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:42:33.990795 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:42:33.990798 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:42:33.990801 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:42:33.990805 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:42:33.990808 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:42:33.990812 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:42:33.990815 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:42:33.990818 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:42:33.990821 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:42:33.990824 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:42:33.990828 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:42:33.990831 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:42:33.990834 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:42:33.990837 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:42:33.990843 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:42:33.990847 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:42:33.990850 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:42:33.990853 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:42:33.990856 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:42:33.990884 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:42:33.990888 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:42:33.990891 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:42:33.990894 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:42:33.990897 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:42:33.990901 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:42:33.990904 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:42:33.990908 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:42:33.990911 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:42:33.990915 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:42:33.990919 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:42:33.990922 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:42:33.990926 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:42:33.990929 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:42:33.990932 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:42:33.990935 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:42:33.990938 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:42:33.990942 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:42:33.990945 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:42:33.990949 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:42:33.990952 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:42:33.990955 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:42:33.990958 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:42:33.990961 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:42:33.990965 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:42:33.990968 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:42:33.990971 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:42:33.990975 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:42:33.990978 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:42:33.990981 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:42:33.990984 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:42:33.990988 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:42:33.990991 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:42:33.990998 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:42:33.991002 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:42:33.991005 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:42:33.991009 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:42:33.991012 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:42:33.991015 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:42:33.991019 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:42:33.991022 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:42:33.991025 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:42:33.991028 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:42:33.991032 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:42:33.991035 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:42:33.991039 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:42:33.991042 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:42:33.991045 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:42:33.991048 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:42:33.991051 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:42:33.991055 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:42:33.991058 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:42:33.991061 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:42:33.991064 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:42:33.991067 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:42:33.991071 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:42:33.991074 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:42:33.991077 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:42:33.991080 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:42:33.991083 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:42:33.991086 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:42:33.991090 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:42:33.991093 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:42:33.991096 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:42:33.991099 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:42:33.991102 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:42:33.991106 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:42:33.991112 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:42:33.991116 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:42:33.991119 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:42:33.991123 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:42:33.991126 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:42:33.996678 dashboard.go:43: [35m[EVENT][0m Profile view created successfully
+2025/09/20 19:43:35.068595 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 100
+2025/09/20 19:43:35.079119 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 101
+2025/09/20 19:43:35.079165 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 102
+2025/09/20 19:43:35.079177 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 103
+2025/09/20 19:43:35.079184 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 104
+2025/09/20 19:43:35.079198 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 105
+2025/09/20 19:43:35.079205 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 106
+2025/09/20 19:43:35.079210 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 107
+2025/09/20 19:43:35.079215 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 108
+2025/09/20 19:43:35.079221 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 109
+2025/09/20 19:43:35.079229 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 110
+2025/09/20 19:43:35.079236 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 111
+2025/09/20 19:43:35.079242 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 112
+2025/09/20 19:43:35.079247 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 113
+2025/09/20 19:43:35.079252 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 114
+2025/09/20 19:43:35.079257 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 115
+2025/09/20 19:43:35.079261 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 116
+2025/09/20 19:43:35.079267 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 117
+2025/09/20 19:43:35.079272 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 118
+2025/09/20 19:43:35.079277 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 119
+2025/09/20 19:43:35.079281 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 120
+2025/09/20 19:43:35.079287 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 121
+2025/09/20 19:43:35.079316 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 122
+2025/09/20 19:43:35.079322 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 123
+2025/09/20 19:43:35.079328 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 124
+2025/09/20 19:43:35.079333 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 125
+2025/09/20 19:43:35.079337 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 126
+2025/09/20 19:43:35.079343 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 127
+2025/09/20 19:43:35.079348 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 128
+2025/09/20 19:43:35.079352 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 129
+2025/09/20 19:43:35.079357 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 130
+2025/09/20 19:43:35.079362 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 131
+2025/09/20 19:43:35.079368 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 132
+2025/09/20 19:43:35.079383 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 133
+2025/09/20 19:43:35.079390 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 134
+2025/09/20 19:43:35.079396 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 135
+2025/09/20 19:43:35.079402 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 136
+2025/09/20 19:43:35.079407 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 137
+2025/09/20 19:43:35.079411 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 138
+2025/09/20 19:43:35.079416 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 139
+2025/09/20 19:43:35.079421 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 140
+2025/09/20 19:43:35.079426 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 141
+2025/09/20 19:43:35.079431 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 142
+2025/09/20 19:43:35.079435 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 143
+2025/09/20 19:43:35.079440 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 144
+2025/09/20 19:43:35.079445 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 145
+2025/09/20 19:43:35.079449 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 146
+2025/09/20 19:43:35.079454 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 147
+2025/09/20 19:43:35.079459 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 148
+2025/09/20 19:43:35.079463 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 149
+2025/09/20 19:43:35.079470 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 150
+2025/09/20 19:43:35.079475 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 151
+2025/09/20 19:43:35.079480 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 152
+2025/09/20 19:43:35.079485 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 153
+2025/09/20 19:43:35.079489 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 154
+2025/09/20 19:43:35.079495 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 155
+2025/09/20 19:43:35.079500 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 156
+2025/09/20 19:43:35.079505 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 157
+2025/09/20 19:43:35.079509 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 158
+2025/09/20 19:43:35.079517 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 159
+2025/09/20 19:43:35.079522 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 160
+2025/09/20 19:43:35.079527 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 161
+2025/09/20 19:43:35.079531 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 162
+2025/09/20 19:43:35.079536 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 163
+2025/09/20 19:43:35.079541 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 164
+2025/09/20 19:43:35.079545 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 165
+2025/09/20 19:43:35.079550 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 166
+2025/09/20 19:43:35.079559 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 167
+2025/09/20 19:43:35.079564 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 168
+2025/09/20 19:43:35.079569 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 169
+2025/09/20 19:43:35.079574 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 170
+2025/09/20 19:43:35.079579 weight.go:34: [35m[EVENT][0m GetBMI called for Weight_Store ID 171
+2025/09/20 19:43:35.116584 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100
+2025/09/20 19:43:35.116600 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 100
+2025/09/20 19:43:35.116605 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 101
+2025/09/20 19:43:35.116609 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 101
+2025/09/20 19:43:35.116613 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 102
+2025/09/20 19:43:35.116617 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 102
+2025/09/20 19:43:35.116621 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 103
+2025/09/20 19:43:35.116625 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 103
+2025/09/20 19:43:35.116628 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 104
+2025/09/20 19:43:35.116632 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 104
+2025/09/20 19:43:35.116636 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 105
+2025/09/20 19:43:35.116639 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 105
+2025/09/20 19:43:35.116643 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 106
+2025/09/20 19:43:35.116647 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 106
+2025/09/20 19:43:35.116650 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 107
+2025/09/20 19:43:35.116653 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 107
+2025/09/20 19:43:35.116657 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 108
+2025/09/20 19:43:35.116724 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 108
+2025/09/20 19:43:35.116729 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 109
+2025/09/20 19:43:35.116733 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 109
+2025/09/20 19:43:35.116736 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 110
+2025/09/20 19:43:35.116740 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 110
+2025/09/20 19:43:35.116745 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 111
+2025/09/20 19:43:35.116749 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 111
+2025/09/20 19:43:35.116752 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 112
+2025/09/20 19:43:35.116756 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 112
+2025/09/20 19:43:35.116761 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 113
+2025/09/20 19:43:35.116764 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 113
+2025/09/20 19:43:35.116768 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 114
+2025/09/20 19:43:35.116771 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 114
+2025/09/20 19:43:35.116775 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 115
+2025/09/20 19:43:35.116811 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 115
+2025/09/20 19:43:35.116817 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 116
+2025/09/20 19:43:35.116822 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 116
+2025/09/20 19:43:35.116827 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 117
+2025/09/20 19:43:35.116831 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 117
+2025/09/20 19:43:35.116836 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 118
+2025/09/20 19:43:35.116839 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 118
+2025/09/20 19:43:35.116843 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 119
+2025/09/20 19:43:35.116847 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 119
+2025/09/20 19:43:35.116851 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 120
+2025/09/20 19:43:35.116855 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 120
+2025/09/20 19:43:35.116858 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 121
+2025/09/20 19:43:35.116862 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 121
+2025/09/20 19:43:35.116867 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 122
+2025/09/20 19:43:35.116870 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 122
+2025/09/20 19:43:35.116874 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 123
+2025/09/20 19:43:35.116877 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 123
+2025/09/20 19:43:35.116880 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 124
+2025/09/20 19:43:35.116884 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 124
+2025/09/20 19:43:35.116887 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 125
+2025/09/20 19:43:35.116891 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 125
+2025/09/20 19:43:35.116894 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 126
+2025/09/20 19:43:35.116898 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 126
+2025/09/20 19:43:35.116901 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 127
+2025/09/20 19:43:35.116905 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 127
+2025/09/20 19:43:35.116908 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 128
+2025/09/20 19:43:35.116911 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 128
+2025/09/20 19:43:35.116915 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 129
+2025/09/20 19:43:35.116918 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 129
+2025/09/20 19:43:35.116922 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 130
+2025/09/20 19:43:35.116926 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 130
+2025/09/20 19:43:35.116930 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 131
+2025/09/20 19:43:35.116933 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 131
+2025/09/20 19:43:35.116936 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 132
+2025/09/20 19:43:35.116940 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 132
+2025/09/20 19:43:35.116943 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 133
+2025/09/20 19:43:35.116946 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 133
+2025/09/20 19:43:35.116950 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 134
+2025/09/20 19:43:35.116953 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 134
+2025/09/20 19:43:35.116957 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 135
+2025/09/20 19:43:35.116960 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 135
+2025/09/20 19:43:35.116964 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 136
+2025/09/20 19:43:35.116967 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 136
+2025/09/20 19:43:35.116971 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 137
+2025/09/20 19:43:35.116974 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 137
+2025/09/20 19:43:35.116978 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 138
+2025/09/20 19:43:35.116981 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 138
+2025/09/20 19:43:35.116986 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 139
+2025/09/20 19:43:35.116990 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 139
+2025/09/20 19:43:35.116994 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 140
+2025/09/20 19:43:35.116997 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 140
+2025/09/20 19:43:35.117000 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 141
+2025/09/20 19:43:35.117004 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 141
+2025/09/20 19:43:35.117007 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 142
+2025/09/20 19:43:35.117011 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 142
+2025/09/20 19:43:35.117016 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 143
+2025/09/20 19:43:35.117020 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 143
+2025/09/20 19:43:35.117026 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 144
+2025/09/20 19:43:35.117029 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 144
+2025/09/20 19:43:35.117032 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 145
+2025/09/20 19:43:35.117035 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 145
+2025/09/20 19:43:35.117040 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 146
+2025/09/20 19:43:35.117043 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 146
+2025/09/20 19:43:35.117047 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 147
+2025/09/20 19:43:35.117050 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 147
+2025/09/20 19:43:35.117053 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 148
+2025/09/20 19:43:35.117056 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 148
+2025/09/20 19:43:35.117060 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 149
+2025/09/20 19:43:35.117063 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 149
+2025/09/20 19:43:35.117085 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 150
+2025/09/20 19:43:35.117089 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 150
+2025/09/20 19:43:35.117092 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 151
+2025/09/20 19:43:35.117095 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 151
+2025/09/20 19:43:35.117099 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 152
+2025/09/20 19:43:35.117102 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 152
+2025/09/20 19:43:35.117105 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 153
+2025/09/20 19:43:35.117109 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 153
+2025/09/20 19:43:35.117113 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 154
+2025/09/20 19:43:35.117116 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 154
+2025/09/20 19:43:35.117119 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 155
+2025/09/20 19:43:35.117123 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 155
+2025/09/20 19:43:35.117126 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 156
+2025/09/20 19:43:35.117129 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 156
+2025/09/20 19:43:35.117133 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 157
+2025/09/20 19:43:35.117137 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 157
+2025/09/20 19:43:35.117141 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 158
+2025/09/20 19:43:35.117144 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 158
+2025/09/20 19:43:35.117150 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 159
+2025/09/20 19:43:35.117153 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 159
+2025/09/20 19:43:35.117157 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 160
+2025/09/20 19:43:35.117160 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 160
+2025/09/20 19:43:35.117164 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 161
+2025/09/20 19:43:35.117167 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 161
+2025/09/20 19:43:35.117170 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 162
+2025/09/20 19:43:35.117174 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 162
+2025/09/20 19:43:35.117177 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 163
+2025/09/20 19:43:35.117180 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 163
+2025/09/20 19:43:35.117185 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 164
+2025/09/20 19:43:35.117189 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 164
+2025/09/20 19:43:35.117192 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 165
+2025/09/20 19:43:35.117195 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 165
+2025/09/20 19:43:35.117199 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 166
+2025/09/20 19:43:35.117205 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 166
+2025/09/20 19:43:35.117209 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 167
+2025/09/20 19:43:35.117213 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 167
+2025/09/20 19:43:35.117217 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 168
+2025/09/20 19:43:35.117220 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 168
+2025/09/20 19:43:35.117223 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 169
+2025/09/20 19:43:35.117227 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 169
+2025/09/20 19:43:35.117233 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 170
+2025/09/20 19:43:35.117237 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 170
+2025/09/20 19:43:35.117240 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 171
+2025/09/20 19:43:35.117243 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 171
+2025/09/20 19:43:35.117247 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 172
+2025/09/20 19:43:35.117250 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 172
+2025/09/20 19:43:35.117253 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 173
+2025/09/20 19:43:35.117257 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 173
+2025/09/20 19:43:35.117260 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 174
+2025/09/20 19:43:35.117264 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 174
+2025/09/20 19:43:35.117267 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 175
+2025/09/20 19:43:35.117270 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 175
+2025/09/20 19:43:35.117275 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 176
+2025/09/20 19:43:35.117279 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 176
+2025/09/20 19:43:35.117285 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 177
+2025/09/20 19:43:35.117288 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 177
+2025/09/20 19:43:35.117292 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 178
+2025/09/20 19:43:35.117296 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 178
+2025/09/20 19:43:35.117300 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 179
+2025/09/20 19:43:35.117306 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 179
+2025/09/20 19:43:35.117309 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 180
+2025/09/20 19:43:35.117312 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 180
+2025/09/20 19:43:35.117316 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 181
+2025/09/20 19:43:35.117319 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 181
+2025/09/20 19:43:35.117323 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 182
+2025/09/20 19:43:35.117326 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 182
+2025/09/20 19:43:35.117329 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 183
+2025/09/20 19:43:35.117332 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 183
+2025/09/20 19:43:35.117336 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 184
+2025/09/20 19:43:35.117339 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 184
+2025/09/20 19:43:35.117342 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 185
+2025/09/20 19:43:35.117345 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 185
+2025/09/20 19:43:35.117348 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 186
+2025/09/20 19:43:35.117352 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 186
+2025/09/20 19:43:35.117355 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 187
+2025/09/20 19:43:35.117358 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 187
+2025/09/20 19:43:35.117361 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 188
+2025/09/20 19:43:35.117365 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 188
+2025/09/20 19:43:35.117368 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 189
+2025/09/20 19:43:35.117371 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 189
+2025/09/20 19:43:35.117375 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 190
+2025/09/20 19:43:35.117379 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 190
+2025/09/20 19:43:35.117383 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 191
+2025/09/20 19:43:35.117386 weightProjection.go:10: [35m[EVENT][0m GetBMI called for weightProjection_Store ID 191
+2025/09/20 19:43:35.351774 baselineStore_init.go:44: [35m[EVENT][0m Closing connection to baseline
+2025/09/20 19:43:35.351853 baselineStore_init.go:48: [35m[EVENT][0m Closed connection to baseline
+2025/09/20 19:43:35.351859 dateIndexStore_init.go:44: [35m[EVENT][0m Closing connection to dateIndex
+2025/09/20 19:43:35.351878 dateIndexStore_init.go:48: [35m[EVENT][0m Closed connection to dateIndex
+2025/09/20 19:43:35.351882 goalStore_init.go:44: [35m[EVENT][0m Closing connection to goal
+2025/09/20 19:43:35.351899 goalStore_init.go:48: [35m[EVENT][0m Closed connection to goal
+2025/09/20 19:43:35.351903 tagStore_init.go:44: [35m[EVENT][0m Closing connection to tag
+2025/09/20 19:43:35.351920 tagStore_init.go:48: [35m[EVENT][0m Closed connection to tag
+2025/09/20 19:43:35.351924 userStore_init.go:44: [35m[EVENT][0m Closing connection to User
+2025/09/20 19:43:35.351941 userStore_init.go:48: [35m[EVENT][0m Closed connection to User
+2025/09/20 19:43:35.351946 weightStore_init.go:44: [35m[EVENT][0m Closing connection to weight
+2025/09/20 19:43:35.351964 weightStore_init.go:48: [35m[EVENT][0m Closed connection to weight
+2025/09/20 19:43:35.351968 weightProjectionStore_init.go:44: [35m[EVENT][0m Closing connection to weightProjection
+2025/09/20 19:43:35.351985 weightProjectionStore_init.go:48: [35m[EVENT][0m Closed connection to weightProjection
+2025/09/20 19:43:35.351989 weightProjectionHistoryStore_init.go:44: [35m[EVENT][0m Closing connection to weightProjectionHistory
+2025/09/20 19:43:35.352007 weightProjectionHistoryStore_init.go:48: [35m[EVENT][0m Closed connection to weightProjectionHistory
+2025/09/20 19:43:35.352011 weightTagStore_init.go:44: [35m[EVENT][0m Closing connection to weightTag
+2025/09/20 19:43:35.352029 weightTagStore_init.go:48: [35m[EVENT][0m Closed connection to weightTag
+2025/09/20 19:43:35.352033 shutdown.go:56: [35m[EVENT][0m Application shutdown complete.
